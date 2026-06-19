@@ -45,4 +45,4 @@ See `CITATION.cff`.
 
 ## License
 
-**To be confirmed by all authors before public release.**
+BasinGraph is released under the BSD-3-Clause license. See `LICENSE`.

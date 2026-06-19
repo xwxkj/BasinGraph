@@ -59,5 +59,7 @@
   "version": "1.0.0",
   "publication_date": "2026-06-19",
   "related_identifiers": [],
-  "notes": "Select the final software license and replace all TO_BE_CONFIRMED fields before creating the public release."
+  "notes": "Software source code is released under the BSD-3-Clause license.",
+  "access_right": "open",
+  "license": "bsd-3-clause"
 }

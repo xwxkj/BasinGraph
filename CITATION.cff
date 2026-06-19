@@ -58,5 +58,5 @@ keywords:
   - basin graph
   - COCO/BBOB
   - CUTEst
-repository-code: "https://github.com/TO_BE_CONFIRMED/BasinGraph"
-license: "TO_BE_CONFIRMED"
+repository-code: "https://github.com/kjxubc/BasinGraph"
+license: "BSD-3-Clause"
