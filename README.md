@@ -1,5 +1,7 @@
 # BasinGraph
 
+[![DOI](https://zenodo.org/badge/1274531480.svg)](https://doi.org/10.5281/zenodo.20765883)
+
 BasinGraph is a geometry-controlled basin-graph optimization framework for
 nonconvex mathematical models.
 
@@ -46,6 +48,12 @@ See `CITATION.cff`.
 ## License
 
 BasinGraph is released under the BSD-3-Clause license. See `LICENSE`.
+
+## Software archive
+
+- Version 1.0.0 DOI: https://doi.org/10.5281/zenodo.20765884
+- All-versions DOI: https://doi.org/10.5281/zenodo.20765883
+- Reproducibility Dataset DOI: https://doi.org/10.5281/zenodo.20765047
 
 ## Data and reproducibility archive
 
