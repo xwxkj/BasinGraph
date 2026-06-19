@@ -13,6 +13,7 @@
     "global optimization",
     "derivative-free optimization",
     "nonconvex optimization",
+    "basin graph",
     "COCO/BBOB",
     "CUTEst"
   ],
