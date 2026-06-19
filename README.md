@@ -14,7 +14,7 @@ nonconvex mathematical models.
 - `environments/`: dependency locks and CUTEst environment information.
 
 Large COCO observer logs, CUTEst run-level histories, and full raw archives are
-not committed to GitHub. They will be deposited on Zenodo and linked by DOI.
+not committed to GitHub. They are deposited on Zenodo at https://doi.org/10.5281/zenodo.20765047.
 
 ## Main validation
 
@@ -46,3 +46,15 @@ See `CITATION.cff`.
 ## License
 
 BasinGraph is released under the BSD-3-Clause license. See `LICENSE`.
+
+## Data and reproducibility archive
+
+The official COCO/BBOB logs, pre-registered CUTEst results, MATLAB
+validation, Source Data and frozen protocols are openly available on
+Zenodo:
+
+- Version-specific Dataset DOI: https://doi.org/10.5281/zenodo.20765047
+- All-versions Dataset DOI: https://doi.org/10.5281/zenodo.20765046
+
+The version-specific DOI identifies the exact files supporting the
+reported study.

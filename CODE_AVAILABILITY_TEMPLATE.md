@@ -1,6 +1,7 @@
-# Code availability template
+# Code availability
 
-The BasinGraph source code, benchmark runners, frozen protocols, analysis
-scripts, and figure-generation scripts are available at
-**https://github.com/xwxkj/BasinGraph**. Version 1.0.0 is archived on Zenodo at
-**[DOI TO BE INSERTED]**.
+The BasinGraph source code, benchmark runners, analysis scripts and
+figure-generation scripts are openly available at
+https://github.com/xwxkj/BasinGraph under the BSD-3-Clause license.
+A versioned Zenodo software DOI will be added after archival of the
+GitHub v1.0.0 release.

@@ -5,48 +5,8 @@
   "creators": [
     {
       "name": "Xu, Kaijie",
-      "affiliation": "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China; Department of Chemical and Biological Engineering, University of British Columbia, Vancouver, BC V6T 1Z3, Canada",
-      "orcid": "0000-0003-4408-9070"
-    },
-    {
-      "name": "Tang, Xiaoan",
-      "affiliation": "Key Laboratory of Process Optimization and Intelligent Decision-making, Ministry of Education, and School of Management, Hefei University of Technology, Hefei 230009, Anhui, China",
-      "orcid": "0000-0002-4624-3687"
-    },
-    {
-      "name": "Nie, Weike",
-      "affiliation": "College of Computer Science, Northwest University, Xi'an 710127, China",
-      "orcid": "0000-0003-2092-3083"
-    },
-    {
-      "name": "Cui, Ye",
-      "affiliation": "Department of Electrical and Computer Engineering, University of Alberta, Edmonton, AB T6G 2R3, Canada",
-      "orcid": "0000-0003-4402-5341"
-    },
-    {
-      "name": "E, Hanyu",
-      "affiliation": "Department of Electrical and Computer Engineering, University of Alberta, Edmonton, AB T6G 2R3, Canada",
-      "orcid": "0000-0002-5567-6126"
-    },
-    {
-      "name": "Yin, Xukun",
-      "affiliation": "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China; Hangzhou Institute of Technology, Xidian University, Hangzhou, China",
-      "orcid": "0000-0003-4840-9529"
-    },
-    {
-      "name": "Zhang, Qiang",
-      "affiliation": "Key Laboratory of Process Optimization and Intelligent Decision-making, Ministry of Education, and School of Management, Hefei University of Technology, Hefei 230009, Anhui, China",
-      "orcid": "0000-0003-2947-1351"
-    },
-    {
-      "name": "Quan, Yinghui",
-      "affiliation": "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China",
-      "orcid": "0000-0001-6541-9441"
-    },
-    {
-      "name": "Feng, Dazheng",
-      "affiliation": "School of Electronic Engineering, Xidian University, Xi'an 710071, China",
-      "orcid": "0000-0002-0168-8340"
+      "orcid": "0000-0003-4408-9070",
+      "affiliation": "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China; Department of Chemical and Biological Engineering, University of British Columbia, Vancouver, BC V6T 1Z3, Canada"
     }
   ],
   "keywords": [
@@ -58,7 +18,13 @@
   ],
   "version": "1.0.0",
   "publication_date": "2026-06-19",
-  "related_identifiers": [],
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20765047",
+      "relation": "isSupplementTo",
+      "resource_type": "dataset"
+    }
+  ],
   "notes": "Software source code is released under the BSD-3-Clause license.",
   "access_right": "open",
   "license": "bsd-3-clause"
