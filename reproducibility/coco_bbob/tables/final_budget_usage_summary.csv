@@ -1,0 +1,8 @@
+algorithm,rows,min_nfe_budget_ratio,median_nfe_budget_ratio,mean_nfe_budget_ratio,max_nfe_budget_ratio,rows_below_99pct_budget
+BIPOP-CMA-ES,1800,1.0,1.0,1.0,1.0,0
+BasinGraph,1800,1.0,1.0,1.0,1.0,0
+CMA-ES,1800,0.045,0.40180000000000005,0.48757692592592594,1.0,1640
+Differential Evolution,1800,1.0,1.0,1.0,1.0,0
+Latin Hypercube Sampling,1800,1.0,1.0,1.0,1.0,0
+Multi-start L-BFGS-B,1800,0.006,0.39525,0.48842711111111115,1.0,1397
+Random Search,1800,1.0,1.0,1.0,1.0,0

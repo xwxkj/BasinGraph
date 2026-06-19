@@ -1,0 +1,3 @@
+# Suggested CUTEst figure caption
+
+Figure X | Pre-registered CUTEst validation. a, Dolan–Moré-style performance profile based on expected objective evaluations required to reach a normalized residual of 10⁻³. b, Data profile showing the fraction of problem–seed pairs reaching the same target as a function of objective evaluations per dimension. c, Mean final-value rank for small (2–20 variables), medium (21–100) and large (101–500) CUTEst instances. d, Success rate for normalized residual targets of 10⁻¹, 10⁻³ and 10⁻⁵. The experiment comprised 50 pre-registered problem instances, seven algorithms and 30 paired seeds.

@@ -1,0 +1,28 @@
+{
+  "selection_seed": "BasinGraph-CUTEst-v2-final-20260619",
+  "optimizer_runs_before_freeze": 0,
+  "technical_inventory_instances": 84,
+  "selected_problem_instances": 50,
+  "selected_by_dimension_group": {
+    "small_2_20": 20,
+    "medium_21_100": 20,
+    "large_101_500": 10
+  },
+  "selected_by_source_type": {
+    "scalable": 29,
+    "fixed": 21
+  },
+  "unique_base_problem_names": 48,
+  "duplicate_base_instances": 2,
+  "valid_but_not_selected": 34,
+  "selection_group_order": [
+    "large_101_500",
+    "medium_21_100",
+    "small_2_20"
+  ],
+  "target_counts": {
+    "small_2_20": 20,
+    "medium_21_100": 20,
+    "large_101_500": 10
+  }
+}

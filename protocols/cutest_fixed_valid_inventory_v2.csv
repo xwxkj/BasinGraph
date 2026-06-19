@@ -1,0 +1,22 @@
+problem_name,instance_id,source_type,sif_N,dimension,dimension_group,objective_type,constraints,origin,derivative_degree,regular,internal_variables,f_at_x0,minimum_bound,maximum_bound,minimum_box_width,maximum_box_width,selection_hash
+BQPGABIM,BQPGABIM,fixed,,46,medium_21_100,quadratic,bound,academic,2,True,False,0.0,-0.10004,0.10002,0.099999551,0.2,2fa7fefb8ac3bf7d2cc5994db7b806b327347beeff92f6b304d1004d2662b78d
+SANTALS,SANTALS,fixed,,21,medium_21_100,sum of squares,bound,academic,2,True,False,1.430614801390367,-1000.0,1000.0,2000.0,2000.0,de2a08e44bbef67076edd81a3d9cfbb5b2a46f4dbf92797aabb72703484d47d4
+BQPGASIM,BQPGASIM,fixed,,50,medium_21_100,quadratic,bound,academic,2,True,False,0.0,-0.10004,0.10002,0.099999551,0.2,f4c5a54e570474db72c5d5b453e4dad6a7849e63da3834afbc04576d194a5924
+BRANIN,BRANIN,fixed,,2,small_2_20,other,bound,academic,2,True,False,88.90408681550525,-5.0,15.0,15.0,15.0,07e1ee433a62c4b40e6757143234933947e86b84c861d0ea3ec1201d8e58c6f0
+ELATVIDUB,ELATVIDUB,fixed,,2,small_2_20,sum of squares,bound,modelling,2,True,False,16002.0,-100.0,100.0,200.0,200.0,1c763151bee42c67a554f56af310708f11d1f60491df6dd53e93dd23d7742466
+FBRAINLS,FBRAINLS,fixed,,2,small_2_20,sum of squares,bound,academic,2,True,False,1.262347512500663,-5.0,5.0,10.0,10.0,1db5c2de1302953c2ce2925a84b1ad1e2034053bffcc9a919540777cc96df3b1
+DEVGLA1B,DEVGLA1B,fixed,,4,small_2_20,sum of squares,bound,modelling,2,True,False,105126.83395133958,1.0,100.0,99.0,99.0,4e0523bfd1727529779a0dad716232e9353a6a258d8fd6161c857027743e58bd
+JUDGEB,JUDGEB,fixed,,2,small_2_20,sum of squares,bound,modelling,2,True,False,2959.941188,-10.0,10.0,20.0,20.0,55e3ae52d1d354a41b794d16236642ee3ebd99d006de779a3b9d7da04c55d11e
+HS5,HS5,fixed,,2,small_2_20,other,bound,academic,2,True,False,1.0,-3.0,4.0,5.5,6.0,56a87fa5f0924b4b545f4caaaaf3dfb87c2d33a09ff449a3e7cdf4a9036538c1
+HIMMELP1,HIMMELP1,fixed,,2,small_2_20,other,bound,academic,2,True,False,86.00278986817034,0.0,95.0,75.0,95.0,6e321e30f2f1894cfaed747e8242c19d29d3c8badee7a8fbec6e8b80739ecb7c
+EGGCRATEB,EGGCRATEB,fixed,,2,small_2_20,sum of squares,bound,modelling,2,True,False,43.37238071763443,-5.0,5.0,10.0,10.0,77818f636d7d8dc7fb149d1f8c6f063c6ffe166bd90f5cf101dc2fa3872d372c
+FBRAIN2LS,FBRAIN2LS,fixed,,4,small_2_20,sum of squares,bound,academic,2,True,False,4.292220715491318,-5.0,5.0,10.0,10.0,90763429f5a4467d993bba20ed52916748f496a3a34d7bf4ef89a71df9226895
+WAYSEA2B,WAYSEA2B,fixed,,2,small_2_20,sum of squares,bound,modelling,2,True,False,2117.317060015625,-500.0,500.0,1000.0,1000.0,95c7d4ce12b6938548c63db89c8b12629553dacfe6db4fd0b09b38383e0cdb28
+DGOSPEC,DGOSPEC,fixed,,3,small_2_20,other,bound,academic,2,True,False,1016.0,-1.0,0.5,1.5,1.5,9ce7e5381200df3778b7a6eec769110bed6884845a2a55e23b5bf8b608bd0444
+HS38,HS38,fixed,,4,small_2_20,other,bound,academic,2,True,False,19192.0,-10.0,10.0,20.0,20.0,a656bb9a49d5aa065ef53f076822df1744e302f387963f68ba1fce05619e82a3
+HS25,HS25,fixed,,3,small_2_20,sum of squares,bound,academic,2,True,False,32.834999999663594,0.0,100.0,5.0,99.9,b1c516c0253efb1a0d702375f27e87d90e817d8616b5a3d3d2a7b7b437f69513
+WAYSEA1B,WAYSEA1B,fixed,,2,small_2_20,sum of squares,bound,modelling,2,True,False,370890.0,-5.0,5.0,10.0,10.0,cc7f24eb60134438e8220fd8abeeaf79a7fa077c6dec4e36ce8f76d87d0aaf55
+PRICE4B,PRICE4B,fixed,,2,small_2_20,sum of squares,bound,modelling,2,True,False,13421.0,-50.0,50.0,100.0,100.0,d6776ea3b36c8eb723c07428eabd06a1b22a0625c9db1117d5acf2fe1482ea4f
+HART6,HART6,fixed,,6,small_2_20,other,bound,academic,2,True,False,-0.4081494281626684,0.0,1.0,1.0,1.0,d8efd873bf2148df4499b284726acf274bbf5729b1434b2a0999b92efe6e7ed6
+EXP2B,EXP2B,fixed,,2,small_2_20,sum of squares,bound,modelling,2,True,False,4.0997369887712205,0.0,20.0,20.0,20.0,e14023c8a0afe86a684fcc6f813c9519d6ff6eb25adab3ee2779d02146fe7e18
+CAMEL6,CAMEL6,fixed,,2,small_2_20,other,bound,academic,2,True,False,4.5823103332742825,-3.0,3.0,3.0,6.0,eddfe658434cb4b287f2e777f8661e865cca4c43a35c54b7902cf3f45ae91dcf

@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.dylib
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# macOS / editors
+.DS_Store
+.vscode/
+.idea/
+
+# Local build and CUTEst stack
+cutest_stack/
+pycutest_cache/
+build/
+dist/
+*.egg-info/
+
+# Large benchmark outputs
+exdata/
+ppdata/
+official_results/
+cutest_results/protocol_v2/job_records/
+cutest_results/protocol_v2/histories/
+cutest_results/protocol_v2/job_failures/
+logs/
+processed_results/
+archive/
+manuscript/
+
+# Secrets / local configuration
+.env
+*.token
+
+# Local repository-build audit
+STEP14B_REPO_BUILD_REPORT.json

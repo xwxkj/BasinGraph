@@ -1,0 +1,15 @@
+Date: 2026-06-19T01:43:29Z
+Architecture: arm64
+macOS: 26.5.1
+Python: Python 3.11.15
+Python executable: ${CONDA_PREFIX}/bin/python
+Conda environment: basingraph-cutest
+Homebrew prefix: /opt/homebrew
+Xcode tools: /Applications/Xcode.app/Contents/Developer
+Clang: Apple clang version 21.0.0 (clang-2100.1.1.101)
+gfortran executable: /opt/homebrew/bin/gfortran
+gfortran: GNU Fortran (Homebrew GCC 16.1.0) 16.1.0
+Meson: 1.11.1
+Ninja: 1.13.2
+Git: git version 2.54.0
+CMake: not installed

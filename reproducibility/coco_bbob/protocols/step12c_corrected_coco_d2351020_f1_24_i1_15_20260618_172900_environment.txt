@@ -1,0 +1,9 @@
+Python: 3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:29:05) [Clang 19.1.7 ]
+Platform: macOS-26.5.1-arm64-arm-64bit
+NumPy: 2.4.6
+SciPy: 1.17.1
+Pandas: 3.0.3
+Matplotlib: 3.11.0
+pycma: 4.4.4
+cocoex: 2.8.2
+cocopp: 2.8.7

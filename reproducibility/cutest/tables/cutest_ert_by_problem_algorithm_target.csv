@@ -1,0 +1,1051 @@
+instance_id,algorithm,target_residual,runs,successes,success_rate,ert_function_evaluations,median_nfe_to_target_successes,dimension,dimension_group
+BQPGABIM,BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,BIPOP-CMA-ES,0.001,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,BIPOP-CMA-ES,0.1,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,BasinGraph,1e-05,30,30,1.0,1299.0,1299.0,46,medium_21_100
+BQPGABIM,BasinGraph,0.001,30,30,1.0,1299.0,1299.0,46,medium_21_100
+BQPGABIM,BasinGraph,0.1,30,30,1.0,1291.0,1291.0,46,medium_21_100
+BQPGABIM,CMA-ES,1e-05,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,CMA-ES,0.001,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,CMA-ES,0.1,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Differential Evolution,1e-05,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Differential Evolution,0.001,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Differential Evolution,0.1,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Latin Hypercube Sampling,0.001,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Latin Hypercube Sampling,0.1,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Random Search,1e-05,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Random Search,0.001,30,0,0.0,inf,,46,medium_21_100
+BQPGABIM,Random Search,0.1,30,0,0.0,inf,,46,medium_21_100
+BQPGASIM,BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,BIPOP-CMA-ES,0.1,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,BasinGraph,1e-05,30,30,1.0,1472.0,1472.0,50,medium_21_100
+BQPGASIM,BasinGraph,0.001,30,30,1.0,1472.0,1472.0,50,medium_21_100
+BQPGASIM,BasinGraph,0.1,30,30,1.0,1458.0,1458.0,50,medium_21_100
+BQPGASIM,CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,CMA-ES,0.1,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+BQPGASIM,Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+BRANIN,BIPOP-CMA-ES,1e-05,30,30,1.0,161.0,157.5,2,small_2_20
+BRANIN,BIPOP-CMA-ES,0.001,30,30,1.0,85.1,80.5,2,small_2_20
+BRANIN,BIPOP-CMA-ES,0.1,30,30,1.0,8.866666666666667,7.5,2,small_2_20
+BRANIN,BasinGraph,1e-05,30,30,1.0,54.0,54.0,2,small_2_20
+BRANIN,BasinGraph,0.001,30,30,1.0,50.36666666666667,54.0,2,small_2_20
+BRANIN,BasinGraph,0.1,30,30,1.0,15.133333333333333,14.0,2,small_2_20
+BRANIN,CMA-ES,1e-05,30,30,1.0,151.83333333333334,156.5,2,small_2_20
+BRANIN,CMA-ES,0.001,30,30,1.0,75.36666666666666,69.5,2,small_2_20
+BRANIN,CMA-ES,0.1,30,30,1.0,8.533333333333333,8.0,2,small_2_20
+BRANIN,Differential Evolution,1e-05,30,30,1.0,432.6333333333333,409.0,2,small_2_20
+BRANIN,Differential Evolution,0.001,30,30,1.0,194.03333333333333,201.5,2,small_2_20
+BRANIN,Differential Evolution,0.1,30,30,1.0,5.6,4.0,2,small_2_20
+BRANIN,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,2,small_2_20
+BRANIN,Latin Hypercube Sampling,0.001,30,24,0.8,665.875,325.0,2,small_2_20
+BRANIN,Latin Hypercube Sampling,0.1,30,30,1.0,7.066666666666666,5.5,2,small_2_20
+BRANIN,Multi-start L-BFGS-B,1e-05,30,30,1.0,19.0,19.0,2,small_2_20
+BRANIN,Multi-start L-BFGS-B,0.001,30,30,1.0,19.0,19.0,2,small_2_20
+BRANIN,Multi-start L-BFGS-B,0.1,30,30,1.0,10.0,10.0,2,small_2_20
+BRANIN,Random Search,1e-05,30,1,0.03333333333333333,29307.0,307.0,2,small_2_20
+BRANIN,Random Search,0.001,30,25,0.8333333333333334,558.48,287.0,2,small_2_20
+BRANIN,Random Search,0.1,30,30,1.0,6.466666666666667,5.0,2,small_2_20
+CAMEL6,BIPOP-CMA-ES,1e-05,30,29,0.9666666666666667,191.58620689655172,153.0,2,small_2_20
+CAMEL6,BIPOP-CMA-ES,0.001,30,30,1.0,115.4,91.5,2,small_2_20
+CAMEL6,BIPOP-CMA-ES,0.1,30,30,1.0,36.43333333333333,17.0,2,small_2_20
+CAMEL6,BasinGraph,1e-05,30,30,1.0,229.56666666666666,223.5,2,small_2_20
+CAMEL6,BasinGraph,0.001,30,30,1.0,115.86666666666666,62.0,2,small_2_20
+CAMEL6,BasinGraph,0.1,30,30,1.0,28.733333333333334,24.0,2,small_2_20
+CAMEL6,CMA-ES,1e-05,30,30,1.0,148.5,138.0,2,small_2_20
+CAMEL6,CMA-ES,0.001,30,30,1.0,85.03333333333333,80.0,2,small_2_20
+CAMEL6,CMA-ES,0.1,30,30,1.0,10.966666666666667,7.5,2,small_2_20
+CAMEL6,Differential Evolution,1e-05,30,30,1.0,407.23333333333335,391.5,2,small_2_20
+CAMEL6,Differential Evolution,0.001,30,30,1.0,202.0,202.5,2,small_2_20
+CAMEL6,Differential Evolution,0.1,30,30,1.0,18.366666666666667,12.5,2,small_2_20
+CAMEL6,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,2,small_2_20
+CAMEL6,Latin Hypercube Sampling,0.001,30,10,0.3333333333333333,2727.0,766.5,2,small_2_20
+CAMEL6,Latin Hypercube Sampling,0.1,30,30,1.0,25.433333333333334,14.0,2,small_2_20
+CAMEL6,Multi-start L-BFGS-B,1e-05,30,30,1.0,41.4,37.0,2,small_2_20
+CAMEL6,Multi-start L-BFGS-B,0.001,30,30,1.0,36.9,31.0,2,small_2_20
+CAMEL6,Multi-start L-BFGS-B,0.1,30,30,1.0,27.4,19.0,2,small_2_20
+CAMEL6,Random Search,1e-05,30,0,0.0,inf,,2,small_2_20
+CAMEL6,Random Search,0.001,30,10,0.3333333333333333,2407.3,365.0,2,small_2_20
+CAMEL6,Random Search,0.1,30,30,1.0,24.933333333333334,13.5,2,small_2_20
+CHEBYQAD[N=50],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],BIPOP-CMA-ES,0.1,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],BasinGraph,1e-05,30,1,0.03333333333333333,74112.0,1612.0,50,medium_21_100
+CHEBYQAD[N=50],BasinGraph,0.001,30,1,0.03333333333333333,73908.0,1408.0,50,medium_21_100
+CHEBYQAD[N=50],BasinGraph,0.1,30,1,0.03333333333333333,73888.0,1388.0,50,medium_21_100
+CHEBYQAD[N=50],CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],CMA-ES,0.1,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+CHEBYQAD[N=50],Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],BIPOP-CMA-ES,0.1,30,14,0.4666666666666667,5167.642857142857,2350.0,50,medium_21_100
+CVXBQP1[N=50],BasinGraph,1e-05,30,30,1.0,2.0,2.0,50,medium_21_100
+CVXBQP1[N=50],BasinGraph,0.001,30,30,1.0,2.0,2.0,50,medium_21_100
+CVXBQP1[N=50],BasinGraph,0.1,30,30,1.0,2.0,2.0,50,medium_21_100
+CVXBQP1[N=50],CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],CMA-ES,0.1,30,17,0.5666666666666667,4234.35294117647,2328.0,50,medium_21_100
+CVXBQP1[N=50],Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],Multi-start L-BFGS-B,1e-05,30,30,1.0,52.0,52.0,50,medium_21_100
+CVXBQP1[N=50],Multi-start L-BFGS-B,0.001,30,30,1.0,52.0,52.0,50,medium_21_100
+CVXBQP1[N=50],Multi-start L-BFGS-B,0.1,30,30,1.0,52.0,52.0,50,medium_21_100
+CVXBQP1[N=50],Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+CVXBQP1[N=50],Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+DEVGLA1B,BIPOP-CMA-ES,1e-05,30,2,0.06666666666666667,14913.5,913.5,4,small_2_20
+DEVGLA1B,BIPOP-CMA-ES,0.001,30,3,0.1,9830.666666666666,781.0,4,small_2_20
+DEVGLA1B,BIPOP-CMA-ES,0.1,30,12,0.4,2227.0,868.0,4,small_2_20
+DEVGLA1B,BasinGraph,1e-05,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,BasinGraph,0.001,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,BasinGraph,0.1,30,3,0.1,9957.0,948.0,4,small_2_20
+DEVGLA1B,CMA-ES,1e-05,30,1,0.03333333333333333,29834.0,834.0,4,small_2_20
+DEVGLA1B,CMA-ES,0.001,30,3,0.1,9894.666666666666,973.0,4,small_2_20
+DEVGLA1B,CMA-ES,0.1,30,10,0.3333333333333333,2796.7,856.5,4,small_2_20
+DEVGLA1B,Differential Evolution,1e-05,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,Differential Evolution,0.001,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,Differential Evolution,0.1,30,8,0.26666666666666666,3551.625,809.0,4,small_2_20
+DEVGLA1B,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,Latin Hypercube Sampling,0.001,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,Latin Hypercube Sampling,0.1,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,Random Search,1e-05,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,Random Search,0.001,30,0,0.0,inf,,4,small_2_20
+DEVGLA1B,Random Search,0.1,30,0,0.0,inf,,4,small_2_20
+DGOSPEC,BIPOP-CMA-ES,1e-05,30,18,0.6,1109.611111111111,376.0,3,small_2_20
+DGOSPEC,BIPOP-CMA-ES,0.001,30,20,0.6666666666666666,802.3,229.0,3,small_2_20
+DGOSPEC,BIPOP-CMA-ES,0.1,30,30,1.0,4.033333333333333,3.0,3,small_2_20
+DGOSPEC,BasinGraph,1e-05,30,30,1.0,143.0,143.0,3,small_2_20
+DGOSPEC,BasinGraph,0.001,30,30,1.0,58.0,59.0,3,small_2_20
+DGOSPEC,BasinGraph,0.1,30,30,1.0,2.0,2.0,3,small_2_20
+DGOSPEC,CMA-ES,1e-05,30,14,0.4666666666666667,1553.4285714285713,378.5,3,small_2_20
+DGOSPEC,CMA-ES,0.001,30,15,0.5,1206.9333333333334,184.0,3,small_2_20
+DGOSPEC,CMA-ES,0.1,30,30,1.0,4.3,2.0,3,small_2_20
+DGOSPEC,Differential Evolution,1e-05,30,29,0.9666666666666667,613.1379310344828,589.0,3,small_2_20
+DGOSPEC,Differential Evolution,0.001,30,29,0.9666666666666667,286.17241379310343,276.0,3,small_2_20
+DGOSPEC,Differential Evolution,0.1,30,30,1.0,4.666666666666667,4.0,3,small_2_20
+DGOSPEC,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,3,small_2_20
+DGOSPEC,Latin Hypercube Sampling,0.001,30,23,0.7666666666666667,735.0,370.0,3,small_2_20
+DGOSPEC,Latin Hypercube Sampling,0.1,30,30,1.0,3.6333333333333333,3.0,3,small_2_20
+DGOSPEC,Multi-start L-BFGS-B,1e-05,30,30,1.0,105.0,105.0,3,small_2_20
+DGOSPEC,Multi-start L-BFGS-B,0.001,30,30,1.0,21.0,21.0,3,small_2_20
+DGOSPEC,Multi-start L-BFGS-B,0.1,30,30,1.0,5.0,5.0,3,small_2_20
+DGOSPEC,Random Search,1e-05,30,0,0.0,inf,,3,small_2_20
+DGOSPEC,Random Search,0.001,30,23,0.7666666666666667,674.5217391304348,263.0,3,small_2_20
+DGOSPEC,Random Search,0.1,30,30,1.0,5.666666666666667,5.0,3,small_2_20
+DIAGIQB[N=500],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],BIPOP-CMA-ES,0.1,30,30,1.0,11916.833333333334,11976.0,500,large_101_500
+DIAGIQB[N=500],BasinGraph,1e-05,30,30,1.0,9561.0,9561.0,500,large_101_500
+DIAGIQB[N=500],BasinGraph,0.001,30,30,1.0,9558.0,9558.0,500,large_101_500
+DIAGIQB[N=500],BasinGraph,0.1,30,30,1.0,9092.0,9092.0,500,large_101_500
+DIAGIQB[N=500],CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],CMA-ES,0.1,30,30,1.0,11746.8,11822.0,500,large_101_500
+DIAGIQB[N=500],Differential Evolution,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],Differential Evolution,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],Differential Evolution,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],Multi-start L-BFGS-B,0.1,30,30,1.0,502.0,502.0,500,large_101_500
+DIAGIQB[N=500],Random Search,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],Random Search,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGIQB[N=500],Random Search,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGIQE[N=50],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],BIPOP-CMA-ES,0.1,30,30,1.0,1240.2333333333333,1170.5,50,medium_21_100
+DIAGIQE[N=50],BasinGraph,1e-05,30,2,0.06666666666666667,36005.0,1005.0,50,medium_21_100
+DIAGIQE[N=50],BasinGraph,0.001,30,30,1.0,999.8,999.0,50,medium_21_100
+DIAGIQE[N=50],BasinGraph,0.1,30,30,1.0,862.5666666666667,882.0,50,medium_21_100
+DIAGIQE[N=50],CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],CMA-ES,0.1,30,30,1.0,1173.2,1162.0,50,medium_21_100
+DIAGIQE[N=50],Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],Multi-start L-BFGS-B,0.1,30,30,1.0,52.0,52.0,50,medium_21_100
+DIAGIQE[N=50],Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQE[N=50],Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],BIPOP-CMA-ES,0.1,30,30,1.0,1192.6666666666667,1139.0,50,medium_21_100
+DIAGIQT[N=50],BasinGraph,1e-05,30,30,1.0,930.0,930.0,50,medium_21_100
+DIAGIQT[N=50],BasinGraph,0.001,30,30,1.0,924.0,924.0,50,medium_21_100
+DIAGIQT[N=50],BasinGraph,0.1,30,30,1.0,914.0,914.0,50,medium_21_100
+DIAGIQT[N=50],CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],CMA-ES,0.1,30,30,1.0,1068.6666666666667,1055.5,50,medium_21_100
+DIAGIQT[N=50],Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],Multi-start L-BFGS-B,0.1,30,30,1.0,52.0,52.0,50,medium_21_100
+DIAGIQT[N=50],Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGIQT[N=50],Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGNQB[N=500],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],BIPOP-CMA-ES,0.1,30,30,1.0,12445.733333333334,12383.5,500,large_101_500
+DIAGNQB[N=500],BasinGraph,1e-05,30,30,1.0,3.0,3.0,500,large_101_500
+DIAGNQB[N=500],BasinGraph,0.001,30,30,1.0,3.0,3.0,500,large_101_500
+DIAGNQB[N=500],BasinGraph,0.1,30,30,1.0,3.0,3.0,500,large_101_500
+DIAGNQB[N=500],CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],CMA-ES,0.1,30,30,1.0,12307.133333333333,12269.0,500,large_101_500
+DIAGNQB[N=500],Differential Evolution,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],Differential Evolution,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],Differential Evolution,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],Multi-start L-BFGS-B,0.1,30,30,1.0,502.0,502.0,500,large_101_500
+DIAGNQB[N=500],Random Search,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],Random Search,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQB[N=500],Random Search,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],BIPOP-CMA-ES,0.1,30,30,1.0,13237.933333333332,13404.5,500,large_101_500
+DIAGNQE[N=500],BasinGraph,1e-05,30,30,1.0,3.0,3.0,500,large_101_500
+DIAGNQE[N=500],BasinGraph,0.001,30,30,1.0,3.0,3.0,500,large_101_500
+DIAGNQE[N=500],BasinGraph,0.1,30,30,1.0,3.0,3.0,500,large_101_500
+DIAGNQE[N=500],CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],CMA-ES,0.1,30,30,1.0,12987.333333333334,12967.5,500,large_101_500
+DIAGNQE[N=500],Differential Evolution,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],Differential Evolution,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],Differential Evolution,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],Random Search,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],Random Search,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQE[N=500],Random Search,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],BIPOP-CMA-ES,0.1,30,30,1.0,14616.6,14578.5,500,large_101_500
+DIAGNQT[N=500],BasinGraph,1e-05,30,30,1.0,3.0,3.0,500,large_101_500
+DIAGNQT[N=500],BasinGraph,0.001,30,30,1.0,3.0,3.0,500,large_101_500
+DIAGNQT[N=500],BasinGraph,0.1,30,30,1.0,3.0,3.0,500,large_101_500
+DIAGNQT[N=500],CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],CMA-ES,0.1,30,30,1.0,14318.166666666666,14073.0,500,large_101_500
+DIAGNQT[N=500],Differential Evolution,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],Differential Evolution,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],Differential Evolution,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],Multi-start L-BFGS-B,0.1,30,30,1.0,502.0,502.0,500,large_101_500
+DIAGNQT[N=500],Random Search,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],Random Search,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=500],Random Search,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGNQT[N=50],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],BIPOP-CMA-ES,0.1,30,30,1.0,1415.9,1350.5,50,medium_21_100
+DIAGNQT[N=50],BasinGraph,1e-05,30,30,1.0,3.0,3.0,50,medium_21_100
+DIAGNQT[N=50],BasinGraph,0.001,30,30,1.0,3.0,3.0,50,medium_21_100
+DIAGNQT[N=50],BasinGraph,0.1,30,30,1.0,3.0,3.0,50,medium_21_100
+DIAGNQT[N=50],CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],CMA-ES,0.1,30,30,1.0,1317.5,1304.5,50,medium_21_100
+DIAGNQT[N=50],Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],Multi-start L-BFGS-B,0.1,30,30,1.0,52.0,52.0,50,medium_21_100
+DIAGNQT[N=50],Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGNQT[N=50],Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGPQB[N=500],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],BIPOP-CMA-ES,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],BasinGraph,1e-05,30,30,1.0,9372.0,9372.0,500,large_101_500
+DIAGPQB[N=500],BasinGraph,0.001,30,30,1.0,9372.0,9372.0,500,large_101_500
+DIAGPQB[N=500],BasinGraph,0.1,30,30,1.0,9372.0,9372.0,500,large_101_500
+DIAGPQB[N=500],CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],CMA-ES,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Differential Evolution,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Differential Evolution,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Differential Evolution,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Random Search,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Random Search,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQB[N=500],Random Search,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGPQE[N=10],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],BIPOP-CMA-ES,0.1,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],BasinGraph,1e-05,30,30,1.0,258.0,258.0,10,small_2_20
+DIAGPQE[N=10],BasinGraph,0.001,30,30,1.0,247.0,247.0,10,small_2_20
+DIAGPQE[N=10],BasinGraph,0.1,30,30,1.0,225.0,225.0,10,small_2_20
+DIAGPQE[N=10],CMA-ES,1e-05,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],CMA-ES,0.001,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],CMA-ES,0.1,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Differential Evolution,1e-05,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Differential Evolution,0.001,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Differential Evolution,0.1,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Random Search,1e-05,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Random Search,0.001,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=10],Random Search,0.1,30,0,0.0,inf,,10,small_2_20
+DIAGPQE[N=50],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],BIPOP-CMA-ES,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],BasinGraph,1e-05,30,30,1.0,866.0,866.0,50,medium_21_100
+DIAGPQE[N=50],BasinGraph,0.001,30,30,1.0,866.0,866.0,50,medium_21_100
+DIAGPQE[N=50],BasinGraph,0.1,30,30,1.0,866.0,866.0,50,medium_21_100
+DIAGPQE[N=50],CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],CMA-ES,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+DIAGPQE[N=50],Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+DIAGPQT[N=500],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],BIPOP-CMA-ES,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],BasinGraph,1e-05,30,30,1.0,9257.0,9257.0,500,large_101_500
+DIAGPQT[N=500],BasinGraph,0.001,30,30,1.0,9257.0,9257.0,500,large_101_500
+DIAGPQT[N=500],BasinGraph,0.1,30,30,1.0,9257.0,9257.0,500,large_101_500
+DIAGPQT[N=500],CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],CMA-ES,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Differential Evolution,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Differential Evolution,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Differential Evolution,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Random Search,1e-05,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Random Search,0.001,30,0,0.0,inf,,500,large_101_500
+DIAGPQT[N=500],Random Search,0.1,30,0,0.0,inf,,500,large_101_500
+EGGCRATEB,BIPOP-CMA-ES,1e-05,30,28,0.9333333333333333,377.2142857142857,175.0,2,small_2_20
+EGGCRATEB,BIPOP-CMA-ES,0.001,30,28,0.9333333333333333,315.92857142857144,112.5,2,small_2_20
+EGGCRATEB,BIPOP-CMA-ES,0.1,30,29,0.9666666666666667,129.93103448275863,38.0,2,small_2_20
+EGGCRATEB,BasinGraph,1e-05,30,30,1.0,1.0,1.0,2,small_2_20
+EGGCRATEB,BasinGraph,0.001,30,30,1.0,1.0,1.0,2,small_2_20
+EGGCRATEB,BasinGraph,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+EGGCRATEB,CMA-ES,1e-05,30,24,0.8,397.0,141.5,2,small_2_20
+EGGCRATEB,CMA-ES,0.001,30,24,0.8,332.375,83.5,2,small_2_20
+EGGCRATEB,CMA-ES,0.1,30,24,0.8,278.7916666666667,26.0,2,small_2_20
+EGGCRATEB,Differential Evolution,1e-05,30,30,1.0,437.3333333333333,434.5,2,small_2_20
+EGGCRATEB,Differential Evolution,0.001,30,30,1.0,274.53333333333336,280.5,2,small_2_20
+EGGCRATEB,Differential Evolution,0.1,30,30,1.0,72.83333333333333,63.5,2,small_2_20
+EGGCRATEB,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,2,small_2_20
+EGGCRATEB,Latin Hypercube Sampling,0.001,30,1,0.03333333333333333,29286.0,286.0,2,small_2_20
+EGGCRATEB,Latin Hypercube Sampling,0.1,30,30,1.0,176.6,145.5,2,small_2_20
+EGGCRATEB,Multi-start L-BFGS-B,1e-05,30,30,1.0,1.0,1.0,2,small_2_20
+EGGCRATEB,Multi-start L-BFGS-B,0.001,30,30,1.0,1.0,1.0,2,small_2_20
+EGGCRATEB,Multi-start L-BFGS-B,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+EGGCRATEB,Random Search,1e-05,30,30,1.0,1.0,1.0,2,small_2_20
+EGGCRATEB,Random Search,0.001,30,30,1.0,1.0,1.0,2,small_2_20
+EGGCRATEB,Random Search,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+ELATVIDUB,BIPOP-CMA-ES,1e-05,30,19,0.6333333333333333,1080.4736842105262,246.0,2,small_2_20
+ELATVIDUB,BIPOP-CMA-ES,0.001,30,24,0.8,738.2083333333334,460.0,2,small_2_20
+ELATVIDUB,BIPOP-CMA-ES,0.1,30,30,1.0,56.2,56.5,2,small_2_20
+ELATVIDUB,BasinGraph,1e-05,30,1,0.03333333333333333,29938.0,938.0,2,small_2_20
+ELATVIDUB,BasinGraph,0.001,30,3,0.1,9940.333333333334,926.0,2,small_2_20
+ELATVIDUB,BasinGraph,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+ELATVIDUB,CMA-ES,1e-05,30,13,0.43333333333333335,1527.4615384615386,214.0,2,small_2_20
+ELATVIDUB,CMA-ES,0.001,30,14,0.4666666666666667,1268.4285714285713,114.5,2,small_2_20
+ELATVIDUB,CMA-ES,0.1,30,30,1.0,36.666666666666664,36.5,2,small_2_20
+ELATVIDUB,Differential Evolution,1e-05,30,27,0.9,647.8888888888889,527.0,2,small_2_20
+ELATVIDUB,Differential Evolution,0.001,30,28,0.9333333333333333,369.10714285714283,266.0,2,small_2_20
+ELATVIDUB,Differential Evolution,0.1,30,30,1.0,98.03333333333333,98.0,2,small_2_20
+ELATVIDUB,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,2,small_2_20
+ELATVIDUB,Latin Hypercube Sampling,0.001,30,1,0.03333333333333333,29221.0,221.0,2,small_2_20
+ELATVIDUB,Latin Hypercube Sampling,0.1,30,29,0.9666666666666667,396.0689655172414,286.0,2,small_2_20
+ELATVIDUB,Multi-start L-BFGS-B,1e-05,30,26,0.8666666666666667,338.0769230769231,143.5,2,small_2_20
+ELATVIDUB,Multi-start L-BFGS-B,0.001,30,26,0.8666666666666667,329.88461538461536,131.5,2,small_2_20
+ELATVIDUB,Multi-start L-BFGS-B,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+ELATVIDUB,Random Search,1e-05,30,0,0.0,inf,,2,small_2_20
+ELATVIDUB,Random Search,0.001,30,0,0.0,inf,,2,small_2_20
+ELATVIDUB,Random Search,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+EXP2B,BIPOP-CMA-ES,1e-05,30,30,1.0,220.43333333333334,191.0,2,small_2_20
+EXP2B,BIPOP-CMA-ES,0.001,30,30,1.0,145.36666666666667,109.0,2,small_2_20
+EXP2B,BIPOP-CMA-ES,0.1,30,30,1.0,61.3,28.0,2,small_2_20
+EXP2B,BasinGraph,1e-05,30,30,1.0,87.0,87.0,2,small_2_20
+EXP2B,BasinGraph,0.001,30,30,1.0,81.0,81.0,2,small_2_20
+EXP2B,BasinGraph,0.1,30,30,1.0,45.733333333333334,66.0,2,small_2_20
+EXP2B,CMA-ES,1e-05,30,30,1.0,185.66666666666666,188.0,2,small_2_20
+EXP2B,CMA-ES,0.001,30,30,1.0,124.6,124.5,2,small_2_20
+EXP2B,CMA-ES,0.1,30,30,1.0,33.0,32.0,2,small_2_20
+EXP2B,Differential Evolution,1e-05,30,30,1.0,377.0,373.0,2,small_2_20
+EXP2B,Differential Evolution,0.001,30,30,1.0,221.16666666666666,216.0,2,small_2_20
+EXP2B,Differential Evolution,0.1,30,30,1.0,52.86666666666667,42.5,2,small_2_20
+EXP2B,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,2,small_2_20
+EXP2B,Latin Hypercube Sampling,0.001,30,4,0.13333333333333333,6821.75,258.5,2,small_2_20
+EXP2B,Latin Hypercube Sampling,0.1,30,30,1.0,49.56666666666667,50.5,2,small_2_20
+EXP2B,Multi-start L-BFGS-B,1e-05,30,30,1.0,52.0,52.0,2,small_2_20
+EXP2B,Multi-start L-BFGS-B,0.001,30,30,1.0,46.0,46.0,2,small_2_20
+EXP2B,Multi-start L-BFGS-B,0.1,30,30,1.0,31.0,31.0,2,small_2_20
+EXP2B,Random Search,1e-05,30,0,0.0,inf,,2,small_2_20
+EXP2B,Random Search,0.001,30,1,0.03333333333333333,29638.0,638.0,2,small_2_20
+EXP2B,Random Search,0.1,30,30,1.0,38.36666666666667,32.0,2,small_2_20
+EXPLIN2[N=12],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],BIPOP-CMA-ES,0.1,30,30,1.0,471.4,425.0,101,large_101_500
+EXPLIN2[N=12],BasinGraph,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],BasinGraph,0.001,30,30,1.0,1692.7,1897.0,101,large_101_500
+EXPLIN2[N=12],BasinGraph,0.1,30,30,1.0,760.2666666666667,351.5,101,large_101_500
+EXPLIN2[N=12],CMA-ES,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],CMA-ES,0.001,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],CMA-ES,0.1,30,30,1.0,329.53333333333336,299.5,101,large_101_500
+EXPLIN2[N=12],Differential Evolution,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],Differential Evolution,0.001,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],Differential Evolution,0.1,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],Multi-start L-BFGS-B,1e-05,30,30,1.0,613.0,613.0,101,large_101_500
+EXPLIN2[N=12],Multi-start L-BFGS-B,0.001,30,30,1.0,307.0,307.0,101,large_101_500
+EXPLIN2[N=12],Multi-start L-BFGS-B,0.1,30,30,1.0,103.0,103.0,101,large_101_500
+EXPLIN2[N=12],Random Search,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],Random Search,0.001,30,0,0.0,inf,,101,large_101_500
+EXPLIN2[N=12],Random Search,0.1,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],BIPOP-CMA-ES,0.1,30,29,0.9666666666666667,2004.0689655172414,1759.0,101,large_101_500
+EXPLIN[N=12],BasinGraph,1e-05,30,30,1.0,322.0,322.0,101,large_101_500
+EXPLIN[N=12],BasinGraph,0.001,30,30,1.0,317.0,317.0,101,large_101_500
+EXPLIN[N=12],BasinGraph,0.1,30,30,1.0,285.0,285.0,101,large_101_500
+EXPLIN[N=12],CMA-ES,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],CMA-ES,0.001,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],CMA-ES,0.1,30,29,0.9666666666666667,1814.2068965517242,1516.0,101,large_101_500
+EXPLIN[N=12],Differential Evolution,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],Differential Evolution,0.001,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],Differential Evolution,0.1,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],Multi-start L-BFGS-B,0.1,30,1,0.03333333333333333,147777.0,1327.0,101,large_101_500
+EXPLIN[N=12],Random Search,1e-05,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],Random Search,0.001,30,0,0.0,inf,,101,large_101_500
+EXPLIN[N=12],Random Search,0.1,30,0,0.0,inf,,101,large_101_500
+FBRAIN2LS,BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,BIPOP-CMA-ES,0.001,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,BIPOP-CMA-ES,0.1,30,24,0.8,474.5833333333333,206.0,4,small_2_20
+FBRAIN2LS,BasinGraph,1e-05,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,BasinGraph,0.001,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,BasinGraph,0.1,30,27,0.9,619.7407407407408,649.0,4,small_2_20
+FBRAIN2LS,CMA-ES,1e-05,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,CMA-ES,0.001,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,CMA-ES,0.1,30,28,0.9333333333333333,319.75,193.0,4,small_2_20
+FBRAIN2LS,Differential Evolution,1e-05,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,Differential Evolution,0.001,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,Differential Evolution,0.1,30,19,0.6333333333333333,1158.578947368421,593.0,4,small_2_20
+FBRAIN2LS,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,Latin Hypercube Sampling,0.001,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,Latin Hypercube Sampling,0.1,30,10,0.3333333333333333,2471.4,486.5,4,small_2_20
+FBRAIN2LS,Multi-start L-BFGS-B,1e-05,30,1,0.03333333333333333,29991.0,991.0,4,small_2_20
+FBRAIN2LS,Multi-start L-BFGS-B,0.001,30,1,0.03333333333333333,29991.0,991.0,4,small_2_20
+FBRAIN2LS,Multi-start L-BFGS-B,0.1,30,30,1.0,207.33333333333334,108.5,4,small_2_20
+FBRAIN2LS,Random Search,1e-05,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,Random Search,0.001,30,0,0.0,inf,,4,small_2_20
+FBRAIN2LS,Random Search,0.1,30,10,0.3333333333333333,2470.5,415.0,4,small_2_20
+FBRAINLS,BIPOP-CMA-ES,1e-05,30,19,0.6333333333333333,1084.1052631578948,403.0,2,small_2_20
+FBRAINLS,BIPOP-CMA-ES,0.001,30,19,0.6333333333333333,1003.8947368421053,341.0,2,small_2_20
+FBRAINLS,BIPOP-CMA-ES,0.1,30,19,0.6333333333333333,935.1052631578947,289.0,2,small_2_20
+FBRAINLS,BasinGraph,1e-05,30,24,0.8,576.7916666666666,276.5,2,small_2_20
+FBRAINLS,BasinGraph,0.001,30,25,0.8333333333333334,516.2,271.0,2,small_2_20
+FBRAINLS,BasinGraph,0.1,30,27,0.9,425.9259259259259,262.0,2,small_2_20
+FBRAINLS,CMA-ES,1e-05,30,14,0.4666666666666667,1549.357142857143,394.0,2,small_2_20
+FBRAINLS,CMA-ES,0.001,30,14,0.4666666666666667,1492.642857142857,331.0,2,small_2_20
+FBRAINLS,CMA-ES,0.1,30,14,0.4666666666666667,1411.357142857143,267.5,2,small_2_20
+FBRAINLS,Differential Evolution,1e-05,30,12,0.4,2298.75,857.0,2,small_2_20
+FBRAINLS,Differential Evolution,0.001,30,13,0.43333333333333335,1960.8461538461538,683.0,2,small_2_20
+FBRAINLS,Differential Evolution,0.1,30,20,0.6666666666666666,1032.55,525.5,2,small_2_20
+FBRAINLS,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,2,small_2_20
+FBRAINLS,Latin Hypercube Sampling,0.001,30,0,0.0,inf,,2,small_2_20
+FBRAINLS,Latin Hypercube Sampling,0.1,30,5,0.16666666666666666,5442.6,399.0,2,small_2_20
+FBRAINLS,Multi-start L-BFGS-B,1e-05,30,24,0.8,445.5,158.5,2,small_2_20
+FBRAINLS,Multi-start L-BFGS-B,0.001,30,24,0.8,441.875,154.0,2,small_2_20
+FBRAINLS,Multi-start L-BFGS-B,0.1,30,24,0.8,428.5,136.0,2,small_2_20
+FBRAINLS,Random Search,1e-05,30,0,0.0,inf,,2,small_2_20
+FBRAINLS,Random Search,0.001,30,0,0.0,inf,,2,small_2_20
+FBRAINLS,Random Search,0.1,30,6,0.2,4324.333333333333,257.5,2,small_2_20
+HADAMALS[N=10],BIPOP-CMA-ES,1e-05,30,1,0.03333333333333333,134911.0,4411.0,90,medium_21_100
+HADAMALS[N=10],BIPOP-CMA-ES,0.001,30,1,0.03333333333333333,134408.0,3908.0,90,medium_21_100
+HADAMALS[N=10],BIPOP-CMA-ES,0.1,30,30,1.0,250.96666666666667,239.5,90,medium_21_100
+HADAMALS[N=10],BasinGraph,1e-05,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],BasinGraph,0.001,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],BasinGraph,0.1,30,30,1.0,526.2333333333333,512.5,90,medium_21_100
+HADAMALS[N=10],CMA-ES,1e-05,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],CMA-ES,0.001,30,1,0.03333333333333333,134980.0,4480.0,90,medium_21_100
+HADAMALS[N=10],CMA-ES,0.1,30,30,1.0,484.96666666666664,430.0,90,medium_21_100
+HADAMALS[N=10],Differential Evolution,1e-05,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],Differential Evolution,0.001,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],Differential Evolution,0.1,30,30,1.0,1859.0,1836.5,90,medium_21_100
+HADAMALS[N=10],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],Multi-start L-BFGS-B,0.1,30,30,1.0,225.46666666666667,183.0,90,medium_21_100
+HADAMALS[N=10],Random Search,1e-05,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],Random Search,0.001,30,0,0.0,inf,,90,medium_21_100
+HADAMALS[N=10],Random Search,0.1,30,0,0.0,inf,,90,medium_21_100
+HART6,BIPOP-CMA-ES,1e-05,30,17,0.5666666666666667,1337.3529411764705,560.0,6,small_2_20
+HART6,BIPOP-CMA-ES,0.001,30,17,0.5666666666666667,1162.9411764705883,394.0,6,small_2_20
+HART6,BIPOP-CMA-ES,0.1,30,30,1.0,185.9,190.0,6,small_2_20
+HART6,BasinGraph,1e-05,30,30,1.0,125.0,125.0,6,small_2_20
+HART6,BasinGraph,0.001,30,30,1.0,118.0,118.0,6,small_2_20
+HART6,BasinGraph,0.1,30,30,1.0,97.0,97.0,6,small_2_20
+HART6,CMA-ES,1e-05,30,18,0.6,1195.0,516.5,6,small_2_20
+HART6,CMA-ES,0.001,30,18,0.6,1006.5,324.0,6,small_2_20
+HART6,CMA-ES,0.1,30,30,1.0,144.0,138.5,6,small_2_20
+HART6,Differential Evolution,1e-05,30,0,0.0,inf,,6,small_2_20
+HART6,Differential Evolution,0.001,30,0,0.0,inf,,6,small_2_20
+HART6,Differential Evolution,0.1,30,23,0.7666666666666667,878.1304347826087,650.0,6,small_2_20
+HART6,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,6,small_2_20
+HART6,Latin Hypercube Sampling,0.001,30,0,0.0,inf,,6,small_2_20
+HART6,Latin Hypercube Sampling,0.1,30,1,0.03333333333333333,29331.0,331.0,6,small_2_20
+HART6,Multi-start L-BFGS-B,1e-05,30,30,1.0,78.0,78.0,6,small_2_20
+HART6,Multi-start L-BFGS-B,0.001,30,30,1.0,71.0,71.0,6,small_2_20
+HART6,Multi-start L-BFGS-B,0.1,30,30,1.0,50.0,50.0,6,small_2_20
+HART6,Random Search,1e-05,30,0,0.0,inf,,6,small_2_20
+HART6,Random Search,0.001,30,0,0.0,inf,,6,small_2_20
+HART6,Random Search,0.1,30,3,0.1,9333.333333333334,192.0,6,small_2_20
+HIMMELP1,BIPOP-CMA-ES,1e-05,30,30,1.0,226.43333333333334,132.0,2,small_2_20
+HIMMELP1,BIPOP-CMA-ES,0.001,30,30,1.0,160.23333333333332,84.0,2,small_2_20
+HIMMELP1,BIPOP-CMA-ES,0.1,30,30,1.0,39.7,16.0,2,small_2_20
+HIMMELP1,BasinGraph,1e-05,30,30,1.0,51.0,51.0,2,small_2_20
+HIMMELP1,BasinGraph,0.001,30,30,1.0,47.5,48.0,2,small_2_20
+HIMMELP1,BasinGraph,0.1,30,30,1.0,19.5,16.0,2,small_2_20
+HIMMELP1,CMA-ES,1e-05,30,29,0.9666666666666667,186.9655172413793,155.0,2,small_2_20
+HIMMELP1,CMA-ES,0.001,30,29,0.9666666666666667,116.72413793103448,79.0,2,small_2_20
+HIMMELP1,CMA-ES,0.1,30,30,1.0,15.633333333333333,13.0,2,small_2_20
+HIMMELP1,Differential Evolution,1e-05,30,30,1.0,296.6333333333333,305.5,2,small_2_20
+HIMMELP1,Differential Evolution,0.001,30,30,1.0,151.93333333333334,148.5,2,small_2_20
+HIMMELP1,Differential Evolution,0.1,30,30,1.0,13.733333333333333,6.0,2,small_2_20
+HIMMELP1,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,2,small_2_20
+HIMMELP1,Latin Hypercube Sampling,0.001,30,17,0.5666666666666667,1275.4117647058824,496.0,2,small_2_20
+HIMMELP1,Latin Hypercube Sampling,0.1,30,30,1.0,14.266666666666667,8.0,2,small_2_20
+HIMMELP1,Multi-start L-BFGS-B,1e-05,30,30,1.0,16.0,16.0,2,small_2_20
+HIMMELP1,Multi-start L-BFGS-B,0.001,30,30,1.0,13.0,13.0,2,small_2_20
+HIMMELP1,Multi-start L-BFGS-B,0.1,30,30,1.0,10.0,10.0,2,small_2_20
+HIMMELP1,Random Search,1e-05,30,0,0.0,inf,,2,small_2_20
+HIMMELP1,Random Search,0.001,30,22,0.7333333333333333,908.7727272727273,611.0,2,small_2_20
+HIMMELP1,Random Search,0.1,30,30,1.0,13.3,7.0,2,small_2_20
+HS110[N=200],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,200,large_101_500
+HS110[N=200],BIPOP-CMA-ES,0.001,30,30,1.0,9490.966666666667,9518.5,200,large_101_500
+HS110[N=200],BIPOP-CMA-ES,0.1,30,30,1.0,5475.566666666667,5522.0,200,large_101_500
+HS110[N=200],BasinGraph,1e-05,30,30,1.0,3.0,3.0,200,large_101_500
+HS110[N=200],BasinGraph,0.001,30,30,1.0,3.0,3.0,200,large_101_500
+HS110[N=200],BasinGraph,0.1,30,30,1.0,3.0,3.0,200,large_101_500
+HS110[N=200],CMA-ES,1e-05,30,0,0.0,inf,,200,large_101_500
+HS110[N=200],CMA-ES,0.001,30,30,1.0,9410.6,9414.5,200,large_101_500
+HS110[N=200],CMA-ES,0.1,30,30,1.0,5361.5,5381.0,200,large_101_500
+HS110[N=200],Differential Evolution,1e-05,30,0,0.0,inf,,200,large_101_500
+HS110[N=200],Differential Evolution,0.001,30,0,0.0,inf,,200,large_101_500
+HS110[N=200],Differential Evolution,0.1,30,0,0.0,inf,,200,large_101_500
+HS110[N=200],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,200,large_101_500
+HS110[N=200],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,200,large_101_500
+HS110[N=200],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,200,large_101_500
+HS110[N=200],Multi-start L-BFGS-B,1e-05,30,30,1.0,202.0,202.0,200,large_101_500
+HS110[N=200],Multi-start L-BFGS-B,0.001,30,30,1.0,202.0,202.0,200,large_101_500
+HS110[N=200],Multi-start L-BFGS-B,0.1,30,30,1.0,202.0,202.0,200,large_101_500
+HS110[N=200],Random Search,1e-05,30,0,0.0,inf,,200,large_101_500
+HS110[N=200],Random Search,0.001,30,0,0.0,inf,,200,large_101_500
+HS110[N=200],Random Search,0.1,30,0,0.0,inf,,200,large_101_500
+HS25,BIPOP-CMA-ES,1e-05,30,30,1.0,464.1,455.0,3,small_2_20
+HS25,BIPOP-CMA-ES,0.001,30,30,1.0,157.1,133.5,3,small_2_20
+HS25,BIPOP-CMA-ES,0.1,30,30,1.0,22.266666666666666,11.5,3,small_2_20
+HS25,BasinGraph,1e-05,30,30,1.0,131.0,131.0,3,small_2_20
+HS25,BasinGraph,0.001,30,30,1.0,124.0,127.0,3,small_2_20
+HS25,BasinGraph,0.1,30,30,1.0,45.833333333333336,34.5,3,small_2_20
+HS25,CMA-ES,1e-05,30,30,1.0,380.26666666666665,350.0,3,small_2_20
+HS25,CMA-ES,0.001,30,30,1.0,136.86666666666667,122.0,3,small_2_20
+HS25,CMA-ES,0.1,30,30,1.0,21.566666666666666,16.0,3,small_2_20
+HS25,Differential Evolution,1e-05,30,27,0.9,847.6666666666666,736.0,3,small_2_20
+HS25,Differential Evolution,0.001,30,30,1.0,237.53333333333333,240.0,3,small_2_20
+HS25,Differential Evolution,0.1,30,30,1.0,22.433333333333334,17.0,3,small_2_20
+HS25,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,3,small_2_20
+HS25,Latin Hypercube Sampling,0.001,30,2,0.06666666666666667,14805.5,805.5,3,small_2_20
+HS25,Latin Hypercube Sampling,0.1,30,30,1.0,27.933333333333334,16.0,3,small_2_20
+HS25,Multi-start L-BFGS-B,1e-05,30,30,1.0,93.0,93.0,3,small_2_20
+HS25,Multi-start L-BFGS-B,0.001,30,30,1.0,89.0,89.0,3,small_2_20
+HS25,Multi-start L-BFGS-B,0.1,30,30,1.0,41.0,41.0,3,small_2_20
+HS25,Random Search,1e-05,30,0,0.0,inf,,3,small_2_20
+HS25,Random Search,0.001,30,8,0.26666666666666666,3020.625,222.5,3,small_2_20
+HS25,Random Search,0.1,30,30,1.0,25.666666666666668,18.0,3,small_2_20
+HS38,BIPOP-CMA-ES,1e-05,30,13,0.43333333333333335,1933.1538461538462,655.0,4,small_2_20
+HS38,BIPOP-CMA-ES,0.001,30,30,1.0,194.4,168.0,4,small_2_20
+HS38,BIPOP-CMA-ES,0.1,30,30,1.0,33.4,32.0,4,small_2_20
+HS38,BasinGraph,1e-05,30,30,1.0,112.0,112.0,4,small_2_20
+HS38,BasinGraph,0.001,30,30,1.0,97.0,97.0,4,small_2_20
+HS38,BasinGraph,0.1,30,30,1.0,1.0,1.0,4,small_2_20
+HS38,CMA-ES,1e-05,30,17,0.5666666666666667,1325.7058823529412,534.0,4,small_2_20
+HS38,CMA-ES,0.001,30,30,1.0,159.16666666666666,151.0,4,small_2_20
+HS38,CMA-ES,0.1,30,30,1.0,16.633333333333333,10.5,4,small_2_20
+HS38,Differential Evolution,1e-05,30,0,0.0,inf,,4,small_2_20
+HS38,Differential Evolution,0.001,30,30,1.0,623.0333333333333,620.5,4,small_2_20
+HS38,Differential Evolution,0.1,30,30,1.0,74.73333333333333,73.0,4,small_2_20
+HS38,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,4,small_2_20
+HS38,Latin Hypercube Sampling,0.001,30,1,0.03333333333333333,29391.0,391.0,4,small_2_20
+HS38,Latin Hypercube Sampling,0.1,30,30,1.0,58.733333333333334,41.0,4,small_2_20
+HS38,Multi-start L-BFGS-B,1e-05,30,30,1.0,71.0,71.0,4,small_2_20
+HS38,Multi-start L-BFGS-B,0.001,30,30,1.0,56.0,56.0,4,small_2_20
+HS38,Multi-start L-BFGS-B,0.1,30,30,1.0,1.0,1.0,4,small_2_20
+HS38,Random Search,1e-05,30,0,0.0,inf,,4,small_2_20
+HS38,Random Search,0.001,30,1,0.03333333333333333,29398.0,398.0,4,small_2_20
+HS38,Random Search,0.1,30,30,1.0,1.0,1.0,4,small_2_20
+HS5,BIPOP-CMA-ES,1e-05,30,30,1.0,206.33333333333334,173.5,2,small_2_20
+HS5,BIPOP-CMA-ES,0.001,30,30,1.0,132.53333333333333,102.5,2,small_2_20
+HS5,BIPOP-CMA-ES,0.1,30,30,1.0,54.86666666666667,20.5,2,small_2_20
+HS5,BasinGraph,1e-05,30,30,1.0,57.0,57.0,2,small_2_20
+HS5,BasinGraph,0.001,30,30,1.0,54.0,54.0,2,small_2_20
+HS5,BasinGraph,0.1,30,30,1.0,34.8,33.5,2,small_2_20
+HS5,CMA-ES,1e-05,30,27,0.9,273.3333333333333,165.0,2,small_2_20
+HS5,CMA-ES,0.001,30,27,0.9,212.4814814814815,105.0,2,small_2_20
+HS5,CMA-ES,0.1,30,27,0.9,134.59259259259258,20.0,2,small_2_20
+HS5,Differential Evolution,1e-05,30,30,1.0,351.1666666666667,351.0,2,small_2_20
+HS5,Differential Evolution,0.001,30,30,1.0,189.9,204.5,2,small_2_20
+HS5,Differential Evolution,0.1,30,30,1.0,40.266666666666666,34.5,2,small_2_20
+HS5,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,2,small_2_20
+HS5,Latin Hypercube Sampling,0.001,30,3,0.1,9417.666666666666,391.0,2,small_2_20
+HS5,Latin Hypercube Sampling,0.1,30,30,1.0,42.166666666666664,30.0,2,small_2_20
+HS5,Multi-start L-BFGS-B,1e-05,30,30,1.0,22.0,22.0,2,small_2_20
+HS5,Multi-start L-BFGS-B,0.001,30,30,1.0,19.0,19.0,2,small_2_20
+HS5,Multi-start L-BFGS-B,0.1,30,30,1.0,13.0,13.0,2,small_2_20
+HS5,Random Search,1e-05,30,0,0.0,inf,,2,small_2_20
+HS5,Random Search,0.001,30,5,0.16666666666666666,5479.2,596.0,2,small_2_20
+HS5,Random Search,0.1,30,30,1.0,49.1,36.0,2,small_2_20
+JUDGEB,BIPOP-CMA-ES,1e-05,30,30,1.0,254.9,145.0,2,small_2_20
+JUDGEB,BIPOP-CMA-ES,0.001,30,30,1.0,173.03333333333333,76.0,2,small_2_20
+JUDGEB,BIPOP-CMA-ES,0.1,30,30,1.0,7.533333333333333,6.5,2,small_2_20
+JUDGEB,BasinGraph,1e-05,30,30,1.0,63.0,63.0,2,small_2_20
+JUDGEB,BasinGraph,0.001,30,30,1.0,48.0,48.0,2,small_2_20
+JUDGEB,BasinGraph,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+JUDGEB,CMA-ES,1e-05,30,23,0.7666666666666667,419.82608695652175,113.0,2,small_2_20
+JUDGEB,CMA-ES,0.001,30,24,0.8,290.8333333333333,39.0,2,small_2_20
+JUDGEB,CMA-ES,0.1,30,30,1.0,3.5,2.5,2,small_2_20
+JUDGEB,Differential Evolution,1e-05,30,30,1.0,320.06666666666666,329.0,2,small_2_20
+JUDGEB,Differential Evolution,0.001,30,30,1.0,122.06666666666666,128.5,2,small_2_20
+JUDGEB,Differential Evolution,0.1,30,30,1.0,9.366666666666667,6.5,2,small_2_20
+JUDGEB,Latin Hypercube Sampling,1e-05,30,1,0.03333333333333333,29669.0,669.0,2,small_2_20
+JUDGEB,Latin Hypercube Sampling,0.001,30,23,0.7666666666666667,672.5217391304348,368.0,2,small_2_20
+JUDGEB,Latin Hypercube Sampling,0.1,30,30,1.0,8.833333333333334,7.0,2,small_2_20
+JUDGEB,Multi-start L-BFGS-B,1e-05,30,30,1.0,28.0,28.0,2,small_2_20
+JUDGEB,Multi-start L-BFGS-B,0.001,30,30,1.0,13.0,13.0,2,small_2_20
+JUDGEB,Multi-start L-BFGS-B,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+JUDGEB,Random Search,1e-05,30,0,0.0,inf,,2,small_2_20
+JUDGEB,Random Search,0.001,30,26,0.8666666666666667,521.5,276.5,2,small_2_20
+JUDGEB,Random Search,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+NCVXBQP1[N=50],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],BIPOP-CMA-ES,0.1,30,30,1.0,1185.4333333333334,1194.5,50,medium_21_100
+NCVXBQP1[N=50],BasinGraph,1e-05,30,30,1.0,256.0,256.0,50,medium_21_100
+NCVXBQP1[N=50],BasinGraph,0.001,30,30,1.0,247.0,247.0,50,medium_21_100
+NCVXBQP1[N=50],BasinGraph,0.1,30,30,1.0,3.0,3.0,50,medium_21_100
+NCVXBQP1[N=50],CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],CMA-ES,0.1,30,30,1.0,1059.4666666666667,1030.0,50,medium_21_100
+NCVXBQP1[N=50],Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],Multi-start L-BFGS-B,1e-05,30,30,1.0,52.0,52.0,50,medium_21_100
+NCVXBQP1[N=50],Multi-start L-BFGS-B,0.001,30,30,1.0,52.0,52.0,50,medium_21_100
+NCVXBQP1[N=50],Multi-start L-BFGS-B,0.1,30,30,1.0,52.0,52.0,50,medium_21_100
+NCVXBQP1[N=50],Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP1[N=50],Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],BIPOP-CMA-ES,0.1,30,30,1.0,1233.2666666666667,1216.0,50,medium_21_100
+NCVXBQP2[N=50],BasinGraph,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],BasinGraph,0.001,30,30,1.0,537.0,537.0,50,medium_21_100
+NCVXBQP2[N=50],BasinGraph,0.1,30,30,1.0,322.0,322.0,50,medium_21_100
+NCVXBQP2[N=50],CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],CMA-ES,0.1,30,30,1.0,1210.7666666666667,1215.5,50,medium_21_100
+NCVXBQP2[N=50],Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],Multi-start L-BFGS-B,1e-05,30,28,0.9333333333333333,970.0714285714286,766.0,50,medium_21_100
+NCVXBQP2[N=50],Multi-start L-BFGS-B,0.001,30,28,0.9333333333333333,829.8214285714286,664.0,50,medium_21_100
+NCVXBQP2[N=50],Multi-start L-BFGS-B,0.1,30,30,1.0,52.0,52.0,50,medium_21_100
+NCVXBQP2[N=50],Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP2[N=50],Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],BIPOP-CMA-ES,0.1,30,30,1.0,1583.4666666666667,1570.5,50,medium_21_100
+NCVXBQP3[N=50],BasinGraph,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],BasinGraph,0.001,30,14,0.4666666666666667,4294.0,1486.0,50,medium_21_100
+NCVXBQP3[N=50],BasinGraph,0.1,30,30,1.0,942.6666666666666,945.5,50,medium_21_100
+NCVXBQP3[N=50],CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],CMA-ES,0.1,30,30,1.0,1461.0333333333333,1443.5,50,medium_21_100
+NCVXBQP3[N=50],Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],Multi-start L-BFGS-B,1e-05,30,30,1.0,205.0,205.0,50,medium_21_100
+NCVXBQP3[N=50],Multi-start L-BFGS-B,0.001,30,30,1.0,205.0,205.0,50,medium_21_100
+NCVXBQP3[N=50],Multi-start L-BFGS-B,0.1,30,30,1.0,52.0,52.0,50,medium_21_100
+NCVXBQP3[N=50],Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+NCVXBQP3[N=50],Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+NONSCOMP[N=500],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],BIPOP-CMA-ES,0.1,30,1,0.03333333333333333,599862.0,19862.0,500,large_101_500
+NONSCOMP[N=500],BasinGraph,1e-05,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],BasinGraph,0.001,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],BasinGraph,0.1,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],CMA-ES,1e-05,30,1,0.03333333333333333,599892.0,19892.0,500,large_101_500
+NONSCOMP[N=500],CMA-ES,0.001,30,1,0.03333333333333333,599892.0,19892.0,500,large_101_500
+NONSCOMP[N=500],CMA-ES,0.1,30,4,0.13333333333333333,149824.0,19819.5,500,large_101_500
+NONSCOMP[N=500],Differential Evolution,1e-05,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],Differential Evolution,0.001,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],Differential Evolution,0.1,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],Random Search,1e-05,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],Random Search,0.001,30,0,0.0,inf,,500,large_101_500
+NONSCOMP[N=500],Random Search,0.1,30,0,0.0,inf,,500,large_101_500
+POWERSUMB[N=10],BIPOP-CMA-ES,1e-05,30,4,0.13333333333333333,6977.0,537.5,10,small_2_20
+POWERSUMB[N=10],BIPOP-CMA-ES,0.001,30,30,1.0,169.3,146.0,10,small_2_20
+POWERSUMB[N=10],BIPOP-CMA-ES,0.1,30,30,1.0,35.96666666666667,39.5,10,small_2_20
+POWERSUMB[N=10],BasinGraph,1e-05,30,0,0.0,inf,,10,small_2_20
+POWERSUMB[N=10],BasinGraph,0.001,30,3,0.1,9267.333333333334,279.0,10,small_2_20
+POWERSUMB[N=10],BasinGraph,0.1,30,30,1.0,70.1,78.0,10,small_2_20
+POWERSUMB[N=10],CMA-ES,1e-05,30,1,0.03333333333333333,29912.0,912.0,10,small_2_20
+POWERSUMB[N=10],CMA-ES,0.001,30,28,0.9333333333333333,250.03571428571428,125.0,10,small_2_20
+POWERSUMB[N=10],CMA-ES,0.1,30,30,1.0,10.333333333333334,11.0,10,small_2_20
+POWERSUMB[N=10],Differential Evolution,1e-05,30,0,0.0,inf,,10,small_2_20
+POWERSUMB[N=10],Differential Evolution,0.001,30,29,0.9666666666666667,533.551724137931,443.0,10,small_2_20
+POWERSUMB[N=10],Differential Evolution,0.1,30,30,1.0,43.46666666666667,19.5,10,small_2_20
+POWERSUMB[N=10],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,10,small_2_20
+POWERSUMB[N=10],Latin Hypercube Sampling,0.001,30,9,0.3,2601.777777777778,259.0,10,small_2_20
+POWERSUMB[N=10],Latin Hypercube Sampling,0.1,30,30,1.0,47.96666666666667,39.5,10,small_2_20
+POWERSUMB[N=10],Multi-start L-BFGS-B,1e-05,30,1,0.03333333333333333,29914.0,914.0,10,small_2_20
+POWERSUMB[N=10],Multi-start L-BFGS-B,0.001,30,14,0.4666666666666667,1666.357142857143,534.5,10,small_2_20
+POWERSUMB[N=10],Multi-start L-BFGS-B,0.1,30,30,1.0,45.0,45.0,10,small_2_20
+POWERSUMB[N=10],Random Search,1e-05,30,0,0.0,inf,,10,small_2_20
+POWERSUMB[N=10],Random Search,0.001,30,17,0.5666666666666667,1310.7058823529412,555.0,10,small_2_20
+POWERSUMB[N=10],Random Search,0.1,30,30,1.0,44.06666666666667,20.5,10,small_2_20
+PRICE4B,BIPOP-CMA-ES,1e-05,30,30,1.0,125.9,126.0,2,small_2_20
+PRICE4B,BIPOP-CMA-ES,0.001,30,30,1.0,72.3,71.0,2,small_2_20
+PRICE4B,BIPOP-CMA-ES,0.1,30,30,1.0,42.63333333333333,43.0,2,small_2_20
+PRICE4B,BasinGraph,1e-05,30,30,1.0,1.0,1.0,2,small_2_20
+PRICE4B,BasinGraph,0.001,30,30,1.0,1.0,1.0,2,small_2_20
+PRICE4B,BasinGraph,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+PRICE4B,CMA-ES,1e-05,30,30,1.0,104.93333333333334,101.5,2,small_2_20
+PRICE4B,CMA-ES,0.001,30,30,1.0,61.833333333333336,57.0,2,small_2_20
+PRICE4B,CMA-ES,0.1,30,30,1.0,33.5,31.0,2,small_2_20
+PRICE4B,Differential Evolution,1e-05,30,30,1.0,275.06666666666666,275.5,2,small_2_20
+PRICE4B,Differential Evolution,0.001,30,30,1.0,152.33333333333334,152.5,2,small_2_20
+PRICE4B,Differential Evolution,0.1,30,30,1.0,78.7,86.0,2,small_2_20
+PRICE4B,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,2,small_2_20
+PRICE4B,Latin Hypercube Sampling,0.001,30,8,0.26666666666666666,3058.0,359.0,2,small_2_20
+PRICE4B,Latin Hypercube Sampling,0.1,30,30,1.0,249.16666666666666,179.5,2,small_2_20
+PRICE4B,Multi-start L-BFGS-B,1e-05,30,30,1.0,1.0,1.0,2,small_2_20
+PRICE4B,Multi-start L-BFGS-B,0.001,30,30,1.0,1.0,1.0,2,small_2_20
+PRICE4B,Multi-start L-BFGS-B,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+PRICE4B,Random Search,1e-05,30,30,1.0,1.0,1.0,2,small_2_20
+PRICE4B,Random Search,0.001,30,30,1.0,1.0,1.0,2,small_2_20
+PRICE4B,Random Search,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+PROBPENL[N=50],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],BIPOP-CMA-ES,0.1,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],BasinGraph,1e-05,30,1,0.03333333333333333,74992.0,2492.0,50,medium_21_100
+PROBPENL[N=50],BasinGraph,0.001,30,1,0.03333333333333333,74989.0,2489.0,50,medium_21_100
+PROBPENL[N=50],BasinGraph,0.1,30,1,0.03333333333333333,74954.0,2454.0,50,medium_21_100
+PROBPENL[N=50],CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],CMA-ES,0.1,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+PROBPENL[N=50],Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+QINGB[N=100],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],BIPOP-CMA-ES,0.1,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],BasinGraph,1e-05,30,30,1.0,1970.0,1970.0,100,medium_21_100
+QINGB[N=100],BasinGraph,0.001,30,30,1.0,1967.0,1967.0,100,medium_21_100
+QINGB[N=100],BasinGraph,0.1,30,30,1.0,1912.0,1912.0,100,medium_21_100
+QINGB[N=100],CMA-ES,1e-05,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],CMA-ES,0.001,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],CMA-ES,0.1,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Differential Evolution,1e-05,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Differential Evolution,0.001,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Differential Evolution,0.1,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Random Search,1e-05,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Random Search,0.001,30,0,0.0,inf,,100,medium_21_100
+QINGB[N=100],Random Search,0.1,30,0,0.0,inf,,100,medium_21_100
+S368[N=50],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],BIPOP-CMA-ES,0.1,30,27,0.9,2329.0,2076.0,50,medium_21_100
+S368[N=50],BasinGraph,1e-05,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],BasinGraph,0.001,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],BasinGraph,0.1,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],CMA-ES,1e-05,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],CMA-ES,0.001,30,2,0.06666666666666667,37443.0,2443.0,50,medium_21_100
+S368[N=50],CMA-ES,0.1,30,27,0.9,2209.814814814815,1917.0,50,medium_21_100
+S368[N=50],Differential Evolution,1e-05,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],Differential Evolution,0.001,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],Differential Evolution,0.1,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],Multi-start L-BFGS-B,1e-05,30,1,0.03333333333333333,74694.0,2194.0,50,medium_21_100
+S368[N=50],Multi-start L-BFGS-B,0.001,30,1,0.03333333333333333,74694.0,2194.0,50,medium_21_100
+S368[N=50],Multi-start L-BFGS-B,0.1,30,26,0.8666666666666667,1599.8076923076924,944.5,50,medium_21_100
+S368[N=50],Random Search,1e-05,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],Random Search,0.001,30,0,0.0,inf,,50,medium_21_100
+S368[N=50],Random Search,0.1,30,0,0.0,inf,,50,medium_21_100
+SANTALS,BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,21,medium_21_100
+SANTALS,BIPOP-CMA-ES,0.001,30,0,0.0,inf,,21,medium_21_100
+SANTALS,BIPOP-CMA-ES,0.1,30,0,0.0,inf,,21,medium_21_100
+SANTALS,BasinGraph,1e-05,30,1,0.03333333333333333,31282.0,832.0,21,medium_21_100
+SANTALS,BasinGraph,0.001,30,1,0.03333333333333333,31282.0,832.0,21,medium_21_100
+SANTALS,BasinGraph,0.1,30,3,0.1,10275.0,820.0,21,medium_21_100
+SANTALS,CMA-ES,1e-05,30,0,0.0,inf,,21,medium_21_100
+SANTALS,CMA-ES,0.001,30,0,0.0,inf,,21,medium_21_100
+SANTALS,CMA-ES,0.1,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Differential Evolution,1e-05,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Differential Evolution,0.001,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Differential Evolution,0.1,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Latin Hypercube Sampling,0.001,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Latin Hypercube Sampling,0.1,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Random Search,1e-05,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Random Search,0.001,30,0,0.0,inf,,21,medium_21_100
+SANTALS,Random Search,0.1,30,0,0.0,inf,,21,medium_21_100
+SINEALI[N=100],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],BIPOP-CMA-ES,0.1,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],BasinGraph,1e-05,30,30,1.0,157.0,157.0,100,medium_21_100
+SINEALI[N=100],BasinGraph,0.001,30,30,1.0,154.0,154.0,100,medium_21_100
+SINEALI[N=100],BasinGraph,0.1,30,30,1.0,3.0,3.0,100,medium_21_100
+SINEALI[N=100],CMA-ES,1e-05,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],CMA-ES,0.001,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],CMA-ES,0.1,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],Differential Evolution,1e-05,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],Differential Evolution,0.001,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],Differential Evolution,0.1,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],Multi-start L-BFGS-B,0.1,30,30,1.0,102.0,102.0,100,medium_21_100
+SINEALI[N=100],Random Search,1e-05,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],Random Search,0.001,30,0,0.0,inf,,100,medium_21_100
+SINEALI[N=100],Random Search,0.1,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],BIPOP-CMA-ES,0.1,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],BasinGraph,1e-05,30,30,1.0,1.0,1.0,100,medium_21_100
+STRTCHDVB[N=100],BasinGraph,0.001,30,30,1.0,1.0,1.0,100,medium_21_100
+STRTCHDVB[N=100],BasinGraph,0.1,30,30,1.0,1.0,1.0,100,medium_21_100
+STRTCHDVB[N=100],CMA-ES,1e-05,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],CMA-ES,0.001,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],CMA-ES,0.1,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],Differential Evolution,1e-05,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],Differential Evolution,0.001,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],Differential Evolution,0.1,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,100,medium_21_100
+STRTCHDVB[N=100],Multi-start L-BFGS-B,1e-05,30,30,1.0,1.0,1.0,100,medium_21_100
+STRTCHDVB[N=100],Multi-start L-BFGS-B,0.001,30,30,1.0,1.0,1.0,100,medium_21_100
+STRTCHDVB[N=100],Multi-start L-BFGS-B,0.1,30,30,1.0,1.0,1.0,100,medium_21_100
+STRTCHDVB[N=100],Random Search,1e-05,30,30,1.0,1.0,1.0,100,medium_21_100
+STRTCHDVB[N=100],Random Search,0.001,30,30,1.0,1.0,1.0,100,medium_21_100
+STRTCHDVB[N=100],Random Search,0.1,30,30,1.0,1.0,1.0,100,medium_21_100
+TRIGON1B[N=100],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],BIPOP-CMA-ES,0.1,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],BasinGraph,1e-05,30,30,1.0,2.0,2.0,100,medium_21_100
+TRIGON1B[N=100],BasinGraph,0.001,30,30,1.0,2.0,2.0,100,medium_21_100
+TRIGON1B[N=100],BasinGraph,0.1,30,30,1.0,2.0,2.0,100,medium_21_100
+TRIGON1B[N=100],CMA-ES,1e-05,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],CMA-ES,0.001,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],CMA-ES,0.1,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],Differential Evolution,1e-05,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],Differential Evolution,0.001,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],Differential Evolution,0.1,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],Multi-start L-BFGS-B,1e-05,30,30,1.0,102.0,102.0,100,medium_21_100
+TRIGON1B[N=100],Multi-start L-BFGS-B,0.001,30,30,1.0,102.0,102.0,100,medium_21_100
+TRIGON1B[N=100],Multi-start L-BFGS-B,0.1,30,30,1.0,102.0,102.0,100,medium_21_100
+TRIGON1B[N=100],Random Search,1e-05,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],Random Search,0.001,30,0,0.0,inf,,100,medium_21_100
+TRIGON1B[N=100],Random Search,0.1,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],BIPOP-CMA-ES,1e-05,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],BIPOP-CMA-ES,0.001,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],BIPOP-CMA-ES,0.1,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],BasinGraph,1e-05,30,30,1.0,1466.0,1466.0,100,medium_21_100
+TRIGON2B[N=100],BasinGraph,0.001,30,30,1.0,1466.0,1466.0,100,medium_21_100
+TRIGON2B[N=100],BasinGraph,0.1,30,30,1.0,1427.0,1427.0,100,medium_21_100
+TRIGON2B[N=100],CMA-ES,1e-05,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],CMA-ES,0.001,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],CMA-ES,0.1,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Differential Evolution,1e-05,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Differential Evolution,0.001,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Differential Evolution,0.1,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Latin Hypercube Sampling,0.001,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Latin Hypercube Sampling,0.1,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Multi-start L-BFGS-B,1e-05,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Multi-start L-BFGS-B,0.001,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Multi-start L-BFGS-B,0.1,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Random Search,1e-05,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Random Search,0.001,30,0,0.0,inf,,100,medium_21_100
+TRIGON2B[N=100],Random Search,0.1,30,0,0.0,inf,,100,medium_21_100
+WAYSEA1B,BIPOP-CMA-ES,1e-05,30,30,1.0,142.63333333333333,96.5,2,small_2_20
+WAYSEA1B,BIPOP-CMA-ES,0.001,30,30,1.0,5.6,4.5,2,small_2_20
+WAYSEA1B,BIPOP-CMA-ES,0.1,30,30,1.0,2.6666666666666665,2.0,2,small_2_20
+WAYSEA1B,BasinGraph,1e-05,30,30,1.0,42.0,42.0,2,small_2_20
+WAYSEA1B,BasinGraph,0.001,30,30,1.0,1.0,1.0,2,small_2_20
+WAYSEA1B,BasinGraph,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+WAYSEA1B,CMA-ES,1e-05,30,30,1.0,121.96666666666667,58.5,2,small_2_20
+WAYSEA1B,CMA-ES,0.001,30,30,1.0,2.7333333333333334,2.0,2,small_2_20
+WAYSEA1B,CMA-ES,0.1,30,30,1.0,1.7666666666666666,1.5,2,small_2_20
+WAYSEA1B,Differential Evolution,1e-05,30,30,1.0,113.7,116.0,2,small_2_20
+WAYSEA1B,Differential Evolution,0.001,30,30,1.0,5.333333333333333,3.5,2,small_2_20
+WAYSEA1B,Differential Evolution,0.1,30,30,1.0,2.8333333333333335,2.0,2,small_2_20
+WAYSEA1B,Latin Hypercube Sampling,1e-05,30,30,1.0,279.9,316.5,2,small_2_20
+WAYSEA1B,Latin Hypercube Sampling,0.001,30,30,1.0,6.066666666666666,4.0,2,small_2_20
+WAYSEA1B,Latin Hypercube Sampling,0.1,30,30,1.0,3.066666666666667,2.5,2,small_2_20
+WAYSEA1B,Multi-start L-BFGS-B,1e-05,30,30,1.0,7.0,7.0,2,small_2_20
+WAYSEA1B,Multi-start L-BFGS-B,0.001,30,30,1.0,1.0,1.0,2,small_2_20
+WAYSEA1B,Multi-start L-BFGS-B,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+WAYSEA1B,Random Search,1e-05,30,27,0.9,390.18518518518516,227.0,2,small_2_20
+WAYSEA1B,Random Search,0.001,30,30,1.0,1.0,1.0,2,small_2_20
+WAYSEA1B,Random Search,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+WAYSEA2B,BIPOP-CMA-ES,1e-05,30,30,1.0,208.46666666666667,208.0,2,small_2_20
+WAYSEA2B,BIPOP-CMA-ES,0.001,30,30,1.0,140.43333333333334,140.0,2,small_2_20
+WAYSEA2B,BIPOP-CMA-ES,0.1,30,30,1.0,116.43333333333334,111.5,2,small_2_20
+WAYSEA2B,BasinGraph,1e-05,30,30,1.0,114.0,114.0,2,small_2_20
+WAYSEA2B,BasinGraph,0.001,30,30,1.0,60.0,60.0,2,small_2_20
+WAYSEA2B,BasinGraph,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+WAYSEA2B,CMA-ES,1e-05,30,30,1.0,180.53333333333333,166.5,2,small_2_20
+WAYSEA2B,CMA-ES,0.001,30,30,1.0,111.73333333333333,108.0,2,small_2_20
+WAYSEA2B,CMA-ES,0.1,30,30,1.0,89.93333333333334,92.0,2,small_2_20
+WAYSEA2B,Differential Evolution,1e-05,30,30,1.0,454.96666666666664,460.5,2,small_2_20
+WAYSEA2B,Differential Evolution,0.001,30,30,1.0,317.03333333333336,327.5,2,small_2_20
+WAYSEA2B,Differential Evolution,0.1,30,30,1.0,261.7,252.5,2,small_2_20
+WAYSEA2B,Latin Hypercube Sampling,1e-05,30,0,0.0,inf,,2,small_2_20
+WAYSEA2B,Latin Hypercube Sampling,0.001,30,0,0.0,inf,,2,small_2_20
+WAYSEA2B,Latin Hypercube Sampling,0.1,30,1,0.03333333333333333,29286.0,286.0,2,small_2_20
+WAYSEA2B,Multi-start L-BFGS-B,1e-05,30,30,1.0,79.0,79.0,2,small_2_20
+WAYSEA2B,Multi-start L-BFGS-B,0.001,30,30,1.0,25.0,25.0,2,small_2_20
+WAYSEA2B,Multi-start L-BFGS-B,0.1,30,30,1.0,1.0,1.0,2,small_2_20
+WAYSEA2B,Random Search,1e-05,30,0,0.0,inf,,2,small_2_20
+WAYSEA2B,Random Search,0.001,30,0,0.0,inf,,2,small_2_20
+WAYSEA2B,Random Search,0.1,30,30,1.0,1.0,1.0,2,small_2_20

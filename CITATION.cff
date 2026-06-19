@@ -1,0 +1,62 @@
+cff-version: 1.2.0
+message: "If you use BasinGraph, please cite the software and the associated article."
+title: "BasinGraph: geometry-controlled basin-graph optimization"
+version: 1.0.0
+date-released: 2026-06-19
+type: software
+authors:
+  - family-names: "Xu"
+    given-names: "Kaijie"
+    email: "kjxu@xidian.edu.cn"
+    affiliation: "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China; Department of Chemical and Biological Engineering, University of British Columbia, Vancouver, BC V6T 1Z3, Canada"
+    orcid: "https://orcid.org/0000-0003-4408-9070"
+  - family-names: "Tang"
+    given-names: "Xiaoan"
+    email: "tangxa@hfut.edu.cn"
+    affiliation: "Key Laboratory of Process Optimization and Intelligent Decision-making, Ministry of Education, and School of Management, Hefei University of Technology, Hefei 230009, Anhui, China"
+    orcid: "https://orcid.org/0000-0002-4624-3687"
+  - family-names: "Nie"
+    given-names: "Weike"
+    email: "weikenie@nwu.edu.cn"
+    affiliation: "College of Computer Science, Northwest University, Xi'an 710127, China"
+    orcid: "https://orcid.org/0000-0003-2092-3083"
+  - family-names: "Cui"
+    given-names: "Ye"
+    email: "ycui7@ualberta.ca"
+    affiliation: "Department of Electrical and Computer Engineering, University of Alberta, Edmonton, AB T6G 2R3, Canada"
+    orcid: "https://orcid.org/0000-0003-4402-5341"
+  - family-names: "E"
+    given-names: "Hanyu"
+    email: "hanyu6@ualberta.ca"
+    affiliation: "Department of Electrical and Computer Engineering, University of Alberta, Edmonton, AB T6G 2R3, Canada"
+    orcid: "https://orcid.org/0000-0002-5567-6126"
+  - family-names: "Yin"
+    given-names: "Xukun"
+    email: "xkyin@xidian.edu.cn"
+    affiliation: "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China; Hangzhou Institute of Technology, Xidian University, Hangzhou, China"
+    orcid: "https://orcid.org/0000-0003-4840-9529"
+  - family-names: "Zhang"
+    given-names: "Qiang"
+    email: "zhangqiangonline@163.com"
+    affiliation: "Key Laboratory of Process Optimization and Intelligent Decision-making, Ministry of Education, and School of Management, Hefei University of Technology, Hefei 230009, Anhui, China"
+    orcid: "https://orcid.org/0000-0003-2947-1351"
+  - family-names: "Quan"
+    given-names: "Yinghui"
+    email: "quanyinghui@126.com"
+    affiliation: "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China"
+    orcid: "https://orcid.org/0000-0001-6541-9441"
+  - family-names: "Feng"
+    given-names: "Dazheng"
+    email: "dzfeng@xidian.edu.cn"
+    affiliation: "School of Electronic Engineering, Xidian University, Xi'an 710071, China"
+    orcid: "https://orcid.org/0000-0002-0168-8340"
+abstract: "BasinGraph is a geometry-controlled global optimization framework that represents discovered attraction basins and transition pathways explicitly."
+keywords:
+  - global optimization
+  - derivative-free optimization
+  - nonconvex optimization
+  - basin graph
+  - COCO/BBOB
+  - CUTEst
+repository-code: "https://github.com/TO_BE_CONFIRMED/BasinGraph"
+license: "TO_BE_CONFIRMED"

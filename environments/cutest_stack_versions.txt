@@ -1,0 +1,19 @@
+Date: 2026-06-19T01:52:02Z
+Architecture: arm64
+macOS: 26.5.1
+Conda environment: basingraph-cutest
+Python: Python 3.11.15
+Meson: 1.11.1
+Ninja: 1.13.2
+CC: /opt/homebrew/opt/gcc/bin/gcc-16
+CC version: gcc-16 (Homebrew GCC 16.1.0) 16.1.0
+FC: /opt/homebrew/bin/gfortran
+FC version: GNU Fortran (Homebrew GCC 16.1.0) 16.1.0
+MACOSX_DEPLOYMENT_TARGET: 26.5
+SIFDECODE prefix: ${BASINGRAPH_ROOT}/cutest_stack/install
+CUTEST prefix: ${BASINGRAPH_ROOT}/cutest_stack/install
+MASTSIF: ${BASINGRAPH_ROOT}/cutest_stack/mastsif
+PYCUTEST_CACHE: ${BASINGRAPH_ROOT}/pycutest_cache
+SIFDecode commit: d8666ba9552b539de2913647e0faa8f10c26af8b
+CUTEst commit: d76788ae042785ff6518378478057191ed884e53
+MASTSIF commit: 29adac9f1618cd23b67f16fe80910e7c030a657a

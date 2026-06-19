@@ -1,0 +1,73 @@
+problem_name,dimension,dimension_group,objective_type,constraints,origin,derivative_degree,regular,internal_variables,selection_hash
+HOLMES,180,large_101_500,other,bound,academic,2,True,False,37a598e92eda3f2ae14d1951ea735df0b585695d3aa65eb42185a8a5c4c0a5f5
+SANTALS,21,medium_21_100,sum of squares,bound,academic,2,True,False,1729b1716b8229369a0fdde19b59dde713316aff79ba9f831dd04001baea2efa
+BQPGASIM,50,medium_21_100,quadratic,bound,academic,2,True,False,1a7ffd6d971aef40b861c86d0da7e8f46dac084dba8d6f5c810e2d29d3f36e07
+HATFLDC,25,medium_21_100,sum of squares,bound,academic,2,True,False,5d8169431deaa3724d273e4b1f4ef400e9e568d5713d5b6947fe5e66658b3a95
+3PK,30,medium_21_100,sum of squares,bound,modelling,2,True,False,69f874407ee4e6ff3f9f620e18a50b00f930c03331c72e27fed2b4002b82d50a
+DECONVB,61,medium_21_100,sum of squares,bound,modelling,2,True,False,bf7b141a8f3f33b7663c1e4323ec6c94c3d9090c92b60e6e379b071007ebe700
+BQPGABIM,50,medium_21_100,quadratic,bound,academic,2,True,False,d8f39c44a702a72c24125ad52bbc5c525ef49aeeaddbf092f43e785ad465b6b7
+PRICE4B,2,small_2_20,sum of squares,bound,modelling,2,True,False,0250d6609b87e7738a12a2d4809cc54cdb4164499a5b9f23489b99c373493662
+MDHOLE,2,small_2_20,other,bound,academic,2,True,False,08984e2d056256577bb603d60392a361311866c182b291ec67e5ad67766c9293
+WAYSEA2B,2,small_2_20,sum of squares,bound,modelling,2,True,False,11fce9cc4ce0e004864a8b901b1ac7318c3bce0710aa68711fb94daf81857dd8
+PALMER7A,6,small_2_20,sum of squares,bound,real-world,2,True,False,131b03a850cdf9dea7553e9ee620fb758b228a4ce73b31ee007aadb2689b56c1
+HS1,2,small_2_20,sum of squares,bound,academic,2,True,False,1553d6b9a9d3525314211d98ec956ae7b7b401517a48b83b82dd237dbc1fc7dd
+PALMER5B,9,small_2_20,sum of squares,bound,real-world,2,True,False,1cb5166e8a9d9f8061a615c282d994874b20deb2b77d24daac3201d78671a09f
+PALMER2A,6,small_2_20,sum of squares,bound,real-world,2,True,False,1e37651c5581dff11a16edd3c17baa95043f09e2d81defd89849302f661c79e3
+PALMER4E,8,small_2_20,sum of squares,bound,real-world,2,True,False,2642787ec0b8f6e1e9969bd6968c98a79255b9461ff6d26dfe92defa9f649c81
+PFIT1LS,3,small_2_20,sum of squares,bound,academic,2,True,False,274da0d6658802501e3e9d47a8548597eb919c2599c7c53d37b3106d113e02a4
+PALMER1B,4,small_2_20,sum of squares,bound,real-world,2,True,False,27b9af807db9e604d3d4414cffadbbfa73265d9b447abd974c07785b9f652464
+HATFLDA,4,small_2_20,sum of squares,bound,academic,2,True,False,28457a961b765f083297794d0545674af7e5ce57a22938461e3ba2e63f2a2e70
+HS45,5,small_2_20,other,bound,academic,2,True,False,291498547837d5718b9b4e52b1c0242b777ab730973ce5de1dc1107003082021
+PALMER6E,8,small_2_20,sum of squares,bound,real-world,2,True,False,2cf513bcaef9c8390b54836e4c7709c2370df5e35e25a754aad198817c79bde7
+PALMER2,4,small_2_20,sum of squares,bound,real-world,2,True,False,33332e8383ca6f2be285b40a16d39595ca8be2f9228d2351d88e2a1c7af69d21
+PALMER3,4,small_2_20,sum of squares,bound,real-world,2,True,False,33ad42ad4b57351f168010269322ea0c8311573cded795e08a2b03488996258d
+HS3,2,small_2_20,quadratic,bound,academic,2,True,False,36f779afd0f78ca43a5a8fb523f9707d0f8c88336a0195bdf27365ada07a4202
+HIMMELP1,2,small_2_20,other,bound,academic,2,True,False,389773426dd933b2f1ae958babe51cccfa80d4df6368bc55f6dcbb6fb078b990
+SIMBQP,2,small_2_20,quadratic,bound,academic,2,True,False,3c0ba3120699ef0cd1aae1ed2b6e8a6a714bb0353a3266a6ccd9f2f1f05b692d
+WAYSEA1B,2,small_2_20,sum of squares,bound,modelling,2,True,False,3e1cf1825652b25fa8c9aa9cd41e92b2bdd8c3df9aabcafe687a21d641658710
+BLEACHNG,17,small_2_20,sum of squares,bound,real-world,1,True,False,493504bec23d2e4eb471f1dc54d7a22737a5ab87af1b1f7d76431e3d26bea7e7
+PALMER2B,4,small_2_20,sum of squares,bound,real-world,2,True,False,4dc22cd7262c58f4ea20966c8e1049179097e26179a2c35671c20fbf275b9499
+PALMER4B,4,small_2_20,sum of squares,bound,real-world,2,True,False,4dcfd375c26ebf032f05c596a650615a7fe6a4d90c270b574ca6ee4d4aba7b07
+FBRAINLS,2,small_2_20,sum of squares,bound,academic,2,True,False,4e4dd040ed1ab7d41440c5334e7dbb5f3a8239105728aa7727f4d20f3d7b2eab
+CAMEL6,2,small_2_20,other,bound,academic,2,True,False,4f30d77cba07a0f8c614ed192290cecaad4a6632b0b0e0994e8abd5d4f937770
+PFIT2LS,3,small_2_20,sum of squares,bound,academic,2,True,False,549373fe6e4d5a098d8aaaf9c1b1ff14d2b929143682671b6abb2c8e0795c96f
+BRANIN,2,small_2_20,other,bound,academic,2,True,False,5bd3c3fd495161f656539df6ac203a7377572e1cd6a30aff538174200c2d27ac
+EGGCRATEB,4,small_2_20,sum of squares,bound,modelling,2,True,False,606e6a663567e4b373c85a5f81f12e8e3c4e756a3fdea62f93a31aad37d02c37
+LOGROS,2,small_2_20,other,bound,academic,2,True,False,63311565e05e986032c9c9af5f92921c21a5b9a20ec60dcbc4ef12f4f9f8b87e
+DEVGLA2B,5,small_2_20,sum of squares,bound,modelling,2,True,False,6d05ffe94523e8ad095105379affe0cc6065d4605fac35e9e0325bb642503096
+PALMER3E,8,small_2_20,sum of squares,bound,real-world,2,True,False,6e1d2c02e5f3129c2020f1142094373a2546ef014d3fa71772e7d7bec045b60e
+HATFLDB,4,small_2_20,sum of squares,bound,academic,2,True,False,758fc8eb2813c029fc908e6f02a75fc00eb18938da806f706778ae9413c109e2
+PALMER3A,6,small_2_20,sum of squares,bound,real-world,2,True,False,7a47afc1a9455fcffeb03ea2bac288153d758e66582884b62be87bd77a406af6
+HS4,2,small_2_20,other,bound,academic,2,True,False,7af102da6a541fb3d50c656a2c987965e915a4e972c2070a26c7433934df4a06
+PALMER1E,8,small_2_20,sum of squares,bound,real-world,2,True,False,7f8976c6b94687850a3ef43b881d00ca689e6d5c51a06dfd6e672a450e0baaa4
+PALMER1,4,small_2_20,sum of squares,bound,real-world,2,True,False,82cdd1f990b5a7308528e00595e32189d3c38750c7683a4c2ad1fd85457209b0
+PALMER5E,8,small_2_20,sum of squares,bound,real-world,2,True,False,8586d5d82b3cad3e052cfc78e0e440a0c9f41cad743f3dfa374cf941a42336bc
+PALMER1A,6,small_2_20,sum of squares,bound,real-world,2,True,False,86bd7362cee0514ed3993235f2867dc893cb47bd673dba23ebd1e25993561c1f
+HS3MOD,2,small_2_20,quadratic,bound,academic,2,True,False,88c108b0dc6f18d268e457b069c9b6e960791f679d0ddb9234af74f8e661791b
+SIM2BQP,2,small_2_20,quadratic,bound,academic,2,True,False,9286b8dfa248a033a1c82c0ea25158c93e04c66d471c0d0cf98862ab87bb4099
+KOEBHELB,3,small_2_20,sum of squares,bound,real-world,2,True,False,95527ba60662b7aef4128e0b8265a12a6fa10173db9e92135b29c1706fea16fb
+PALMER2E,8,small_2_20,sum of squares,bound,real-world,2,True,False,9afbb84adfb47a506d226f58541e0caab836a9a0e4bb568069768075cf2cb02f
+PALMER5A,8,small_2_20,sum of squares,bound,real-world,2,True,False,9d0370f94750204b64197ede621af9e4da54d7ae28ed7fbd8d6ccc7e3ee80552
+EXP2B,2,small_2_20,sum of squares,bound,modelling,2,True,False,a88d6ec10a3f431f42737f4082401a1f7a92fbba251b78a582a3c171c1eef677
+HS25,3,small_2_20,sum of squares,bound,academic,2,True,False,a9dc0b08a4e4a89e3fa436134b266d2945da5a9bb31c0172bf5dcad1d661b385
+HS5,2,small_2_20,other,bound,academic,2,True,False,ab34a23ea4bdf49712bca91aa8b4af3edc98b4b4bd3b9ef651ca2d2633119b53
+YFIT,3,small_2_20,sum of squares,bound,modelling,2,True,False,ab43f7e49e7ae0c5f493afc66c674333a5fc1bde982a3a7beb68f55c3ab812fe
+OSLBQP,8,small_2_20,quadratic,bound,academic,2,True,False,b3d0f17dba285dbc8da7b07ab0374a86e6f01e49f18b0b292a1f0b708934f119
+HART6,6,small_2_20,other,bound,academic,2,True,False,b66a9675fb351ac49420c6a7b0885113350f0f86eb8d0010a584540b642743af
+PALMER4,4,small_2_20,sum of squares,bound,real-world,2,True,False,ba224006b6bafc251436042ff1a6bb50922c28338e23276a0b9e5b8f32e35608
+PALMER8A,6,small_2_20,sum of squares,bound,real-world,2,True,False,ba4a4d57fffb8261f9161f55bcfb2b0acb11a35d96e72780d0f5e4271fa45981
+DEVGLA1B,4,small_2_20,sum of squares,bound,modelling,2,True,False,bc87599e6620d4577ddc6523335dc908b2d7eb4167cb54037c4950a88ff39ef2
+PALMER4A,6,small_2_20,sum of squares,bound,real-world,2,True,False,bd6e5a978b6334eef1d5cf5cad9315949e77b0290c3a8eb59ad2ade85e1f3ca5
+PALMER3B,4,small_2_20,sum of squares,bound,real-world,2,True,False,be65f593c5d4e680fefd795a594f0a1367f384b7cedffc6041ed33f291f7d406
+PFIT3LS,3,small_2_20,sum of squares,bound,academic,2,True,False,c124395154cb9f16e82b12c2d40c7041fd886019855f1f15130c321b05f41781
+DGOSPEC,3,small_2_20,other,bound,academic,2,True,False,c541e607db1f28a5a3941ef6c60ca214912fae46765f5b6b5693d1c5ef60177b
+WEEDS,3,small_2_20,sum of squares,bound,real-world,2,True,False,c950cc0c1cbed2b8458c2f1e0ecb97cb961724af4b993912ebdfc1c96064c388
+FBRAIN2LS,4,small_2_20,sum of squares,bound,academic,2,True,False,d313a4b1669a789312cacece45bf408265a189732243fde86ee473af29a72e88
+PALMER8E,8,small_2_20,sum of squares,bound,real-world,2,True,False,d824a7c8c30115eee52edac38cc543c2ec158b1e586e2b9ac97df86276e37004
+HS2,2,small_2_20,sum of squares,bound,academic,2,True,False,d8ae00f99b216ab2e95e1367baa8b64e132cf0aa70eebfb2547aadae73e0ec90
+PALMER7E,8,small_2_20,sum of squares,bound,real-world,2,True,False,d8d4144ced28b2920567a0ec4e0c82aa0e73c2a6dc95fca9357e047f138182f5
+PALMER6A,6,small_2_20,sum of squares,bound,real-world,2,True,False,e0228ef451b6e042518568b207545cf81a1e0ac7638c3601ff6bad1ad118eeff
+JUDGEB,2,small_2_20,sum of squares,bound,modelling,2,True,False,e5bc5d0e4465007c549bc3e39af6d7f24ca9f5a7e9ad84fb6ef7062e275cb4e6
+HS38,4,small_2_20,other,bound,academic,2,True,False,fa302bdf6142b679803e12dac3c3812e230907b65dee0ed7c87a3a2dd842df0a
+PFIT4LS,3,small_2_20,sum of squares,bound,academic,2,True,False,fbdd4aa7a9a8ef6b877c1d8049d190c7b0d8173d52288f0cb690f98839d222e4
+ELATVIDUB,2,small_2_20,sum of squares,bound,modelling,2,True,False,fffebdaacd8f83bbb4f4acffd2311e58676a0a3d72bccecac026bba5ddab985b

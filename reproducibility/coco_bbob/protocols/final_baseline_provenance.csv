@@ -1,0 +1,8 @@
+algorithm,implementation_source,software,version,modification,parameter_policy,formal_coco_label
+BasinGraph,This work,BasinGraph Python implementation,Final COCO core snapshot,Not applicable,Fixed manuscript parameters,BasinGraph
+CMA-ES,pycma,cma,4.4.4,Standardized objective and budget wrapper only,pycma defaults with bounds and fixed seed,CMA_ES
+BIPOP-CMA-ES,pycma fmin2 interface,cma,4.4.4,Standardized objective and budget wrapper only,"restarts=9, bipop=True",BIPOP_CMA_ES
+Differential Evolution,Self-contained reference implementation,BasinGraph benchmark repository,Final COCO core snapshot,None,"F=0.5, CR=0.9, fixed population policy",DE
+Multi-start L-BFGS-B,SciPy wrapper,scipy.optimize.minimize,1.17.1,Standardized multistart and budget wrapper,Fixed multistart budget allocation,MS_LBFGSB
+Latin Hypercube Sampling,Self-contained implementation,BasinGraph benchmark repository,Final COCO core snapshot,None,Uniform LHS under identical FE budget,LHS
+Random Search,Self-contained implementation,BasinGraph benchmark repository,Final COCO core snapshot,None,Uniform random sampling under identical FE budget,Random

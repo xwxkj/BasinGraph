@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "basingraph-optimizer"
+version = "1.0.0"
+description = "Geometry-controlled basin-graph optimization"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  {name = "Kaijie Xu", email = "kjxu@xidian.edu.cn"},
+  {name = "Xiaoan Tang", email = "tangxa@hfut.edu.cn"},
+  {name = "Xukun Yin", email = "xkyin@xidian.edu.cn"},
+]
+dependencies = [
+  "numpy",
+  "scipy",
+  "pandas",
+  "matplotlib",
+]
+
+[project.optional-dependencies]
+coco = ["cma", "coco-experiment", "cocopp"]
+cutest = ["pycutest==1.8.2"]
+
+[tool.setuptools.packages.find]
+include = ["basingraph*"]
