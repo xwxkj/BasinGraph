@@ -1,0 +1,22 @@
+{
+  "status": "V2_RC1_ABLATION_AUDIT_OK",
+  "git_commit": "8b8dbded99f9b1029aeee1e0a399e37758f92a05",
+  "implementation_version": "2.0.0-rc1",
+  "rows": 245,
+  "tasks": 7,
+  "variants": 7,
+  "seeds": 5,
+  "all_runs_completed": true,
+  "all_runs_exhausted_budget": true,
+  "phase_accounting_verified": true,
+  "graph_referential_integrity_verified": true,
+  "each_ablation_changed_trajectory": true,
+  "best_mean_rank_variant": "NoArchiveFallback",
+  "best_mean_rank": 3.557142857142857,
+  "files": {
+    "results_v2/ablation_mini_rc1/validation_report.json": "ec4523d86dfb2e89777c11c98632de0203f19755355a17b607b032216b7f4b43",
+    "results_v2/ablation_mini_rc1/ablation_mini_raw_results.csv": "8a4b5a2f8506e29091283ee770df835cd2d19d3751193c0f120c326695c5bf27",
+    "results_v2/ablation_mini_rc1/ablation_mini_variant_summary.csv": "fe81d477107b4bd0254db05e80fe81a891293446f5d47f29c74d07f8c2db5c17",
+    "results_v2/ablation_mini_rc1/ablation_mini_behavior_differences.csv": "88c66112aae91e7833ddeee6cfbea534362a2d07b07e4d7e032a94f007bb6fe4"
+  }
+}
