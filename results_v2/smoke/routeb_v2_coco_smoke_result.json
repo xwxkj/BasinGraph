@@ -1,0 +1,3526 @@
+{
+  "implementation_version": "2.0.0-rc1",
+  "options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "options": {
+    "initial_design_fraction": 0.1,
+    "center_local_fraction": 0.15,
+    "coordinate_sweep_fraction": 0.3,
+    "far_basin_fraction": 0.15,
+    "archive_fallback_fraction": 0.1,
+    "final_polish_fraction": 0.05,
+    "n_initial_lhs": 24,
+    "archive_max_size": 80,
+    "merge_radius_factor": 0.035,
+    "center_local_max_dim": 20,
+    "local_mode_min_score": 0.12,
+    "large_box_scale": 100.0,
+    "far_basin_ruggedness_threshold": 0.1,
+    "far_basin_boundary_threshold": 0.05,
+    "line_coarse_samples": 11,
+    "line_refine_top_k": 3,
+    "line_refine_maxiter": 20,
+    "coordinate_starts": 6,
+    "far_basin_random": 32,
+    "archive_fallback_starts": 4,
+    "final_polish_starts": 2,
+    "graph_quality_weight": 0.55,
+    "graph_novelty_weight": 0.25,
+    "graph_accessibility_weight": 0.2,
+    "local_ftol": 1e-12,
+    "local_gtol": 1e-08,
+    "enable_geometry_controller": true,
+    "enable_graph_guidance": true,
+    "enable_multibracket": true,
+    "enable_far_basin": true,
+    "enable_archive_fallback": true,
+    "enable_final_polish": true
+  },
+  "xbest": [
+    0.2527999546931677,
+    -1.1568000697496708
+  ],
+  "fbest": 79.48,
+  "nfe": 200,
+  "phase_evaluations": {
+    "initial_design": 20,
+    "center_local": 12,
+    "coordinate_sweep": 60,
+    "far_basin": 30,
+    "archive_fallback": 20,
+    "final_polish": 10,
+    "budget_completion": 48
+  },
+  "history": [
+    [
+      1,
+      80.88209408
+    ],
+    [
+      2,
+      80.88209408
+    ],
+    [
+      3,
+      80.88209408
+    ],
+    [
+      4,
+      80.88209408
+    ],
+    [
+      5,
+      80.88209408
+    ],
+    [
+      6,
+      80.88209408
+    ],
+    [
+      7,
+      80.88209408
+    ],
+    [
+      8,
+      80.88209408
+    ],
+    [
+      9,
+      80.88209408
+    ],
+    [
+      10,
+      80.88209408
+    ],
+    [
+      11,
+      80.88209408
+    ],
+    [
+      12,
+      80.88209408
+    ],
+    [
+      13,
+      80.88209408
+    ],
+    [
+      14,
+      80.88209408
+    ],
+    [
+      15,
+      80.88209408
+    ],
+    [
+      16,
+      80.88209408
+    ],
+    [
+      17,
+      80.88209408
+    ],
+    [
+      18,
+      80.88209408
+    ],
+    [
+      19,
+      80.88209408
+    ],
+    [
+      20,
+      80.88209408
+    ],
+    [
+      21,
+      80.88209408
+    ],
+    [
+      22,
+      80.882094074944
+    ],
+    [
+      23,
+      80.882094074944
+    ],
+    [
+      24,
+      80.8820929415099
+    ],
+    [
+      25,
+      80.8820929415099
+    ],
+    [
+      26,
+      80.8820929183739
+    ],
+    [
+      27,
+      79.48000140194958
+    ],
+    [
+      28,
+      79.48000140194452
+    ],
+    [
+      29,
+      79.48000140194452
+    ],
+    [
+      30,
+      79.48
+    ],
+    [
+      31,
+      79.48
+    ],
+    [
+      32,
+      79.48
+    ],
+    [
+      33,
+      79.48
+    ],
+    [
+      34,
+      79.48
+    ],
+    [
+      35,
+      79.48
+    ],
+    [
+      36,
+      79.48
+    ],
+    [
+      37,
+      79.48
+    ],
+    [
+      38,
+      79.48
+    ],
+    [
+      39,
+      79.48
+    ],
+    [
+      40,
+      79.48
+    ],
+    [
+      41,
+      79.48
+    ],
+    [
+      42,
+      79.48
+    ],
+    [
+      43,
+      79.48
+    ],
+    [
+      44,
+      79.48
+    ],
+    [
+      45,
+      79.48
+    ],
+    [
+      46,
+      79.48
+    ],
+    [
+      47,
+      79.48
+    ],
+    [
+      48,
+      79.48
+    ],
+    [
+      49,
+      79.48
+    ],
+    [
+      50,
+      79.48
+    ],
+    [
+      51,
+      79.48
+    ],
+    [
+      52,
+      79.48
+    ],
+    [
+      53,
+      79.48
+    ],
+    [
+      54,
+      79.48
+    ],
+    [
+      55,
+      79.48
+    ],
+    [
+      56,
+      79.48
+    ],
+    [
+      57,
+      79.48
+    ],
+    [
+      58,
+      79.48
+    ],
+    [
+      59,
+      79.48
+    ],
+    [
+      60,
+      79.48
+    ],
+    [
+      61,
+      79.48
+    ],
+    [
+      62,
+      79.48
+    ],
+    [
+      63,
+      79.48
+    ],
+    [
+      64,
+      79.48
+    ],
+    [
+      65,
+      79.48
+    ],
+    [
+      66,
+      79.48
+    ],
+    [
+      67,
+      79.48
+    ],
+    [
+      68,
+      79.48
+    ],
+    [
+      69,
+      79.48
+    ],
+    [
+      70,
+      79.48
+    ],
+    [
+      71,
+      79.48
+    ],
+    [
+      72,
+      79.48
+    ],
+    [
+      73,
+      79.48
+    ],
+    [
+      74,
+      79.48
+    ],
+    [
+      75,
+      79.48
+    ],
+    [
+      76,
+      79.48
+    ],
+    [
+      77,
+      79.48
+    ],
+    [
+      78,
+      79.48
+    ],
+    [
+      79,
+      79.48
+    ],
+    [
+      80,
+      79.48
+    ],
+    [
+      81,
+      79.48
+    ],
+    [
+      82,
+      79.48
+    ],
+    [
+      83,
+      79.48
+    ],
+    [
+      84,
+      79.48
+    ],
+    [
+      85,
+      79.48
+    ],
+    [
+      86,
+      79.48
+    ],
+    [
+      87,
+      79.48
+    ],
+    [
+      88,
+      79.48
+    ],
+    [
+      89,
+      79.48
+    ],
+    [
+      90,
+      79.48
+    ],
+    [
+      91,
+      79.48
+    ],
+    [
+      92,
+      79.48
+    ],
+    [
+      93,
+      79.48
+    ],
+    [
+      94,
+      79.48
+    ],
+    [
+      95,
+      79.48
+    ],
+    [
+      96,
+      79.48
+    ],
+    [
+      97,
+      79.48
+    ],
+    [
+      98,
+      79.48
+    ],
+    [
+      99,
+      79.48
+    ],
+    [
+      100,
+      79.48
+    ],
+    [
+      101,
+      79.48
+    ],
+    [
+      102,
+      79.48
+    ],
+    [
+      103,
+      79.48
+    ],
+    [
+      104,
+      79.48
+    ],
+    [
+      105,
+      79.48
+    ],
+    [
+      106,
+      79.48
+    ],
+    [
+      107,
+      79.48
+    ],
+    [
+      108,
+      79.48
+    ],
+    [
+      109,
+      79.48
+    ],
+    [
+      110,
+      79.48
+    ],
+    [
+      111,
+      79.48
+    ],
+    [
+      112,
+      79.48
+    ],
+    [
+      113,
+      79.48
+    ],
+    [
+      114,
+      79.48
+    ],
+    [
+      115,
+      79.48
+    ],
+    [
+      116,
+      79.48
+    ],
+    [
+      117,
+      79.48
+    ],
+    [
+      118,
+      79.48
+    ],
+    [
+      119,
+      79.48
+    ],
+    [
+      120,
+      79.48
+    ],
+    [
+      121,
+      79.48
+    ],
+    [
+      122,
+      79.48
+    ],
+    [
+      123,
+      79.48
+    ],
+    [
+      124,
+      79.48
+    ],
+    [
+      125,
+      79.48
+    ],
+    [
+      126,
+      79.48
+    ],
+    [
+      127,
+      79.48
+    ],
+    [
+      128,
+      79.48
+    ],
+    [
+      129,
+      79.48
+    ],
+    [
+      130,
+      79.48
+    ],
+    [
+      131,
+      79.48
+    ],
+    [
+      132,
+      79.48
+    ],
+    [
+      133,
+      79.48
+    ],
+    [
+      134,
+      79.48
+    ],
+    [
+      135,
+      79.48
+    ],
+    [
+      136,
+      79.48
+    ],
+    [
+      137,
+      79.48
+    ],
+    [
+      138,
+      79.48
+    ],
+    [
+      139,
+      79.48
+    ],
+    [
+      140,
+      79.48
+    ],
+    [
+      141,
+      79.48
+    ],
+    [
+      142,
+      79.48
+    ],
+    [
+      143,
+      79.48
+    ],
+    [
+      144,
+      79.48
+    ],
+    [
+      145,
+      79.48
+    ],
+    [
+      146,
+      79.48
+    ],
+    [
+      147,
+      79.48
+    ],
+    [
+      148,
+      79.48
+    ],
+    [
+      149,
+      79.48
+    ],
+    [
+      150,
+      79.48
+    ],
+    [
+      151,
+      79.48
+    ],
+    [
+      152,
+      79.48
+    ],
+    [
+      153,
+      79.48
+    ],
+    [
+      154,
+      79.48
+    ],
+    [
+      155,
+      79.48
+    ],
+    [
+      156,
+      79.48
+    ],
+    [
+      157,
+      79.48
+    ],
+    [
+      158,
+      79.48
+    ],
+    [
+      159,
+      79.48
+    ],
+    [
+      160,
+      79.48
+    ],
+    [
+      161,
+      79.48
+    ],
+    [
+      162,
+      79.48
+    ],
+    [
+      163,
+      79.48
+    ],
+    [
+      164,
+      79.48
+    ],
+    [
+      165,
+      79.48
+    ],
+    [
+      166,
+      79.48
+    ],
+    [
+      167,
+      79.48
+    ],
+    [
+      168,
+      79.48
+    ],
+    [
+      169,
+      79.48
+    ],
+    [
+      170,
+      79.48
+    ],
+    [
+      171,
+      79.48
+    ],
+    [
+      172,
+      79.48
+    ],
+    [
+      173,
+      79.48
+    ],
+    [
+      174,
+      79.48
+    ],
+    [
+      175,
+      79.48
+    ],
+    [
+      176,
+      79.48
+    ],
+    [
+      177,
+      79.48
+    ],
+    [
+      178,
+      79.48
+    ],
+    [
+      179,
+      79.48
+    ],
+    [
+      180,
+      79.48
+    ],
+    [
+      181,
+      79.48
+    ],
+    [
+      182,
+      79.48
+    ],
+    [
+      183,
+      79.48
+    ],
+    [
+      184,
+      79.48
+    ],
+    [
+      185,
+      79.48
+    ],
+    [
+      186,
+      79.48
+    ],
+    [
+      187,
+      79.48
+    ],
+    [
+      188,
+      79.48
+    ],
+    [
+      189,
+      79.48
+    ],
+    [
+      190,
+      79.48
+    ],
+    [
+      191,
+      79.48
+    ],
+    [
+      192,
+      79.48
+    ],
+    [
+      193,
+      79.48
+    ],
+    [
+      194,
+      79.48
+    ],
+    [
+      195,
+      79.48
+    ],
+    [
+      196,
+      79.48
+    ],
+    [
+      197,
+      79.48
+    ],
+    [
+      198,
+      79.48
+    ],
+    [
+      199,
+      79.48
+    ],
+    [
+      200,
+      79.48
+    ]
+  ],
+  "archive": [
+    {
+      "node_id": 20,
+      "center": [
+        0.2527999546931677,
+        -1.1568000697496708
+      ],
+      "f_center": 79.48,
+      "radius": 0.4025250382035747,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 14,
+      "created_nfe": 32,
+      "last_updated_nfe": 191,
+      "novelty": 0.0,
+      "source": "center_local"
+    },
+    {
+      "node_id": 39,
+      "center": [
+        0.003815260178079427,
+        -0.6773910107459001
+      ],
+      "f_center": 79.77182637964184,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 155,
+      "last_updated_nfe": 174,
+      "novelty": 0.5452879134057819,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 43,
+      "center": [
+        -0.4077560155268566,
+        -0.5175310088429896
+      ],
+      "f_center": 80.32499909270362,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 160,
+      "last_updated_nfe": 166,
+      "novelty": 0.5064479839186741,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 1,
+      "center": [
+        0.0,
+        0.0
+      ],
+      "f_center": 80.88209408,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 1,
+      "last_updated_nfe": 1,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 17,
+      "center": [
+        -1.1082868543307798,
+        -0.46096787976256676
+      ],
+      "f_center": 81.81673976458619,
+      "radius": 0.41405065542846714,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 3,
+      "created_nfe": 18,
+      "last_updated_nfe": 196,
+      "novelty": 0.8265735955989524,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 56,
+      "center": [
+        1.9450824724935472,
+        -0.39869172308060064
+      ],
+      "f_center": 82.91854812624258,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 199,
+      "last_updated_nfe": 199,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 45,
+      "center": [
+        0.15833411102624795,
+        0.8602362632138377
+      ],
+      "f_center": 83.55735909129925,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 169,
+      "last_updated_nfe": 169,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 50,
+      "center": [
+        -1.8847345241830187,
+        -1.2065159869320028
+      ],
+      "f_center": 84.05152552143095,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 180,
+      "last_updated_nfe": 197,
+      "novelty": 0.07731059225092686,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 15,
+      "center": [
+        2.371626454852044,
+        -1.5789998459669867
+      ],
+      "f_center": 84.14767825571543,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 15,
+      "last_updated_nfe": 15,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 28,
+      "center": [
+        2.4832726403671237,
+        -0.7586028396391395
+      ],
+      "f_center": 84.61356917794575,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 109,
+      "last_updated_nfe": 161,
+      "novelty": 0.5720116941567959,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 37,
+      "center": [
+        1.4130213369726563,
+        0.8878097623379452
+      ],
+      "f_center": 85.00654263101426,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 153,
+      "last_updated_nfe": 153,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 13,
+      "center": [
+        0.927919447331079,
+        1.3066562121517364
+      ],
+      "f_center": 86.0044027773536,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 13,
+      "last_updated_nfe": 13,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 23,
+      "center": [
+        0.2220344418070217,
+        -3.78967463340629
+      ],
+      "f_center": 86.41297535480524,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 2,
+      "created_nfe": 96,
+      "last_updated_nfe": 106,
+      "novelty": 0.811835437946353,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 40,
+      "center": [
+        0.13086241908921303,
+        1.4809390766879473
+      ],
+      "f_center": 86.45253621032496,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 156,
+      "last_updated_nfe": 156,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 41,
+      "center": [
+        -2.344592359576869,
+        -1.644997823550888
+      ],
+      "f_center": 86.46478418450812,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 158,
+      "last_updated_nfe": 158,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 51,
+      "center": [
+        -1.9344396943783815,
+        -2.717093868181015
+      ],
+      "f_center": 86.69853443574772,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 181,
+      "last_updated_nfe": 181,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 52,
+      "center": [
+        -2.629924045362041,
+        -1.0153612429783445
+      ],
+      "f_center": 87.81010284369633,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 182,
+      "last_updated_nfe": 182,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 38,
+      "center": [
+        -1.7833335757357105,
+        1.3373653000139383
+      ],
+      "f_center": 89.8467004820319,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 154,
+      "last_updated_nfe": 154,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 36,
+      "center": [
+        -2.1759373815635525,
+        -3.3881215279678094
+      ],
+      "f_center": 90.35756102977678,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 1,
+      "created_nfe": 122,
+      "last_updated_nfe": 122,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 47,
+      "center": [
+        2.5173690792645846,
+        -3.5888469448769653
+      ],
+      "f_center": 90.52312545684663,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 171,
+      "last_updated_nfe": 171,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 16,
+      "center": [
+        -0.06221557104072578,
+        2.238638738479316
+      ],
+      "f_center": 91.10823903676413,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 3,
+      "created_nfe": 16,
+      "last_updated_nfe": 198,
+      "novelty": 0.27642915630003395,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 54,
+      "center": [
+        -0.8865379015261314,
+        2.3076734146962963
+      ],
+      "f_center": 92.78066689499138,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 187,
+      "last_updated_nfe": 187,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 8,
+      "center": [
+        0.007054040145727307,
+        -4.83916516905397
+      ],
+      "f_center": 93.10020431504657,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 4,
+      "created_nfe": 8,
+      "last_updated_nfe": 118,
+      "novelty": 0.22767346058693566,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 57,
+      "center": [
+        0.560907240045909,
+        -5.0
+      ],
+      "f_center": 94.34511631136871,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 200,
+      "last_updated_nfe": 200,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 44,
+      "center": [
+        1.9783356375959273,
+        -4.681441607410488
+      ],
+      "f_center": 94.88057169730277,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 168,
+      "last_updated_nfe": 168,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 22,
+      "center": [
+        1.2296828435641036,
+        -5.0
+      ],
+      "f_center": 95.20448633004989,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 2,
+      "created_nfe": 95,
+      "last_updated_nfe": 110,
+      "novelty": 0.16650783626931528,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 34,
+      "center": [
+        -1.9037391063481182,
+        2.33312422318613
+      ],
+      "f_center": 96.31023200079005,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 1,
+      "created_nfe": 119,
+      "last_updated_nfe": 119,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 31,
+      "center": [
+        -1.3364309934176302,
+        -5.0
+      ],
+      "f_center": 96.77584139043918,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 114,
+      "last_updated_nfe": 184,
+      "novelty": 0.9056272710655847,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 32,
+      "center": [
+        3.3015634727751526,
+        2.319951514589835
+      ],
+      "f_center": 100.86275980713073,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 1,
+      "created_nfe": 115,
+      "last_updated_nfe": 115,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 55,
+      "center": [
+        0.882033458043157,
+        3.4629112146767556
+      ],
+      "f_center": 101.21766645173113,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 193,
+      "last_updated_nfe": 193,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 19,
+      "center": [
+        -0.6652442784180943,
+        3.472997255146627
+      ],
+      "f_center": 101.75782792089944,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 20,
+      "last_updated_nfe": 20,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 53,
+      "center": [
+        -1.6515467744571626,
+        3.285682657774848
+      ],
+      "f_center": 102.84218880201568,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 185,
+      "last_updated_nfe": 185,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 26,
+      "center": [
+        5.0,
+        -2.10706964221225
+      ],
+      "f_center": 102.91892023291021,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 1,
+      "created_nfe": 100,
+      "last_updated_nfe": 100,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 7,
+      "center": [
+        5.0,
+        0.0
+      ],
+      "f_center": 103.35409408000001,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 7,
+      "last_updated_nfe": 98,
+      "novelty": 0.46866173272983636,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 29,
+      "center": [
+        5.0,
+        -2.8497962733134257
+      ],
+      "f_center": 104.88214422145316,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 2,
+      "created_nfe": 112,
+      "last_updated_nfe": 121,
+      "novelty": 0.7112522494042612,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 27,
+      "center": [
+        3.6202150184115527,
+        -4.926366285132765
+      ],
+      "f_center": 105.02911388423331,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 107,
+      "last_updated_nfe": 167,
+      "novelty": 0.16152559080453066,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 11,
+      "center": [
+        4.503235480478748,
+        -4.003569312124272
+      ],
+      "f_center": 105.65029729016511,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 11,
+      "last_updated_nfe": 11,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 12,
+      "center": [
+        -2.8853451816426503,
+        2.910308647141483
+      ],
+      "f_center": 105.86932792872,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 12,
+      "last_updated_nfe": 12,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 21,
+      "center": [
+        -5.0,
+        -1.337062944756513
+      ],
+      "f_center": 107.10440256925229,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 3,
+      "created_nfe": 93,
+      "last_updated_nfe": 117,
+      "novelty": 0.965695641451704,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 6,
+      "center": [
+        -5.0,
+        0.0
+      ],
+      "f_center": 108.41009408,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 6,
+      "last_updated_nfe": 102,
+      "novelty": 0.9648236592341372,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 24,
+      "center": [
+        3.4967344157025115,
+        3.2874407815838502
+      ],
+      "f_center": 109.75438661807223,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 1,
+      "created_nfe": 97,
+      "last_updated_nfe": 97,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 46,
+      "center": [
+        4.364983527788233,
+        -4.9403166709028685
+      ],
+      "f_center": 110.7050517652128,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 170,
+      "last_updated_nfe": 170,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 48,
+      "center": [
+        2.588093456302306,
+        3.9799460048568043
+      ],
+      "f_center": 111.31975504546071,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 173,
+      "last_updated_nfe": 173,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 5,
+      "center": [
+        4.8175922660374315,
+        -4.620230286771558
+      ],
+      "f_center": 112.31267778340167,
+      "radius": 0.4213046599492727,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 5,
+      "last_updated_nfe": 192,
+      "novelty": 0.8511639485589232,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 35,
+      "center": [
+        -5.0,
+        -3.477555772061148
+      ],
+      "f_center": 112.45781519355513,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 1,
+      "created_nfe": 120,
+      "last_updated_nfe": 120,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 18,
+      "center": [
+        -3.8928672975165317,
+        3.201598866334928
+      ],
+      "f_center": 115.66219801976762,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 19,
+      "last_updated_nfe": 105,
+      "novelty": 0.8718006791481338,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 9,
+      "center": [
+        0.45042023803169196,
+        5.0
+      ],
+      "f_center": 117.42523999847971,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 3,
+      "created_nfe": 9,
+      "last_updated_nfe": 194,
+      "novelty": 0.8401897264841793,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 14,
+      "center": [
+        -2.3338522415042413,
+        4.5535233562830655
+      ],
+      "f_center": 118.77856265179082,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 14,
+      "last_updated_nfe": 103,
+      "novelty": 0.6646077629864033,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 2,
+      "center": [
+        -4.979843680329857,
+        -4.844783110255846
+      ],
+      "f_center": 120.46177930682838,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 2,
+      "last_updated_nfe": 17,
+      "novelty": 0.3162184732014444,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 30,
+      "center": [
+        -5.0,
+        2.742029367792511
+      ],
+      "f_center": 122.27277827916136,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 1,
+      "created_nfe": 113,
+      "last_updated_nfe": 113,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 33,
+      "center": [
+        5.0,
+        3.700630948148783
+      ],
+      "f_center": 125.6105432560336,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.585786437626905,
+      "visits": 1,
+      "created_nfe": 116,
+      "last_updated_nfe": 116,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 25,
+      "center": [
+        3.468987395741358,
+        4.879023132213146
+      ],
+      "f_center": 126.2550222478849,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 3,
+      "created_nfe": 99,
+      "last_updated_nfe": 186,
+      "novelty": 0.7460329450572393,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 42,
+      "center": [
+        -4.989103889703124,
+        3.239616341833461
+      ],
+      "f_center": 126.28603303962505,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 159,
+      "last_updated_nfe": 159,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 49,
+      "center": [
+        4.165305175339672,
+        4.610291323093444
+      ],
+      "f_center": 128.04703907595942,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 175,
+      "last_updated_nfe": 175,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 10,
+      "center": [
+        -3.1963402524960696,
+        4.963916312060871
+      ],
+      "f_center": 128.83973665411668,
+      "radius": 0.7071067811865476,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 10,
+      "last_updated_nfe": 101,
+      "novelty": 0.3134610537430236,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 3,
+      "center": [
+        5.0,
+        4.5705934237791945
+      ],
+      "f_center": 134.81894327074917,
+      "radius": 0.3249808822071252,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 3,
+      "created_nfe": 3,
+      "last_updated_nfe": 179,
+      "novelty": 0.6565605301846994,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 4,
+      "center": [
+        -5.0,
+        5.0
+      ],
+      "f_center": 144.97809408,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 4,
+      "last_updated_nfe": 4,
+      "novelty": 1.0,
+      "source": "initial_design"
+    }
+  ],
+  "graph_edges": [
+    {
+      "source_id": 1,
+      "target_id": 20,
+      "evaluations": 19,
+      "best_improvement": 1.4020940799999977,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.125,
+      "created_nfe": 134,
+      "last_updated_nfe": 152,
+      "attempts": 2,
+      "source_mode": "final_polish"
+    },
+    {
+      "source_id": 11,
+      "target_id": 5,
+      "evaluations": 1,
+      "best_improvement": -6.6623804932365545,
+      "barrier_proxy": 6.6623804932365545,
+      "accessibility": 0.11544170805943975,
+      "created_nfe": 192,
+      "last_updated_nfe": 192,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 11,
+      "target_id": 46,
+      "evaluations": 1,
+      "best_improvement": -5.054754475047687,
+      "barrier_proxy": 5.054754475047687,
+      "accessibility": 0.14174837742928542,
+      "created_nfe": 170,
+      "last_updated_nfe": 170,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 13,
+      "target_id": 20,
+      "evaluations": 0,
+      "best_improvement": 6.5244027773536,
+      "barrier_proxy": 0.0,
+      "accessibility": 1.0,
+      "created_nfe": 142,
+      "last_updated_nfe": 142,
+      "attempts": 1,
+      "source_mode": "archive_fallback"
+    },
+    {
+      "source_id": 13,
+      "target_id": 37,
+      "evaluations": 1,
+      "best_improvement": 0.9978601463393488,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 153,
+      "last_updated_nfe": 153,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 13,
+      "target_id": 45,
+      "evaluations": 1,
+      "best_improvement": 2.447043686054357,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 169,
+      "last_updated_nfe": 169,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 14,
+      "target_id": 53,
+      "evaluations": 1,
+      "best_improvement": 15.936373849775137,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 185,
+      "last_updated_nfe": 185,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 15,
+      "target_id": 20,
+      "evaluations": 0,
+      "best_improvement": 4.66767825571543,
+      "barrier_proxy": 0.0,
+      "accessibility": 1.0,
+      "created_nfe": 142,
+      "last_updated_nfe": 142,
+      "attempts": 1,
+      "source_mode": "archive_fallback"
+    },
+    {
+      "source_id": 15,
+      "target_id": 41,
+      "evaluations": 1,
+      "best_improvement": -2.317105928792685,
+      "barrier_proxy": 2.317105928792685,
+      "accessibility": 0.23163666041422765,
+      "created_nfe": 158,
+      "last_updated_nfe": 158,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 15,
+      "target_id": 56,
+      "evaluations": 1,
+      "best_improvement": 1.2291301294728498,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 199,
+      "last_updated_nfe": 199,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 16,
+      "target_id": 54,
+      "evaluations": 1,
+      "best_improvement": -1.0772654908605546,
+      "barrier_proxy": 1.0772654908605546,
+      "accessibility": 0.32496383655228617,
+      "created_nfe": 187,
+      "last_updated_nfe": 187,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 17,
+      "target_id": 20,
+      "evaluations": 8,
+      "best_improvement": 2.7950196294835905,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.1111111111111111,
+      "created_nfe": 142,
+      "last_updated_nfe": 142,
+      "attempts": 1,
+      "source_mode": "archive_fallback"
+    },
+    {
+      "source_id": 17,
+      "target_id": 43,
+      "evaluations": 1,
+      "best_improvement": 1.9500205367799737,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 160,
+      "last_updated_nfe": 160,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 20,
+      "target_id": 6,
+      "evaluations": 1,
+      "best_improvement": -28.93009407999999,
+      "barrier_proxy": 30.97395151011291,
+      "accessibility": 0.030326968840640955,
+      "created_nfe": 102,
+      "last_updated_nfe": 102,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 7,
+      "evaluations": 1,
+      "best_improvement": -23.874094080000006,
+      "barrier_proxy": 24.75062889213767,
+      "accessibility": 0.03738229871275707,
+      "created_nfe": 98,
+      "last_updated_nfe": 98,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 8,
+      "evaluations": 3,
+      "best_improvement": -13.620204315046564,
+      "barrier_proxy": 13.620204315046564,
+      "accessibility": 0.06401964915636374,
+      "created_nfe": 94,
+      "last_updated_nfe": 118,
+      "attempts": 3,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 9,
+      "evaluations": 1,
+      "best_improvement": -37.94523999847971,
+      "barrier_proxy": 37.94523999847971,
+      "accessibility": 0.025034271919208883,
+      "created_nfe": 111,
+      "last_updated_nfe": 111,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 10,
+      "evaluations": 1,
+      "best_improvement": -49.35973665411667,
+      "barrier_proxy": 51.35919129028032,
+      "accessibility": 0.018740913717374044,
+      "created_nfe": 101,
+      "last_updated_nfe": 101,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 14,
+      "evaluations": 1,
+      "best_improvement": -39.29856265179082,
+      "barrier_proxy": 45.377204233454805,
+      "accessibility": 0.021107197357455358,
+      "created_nfe": 103,
+      "last_updated_nfe": 103,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 18,
+      "evaluations": 1,
+      "best_improvement": -36.18219801976761,
+      "barrier_proxy": 38.53771601542972,
+      "accessibility": 0.0246683853530222,
+      "created_nfe": 105,
+      "last_updated_nfe": 105,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 21,
+      "evaluations": 3,
+      "best_improvement": -27.624402569252283,
+      "barrier_proxy": 27.624402569252283,
+      "accessibility": 0.033755954999002025,
+      "created_nfe": 93,
+      "last_updated_nfe": 117,
+      "attempts": 3,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 22,
+      "evaluations": 2,
+      "best_improvement": -15.724486330049885,
+      "barrier_proxy": 15.724486330049885,
+      "accessibility": 0.056419124446196886,
+      "created_nfe": 95,
+      "last_updated_nfe": 110,
+      "attempts": 2,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 23,
+      "evaluations": 2,
+      "best_improvement": -6.932975354805237,
+      "barrier_proxy": 6.932975354805237,
+      "accessibility": 0.11194478438385916,
+      "created_nfe": 96,
+      "last_updated_nfe": 106,
+      "attempts": 2,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 24,
+      "evaluations": 1,
+      "best_improvement": -30.274386618072228,
+      "barrier_proxy": 30.274386618072228,
+      "accessibility": 0.030984322392669246,
+      "created_nfe": 97,
+      "last_updated_nfe": 97,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 25,
+      "evaluations": 1,
+      "best_improvement": -50.76638115793678,
+      "barrier_proxy": 50.76638115793678,
+      "accessibility": 0.018951460722820224,
+      "created_nfe": 99,
+      "last_updated_nfe": 99,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 26,
+      "evaluations": 1,
+      "best_improvement": -23.438920232910206,
+      "barrier_proxy": 23.438920232910206,
+      "accessibility": 0.03930984455489211,
+      "created_nfe": 100,
+      "last_updated_nfe": 100,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 27,
+      "evaluations": 1,
+      "best_improvement": -25.549113884233307,
+      "barrier_proxy": 25.549113884233307,
+      "accessibility": 0.03629880816501732,
+      "created_nfe": 107,
+      "last_updated_nfe": 107,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 28,
+      "evaluations": 1,
+      "best_improvement": -6.096327223968743,
+      "barrier_proxy": 6.096327223968743,
+      "accessibility": 0.12351279442356944,
+      "created_nfe": 109,
+      "last_updated_nfe": 109,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 29,
+      "evaluations": 2,
+      "best_improvement": -25.402144221453156,
+      "barrier_proxy": 25.402144221453156,
+      "accessibility": 0.03649349452066234,
+      "created_nfe": 112,
+      "last_updated_nfe": 121,
+      "attempts": 2,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 30,
+      "evaluations": 1,
+      "best_improvement": -42.792778279161354,
+      "barrier_proxy": 42.792778279161354,
+      "accessibility": 0.02232502734632166,
+      "created_nfe": 113,
+      "last_updated_nfe": 113,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 31,
+      "evaluations": 1,
+      "best_improvement": -17.29584139043918,
+      "barrier_proxy": 17.29584139043918,
+      "accessibility": 0.05182463826094083,
+      "created_nfe": 114,
+      "last_updated_nfe": 114,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 32,
+      "evaluations": 1,
+      "best_improvement": -21.382759807130725,
+      "barrier_proxy": 21.382759807130725,
+      "accessibility": 0.04276655143568825,
+      "created_nfe": 115,
+      "last_updated_nfe": 115,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 33,
+      "evaluations": 1,
+      "best_improvement": -46.13054325603359,
+      "barrier_proxy": 46.13054325603359,
+      "accessibility": 0.02077682760986998,
+      "created_nfe": 116,
+      "last_updated_nfe": 116,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 34,
+      "evaluations": 1,
+      "best_improvement": -16.830232000790048,
+      "barrier_proxy": 16.830232000790048,
+      "accessibility": 0.05310609024668648,
+      "created_nfe": 119,
+      "last_updated_nfe": 119,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 35,
+      "evaluations": 1,
+      "best_improvement": -32.97781519355513,
+      "barrier_proxy": 32.97781519355513,
+      "accessibility": 0.02858955010386858,
+      "created_nfe": 120,
+      "last_updated_nfe": 120,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 36,
+      "evaluations": 1,
+      "best_improvement": -10.877561029776771,
+      "barrier_proxy": 10.877561029776771,
+      "accessibility": 0.07765445628156613,
+      "created_nfe": 122,
+      "last_updated_nfe": 122,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 20,
+      "target_id": 39,
+      "evaluations": 1,
+      "best_improvement": -0.32007951894856035,
+      "barrier_proxy": 0.32007951894856035,
+      "accessibility": 0.43101970938185397,
+      "created_nfe": 155,
+      "last_updated_nfe": 155,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 20,
+      "target_id": 42,
+      "evaluations": 1,
+      "best_improvement": -46.80603303962505,
+      "barrier_proxy": 46.80603303962505,
+      "accessibility": 0.020489270234032575,
+      "created_nfe": 159,
+      "last_updated_nfe": 159,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 20,
+      "target_id": 49,
+      "evaluations": 1,
+      "best_improvement": -48.567039075959414,
+      "barrier_proxy": 48.567039075959414,
+      "accessibility": 0.019775727791731038,
+      "created_nfe": 175,
+      "last_updated_nfe": 175,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 21,
+      "target_id": 38,
+      "evaluations": 1,
+      "best_improvement": 17.25770208722038,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 154,
+      "last_updated_nfe": 154,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 22,
+      "target_id": 57,
+      "evaluations": 1,
+      "best_improvement": 0.8593700186811759,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 200,
+      "last_updated_nfe": 200,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 23,
+      "target_id": 44,
+      "evaluations": 1,
+      "best_improvement": -8.46759634249753,
+      "barrier_proxy": 8.46759634249753,
+      "accessibility": 0.09553291579845194,
+      "created_nfe": 168,
+      "last_updated_nfe": 168,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 24,
+      "target_id": 48,
+      "evaluations": 1,
+      "best_improvement": -1.5653684273884778,
+      "barrier_proxy": 1.5653684273884778,
+      "accessibility": 0.28047592285784306,
+      "created_nfe": 173,
+      "last_updated_nfe": 173,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 25,
+      "target_id": 20,
+      "evaluations": 3,
+      "best_improvement": 46.77502224788489,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.25,
+      "created_nfe": 165,
+      "last_updated_nfe": 165,
+      "attempts": 1,
+      "source_mode": "stall_polish"
+    },
+    {
+      "source_id": 33,
+      "target_id": 3,
+      "evaluations": 2,
+      "best_improvement": -9.20840001471558,
+      "barrier_proxy": 9.20840001471558,
+      "accessibility": 0.08921880006843917,
+      "created_nfe": 157,
+      "last_updated_nfe": 179,
+      "attempts": 2,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 33,
+      "target_id": 25,
+      "evaluations": 1,
+      "best_improvement": -0.644478991851301,
+      "barrier_proxy": 4.485407849374809,
+      "accessibility": 0.15419230728818384,
+      "created_nfe": 186,
+      "last_updated_nfe": 186,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 36,
+      "target_id": 51,
+      "evaluations": 1,
+      "best_improvement": 3.659026594029058,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 181,
+      "last_updated_nfe": 181,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 37,
+      "target_id": 39,
+      "evaluations": 1,
+      "best_improvement": 5.234716251372419,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 174,
+      "last_updated_nfe": 174,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 39,
+      "target_id": 16,
+      "evaluations": 1,
+      "best_improvement": -11.336412657122295,
+      "barrier_proxy": 11.336412657122295,
+      "accessibility": 0.07498268280308132,
+      "created_nfe": 198,
+      "last_updated_nfe": 198,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 39,
+      "target_id": 40,
+      "evaluations": 1,
+      "best_improvement": -6.6524566913764005,
+      "barrier_proxy": 6.6524566913764005,
+      "accessibility": 0.11557411214743957,
+      "created_nfe": 156,
+      "last_updated_nfe": 156,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 41,
+      "target_id": 50,
+      "evaluations": 2,
+      "best_improvement": 2.4132586630771726,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 180,
+      "last_updated_nfe": 197,
+      "attempts": 2,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 43,
+      "target_id": 52,
+      "evaluations": 1,
+      "best_improvement": -7.485103750992707,
+      "barrier_proxy": 7.485103750992707,
+      "accessibility": 0.1054284725030383,
+      "created_nfe": 182,
+      "last_updated_nfe": 182,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 44,
+      "target_id": 47,
+      "evaluations": 1,
+      "best_improvement": 4.357446240456142,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 171,
+      "last_updated_nfe": 171,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 45,
+      "target_id": 55,
+      "evaluations": 1,
+      "best_improvement": -17.660307360431887,
+      "barrier_proxy": 17.660307360431887,
+      "accessibility": 0.05086390470235418,
+      "created_nfe": 193,
+      "last_updated_nfe": 193,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    }
+  ],
+  "diagnostics": {
+    "dimension": 2,
+    "mean_scale": 10.0,
+    "max_scale": 10.0,
+    "anisotropy": 1.0,
+    "boundary_signal": -0.20552414857112924,
+    "ruggedness_score": 0.12089770253674038,
+    "sign_change_rate": 1.0,
+    "finite_anchor_fraction": 1.0,
+    "valid_axis_triplets": 2
+  },
+  "event_log": [
+    {
+      "nfe": 1,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 1,
+        "f_center": 80.88209408,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 2,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 2,
+        "f_center": 121.84209408000001,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 3,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 3,
+        "f_center": 139.92209408000002,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 4,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 4,
+        "f_center": 144.97809408,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 5,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 5,
+        "f_center": 116.78609408,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 6,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 6,
+        "f_center": 108.41009408,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 7,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 7,
+        "f_center": 103.35409408000001,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 8,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 8,
+        "f_center": 94.31409408,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 9,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 9,
+        "f_center": 117.45009408000001,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 10,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 10,
+        "f_center": 128.83973665411668,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 11,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 11,
+        "f_center": 105.65029729016511,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 12,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 12,
+        "f_center": 105.86932792872,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 13,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 13,
+        "f_center": 86.0044027773536,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 14,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 14,
+        "f_center": 118.77856265179082,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 15,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 15,
+        "f_center": 84.14767825571543,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 16,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 16,
+        "f_center": 91.70340140413083,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 17,
+      "phase": "initial_design",
+      "event": "node_merged",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 2,
+        "f_center": 120.46177930682838,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 18,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 17,
+        "f_center": 82.2750196294836,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 19,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 18,
+        "f_center": 115.66219801976762,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 20,
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
+      "payload": {
+        "node_id": 19,
+        "f_center": 101.75782792089944,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 20,
+      "phase": "unassigned",
+      "event": "diagnostics",
+      "message": "geometry diagnostics computed",
+      "payload": {
+        "dimension": 2,
+        "mean_scale": 10.0,
+        "max_scale": 10.0,
+        "anisotropy": 1.0,
+        "boundary_signal": -0.20552414857112924,
+        "ruggedness_score": 0.12089770253674038,
+        "sign_change_rate": 1.0,
+        "finite_anchor_fraction": 1.0,
+        "valid_axis_triplets": 2
+      }
+    },
+    {
+      "nfe": 20,
+      "phase": "unassigned",
+      "event": "controller_decision",
+      "message": "phase enablement fixed",
+      "payload": {
+        "use_center_local": true,
+        "use_far_basin": true,
+        "enable_graph_guidance": true,
+        "enable_multibracket": true
+      }
+    },
+    {
+      "nfe": 32,
+      "phase": "center_local",
+      "event": "node_created",
+      "message": "center_local",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 32,
+      "phase": "center_local",
+      "event": "center_local_complete",
+      "message": "center-local contraction finished",
+      "payload": {
+        "node_id": 20,
+        "evaluations": 12
+      }
+    },
+    {
+      "nfe": 92,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 92,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 93,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 21,
+        "f_center": 107.81687168602015,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 94,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 8,
+        "f_center": 94.31409408,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 95,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 22,
+        "f_center": 95.44838282666508,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 96,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 23,
+        "f_center": 86.41297535480524,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 97,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 24,
+        "f_center": 109.75438661807223,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 98,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 7,
+        "f_center": 103.35409408000001,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 99,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 25,
+        "f_center": 130.24638115793678,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 100,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 26,
+        "f_center": 102.91892023291021,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 101,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 10,
+        "f_center": 128.83973665411668,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 102,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 6,
+        "f_center": 108.41009408,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 103,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 14,
+        "f_center": 118.77856265179082,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 104,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 8,
+        "f_center": 94.31409408,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 105,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 18,
+        "f_center": 115.66219801976762,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 106,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 23,
+        "f_center": 86.41297535480524,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 107,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 27,
+        "f_center": 105.02911388423331,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 108,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 21,
+        "f_center": 107.81687168602015,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 109,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 28,
+        "f_center": 85.57632722396875,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 110,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 22,
+        "f_center": 95.20448633004989,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 111,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 9,
+        "f_center": 117.42523999847971,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 112,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 29,
+        "f_center": 105.65640176114188,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 113,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 30,
+        "f_center": 122.27277827916136,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 114,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 31,
+        "f_center": 96.77584139043918,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 115,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 32,
+        "f_center": 100.86275980713073,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 116,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 33,
+        "f_center": 125.6105432560336,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 117,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 21,
+        "f_center": 107.10440256925229,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 118,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 8,
+        "f_center": 93.10020431504657,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 119,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 34,
+        "f_center": 96.31023200079005,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 120,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 35,
+        "f_center": 112.45781519355513,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 121,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 29,
+        "f_center": 104.88214422145316,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 122,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 36,
+        "f_center": 90.35756102977678,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 134,
+      "phase": "archive_fallback",
+      "event": "node_merged",
+      "message": "archive_fallback",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 142,
+      "phase": "archive_fallback",
+      "event": "node_merged",
+      "message": "archive_fallback",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 142,
+      "phase": "archive_fallback",
+      "event": "node_merged",
+      "message": "archive_fallback",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 142,
+      "phase": "archive_fallback",
+      "event": "node_merged",
+      "message": "archive_fallback",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 145,
+      "phase": "final_polish",
+      "event": "node_merged",
+      "message": "final_polish",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 152,
+      "phase": "final_polish",
+      "event": "node_merged",
+      "message": "final_polish",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 153,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 37,
+        "f_center": 85.00654263101426,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 154,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 38,
+        "f_center": 89.8467004820319,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 155,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 39,
+        "f_center": 79.80007951894856,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 156,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 40,
+        "f_center": 86.45253621032496,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 157,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 3,
+        "f_center": 138.6471425797634,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 158,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 41,
+        "f_center": 86.46478418450812,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 159,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 42,
+        "f_center": 126.28603303962505,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 160,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 43,
+        "f_center": 80.32499909270362,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 161,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 28,
+        "f_center": 84.61356917794575,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 162,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 25,
+        "f_center": 126.2550222478849,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 165,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "stall_polish",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 166,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 43,
+        "f_center": 80.32499909270362,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 167,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 27,
+        "f_center": 105.02911388423331,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 168,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 44,
+        "f_center": 94.88057169730277,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 169,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 45,
+        "f_center": 83.55735909129925,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 170,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 46,
+        "f_center": 110.7050517652128,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 171,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 47,
+        "f_center": 90.52312545684663,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 172,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 173,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 48,
+        "f_center": 111.31975504546071,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 174,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 39,
+        "f_center": 79.77182637964184,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 175,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 49,
+        "f_center": 128.04703907595942,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 178,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "stall_polish",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 179,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 3,
+        "f_center": 134.81894327074917,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 180,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 50,
+        "f_center": 84.12313978023613,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 181,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 51,
+        "f_center": 86.69853443574772,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 182,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 52,
+        "f_center": 87.81010284369633,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 183,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 17,
+        "f_center": 81.81673976458619,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 184,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 31,
+        "f_center": 96.77584139043918,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 185,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 53,
+        "f_center": 102.84218880201568,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 186,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 25,
+        "f_center": 126.2550222478849,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 187,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 54,
+        "f_center": 92.78066689499138,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 188,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 191,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "stall_polish",
+      "payload": {
+        "node_id": 20,
+        "f_center": 79.48,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 192,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 5,
+        "f_center": 112.31267778340167,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 193,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 55,
+        "f_center": 101.21766645173113,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 194,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 9,
+        "f_center": 117.42523999847971,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 195,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 16,
+        "f_center": 91.70340140413083,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 196,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 17,
+        "f_center": 81.81673976458619,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 197,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 50,
+        "f_center": 84.05152552143095,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 198,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 16,
+        "f_center": 91.10823903676413,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 199,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 56,
+        "f_center": 82.91854812624258,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 200,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 57,
+        "f_center": 94.34511631136871,
+        "removed_node_ids": []
+      }
+    }
+  ],
+  "message": "budget_exhausted"
+}

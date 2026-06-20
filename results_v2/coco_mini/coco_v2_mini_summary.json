@@ -1,0 +1,14 @@
+{
+  "status": "V2_COCO_MINI_OK",
+  "rows": 27,
+  "algorithms": [
+    "BasinGraph_v2",
+    "CMA_ES",
+    "BIPOP_CMA_ES"
+  ],
+  "expected_rows": 27,
+  "info_files": 9,
+  "dat_files": 9,
+  "raw_results": "results_v2/coco_mini/coco_v2_mini_raw_results.csv",
+  "exdata_root": "exdata/routeb_v2_coco_mini"
+}

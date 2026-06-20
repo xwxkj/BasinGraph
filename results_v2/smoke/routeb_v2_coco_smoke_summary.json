@@ -1,0 +1,12 @@
+[
+  {
+    "problem_id": "bbob_f001_i01_d02",
+    "dimension": 2,
+    "budget": 200,
+    "nfe": 200,
+    "fbest": 79.48,
+    "archive_nodes": 57,
+    "graph_edges": 54,
+    "message": "budget_exhausted"
+  }
+]
