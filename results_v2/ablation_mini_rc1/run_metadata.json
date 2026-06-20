@@ -1,0 +1,14 @@
+{
+  "status": "V2_RC1_ABLATION_MINI_RUN_COMPLETE",
+  "implementation_version": "2.0.0-rc1",
+  "full_options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "tasks": 7,
+  "variants": 7,
+  "seeds": 5,
+  "rows": 245,
+  "workers": 4,
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "python": "3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:29:05) [Clang 19.1.7 ]",
+  "elapsed_seconds": 4.766570707999563,
+  "raw_results": "results_v2/ablation_mini_rc1/ablation_mini_raw_results.csv"
+}

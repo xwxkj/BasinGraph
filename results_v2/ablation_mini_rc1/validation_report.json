@@ -1,0 +1,15 @@
+{
+  "status": "V2_RC1_ABLATION_MINI_VALIDATION_OK",
+  "implementation_version": "2.0.0-rc1",
+  "full_options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "rows": 245,
+  "tasks": 7,
+  "variants": 7,
+  "seeds": 5,
+  "all_runs_exhausted_budget": true,
+  "phase_accounting_verified": true,
+  "graph_referential_integrity_verified": true,
+  "each_ablation_changed_trajectory": true,
+  "best_mean_rank_variant": "NoArchiveFallback",
+  "best_mean_rank": 3.557142857142857
+}
