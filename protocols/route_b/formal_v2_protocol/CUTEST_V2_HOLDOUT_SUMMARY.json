@@ -1,0 +1,14 @@
+{
+  "selection_seed": "BasinGraph-v2-holdout-20260619",
+  "created_utc": "2026-06-20T05:16:12.484036+00:00",
+  "optimizer_runs_performed_by_this_script": 0,
+  "development_cutest_instances": 50,
+  "prospective_holdout_instances": 24,
+  "holdout_groups": {
+    "large_101_500": 6,
+    "medium_21_100": 7,
+    "small_2_20": 11
+  },
+  "holdout_unique_base_problems": 20,
+  "holdout_base_overlaps_development": 24
+}

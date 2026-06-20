@@ -1,0 +1,14 @@
+partition,suite,function_indices,dimension,instance_indices,budget_multiplier,algorithms,inspection_rule
+development,bbob,1-24,2,"1,2,3",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,May be used for engineering and parameter development.
+development,bbob,1-24,5,"1,2,3",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,May be used for engineering and parameter development.
+development,bbob,1-24,10,"1,2,3",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,May be used for engineering and parameter development.
+prospective_holdout,bbob,1-24,2,"4,5,6,7,8,9,10,11,12,13,14,15",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,Must remain uninspected until final v2.0.0 code tag.
+prospective_holdout,bbob,1-24,3,"4,5,6,7,8,9,10,11,12,13,14,15",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,Must remain uninspected until final v2.0.0 code tag.
+prospective_holdout,bbob,1-24,5,"4,5,6,7,8,9,10,11,12,13,14,15",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,Must remain uninspected until final v2.0.0 code tag.
+prospective_holdout,bbob,1-24,10,"4,5,6,7,8,9,10,11,12,13,14,15",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,Must remain uninspected until final v2.0.0 code tag.
+prospective_holdout,bbob,1-24,20,"4,5,6,7,8,9,10,11,12,13,14,15",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,Must remain uninspected until final v2.0.0 code tag.
+final_full_report,bbob,1-24,2,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,Run only after final code freeze; report development and holdout separately.
+final_full_report,bbob,1-24,3,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,Run only after final code freeze; report development and holdout separately.
+final_full_report,bbob,1-24,5,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,Run only after final code freeze; report development and holdout separately.
+final_full_report,bbob,1-24,10,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,Run only after final code freeze; report development and holdout separately.
+final_full_report,bbob,1-24,20,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",1000,BasinGraph_v2;CMA_ES;BIPOP_CMA_ES;DE;MS_LBFGSB;LHS;Random,Run only after final code freeze; report development and holdout separately.
