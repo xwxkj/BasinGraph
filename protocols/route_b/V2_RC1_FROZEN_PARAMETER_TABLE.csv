@@ -1,0 +1,26 @@
+parameter,value,meaning
+implementation_version,2.0.0-rc1,Route B release candidate identifier
+initial_design_fraction,0.10,Fraction of total FE budget reserved for initial design
+center_local_fraction,0.15,Fraction reserved for center-local contraction
+coordinate_sweep_fraction,0.30,Fraction reserved for coordinate multi-bracket sweep
+far_basin_fraction,0.15,Fraction reserved for far-basin exploration
+archive_fallback_fraction,0.10,Fraction reserved for archive fallback
+final_polish_fraction,0.05,Fraction reserved for final polishing
+n_initial_lhs,24,Latin hypercube candidates in initial design
+archive_max_size,80,Maximum active basin nodes
+merge_radius_factor,0.035,Normalized basin-node merge radius
+center_local_max_dim,20,Maximum dimension for controller-enabled center-local phase
+local_mode_min_score,0.12,Minimum local-mode score
+large_box_scale,100.0,Box-scale trigger for far-basin phase
+far_basin_ruggedness_threshold,0.10,Ruggedness trigger
+far_basin_boundary_threshold,0.05,Boundary-signal trigger
+line_coarse_samples,11,Coarse line samples per coordinate
+line_refine_top_k,3,Number of local brackets refined per coordinate
+line_refine_maxiter,20,Maximum bounded refinement iterations
+coordinate_starts,6,Archive starts for coordinate sweep
+far_basin_random,32,Maximum far-basin probes
+archive_fallback_starts,4,Graph/archive fallback starts
+final_polish_starts,2,Elite starts for final polishing
+graph_quality_weight,0.55,Graph guidance quality weight
+graph_novelty_weight,0.25,Graph guidance novelty weight
+graph_accessibility_weight,0.20,Graph guidance accessibility weight

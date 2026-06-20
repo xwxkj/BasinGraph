@@ -1,4 +1,40 @@
 {
+  "implementation_version": "2.0.0-rc1",
+  "options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "options": {
+    "initial_design_fraction": 0.1,
+    "center_local_fraction": 0.15,
+    "coordinate_sweep_fraction": 0.3,
+    "far_basin_fraction": 0.15,
+    "archive_fallback_fraction": 0.1,
+    "final_polish_fraction": 0.05,
+    "n_initial_lhs": 24,
+    "archive_max_size": 80,
+    "merge_radius_factor": 0.035,
+    "center_local_max_dim": 20,
+    "local_mode_min_score": 0.12,
+    "large_box_scale": 100.0,
+    "far_basin_ruggedness_threshold": 0.1,
+    "far_basin_boundary_threshold": 0.05,
+    "line_coarse_samples": 11,
+    "line_refine_top_k": 3,
+    "line_refine_maxiter": 20,
+    "coordinate_starts": 6,
+    "far_basin_random": 32,
+    "archive_fallback_starts": 4,
+    "final_polish_starts": 2,
+    "graph_quality_weight": 0.55,
+    "graph_novelty_weight": 0.25,
+    "graph_accessibility_weight": 0.2,
+    "local_ftol": 1e-12,
+    "local_gtol": 1e-08,
+    "enable_geometry_controller": true,
+    "enable_graph_guidance": true,
+    "enable_multibracket": true,
+    "enable_far_basin": true,
+    "enable_archive_fallback": true,
+    "enable_final_polish": true
+  },
   "xbest": [
     0.0,
     0.0,
@@ -8,6 +44,15 @@
   ],
   "fbest": 0.0,
   "nfe": 1000,
+  "phase_evaluations": {
+    "initial_design": 39,
+    "center_local": 126,
+    "coordinate_sweep": 300,
+    "far_basin": 32,
+    "archive_fallback": 100,
+    "final_polish": 50,
+    "budget_completion": 353
+  },
   "history": [
     [
       1,
@@ -4023,11 +4068,11 @@
       "f_center": 0.0,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
-      "visits": 11,
+      "visits": 17,
       "created_nfe": 1,
-      "last_updated_nfe": 945,
-      "novelty": 1.1925692816787521e-09,
-      "source": "anchor"
+      "last_updated_nfe": 1000,
+      "novelty": 0.0,
+      "source": "initial_design"
     },
     {
       "node_id": 6,
@@ -4043,9 +4088,9 @@
       "curvature_proxy": 0.6858961202443006,
       "visits": 5,
       "created_nfe": 6,
-      "last_updated_nfe": 480,
-      "novelty": 1.1925692816787521e-09,
-      "source": "anchor"
+      "last_updated_nfe": 465,
+      "novelty": 1.7036704023982171e-09,
+      "source": "initial_design"
     },
     {
       "node_id": 7,
@@ -4059,11 +4104,11 @@
       "f_center": 28.924713725785896,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
-      "visits": 5,
+      "visits": 1,
       "created_nfe": 7,
-      "last_updated_nfe": 635,
-      "novelty": 1.1925692816787521e-09,
-      "source": "anchor"
+      "last_updated_nfe": 7,
+      "novelty": 1.0,
+      "source": "initial_design"
     },
     {
       "node_id": 8,
@@ -4077,11 +4122,11 @@
       "f_center": 28.924713725785896,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
-      "visits": 5,
+      "visits": 1,
       "created_nfe": 8,
-      "last_updated_nfe": 790,
-      "novelty": 1.1925692816787521e-09,
-      "source": "anchor"
+      "last_updated_nfe": 8,
+      "novelty": 1.0,
+      "source": "initial_design"
     },
     {
       "node_id": 9,
@@ -4093,13 +4138,13 @@
         0.0
       ],
       "f_center": 28.924713725785896,
-      "radius": 0.45794672179195695,
+      "radius": 1.1448668044798924,
       "curvature_proxy": 0.6858961202443006,
-      "visits": 5,
+      "visits": 2,
       "created_nfe": 9,
-      "last_updated_nfe": 945,
-      "novelty": 1.1925692816787521e-09,
-      "source": "anchor"
+      "last_updated_nfe": 488,
+      "novelty": 0.5937972432770888,
+      "source": "initial_design"
     },
     {
       "node_id": 10,
@@ -4113,11 +4158,11 @@
       "f_center": 28.924713725785896,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
-      "visits": 3,
+      "visits": 1,
       "created_nfe": 10,
-      "last_updated_nfe": 1000,
-      "novelty": 1.1925692816787521e-09,
-      "source": "anchor"
+      "last_updated_nfe": 10,
+      "novelty": 1.0,
+      "source": "initial_design"
     },
     {
       "node_id": 11,
@@ -4135,7 +4180,7 @@
       "created_nfe": 11,
       "last_updated_nfe": 11,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "initial_design"
     },
     {
       "node_id": 12,
@@ -4153,7 +4198,7 @@
       "created_nfe": 12,
       "last_updated_nfe": 12,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "initial_design"
     },
     {
       "node_id": 13,
@@ -4171,7 +4216,7 @@
       "created_nfe": 13,
       "last_updated_nfe": 13,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "initial_design"
     },
     {
       "node_id": 14,
@@ -4189,7 +4234,7 @@
       "created_nfe": 14,
       "last_updated_nfe": 14,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "initial_design"
     },
     {
       "node_id": 15,
@@ -4207,651 +4252,1935 @@
       "created_nfe": 15,
       "last_updated_nfe": 15,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "initial_design"
     },
     {
-      "node_id": 44,
+      "node_id": 74,
       "center": [
-        0.34107189308153085,
-        1.969404222582523,
-        0.10484582165437928,
-        5.00223429544199,
-        2.823730269638154
+        1.9032114045969566,
+        1.120227630532976,
+        -2.1351273694168205,
+        -2.125164929703074,
+        1.944623883124943
       ],
-      "f_center": 60.22572194806625,
+      "f_center": 29.17514872451314,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
       "visits": 1,
-      "created_nfe": 44,
-      "last_updated_nfe": 44,
+      "created_nfe": 652,
+      "last_updated_nfe": 652,
       "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 41,
-      "center": [
-        -2.0003484416868558,
-        -4.022876878452897,
-        1.6882281965970662,
-        -1.4882917954730455,
-        -1.13622918711686
-      ],
-      "f_center": 63.846714854261165,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 41,
-      "last_updated_nfe": 41,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 20,
-      "center": [
-        -4.0436082168202265,
-        -0.8090508118899704,
-        4.234506608181957,
-        -2.189126387836312,
-        -2.005661666713441
-      ],
-      "f_center": 65.80079307722636,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 20,
-      "last_updated_nfe": 20,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 22,
-      "center": [
-        0.05547907918047379,
-        3.943065720526122,
-        -3.415942725588263,
-        0.13058878623766113,
-        2.2891872090807643
-      ],
-      "f_center": 67.96779403991171,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 22,
-      "last_updated_nfe": 22,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 17,
-      "center": [
-        -2.8605776788692494,
-        1.8919146361054269,
-        2.029888400187672,
-        -3.381520938154356,
-        0.40572153306438263
-      ],
-      "f_center": 69.12535515584575,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 17,
-      "last_updated_nfe": 17,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 24,
-      "center": [
-        1.8995864674193044,
-        1.4409723054101669,
-        0.9255299244414816,
-        1.3140457734859297,
-        -3.69806846442933
-      ],
-      "f_center": 71.38568540067386,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 24,
-      "last_updated_nfe": 24,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 32,
-      "center": [
-        -1.3346824834413025,
-        3.0998291301606615,
-        -2.16802798981687,
-        -3.289888120288183,
-        1.2253525225439272
-      ],
-      "f_center": 71.4041549233635,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 32,
-      "last_updated_nfe": 32,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 25,
-      "center": [
-        2.514085099956718,
-        -1.7346552452775104,
-        -2.985677526659289,
-        1.0406773294617713,
-        -1.4510211253586571
-      ],
-      "f_center": 72.25140559785699,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 25,
-      "last_updated_nfe": 25,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 29,
-      "center": [
-        3.7940943330293697,
-        -2.7329326845935897,
-        -0.1812169626826039,
-        1.8567985226854544,
-        -0.48883731946055775
-      ],
-      "f_center": 73.48763426654213,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 29,
-      "last_updated_nfe": 29,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 23,
-      "center": [
-        -1.0934152891863134,
-        2.620567278322426,
-        -3.985749177861754,
-        3.1776275464927535,
-        -1.649444038459587
-      ],
-      "f_center": 77.25993231431488,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 23,
-      "last_updated_nfe": 23,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 30,
-      "center": [
-        1.9677734160589333,
-        -4.778300870267057,
-        2.3310373828094724,
-        0.6031394266451855,
-        1.8801678122488932
-      ],
-      "f_center": 80.0226092244281,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 30,
-      "last_updated_nfe": 30,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 38,
-      "center": [
-        -0.4333184528513394,
-        2.9821948854527927,
-        -4.775331496210476,
-        2.0836637778734213,
-        3.8911873555764123
-      ],
-      "f_center": 82.57838328469344,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 38,
-      "last_updated_nfe": 38,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 42,
-      "center": [
-        3.1309406434883007,
-        -0.07276645751936073,
-        4.476436628821706,
-        -4.137393940641507,
-        3.08904257704405
-      ],
-      "f_center": 85.64731154915516,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 42,
-      "last_updated_nfe": 42,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 26,
-      "center": [
-        -3.184075820142432,
-        -1.2953261038180135,
-        -1.0218776929919002,
-        4.384355210392658,
-        -3.3008266045247368
-      ],
-      "f_center": 92.47145721270253,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 26,
-      "last_updated_nfe": 26,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 35,
-      "center": [
-        4.2476735834773995,
-        1.1336900310206772,
-        -1.5009342148546603,
-        2.6745046739724687,
-        -0.5334558044717355
-      ],
-      "f_center": 96.54485007163669,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 35,
-      "last_updated_nfe": 35,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 28,
-      "center": [
-        -4.571258007013687,
-        -1.1588971524771585,
-        0.6980995064195223,
-        0.496035774043313,
-        -4.066376684425072
-      ],
-      "f_center": 97.16350582600023,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 28,
-      "last_updated_nfe": 28,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 33,
-      "center": [
-        0.9100399310358194,
-        -3.365731099112895,
-        -4.220862434203057,
-        -0.48004368988858825,
-        1.4704011546750069
-      ],
-      "f_center": 98.49590005734943,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 33,
-      "last_updated_nfe": 33,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 37,
-      "center": [
-        1.3700467190786867,
-        -4.540023506040321,
-        -3.034379283766654,
-        -1.890076742938898,
-        -2.434943279841835
-      ],
-      "f_center": 99.43103682827578,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 37,
-      "last_updated_nfe": 37,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 34,
-      "center": [
-        4.507243135906157,
-        0.6115145860100268,
-        -0.8523809151593733,
-        4.576558932884786,
-        0.03881710217574508
-      ],
-      "f_center": 103.15881823813666,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 34,
-      "last_updated_nfe": 34,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 21,
-      "center": [
-        -3.502718585182267,
-        4.911423753575355,
-        0.4781095361846788,
-        -1.1013013463586274,
-        2.601556200550517
-      ],
-      "f_center": 106.00436785027017,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 21,
-      "last_updated_nfe": 21,
-      "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 31,
-      "center": [
-        -4.199664325694999,
-        -2.348752974725747,
-        2.7440379972846287,
-        3.414724714999333,
-        0.7190567193106112
-      ],
-      "f_center": 106.47013196545926,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 31,
-      "last_updated_nfe": 31,
-      "novelty": 1.0,
-      "source": "anchor"
+      "source": "budget_completion"
     },
     {
       "node_id": 39,
       "center": [
-        2.7477455946463385,
-        3.686728761342022,
-        -1.6464791520411426,
-        -3.856220064261264,
-        4.254561321856884
+        1.3024440671652284,
+        1.8256268656107988,
+        3.005639655286692,
+        -1.0119194927712973,
+        4.050840791882689
       ],
-      "f_center": 110.9903626490391,
+      "f_center": 50.697522292458736,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
       "visits": 1,
       "created_nfe": 39,
       "last_updated_nfe": 39,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "initial_design"
     },
     {
-      "node_id": 19,
+      "node_id": 38,
       "center": [
-        0.7326235316246699,
-        -0.4112972226729834,
-        3.714468245021778,
-        3.734270798243915,
-        3.490946012977637
+        0.2259389133685259,
+        -0.4914098444602768,
+        -2.9349846746332107,
+        -0.03267113360317975,
+        1.7310982165324917
       ],
-      "f_center": 113.39549602364183,
+      "f_center": 52.60146134873426,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
       "visits": 1,
-      "created_nfe": 19,
-      "last_updated_nfe": 19,
+      "created_nfe": 38,
+      "last_updated_nfe": 38,
       "novelty": 1.0,
-      "source": "anchor"
-    },
-    {
-      "node_id": 36,
-      "center": [
-        4.78547095213674,
-        0.38373316693203563,
-        3.226633333001076,
-        -2.3796511012325614,
-        -5.046937982680442
-      ],
-      "f_center": 116.07490840732899,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
-      "visits": 1,
-      "created_nfe": 36,
-      "last_updated_nfe": 36,
-      "novelty": 1.0,
-      "source": "anchor"
+      "source": "initial_design"
     },
     {
       "node_id": 18,
       "center": [
-        -1.6977554567433168,
-        -4.172327802101821,
-        5.041593864094197,
-        -2.7795195802245223,
-        -4.679458474549028
+        -2.954593466002074,
+        2.980156054672878,
+        -0.9837011750732403,
+        4.342360926492893,
+        0.9749807471367369
       ],
-      "f_center": 116.6505096949341,
+      "f_center": 54.52577641384203,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
       "visits": 1,
       "created_nfe": 18,
       "last_updated_nfe": 18,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "initial_design"
     },
     {
-      "node_id": 16,
+      "node_id": 89,
       "center": [
-        -5.039843160772117,
-        -2.1636341281947473,
-        -4.737564249207836,
-        2.511612269756025,
-        -3.770788446300851
+        3.131664177212005,
+        0.9364512490759911,
+        2.2560648406783983,
+        2.9609552701358512,
+        3.878654293682908
       ],
-      "f_center": 117.65201120869004,
+      "f_center": 57.05189588807811,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
       "visits": 1,
-      "created_nfe": 16,
-      "last_updated_nfe": 16,
+      "created_nfe": 793,
+      "last_updated_nfe": 793,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "budget_completion"
     },
     {
-      "node_id": 43,
+      "node_id": 91,
       "center": [
-        -0.7259229921965558,
-        4.228766202472715,
-        1.539664076945506,
-        -4.968495247667359,
-        4.702030508370343
+        0.958056132565228,
+        0.06366797234966608,
+        4.233720744033027,
+        -0.7383931906713008,
+        0.4727647819344487
       ],
-      "f_center": 120.60679104022783,
+      "f_center": 60.31134641125995,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
       "visits": 1,
-      "created_nfe": 43,
-      "last_updated_nfe": 43,
+      "created_nfe": 921,
+      "last_updated_nfe": 921,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 56,
+      "center": [
+        -0.13152230208232277,
+        -1.0875979954732564,
+        1.9525146286756028,
+        5.12,
+        1.4517908029450257
+      ],
+      "f_center": 60.73280688995325,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 482,
+      "last_updated_nfe": 482,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 32,
+      "center": [
+        3.0911973190771542,
+        1.1039582452896752,
+        1.1852592524471541,
+        -1.386379298399707,
+        0.45547161688969506
+      ],
+      "f_center": 61.17711489630729,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 32,
+      "last_updated_nfe": 32,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 95,
+      "center": [
+        -1.344404511639638,
+        -0.7771682361795306,
+        -5.12,
+        0.9267079946463129,
+        -0.8285343906195007
+      ],
+      "f_center": 63.077571942757814,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 925,
+      "last_updated_nfe": 925,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 81,
+      "center": [
+        0.3437847011033691,
+        -4.6985603617431675,
+        0.15696220309547906,
+        -1.2005717038510977,
+        0.9520650192622281
+      ],
+      "f_center": 65.176395636557,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 785,
+      "last_updated_nfe": 785,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 94,
+      "center": [
+        -0.9389566887956863,
+        0.719934467861238,
+        -0.18686162408553142,
+        5.12,
+        0.3607580911654211
+      ],
+      "f_center": 65.64115490942291,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 924,
+      "last_updated_nfe": 924,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 78,
+      "center": [
+        0.28905223074350345,
+        -1.67421904402313,
+        -5.12,
+        -0.8389343247478703,
+        0.9423225972465858
+      ],
+      "f_center": 65.76369585992934,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 656,
+      "last_updated_nfe": 656,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 29,
+      "center": [
+        4.045908383994562,
+        -2.7021289210309365,
+        0.27720792419568596,
+        0.6467110082835612,
+        -0.9907210271575151
+      ],
+      "f_center": 66.28527795847246,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 29,
+      "last_updated_nfe": 29,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 44,
+      "center": [
+        0.5135943103386486,
+        1.4453050715392628,
+        -4.17698093583282,
+        0.01487591085791117,
+        1.992569093067188
+      ],
+      "f_center": 68.77512598547057,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 470,
+      "last_updated_nfe": 470,
+      "novelty": 1.0,
+      "source": "far_basin"
     },
     {
       "node_id": 40,
       "center": [
-        -2.4028558140005316,
-        -3.2181944590085436,
-        3.5751454870209995,
-        -4.56375841395581,
-        -2.8966833162747867
+        2.2962097687902014,
+        0.2037097257120893,
+        -0.7341010088508955,
+        1.9293120479305188,
+        -5.12
       ],
-      "f_center": 124.48825606782887,
+      "f_center": 70.46261452517541,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 466,
+      "last_updated_nfe": 466,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 42,
+      "center": [
+        1.9278679333399886,
+        2.796213439458675,
+        -0.1123112017619922,
+        -0.4492529382590244,
+        5.12
+      ],
+      "f_center": 70.70537026786535,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 468,
+      "last_updated_nfe": 468,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 98,
+      "center": [
+        3.7569290832011273,
+        2.942948955573328,
+        2.352864476031861,
+        -0.13869841846520592,
+        2.2508901553799205
+      ],
+      "f_center": 73.2389663583233,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
       "visits": 1,
-      "created_nfe": 40,
-      "last_updated_nfe": 40,
+      "created_nfe": 928,
+      "last_updated_nfe": 928,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 67,
+      "center": [
+        4.7429662435241955,
+        2.9904630285683935,
+        -1.269260311355329,
+        -2.2103597776956323,
+        0.18940800395920043
+      ],
+      "f_center": 73.45734175052468,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 494,
+      "last_updated_nfe": 494,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 28,
+      "center": [
+        1.971186162447701,
+        0.6013037022368879,
+        4.003337508474707,
+        -3.0573318666539158,
+        -2.4498221701350196
+      ],
+      "f_center": 73.97908125935268,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 28,
+      "last_updated_nfe": 28,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 92,
+      "center": [
+        -1.768927025982076,
+        -0.06630329712670834,
+        -0.6139812544172517,
+        5.12,
+        0.673764605017517
+      ],
+      "f_center": 74.71022482281239,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 922,
+      "last_updated_nfe": 922,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 59,
+      "center": [
+        1.0768160517902967,
+        5.12,
+        1.1934729139798725,
+        -1.4495925997151056,
+        0.3165325181938213
+      ],
+      "f_center": 74.93724206051853,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 485,
+      "last_updated_nfe": 485,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 76,
+      "center": [
+        -0.13008722878641893,
+        -4.497598717177152,
+        -1.0850421191571507,
+        0.5061766314411089,
+        -2.99341887854888
+      ],
+      "f_center": 75.1917372780621,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 654,
+      "last_updated_nfe": 654,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 84,
+      "center": [
+        -2.2100934477989735,
+        4.995932605587552,
+        -4.0343227832032476,
+        4.031852981315663,
+        0.8343566170511858
+      ],
+      "f_center": 75.96932962559092,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 788,
+      "last_updated_nfe": 788,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 51,
+      "center": [
+        0.13642062945590952,
+        5.12,
+        1.2650050447428816,
+        -0.6843272599391612,
+        -0.42103248577349095
+      ],
+      "f_center": 78.38900366523579,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 477,
+      "last_updated_nfe": 477,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 49,
+      "center": [
+        -5.12,
+        0.8452587070739396,
+        -1.7583291162352495,
+        -0.313170114927796,
+        -0.41005614798547807
+      ],
+      "f_center": 79.15062221295051,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 475,
+      "last_updated_nfe": 475,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 83,
+      "center": [
+        -0.8549238958175178,
+        -0.19627054192906568,
+        2.8008941550036917,
+        5.12,
+        -2.4874381064562683
+      ],
+      "f_center": 81.11434941231728,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 787,
+      "last_updated_nfe": 787,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 60,
+      "center": [
+        -0.6021307819344851,
+        0.8874340513054036,
+        -3.588452298233068,
+        -5.12,
+        -0.043867116179830745
+      ],
+      "f_center": 82.2355480613254,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 2,
+      "created_nfe": 486,
+      "last_updated_nfe": 648,
+      "novelty": 0.8751441140019202,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 43,
+      "center": [
+        2.0704387237068818,
+        5.12,
+        -3.374703665491644,
+        -0.1378272422175158,
+        -2.2848206376898643
+      ],
+      "f_center": 83.55244821603398,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 469,
+      "last_updated_nfe": 469,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 24,
+      "center": [
+        -1.0324516237619061,
+        -0.060603148039276356,
+        2.5039389045908216,
+        -4.510490312206545,
+        2.7829803123310093
+      ],
+      "f_center": 84.27005762120633,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 24,
+      "last_updated_nfe": 24,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 77,
+      "center": [
+        -5.12,
+        -1.1594686805847365,
+        -1.2587058455553473,
+        -1.6794048893037639,
+        -1.408481171462817
+      ],
+      "f_center": 84.5013059727911,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 655,
+      "last_updated_nfe": 655,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 21,
+      "center": [
+        2.428545489768493,
+        -1.6168958422701944,
+        -0.22619911986034325,
+        1.949325110390732,
+        -4.835633559674262
+      ],
+      "f_center": 86.06545901273498,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 21,
+      "last_updated_nfe": 21,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 36,
+      "center": [
+        -2.1003684166650505,
+        4.16437300611608,
+        -4.340930793419151,
+        1.2850965543897113,
+        3.0371212480348353
+      ],
+      "f_center": 86.13766382830822,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 36,
+      "last_updated_nfe": 36,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 80,
+      "center": [
+        0.020776513310723055,
+        -5.12,
+        0.17360906776496776,
+        2.4646098606774305,
+        4.881326648620338
+      ],
+      "f_center": 86.73172071611457,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 784,
+      "last_updated_nfe": 784,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 61,
+      "center": [
+        -1.3717295880221476,
+        -5.12,
+        0.17347891288006578,
+        -0.8447038427988902,
+        5.12
+      ],
+      "f_center": 87.16868774697944,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 487,
+      "last_updated_nfe": 487,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 37,
+      "center": [
+        -1.5937478774467269,
+        -2.147113551572694,
+        1.3705530767503804,
+        -2.7251351740448038,
+        -0.4923166421283689
+      ],
+      "f_center": 87.40351713330543,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 37,
+      "last_updated_nfe": 37,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 90,
+      "center": [
+        2.3586066723795467,
+        1.4598056638952712,
+        0.9216859852847051,
+        4.927433045365791,
+        -0.6121498428885088
+      ],
+      "f_center": 89.01351383612186,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 920,
+      "last_updated_nfe": 920,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 48,
+      "center": [
+        5.088059375738718,
+        5.12,
+        1.963488817276896,
+        1.9699817756667108,
+        3.741214345247936
+      ],
+      "f_center": 89.0289438381967,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 474,
+      "last_updated_nfe": 474,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 19,
+      "center": [
+        0.9501895140670253,
+        1.3380159612433786,
+        0.4632971839539053,
+        -1.7662392403575127,
+        4.600648988391513
+      ],
+      "f_center": 89.71455757750836,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 19,
+      "last_updated_nfe": 19,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 22,
+      "center": [
+        -0.18141323262018982,
+        2.3683677719426957,
+        -2.557456056512112,
+        -3.536411202648546,
+        0.14012801759879423
+      ],
+      "f_center": 90.02838704012723,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 22,
+      "last_updated_nfe": 22,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 34,
+      "center": [
+        2.8187389397852085,
+        -2.0597572201803627,
+        4.903362151553199,
+        0.3431361685159766,
+        -3.60159680320428
+      ],
+      "f_center": 91.17261425595932,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 34,
+      "last_updated_nfe": 34,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 79,
+      "center": [
+        -4.490303871799122,
+        -5.12,
+        0.005793028335264509,
+        0.688554836822062,
+        -0.22087811460351647
+      ],
+      "f_center": 91.54447240145059,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 657,
+      "last_updated_nfe": 657,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 85,
+      "center": [
+        -0.5900808012520602,
+        4.5899040393266155,
+        -0.5197845787422252,
+        -0.9436346864772642,
+        1.7710133342557395
+      ],
+      "f_center": 91.82654843790215,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 789,
+      "last_updated_nfe": 789,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 68,
+      "center": [
+        -1.5511513295063166,
+        1.3806103893473098,
+        2.1362763356591064,
+        5.12,
+        -2.797670418761363
+      ],
+      "f_center": 92.92796624508433,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 495,
+      "last_updated_nfe": 495,
+      "novelty": 1.0,
+      "source": "far_basin"
     },
     {
       "node_id": 27,
       "center": [
-        3.399284388455487,
-        4.474683679850734,
-        -2.4523859269440957,
-        -0.7366784170316016,
-        4.807792961450999
+        -4.317999685201674,
+        -1.1909363977003813,
+        -5.1039004021645376,
+        3.9860681152612143,
+        -2.9950672487075187
       ],
-      "f_center": 136.0270091466244,
+      "f_center": 93.58906117799816,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
       "visits": 1,
       "created_nfe": 27,
       "last_updated_nfe": 27,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "initial_design"
     },
     {
-      "node_id": 2,
+      "node_id": 55,
       "center": [
-        -5.12,
-        -5.12,
-        -5.12,
-        -5.12,
+        -4.068921261555206,
+        -2.32615189888191,
+        5.12,
+        1.358625387931826,
+        -0.7656947110511815
+      ],
+      "f_center": 94.17424339788006,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 481,
+      "last_updated_nfe": 481,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 17,
+      "center": [
+        4.611313132010237,
+        -4.0996549756152545,
+        -0.5801328363064826,
+        0.9732757375547871,
+        -2.741208083529938
+      ],
+      "f_center": 95.87062528312424,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 17,
+      "last_updated_nfe": 17,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 58,
+      "center": [
+        1.799286476807957,
+        3.6504446956133036,
+        1.8649415949361698,
+        1.5968870943346198,
         -5.12
       ],
-      "f_center": 144.6235686289295,
+      "f_center": 95.91688549283728,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 484,
+      "last_updated_nfe": 484,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 23,
+      "center": [
+        -5.0993599286577735,
+        -4.9610579049019865,
+        -1.8286027074561018,
+        3.8175840341243594,
+        1.2922845450068454
+      ],
+      "f_center": 96.15270901503847,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
       "visits": 1,
-      "created_nfe": 2,
-      "last_updated_nfe": 2,
+      "created_nfe": 23,
+      "last_updated_nfe": 23,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "initial_design"
     },
     {
-      "node_id": 3,
+      "node_id": 46,
       "center": [
+        -0.13068159539530877,
+        5.12,
+        -1.467965391217581,
+        5.12,
+        2.826451088778256
+      ],
+      "f_center": 96.37322731590166,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 472,
+      "last_updated_nfe": 472,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 53,
+      "center": [
+        3.9873424438219427,
+        -5.12,
+        3.1943688392438925,
+        -4.36251552090162,
+        0.06663201014161661
+      ],
+      "f_center": 98.02941250917704,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 479,
+      "last_updated_nfe": 479,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 35,
+      "center": [
+        0.7339253325084254,
+        -4.600334059243233,
+        -1.342284310443513,
+        -4.069806345479911,
+        2.21330278482018
+      ],
+      "f_center": 98.19165375274761,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 35,
+      "last_updated_nfe": 35,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 93,
+      "center": [
+        3.495991529475515,
+        0.5385169683666701,
+        2.189415097465531,
+        -1.5318750082527797,
+        0.29464637653269066
+      ],
+      "f_center": 98.29765907327996,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 923,
+      "last_updated_nfe": 923,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 88,
+      "center": [
+        -5.12,
+        2.5030320751183472,
+        -2.8977178788711835,
+        -0.7061129133516073,
+        0.5608656135096495
+      ],
+      "f_center": 98.39324389248728,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 792,
+      "last_updated_nfe": 792,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 71,
+      "center": [
+        2.4020495588897126,
+        -1.149215703488479,
         5.12,
         5.12,
-        5.12,
-        5.12,
+        -2.859859117924847
+      ],
+      "f_center": 98.9988857531699,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 649,
+      "last_updated_nfe": 649,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 33,
+      "center": [
+        4.724392877737878,
+        -3.0585190421134327,
+        -3.405017537265353,
+        -0.7668667853308362,
+        -3.95089166749371
+      ],
+      "f_center": 99.42250245842095,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 33,
+      "last_updated_nfe": 33,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 63,
+      "center": [
+        3.212962003617546,
+        4.894920492526501,
+        -5.12,
+        0.5059634592296507,
+        -0.19351163596660592
+      ],
+      "f_center": 99.81458946615737,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 490,
+      "last_updated_nfe": 490,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 72,
+      "center": [
+        0.5589689171270832,
+        3.386516388412648,
+        -4.19478505443155,
+        -1.6208233565671162,
+        -0.230788594207683
+      ],
+      "f_center": 101.59262183024907,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 650,
+      "last_updated_nfe": 650,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 97,
+      "center": [
+        2.955887827519876,
+        0.6367950465513497,
+        3.6798173080383703,
+        0.47835535086379005,
+        -4.249481725993401
+      ],
+      "f_center": 102.02378065749657,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 927,
+      "last_updated_nfe": 927,
+      "novelty": 1.0,
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 54,
+      "center": [
+        1.8127719906972068,
+        -0.1995997166887226,
+        4.445546866989281,
+        5.085214457989278,
+        3.239863333737421
+      ],
+      "f_center": 102.67165566533272,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 480,
+      "last_updated_nfe": 480,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 26,
+      "center": [
+        -0.6812101411001281,
+        3.5563491892701444,
+        -3.4254723098874758,
+        2.690194514263771,
+        -1.9240085230200372
+      ],
+      "f_center": 103.06487614423949,
+      "radius": 0.45794672179195695,
+      "curvature_proxy": 0.6858961202443006,
+      "visits": 1,
+      "created_nfe": 26,
+      "last_updated_nfe": 26,
+      "novelty": 1.0,
+      "source": "initial_design"
+    },
+    {
+      "node_id": 65,
+      "center": [
+        1.268618808097691,
+        -5.12,
+        0.41151614120944857,
+        1.5666339225157013,
+        1.430704696641991
+      ],
+      "f_center": 103.06916304937766,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 492,
+      "last_updated_nfe": 492,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 62,
+      "center": [
+        -0.8795097293492041,
+        -5.12,
+        3.593206322641743,
+        1.252732732470225,
         5.12
       ],
-      "f_center": 144.6235686289295,
+      "f_center": 104.34019148266627,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 489,
+      "last_updated_nfe": 489,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 41,
+      "center": [
+        0.5258879383753142,
+        5.12,
+        -0.7283490887663391,
+        2.4770400436254727,
+        0.5957875337757867
+      ],
+      "f_center": 105.58564615432059,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 467,
+      "last_updated_nfe": 467,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 87,
+      "center": [
+        -0.741172972007041,
+        -5.12,
+        -0.432521699278541,
+        2.7393076967376553,
+        5.12
+      ],
+      "f_center": 106.42988646023406,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
       "visits": 1,
-      "created_nfe": 3,
-      "last_updated_nfe": 3,
+      "created_nfe": 791,
+      "last_updated_nfe": 791,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "budget_completion"
     },
     {
-      "node_id": 4,
+      "node_id": 52,
       "center": [
-        -5.12,
-        5.12,
-        -5.12,
-        5.12,
+        -0.27126593854417813,
+        4.6461766510741,
+        -0.28696913607548313,
+        -0.6332271641999292,
         -5.12
       ],
-      "f_center": 144.6235686289295,
-      "radius": 0.45794672179195695,
-      "curvature_proxy": 0.6858961202443006,
+      "f_center": 107.46954583519563,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
       "visits": 1,
-      "created_nfe": 4,
-      "last_updated_nfe": 4,
+      "created_nfe": 478,
+      "last_updated_nfe": 478,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "far_basin"
     },
     {
-      "node_id": 5,
+      "node_id": 73,
       "center": [
-        5.12,
-        -5.12,
-        5.12,
-        -5.12,
-        5.12
+        0.3122714037028551,
+        -3.4722909408996867,
+        4.986684289742866,
+        0.4634963489394994,
+        -1.66467906446076
       ],
-      "f_center": 144.6235686289295,
+      "f_center": 108.5505724952595,
       "radius": 0.45794672179195695,
       "curvature_proxy": 0.6858961202443006,
       "visits": 1,
-      "created_nfe": 5,
-      "last_updated_nfe": 5,
+      "created_nfe": 651,
+      "last_updated_nfe": 651,
       "novelty": 1.0,
-      "source": "anchor"
+      "source": "budget_completion"
+    },
+    {
+      "node_id": 70,
+      "center": [
+        -0.5127622182781928,
+        -5.0554578331195055,
+        -0.8270905984386201,
+        3.430715937980744,
+        4.920003248353261
+      ],
+      "f_center": 108.69736208068497,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 497,
+      "last_updated_nfe": 497,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 69,
+      "center": [
+        1.7933750151578673,
+        3.554416504120979,
+        4.386565437682993,
+        -5.12,
+        1.0635226049882684
+      ],
+      "f_center": 110.22904017840709,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 496,
+      "last_updated_nfe": 496,
+      "novelty": 1.0,
+      "source": "far_basin"
+    },
+    {
+      "node_id": 47,
+      "center": [
+        1.451891621335564,
+        -5.12,
+        2.8171851275322344,
+        1.6056323517507678,
+        -4.220158338717255
+      ],
+      "f_center": 110.81963904392865,
+      "radius": 1.1448668044798924,
+      "curvature_proxy": 0.466229417095431,
+      "visits": 1,
+      "created_nfe": 473,
+      "last_updated_nfe": 473,
+      "novelty": 1.0,
+      "source": "far_basin"
     }
   ],
   "graph_edges": [
+    {
+      "source_id": 1,
+      "target_id": 9,
+      "evaluations": 1,
+      "best_improvement": -28.924713725785896,
+      "barrier_proxy": 71.50885942483595,
+      "accessibility": 0.013603802423604695,
+      "created_nfe": 488,
+      "last_updated_nfe": 488,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 40,
+      "evaluations": 1,
+      "best_improvement": -70.46261452517541,
+      "barrier_proxy": 70.46261452517541,
+      "accessibility": 0.013800219693323014,
+      "created_nfe": 466,
+      "last_updated_nfe": 466,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 41,
+      "evaluations": 1,
+      "best_improvement": -105.58564615432059,
+      "barrier_proxy": 105.58564615432059,
+      "accessibility": 0.009294920240248429,
+      "created_nfe": 467,
+      "last_updated_nfe": 467,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 42,
+      "evaluations": 1,
+      "best_improvement": -70.70537026786535,
+      "barrier_proxy": 70.70537026786535,
+      "accessibility": 0.013754142181186093,
+      "created_nfe": 468,
+      "last_updated_nfe": 468,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 43,
+      "evaluations": 1,
+      "best_improvement": -83.55244821603398,
+      "barrier_proxy": 83.55244821603398,
+      "accessibility": 0.011688736217984502,
+      "created_nfe": 469,
+      "last_updated_nfe": 469,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 44,
+      "evaluations": 1,
+      "best_improvement": -68.77512598547057,
+      "barrier_proxy": 68.77512598547057,
+      "accessibility": 0.014129257787620048,
+      "created_nfe": 470,
+      "last_updated_nfe": 470,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 46,
+      "evaluations": 1,
+      "best_improvement": -96.37322731590166,
+      "barrier_proxy": 96.37322731590166,
+      "accessibility": 0.01016536742043385,
+      "created_nfe": 472,
+      "last_updated_nfe": 472,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 47,
+      "evaluations": 1,
+      "best_improvement": -110.81963904392865,
+      "barrier_proxy": 110.81963904392865,
+      "accessibility": 0.008863705011594917,
+      "created_nfe": 473,
+      "last_updated_nfe": 473,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 48,
+      "evaluations": 1,
+      "best_improvement": -89.0289438381967,
+      "barrier_proxy": 89.0289438381967,
+      "accessibility": 0.01098551688985311,
+      "created_nfe": 474,
+      "last_updated_nfe": 474,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 49,
+      "evaluations": 1,
+      "best_improvement": -79.15062221295051,
+      "barrier_proxy": 79.15062221295051,
+      "accessibility": 0.012322764419179203,
+      "created_nfe": 475,
+      "last_updated_nfe": 475,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 51,
+      "evaluations": 1,
+      "best_improvement": -78.38900366523579,
+      "barrier_proxy": 78.38900366523579,
+      "accessibility": 0.012439512301512076,
+      "created_nfe": 477,
+      "last_updated_nfe": 477,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 52,
+      "evaluations": 1,
+      "best_improvement": -107.46954583519563,
+      "barrier_proxy": 107.46954583519563,
+      "accessibility": 0.009134960708665782,
+      "created_nfe": 478,
+      "last_updated_nfe": 478,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 53,
+      "evaluations": 1,
+      "best_improvement": -98.02941250917704,
+      "barrier_proxy": 98.02941250917704,
+      "accessibility": 0.009997059613923621,
+      "created_nfe": 479,
+      "last_updated_nfe": 479,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 54,
+      "evaluations": 1,
+      "best_improvement": -102.67165566533272,
+      "barrier_proxy": 102.67165566533272,
+      "accessibility": 0.009553684745346016,
+      "created_nfe": 480,
+      "last_updated_nfe": 480,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 55,
+      "evaluations": 1,
+      "best_improvement": -94.17424339788006,
+      "barrier_proxy": 94.17424339788006,
+      "accessibility": 0.010397794301982965,
+      "created_nfe": 481,
+      "last_updated_nfe": 481,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 56,
+      "evaluations": 1,
+      "best_improvement": -60.73280688995325,
+      "barrier_proxy": 60.73280688995325,
+      "accessibility": 0.015940622611613945,
+      "created_nfe": 482,
+      "last_updated_nfe": 482,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 58,
+      "evaluations": 1,
+      "best_improvement": -95.91688549283728,
+      "barrier_proxy": 95.91688549283728,
+      "accessibility": 0.01021274313379944,
+      "created_nfe": 484,
+      "last_updated_nfe": 484,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 59,
+      "evaluations": 1,
+      "best_improvement": -74.93724206051853,
+      "barrier_proxy": 74.93724206051853,
+      "accessibility": 0.012997606532521714,
+      "created_nfe": 485,
+      "last_updated_nfe": 485,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 60,
+      "evaluations": 1,
+      "best_improvement": -85.77871394026859,
+      "barrier_proxy": 85.77871394026859,
+      "accessibility": 0.011392283562965814,
+      "created_nfe": 486,
+      "last_updated_nfe": 486,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 61,
+      "evaluations": 1,
+      "best_improvement": -87.16868774697944,
+      "barrier_proxy": 87.16868774697944,
+      "accessibility": 0.011214699075055914,
+      "created_nfe": 487,
+      "last_updated_nfe": 487,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 62,
+      "evaluations": 1,
+      "best_improvement": -104.34019148266627,
+      "barrier_proxy": 104.34019148266627,
+      "accessibility": 0.009403782201793408,
+      "created_nfe": 489,
+      "last_updated_nfe": 489,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 63,
+      "evaluations": 1,
+      "best_improvement": -99.81458946615737,
+      "barrier_proxy": 99.81458946615737,
+      "accessibility": 0.009821775103580756,
+      "created_nfe": 490,
+      "last_updated_nfe": 490,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 65,
+      "evaluations": 1,
+      "best_improvement": -103.06916304937766,
+      "barrier_proxy": 103.06916304937766,
+      "accessibility": 0.009517540360819721,
+      "created_nfe": 492,
+      "last_updated_nfe": 492,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 67,
+      "evaluations": 1,
+      "best_improvement": -73.45734175052468,
+      "barrier_proxy": 73.45734175052468,
+      "accessibility": 0.013252520918457172,
+      "created_nfe": 494,
+      "last_updated_nfe": 494,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 68,
+      "evaluations": 1,
+      "best_improvement": -92.92796624508433,
+      "barrier_proxy": 92.92796624508433,
+      "accessibility": 0.010534303425591224,
+      "created_nfe": 495,
+      "last_updated_nfe": 495,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 69,
+      "evaluations": 1,
+      "best_improvement": -110.22904017840709,
+      "barrier_proxy": 110.22904017840709,
+      "accessibility": 0.008910349749140957,
+      "created_nfe": 496,
+      "last_updated_nfe": 496,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 70,
+      "evaluations": 1,
+      "best_improvement": -108.69736208068497,
+      "barrier_proxy": 108.69736208068497,
+      "accessibility": 0.009033638934152027,
+      "created_nfe": 497,
+      "last_updated_nfe": 497,
+      "attempts": 1,
+      "source_mode": "far_basin"
+    },
+    {
+      "source_id": 1,
+      "target_id": 84,
+      "evaluations": 1,
+      "best_improvement": -75.96932962559092,
+      "barrier_proxy": 75.96932962559092,
+      "accessibility": 0.012825555956451141,
+      "created_nfe": 788,
+      "last_updated_nfe": 788,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
     {
       "source_id": 6,
       "target_id": 1,
       "evaluations": 20,
       "best_improvement": 28.924713725785896,
-      "barrier_proxy": 28.924713725785896,
-      "accessibility": 0.02003015992224918,
-      "created_nfe": 480,
-      "last_updated_nfe": 480,
+      "barrier_proxy": 0.0,
+      "accessibility": 1.0,
+      "created_nfe": 465,
+      "last_updated_nfe": 647,
+      "attempts": 2,
+      "source_mode": "final_polish"
+    },
+    {
+      "source_id": 6,
+      "target_id": 88,
+      "evaluations": 1,
+      "best_improvement": -69.46853016670138,
+      "barrier_proxy": 69.46853016670138,
+      "accessibility": 0.013992172466223743,
+      "created_nfe": 792,
+      "last_updated_nfe": 792,
       "attempts": 1,
-      "source_mode": "coordinate_multibracket"
+      "source_mode": "budget_completion"
     },
     {
       "source_id": 7,
       "target_id": 1,
-      "evaluations": 20,
+      "evaluations": 100,
       "best_improvement": 28.924713725785896,
-      "barrier_proxy": 28.924713725785896,
-      "accessibility": 0.02003015992224918,
-      "created_nfe": 635,
-      "last_updated_nfe": 635,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.009900990099009901,
+      "created_nfe": 597,
+      "last_updated_nfe": 597,
       "attempts": 1,
-      "source_mode": "coordinate_multibracket"
+      "source_mode": "archive_fallback"
     },
     {
       "source_id": 8,
       "target_id": 1,
-      "evaluations": 20,
+      "evaluations": 126,
       "best_improvement": 28.924713725785896,
-      "barrier_proxy": 28.924713725785896,
-      "accessibility": 0.02003015992224918,
-      "created_nfe": 790,
-      "last_updated_nfe": 790,
+      "barrier_proxy": 0.0,
+      "accessibility": 1.0,
+      "created_nfe": 597,
+      "last_updated_nfe": 783,
+      "attempts": 2,
+      "source_mode": "stall_polish"
+    },
+    {
+      "source_id": 8,
+      "target_id": 76,
+      "evaluations": 1,
+      "best_improvement": -46.267023552276214,
+      "barrier_proxy": 46.267023552276214,
+      "accessibility": 0.0207180788539185,
+      "created_nfe": 654,
+      "last_updated_nfe": 654,
       "attempts": 1,
-      "source_mode": "coordinate_multibracket"
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 8,
+      "target_id": 77,
+      "evaluations": 1,
+      "best_improvement": -55.57659224700521,
+      "barrier_proxy": 55.57659224700521,
+      "accessibility": 0.017368169267642165,
+      "created_nfe": 655,
+      "last_updated_nfe": 655,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 8,
+      "target_id": 79,
+      "evaluations": 1,
+      "best_improvement": -62.6197586756647,
+      "barrier_proxy": 62.6197586756647,
+      "accessibility": 0.015475142905115681,
+      "created_nfe": 657,
+      "last_updated_nfe": 657,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 8,
+      "target_id": 81,
+      "evaluations": 1,
+      "best_improvement": -36.25168191077111,
+      "barrier_proxy": 36.25168191077111,
+      "accessibility": 0.026142641317908027,
+      "created_nfe": 785,
+      "last_updated_nfe": 785,
+      "attempts": 1,
+      "source_mode": "budget_completion"
     },
     {
       "source_id": 9,
-      "target_id": 1,
-      "evaluations": 20,
-      "best_improvement": 28.924713725785896,
-      "barrier_proxy": 28.924713725785896,
-      "accessibility": 0.02003015992224918,
-      "created_nfe": 945,
-      "last_updated_nfe": 945,
+      "target_id": 85,
+      "evaluations": 1,
+      "best_improvement": -62.901834712116255,
+      "barrier_proxy": 62.901834712116255,
+      "accessibility": 0.015407884914743621,
+      "created_nfe": 789,
+      "last_updated_nfe": 789,
       "attempts": 1,
-      "source_mode": "coordinate_multibracket"
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 10,
+      "target_id": 1,
+      "evaluations": 0,
+      "best_improvement": 28.924713725785896,
+      "barrier_proxy": 0.0,
+      "accessibility": 1.0,
+      "created_nfe": 597,
+      "last_updated_nfe": 597,
+      "attempts": 1,
+      "source_mode": "archive_fallback"
+    },
+    {
+      "source_id": 10,
+      "target_id": 78,
+      "evaluations": 1,
+      "best_improvement": -36.83898213414345,
+      "barrier_proxy": 36.83898213414345,
+      "accessibility": 0.02574732768603885,
+      "created_nfe": 656,
+      "last_updated_nfe": 656,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 10,
+      "target_id": 95,
+      "evaluations": 1,
+      "best_improvement": -34.15285821697192,
+      "barrier_proxy": 34.15285821697192,
+      "accessibility": 0.02766033031187977,
+      "created_nfe": 925,
+      "last_updated_nfe": 925,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 11,
+      "target_id": 1,
+      "evaluations": 0,
+      "best_improvement": 28.924713725785896,
+      "barrier_proxy": 0.0,
+      "accessibility": 1.0,
+      "created_nfe": 597,
+      "last_updated_nfe": 597,
+      "attempts": 1,
+      "source_mode": "archive_fallback"
+    },
+    {
+      "source_id": 11,
+      "target_id": 91,
+      "evaluations": 1,
+      "best_improvement": -31.38663268547405,
+      "barrier_proxy": 31.38663268547405,
+      "accessibility": 0.029952107162789215,
+      "created_nfe": 921,
+      "last_updated_nfe": 921,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 13,
+      "target_id": 90,
+      "evaluations": 1,
+      "best_improvement": -60.08880011033597,
+      "barrier_proxy": 60.08880011033597,
+      "accessibility": 0.016105964332100684,
+      "created_nfe": 920,
+      "last_updated_nfe": 920,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 13,
+      "target_id": 92,
+      "evaluations": 1,
+      "best_improvement": -45.7855110970265,
+      "barrier_proxy": 45.7855110970265,
+      "accessibility": 0.020926845335389244,
+      "created_nfe": 922,
+      "last_updated_nfe": 922,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 13,
+      "target_id": 94,
+      "evaluations": 1,
+      "best_improvement": -36.716441183637016,
+      "barrier_proxy": 36.716441183637016,
+      "accessibility": 0.025828820248660577,
+      "created_nfe": 924,
+      "last_updated_nfe": 924,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 22,
+      "target_id": 72,
+      "evaluations": 1,
+      "best_improvement": -11.564234790121844,
+      "barrier_proxy": 11.564234790121844,
+      "accessibility": 0.07372328888970944,
+      "created_nfe": 650,
+      "last_updated_nfe": 650,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 32,
+      "target_id": 93,
+      "evaluations": 1,
+      "best_improvement": -37.12054417697267,
+      "barrier_proxy": 37.12054417697267,
+      "accessibility": 0.02556201660887491,
+      "created_nfe": 923,
+      "last_updated_nfe": 923,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 34,
+      "target_id": 73,
+      "evaluations": 1,
+      "best_improvement": -17.377958239300185,
+      "barrier_proxy": 17.377958239300185,
+      "accessibility": 0.051605023999479624,
+      "created_nfe": 651,
+      "last_updated_nfe": 651,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 34,
+      "target_id": 97,
+      "evaluations": 1,
+      "best_improvement": -10.851166401537256,
+      "barrier_proxy": 10.851166401537256,
+      "accessibility": 0.07781394845843566,
+      "created_nfe": 927,
+      "last_updated_nfe": 927,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 35,
+      "target_id": 74,
+      "evaluations": 1,
+      "best_improvement": 69.01650502823448,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 652,
+      "last_updated_nfe": 652,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 39,
+      "target_id": 1,
+      "evaluations": 126,
+      "best_improvement": 50.697522292458736,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.007874015748031496,
+      "created_nfe": 919,
+      "last_updated_nfe": 919,
+      "attempts": 1,
+      "source_mode": "stall_polish"
+    },
+    {
+      "source_id": 39,
+      "target_id": 89,
+      "evaluations": 1,
+      "best_improvement": -6.354373595619371,
+      "barrier_proxy": 6.354373595619371,
+      "accessibility": 0.11969778326939455,
+      "created_nfe": 793,
+      "last_updated_nfe": 793,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 39,
+      "target_id": 98,
+      "evaluations": 1,
+      "best_improvement": -22.54144406586456,
+      "barrier_proxy": 22.54144406586456,
+      "accessibility": 0.04074739845447523,
+      "created_nfe": 928,
+      "last_updated_nfe": 928,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 48,
+      "target_id": 1,
+      "evaluations": 71,
+      "best_improvement": 89.0289438381967,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.013888888888888888,
+      "created_nfe": 1000,
+      "last_updated_nfe": 1000,
+      "attempts": 1,
+      "source_mode": "stall_polish"
+    },
+    {
+      "source_id": 62,
+      "target_id": 80,
+      "evaluations": 1,
+      "best_improvement": 17.608470766551704,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 784,
+      "last_updated_nfe": 784,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 71,
+      "target_id": 83,
+      "evaluations": 1,
+      "best_improvement": 17.88453634085262,
+      "barrier_proxy": 0.0,
+      "accessibility": 0.5,
+      "created_nfe": 787,
+      "last_updated_nfe": 787,
+      "attempts": 1,
+      "source_mode": "budget_completion"
+    },
+    {
+      "source_id": 80,
+      "target_id": 87,
+      "evaluations": 1,
+      "best_improvement": -19.698165744119493,
+      "barrier_proxy": 19.698165744119493,
+      "accessibility": 0.04608684493393245,
+      "created_nfe": 791,
+      "last_updated_nfe": 791,
+      "attempts": 1,
+      "source_mode": "budget_completion"
     }
   ],
   "diagnostics": {
@@ -4859,410 +6188,445 @@
     "mean_scale": 10.24,
     "max_scale": 10.24,
     "anisotropy": 1.0,
-    "boundary_signal": 0.06834348006030849,
-    "ruggedness_score": 0.7192080095982832,
-    "sign_change_rate": 0.0,
-    "finite_anchor_fraction": 1.0
+    "boundary_signal": 0.6843690892048879,
+    "ruggedness_score": 0.424035059354332,
+    "sign_change_rate": 1.0,
+    "finite_anchor_fraction": 1.0,
+    "valid_axis_triplets": 5
   },
   "event_log": [
     {
       "nfe": 1,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 1,
-        "f_center": 0.0
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 2,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 2,
-        "f_center": 144.6235686289295
+        "f_center": 144.6235686289295,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 3,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 3,
-        "f_center": 144.6235686289295
+        "f_center": 144.6235686289295,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 4,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 4,
-        "f_center": 144.6235686289295
+        "f_center": 144.6235686289295,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 5,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 5,
-        "f_center": 144.6235686289295
+        "f_center": 144.6235686289295,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 6,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 6,
-        "f_center": 28.924713725785896
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 7,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 7,
-        "f_center": 28.924713725785896
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 8,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 8,
-        "f_center": 28.924713725785896
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 9,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 9,
-        "f_center": 28.924713725785896
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 10,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 10,
-        "f_center": 28.924713725785896
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 11,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 11,
-        "f_center": 28.924713725785896
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 12,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 12,
-        "f_center": 28.924713725785896
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 13,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 13,
-        "f_center": 28.924713725785896
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 14,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 14,
-        "f_center": 28.924713725785896
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 15,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 15,
-        "f_center": 28.924713725785896
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 16,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 16,
-        "f_center": 117.65201120869004
+        "f_center": 125.57663759893371,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 17,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 17,
-        "f_center": 69.12535515584575
+        "f_center": 95.87062528312424,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 18,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 18,
-        "f_center": 116.6505096949341
+        "f_center": 54.52577641384203,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 19,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 19,
-        "f_center": 113.39549602364183
+        "f_center": 89.71455757750836,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 20,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 20,
-        "f_center": 65.80079307722636
+        "f_center": 133.39844699606488,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 21,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 21,
-        "f_center": 106.00436785027017
+        "f_center": 86.06545901273498,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 22,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 22,
-        "f_center": 67.96779403991171
+        "f_center": 90.02838704012723,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 23,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 23,
-        "f_center": 77.25993231431488
+        "f_center": 96.15270901503847,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 24,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 24,
-        "f_center": 71.38568540067386
+        "f_center": 84.27005762120633,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 25,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 25,
-        "f_center": 72.25140559785699
+        "f_center": 133.0601190723571,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 26,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 26,
-        "f_center": 92.47145721270253
+        "f_center": 103.06487614423949,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 27,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 27,
-        "f_center": 136.0270091466244
+        "f_center": 93.58906117799816,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 28,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 28,
-        "f_center": 97.16350582600023
+        "f_center": 73.97908125935268,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 29,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 29,
-        "f_center": 73.48763426654213
+        "f_center": 66.28527795847246,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 30,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 30,
-        "f_center": 80.0226092244281
+        "f_center": 123.08708828174272,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 31,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 31,
-        "f_center": 106.47013196545926
+        "f_center": 128.1970152693621,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 32,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 32,
-        "f_center": 71.4041549233635
+        "f_center": 61.17711489630729,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 33,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 33,
-        "f_center": 98.49590005734943
+        "f_center": 99.42250245842095,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 34,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 34,
-        "f_center": 103.15881823813666
+        "f_center": 91.17261425595932,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 35,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 35,
-        "f_center": 96.54485007163669
+        "f_center": 98.19165375274761,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 36,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 36,
-        "f_center": 116.07490840732899
+        "f_center": 86.13766382830822,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 37,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 37,
-        "f_center": 99.43103682827578
+        "f_center": 87.40351713330543,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 38,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 38,
-        "f_center": 82.57838328469344
+        "f_center": 52.60146134873426,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 39,
-      "event": "basin_node_created",
-      "message": "anchor",
+      "phase": "initial_design",
+      "event": "node_created",
+      "message": "initial_design",
       "payload": {
         "node_id": 39,
-        "f_center": 110.9903626490391
+        "f_center": 50.697522292458736,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 40,
-      "event": "basin_node_created",
-      "message": "anchor",
-      "payload": {
-        "node_id": 40,
-        "f_center": 124.48825606782887
-      }
-    },
-    {
-      "nfe": 41,
-      "event": "basin_node_created",
-      "message": "anchor",
-      "payload": {
-        "node_id": 41,
-        "f_center": 63.846714854261165
-      }
-    },
-    {
-      "nfe": 42,
-      "event": "basin_node_created",
-      "message": "anchor",
-      "payload": {
-        "node_id": 42,
-        "f_center": 85.64731154915516
-      }
-    },
-    {
-      "nfe": 43,
-      "event": "basin_node_created",
-      "message": "anchor",
-      "payload": {
-        "node_id": 43,
-        "f_center": 120.60679104022783
-      }
-    },
-    {
-      "nfe": 44,
-      "event": "basin_node_created",
-      "message": "anchor",
-      "payload": {
-        "node_id": 44,
-        "f_center": 60.22572194806625
-      }
-    },
-    {
-      "nfe": 44,
+      "nfe": 39,
+      "phase": "unassigned",
       "event": "diagnostics",
       "message": "geometry diagnostics computed",
       "payload": {
@@ -5270,271 +6634,973 @@
         "mean_scale": 10.24,
         "max_scale": 10.24,
         "anisotropy": 1.0,
-        "boundary_signal": 0.06834348006030849,
-        "ruggedness_score": 0.7192080095982832,
-        "sign_change_rate": 0.0,
-        "finite_anchor_fraction": 1.0
+        "boundary_signal": 0.6843690892048879,
+        "ruggedness_score": 0.424035059354332,
+        "sign_change_rate": 1.0,
+        "finite_anchor_fraction": 1.0,
+        "valid_axis_triplets": 5
       }
     },
     {
-      "nfe": 170,
-      "event": "basin_node_merged",
+      "nfe": 39,
+      "phase": "unassigned",
+      "event": "controller_decision",
+      "message": "phase enablement fixed",
+      "payload": {
+        "use_center_local": true,
+        "use_far_basin": true,
+        "enable_graph_guidance": true,
+        "enable_multibracket": true
+      }
+    },
+    {
+      "nfe": 165,
+      "phase": "center_local",
+      "event": "node_merged",
       "message": "center_local",
       "payload": {
         "node_id": 1,
-        "f_center": 0.0
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 170,
-      "event": "center_local",
-      "message": "center-local contraction completed",
-      "payload": {
-        "used": 126,
-        "node_id": 1
-      }
-    },
-    {
-      "nfe": 325,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 165,
+      "phase": "center_local",
+      "event": "center_local_complete",
+      "message": "center-local contraction finished",
       "payload": {
         "node_id": 1,
-        "f_center": 0.0
+        "evaluations": 126
       }
     },
     {
-      "nfe": 325,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 320,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
       "payload": {
         "node_id": 1,
-        "f_center": 0.0
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 325,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 320,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
       "payload": {
         "node_id": 1,
-        "f_center": 0.0
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 325,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 320,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
       "payload": {
         "node_id": 1,
-        "f_center": 0.0
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 325,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 320,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
       "payload": {
         "node_id": 1,
-        "f_center": 0.0
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 480,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 320,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
       "payload": {
         "node_id": 1,
-        "f_center": 0.0
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 480,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 465,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
+      "payload": {
+        "node_id": 1,
+        "f_center": 0.0,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 465,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
       "payload": {
         "node_id": 6,
-        "f_center": 28.924713725785896
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 465,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
+      "payload": {
+        "node_id": 6,
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 465,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
+      "payload": {
+        "node_id": 6,
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 465,
+      "phase": "coordinate_sweep",
+      "event": "node_merged",
+      "message": "coordinate_sweep",
+      "payload": {
+        "node_id": 6,
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 466,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 40,
+        "f_center": 70.46261452517541,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 467,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 41,
+        "f_center": 105.58564615432059,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 468,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 42,
+        "f_center": 70.70537026786535,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 469,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 43,
+        "f_center": 83.55244821603398,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 470,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 44,
+        "f_center": 68.77512598547057,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 471,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 45,
+        "f_center": 127.38538430739294,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 472,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 46,
+        "f_center": 96.37322731590166,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 473,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 47,
+        "f_center": 110.81963904392865,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 474,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 48,
+        "f_center": 89.0289438381967,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 475,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 49,
+        "f_center": 79.15062221295051,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 476,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 50,
+        "f_center": 116.16466723828346,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 477,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 51,
+        "f_center": 78.38900366523579,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 478,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 52,
+        "f_center": 107.46954583519563,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 479,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 53,
+        "f_center": 98.02941250917704,
+        "removed_node_ids": []
       }
     },
     {
       "nfe": 480,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
       "payload": {
-        "node_id": 6,
-        "f_center": 28.924713725785896
+        "node_id": 54,
+        "f_center": 102.67165566533272,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 480,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 481,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
       "payload": {
-        "node_id": 6,
-        "f_center": 28.924713725785896
+        "node_id": 55,
+        "f_center": 94.17424339788006,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 480,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 482,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
       "payload": {
-        "node_id": 6,
-        "f_center": 28.924713725785896
+        "node_id": 56,
+        "f_center": 60.73280688995325,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 635,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 483,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 57,
+        "f_center": 148.8603562618167,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 484,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 58,
+        "f_center": 95.91688549283728,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 485,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 59,
+        "f_center": 74.93724206051853,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 486,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 60,
+        "f_center": 85.77871394026859,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 487,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 61,
+        "f_center": 87.16868774697944,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 488,
+      "phase": "far_basin",
+      "event": "node_merged",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 9,
+        "f_center": 28.924713725785896,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 489,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 62,
+        "f_center": 104.34019148266627,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 490,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 63,
+        "f_center": 99.81458946615737,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 491,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 64,
+        "f_center": 114.85987969133456,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 492,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 65,
+        "f_center": 103.06916304937766,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 493,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 66,
+        "f_center": 112.69054132887622,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 494,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 67,
+        "f_center": 73.45734175052468,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 495,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 68,
+        "f_center": 92.92796624508433,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 496,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 69,
+        "f_center": 110.22904017840709,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 497,
+      "phase": "far_basin",
+      "event": "node_created",
+      "message": "far_basin",
+      "payload": {
+        "node_id": 70,
+        "f_center": 108.69736208068497,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 597,
+      "phase": "archive_fallback",
+      "event": "node_merged",
+      "message": "archive_fallback",
       "payload": {
         "node_id": 1,
-        "f_center": 0.0
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 635,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
-      "payload": {
-        "node_id": 7,
-        "f_center": 28.924713725785896
-      }
-    },
-    {
-      "nfe": 635,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
-      "payload": {
-        "node_id": 7,
-        "f_center": 28.924713725785896
-      }
-    },
-    {
-      "nfe": 635,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
-      "payload": {
-        "node_id": 7,
-        "f_center": 28.924713725785896
-      }
-    },
-    {
-      "nfe": 635,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
-      "payload": {
-        "node_id": 7,
-        "f_center": 28.924713725785896
-      }
-    },
-    {
-      "nfe": 790,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
-      "payload": {
-        "node_id": 8,
-        "f_center": 28.924713725785896
-      }
-    },
-    {
-      "nfe": 790,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 597,
+      "phase": "archive_fallback",
+      "event": "node_merged",
+      "message": "archive_fallback",
       "payload": {
         "node_id": 1,
-        "f_center": 0.0
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 790,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
-      "payload": {
-        "node_id": 8,
-        "f_center": 28.924713725785896
-      }
-    },
-    {
-      "nfe": 790,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
-      "payload": {
-        "node_id": 8,
-        "f_center": 28.924713725785896
-      }
-    },
-    {
-      "nfe": 790,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
-      "payload": {
-        "node_id": 8,
-        "f_center": 28.924713725785896
-      }
-    },
-    {
-      "nfe": 945,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
-      "payload": {
-        "node_id": 9,
-        "f_center": 28.924713725785896
-      }
-    },
-    {
-      "nfe": 945,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 597,
+      "phase": "archive_fallback",
+      "event": "node_merged",
+      "message": "archive_fallback",
       "payload": {
         "node_id": 1,
-        "f_center": 0.0
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 945,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 597,
+      "phase": "archive_fallback",
+      "event": "node_merged",
+      "message": "archive_fallback",
       "payload": {
-        "node_id": 9,
-        "f_center": 28.924713725785896
+        "node_id": 1,
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 945,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 647,
+      "phase": "final_polish",
+      "event": "node_merged",
+      "message": "final_polish",
       "payload": {
-        "node_id": 9,
-        "f_center": 28.924713725785896
+        "node_id": 1,
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     },
     {
-      "nfe": 945,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "nfe": 647,
+      "phase": "final_polish",
+      "event": "node_merged",
+      "message": "final_polish",
       "payload": {
-        "node_id": 9,
-        "f_center": 28.924713725785896
+        "node_id": 1,
+        "f_center": 0.0,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 648,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 60,
+        "f_center": 82.2355480613254,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 649,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 71,
+        "f_center": 98.9988857531699,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 650,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 72,
+        "f_center": 101.59262183024907,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 651,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 73,
+        "f_center": 108.5505724952595,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 652,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 74,
+        "f_center": 29.17514872451314,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 653,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 75,
+        "f_center": 130.96112740468965,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 654,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 76,
+        "f_center": 75.1917372780621,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 655,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 77,
+        "f_center": 84.5013059727911,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 656,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 78,
+        "f_center": 65.76369585992934,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 657,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 79,
+        "f_center": 91.54447240145059,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 783,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "stall_polish",
+      "payload": {
+        "node_id": 1,
+        "f_center": 0.0,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 784,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 80,
+        "f_center": 86.73172071611457,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 785,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 81,
+        "f_center": 65.176395636557,
+        "removed_node_ids": [
+          57
+        ]
+      }
+    },
+    {
+      "nfe": 786,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 82,
+        "f_center": 114.08921639367412,
+        "removed_node_ids": [
+          2
+        ]
+      }
+    },
+    {
+      "nfe": 787,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 83,
+        "f_center": 81.11434941231728,
+        "removed_node_ids": [
+          3
+        ]
+      }
+    },
+    {
+      "nfe": 788,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 84,
+        "f_center": 75.96932962559092,
+        "removed_node_ids": [
+          4
+        ]
+      }
+    },
+    {
+      "nfe": 789,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 85,
+        "f_center": 91.82654843790215,
+        "removed_node_ids": [
+          5
+        ]
+      }
+    },
+    {
+      "nfe": 790,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 86,
+        "f_center": 113.81615450961363,
+        "removed_node_ids": [
+          20
+        ]
+      }
+    },
+    {
+      "nfe": 791,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 87,
+        "f_center": 106.42988646023406,
+        "removed_node_ids": [
+          25
+        ]
+      }
+    },
+    {
+      "nfe": 792,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 88,
+        "f_center": 98.39324389248728,
+        "removed_node_ids": [
+          75
+        ]
+      }
+    },
+    {
+      "nfe": 793,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 89,
+        "f_center": 57.05189588807811,
+        "removed_node_ids": [
+          31
+        ]
+      }
+    },
+    {
+      "nfe": 919,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "stall_polish",
+      "payload": {
+        "node_id": 1,
+        "f_center": 0.0,
+        "removed_node_ids": []
+      }
+    },
+    {
+      "nfe": 920,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 90,
+        "f_center": 89.01351383612186,
+        "removed_node_ids": [
+          45
+        ]
+      }
+    },
+    {
+      "nfe": 921,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 91,
+        "f_center": 60.31134641125995,
+        "removed_node_ids": [
+          16
+        ]
+      }
+    },
+    {
+      "nfe": 922,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 92,
+        "f_center": 74.71022482281239,
+        "removed_node_ids": [
+          30
+        ]
+      }
+    },
+    {
+      "nfe": 923,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 93,
+        "f_center": 98.29765907327996,
+        "removed_node_ids": [
+          50
+        ]
+      }
+    },
+    {
+      "nfe": 924,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 94,
+        "f_center": 65.64115490942291,
+        "removed_node_ids": [
+          64
+        ]
+      }
+    },
+    {
+      "nfe": 925,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 95,
+        "f_center": 63.077571942757814,
+        "removed_node_ids": [
+          82
+        ]
+      }
+    },
+    {
+      "nfe": 926,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 96,
+        "f_center": 125.81228679876654,
+        "removed_node_ids": [
+          96
+        ]
+      }
+    },
+    {
+      "nfe": 927,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 97,
+        "f_center": 102.02378065749657,
+        "removed_node_ids": [
+          86
+        ]
+      }
+    },
+    {
+      "nfe": 928,
+      "phase": "budget_completion",
+      "event": "node_created",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 98,
+        "f_center": 73.2389663583233,
+        "removed_node_ids": [
+          66
+        ]
+      }
+    },
+    {
+      "nfe": 929,
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "budget_completion",
+      "payload": {
+        "node_id": 99,
+        "f_center": 115.39476215476212,
+        "removed_node_ids": [
+          99
+        ]
       }
     },
     {
       "nfe": 1000,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
+      "phase": "budget_completion",
+      "event": "node_merged",
+      "message": "stall_polish",
       "payload": {
-        "node_id": 10,
-        "f_center": 28.924713725785896
-      }
-    },
-    {
-      "nfe": 1000,
-      "event": "basin_node_merged",
-      "message": "coordinate_multibracket",
-      "payload": {
-        "node_id": 10,
-        "f_center": 28.924713725785896
+        "node_id": 1,
+        "f_center": 0.0,
+        "removed_node_ids": []
       }
     }
   ],
