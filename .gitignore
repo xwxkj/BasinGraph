@@ -38,3 +38,10 @@ manuscript/
 
 # Local repository-build audit
 STEP14B_REPO_BUILD_REPORT.json
+
+# Route B large formal-development artifacts
+results_v2/formal_development/coco_rc1/*/details/
+results_v2/formal_development/coco_rc1/*/*.tar.gz
+exdata/routeb_v2_development/
+ppdata/
+logs_v2/
