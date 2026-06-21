@@ -52,3 +52,10 @@ results_v2/formal_holdout/coco_rc1/*/*.tar.gz
 exdata/routeb_v2_holdout/
 ppdata/rc1_holdout_*/
 logs_v2/
+
+# Prospective CUTEst holdout large artifacts
+results_v2/formal_holdout/cutest_rc1/*/jobs/
+results_v2/formal_holdout/cutest_rc1/*/failures/
+results_v2/formal_holdout/cutest_rc1/*/cutest_holdout_raw_results_all_available.csv
+results_v2/formal_holdout/cutest_rc1/*/CUTEST_HOLDOUT_JOB_MANIFEST_SHA256.csv
+logs_v2/
