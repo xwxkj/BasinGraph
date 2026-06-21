@@ -1,0 +1,21 @@
+{
+  "status": "RC1_SELECTED_AS_FINAL_HOLDOUT_CANDIDATE",
+  "created_utc": "2026-06-21T04:29:48.715663+00:00",
+  "selected_implementation": "2.0.0-rc1",
+  "selected_options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "selected_code_freeze_tag": "route-b-v2.0.0-rc1-codefreeze",
+  "selected_code_freeze_commit": "8c2696b6f61e50d1836f5a661485b933604f46fc",
+  "ablation_freeze_tag": "route-b-v2.0.0-rc1-ablationfreeze",
+  "protocol_freeze_tag": "route-b-v2.0.0-rc1-protocolfreeze",
+  "current_branch": "route-b/finalize-rc1-consistent",
+  "branch_parent_commit": "188ae2724fd4fc172e798095f2d0b4f5e29176af",
+  "development_run_id": "v2rc1_coco_development_20260620T053200Z",
+  "development_rows": 1512,
+  "development_problems": 216,
+  "development_mean_rank": 3.388888888888889,
+  "development_wins": 71,
+  "rc2_rejected": true,
+  "rc3_authorized": false,
+  "holdout_accessed": false,
+  "release_policy": "The public release may later be tagged v2.0.0, but all result records and Methods text must identify implementation 2.0.0-rc1, the options hash and the code-freeze tag."
+}

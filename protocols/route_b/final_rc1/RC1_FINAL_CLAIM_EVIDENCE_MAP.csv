@@ -1,0 +1,6 @@
+claim,status,required_evidence
+The optimizer maintains an explicit graph during search.,supported,serialized archive/edges and integrity tests
+Graph guidance changes search behavior.,supported,NoGraphGuidance ablation
+Every node is a certified local minimum.,prohibited,not available in rc1
+The implementation exactly reconstructs basin topology.,prohibited,not established
+Generalization beyond development problems.,pending_holdout,prospective COCO and CUTEst holdout
