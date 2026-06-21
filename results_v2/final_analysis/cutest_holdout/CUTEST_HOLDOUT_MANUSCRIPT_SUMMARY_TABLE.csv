@@ -1,0 +1,9 @@
+Metric,BasinGraph result
+Mean ERT rank,1.944
+Overall target success,56.5%
+Solved problem–target blocks,124/144
+Fully solved blocks,69/144
+Mean final rank,1.753
+Best/tied final runs,509/720
+Median normalized final gap,0.000593
+Friedman P value,5.83e-21

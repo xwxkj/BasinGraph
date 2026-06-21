@@ -1,0 +1,7 @@
+baseline,baseline_display,paired_problem_seed_runs,basingraph_better,basingraph_worse,ties,paired_win_probability_with_half_ties,median_basingraph_minus_baseline_fbest
+LHS,Latin Hypercube Sampling,720,719,1,0,0.9986111111111111,-665724195430.5747
+Random,Random Search,720,719,1,0,0.9986111111111111,-615189897230.9979
+DE,Differential Evolution,720,700,20,0,0.9722222222222222,-100356951110.1018
+BIPOP_CMA_ES,BIPOP-CMA-ES,720,558,162,0,0.775,-5980.890184334945
+CMA_ES,CMA-ES,720,554,166,0,0.7694444444444445,-5537.68465291278
+MS_LBFGSB,Multi-start L-BFGS-B,720,444,118,158,0.7263888888888889,-35380.25376020459

@@ -1,0 +1,505 @@
+dimension_group,dimension_group_display,algorithm,algorithm_display,evaluations_per_dimension,fraction_reached,problem_seed_target_triples
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.002,0.006944444444444444,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.005,0.006944444444444444,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.01,0.006944444444444444,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.02,0.006944444444444444,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.05,0.006944444444444444,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.1,0.13194444444444445,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.2,0.1736111111111111,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.5,0.3055555555555556,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,1.0,0.3055555555555556,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,2.0,0.3055555555555556,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,5.0,0.3085648148148148,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,10.0,0.36412037037037037,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,20.0,0.39699074074074076,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,40.0,0.4930555555555556,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,50.0,0.5173611111111112,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,100.0,0.5645833333333333,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,200.0,0.5650462962962963,4320
+all,All 24 holdout problems,BasinGraph_v2,BasinGraph 2.0.0-rc1,500.0,0.5650462962962963,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,0.002,0.004629629629629629,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,0.005,0.0060185185185185185,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,0.01,0.006944444444444444,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,0.02,0.006944444444444444,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,0.05,0.006944444444444444,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,0.1,0.006944444444444444,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,0.2,0.006944444444444444,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,0.5,0.006944444444444444,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,1.0,0.006944444444444444,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,2.0,0.006944444444444444,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,5.0,0.007175925925925926,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,10.0,0.00949074074074074,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,20.0,0.041666666666666664,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,40.0,0.13680555555555557,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,50.0,0.17592592592592593,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,100.0,0.29444444444444445,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,200.0,0.3388888888888889,4320
+all,All 24 holdout problems,CMA_ES,CMA-ES,500.0,0.3388888888888889,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,0.002,0.004629629629629629,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,0.005,0.005787037037037037,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,0.01,0.0060185185185185185,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,0.02,0.006481481481481481,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,0.05,0.006944444444444444,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,0.1,0.006944444444444444,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,0.2,0.006944444444444444,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,0.5,0.006944444444444444,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,1.0,0.006944444444444444,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,2.0,0.006944444444444444,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,5.0,0.006944444444444444,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,10.0,0.009027777777777777,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,20.0,0.03518518518518519,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,40.0,0.12546296296296297,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,50.0,0.16064814814814815,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,100.0,0.2796296296296296,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,200.0,0.32222222222222224,4320
+all,All 24 holdout problems,BIPOP_CMA_ES,BIPOP-CMA-ES,500.0,0.32222222222222224,4320
+all,All 24 holdout problems,DE,Differential Evolution,0.002,0.004629629629629629,4320
+all,All 24 holdout problems,DE,Differential Evolution,0.005,0.0060185185185185185,4320
+all,All 24 holdout problems,DE,Differential Evolution,0.01,0.006944444444444444,4320
+all,All 24 holdout problems,DE,Differential Evolution,0.02,0.006944444444444444,4320
+all,All 24 holdout problems,DE,Differential Evolution,0.05,0.006944444444444444,4320
+all,All 24 holdout problems,DE,Differential Evolution,0.1,0.006944444444444444,4320
+all,All 24 holdout problems,DE,Differential Evolution,0.2,0.006944444444444444,4320
+all,All 24 holdout problems,DE,Differential Evolution,0.5,0.006944444444444444,4320
+all,All 24 holdout problems,DE,Differential Evolution,1.0,0.006944444444444444,4320
+all,All 24 holdout problems,DE,Differential Evolution,2.0,0.006944444444444444,4320
+all,All 24 holdout problems,DE,Differential Evolution,5.0,0.006944444444444444,4320
+all,All 24 holdout problems,DE,Differential Evolution,10.0,0.006944444444444444,4320
+all,All 24 holdout problems,DE,Differential Evolution,20.0,0.006944444444444444,4320
+all,All 24 holdout problems,DE,Differential Evolution,40.0,0.008101851851851851,4320
+all,All 24 holdout problems,DE,Differential Evolution,50.0,0.008564814814814815,4320
+all,All 24 holdout problems,DE,Differential Evolution,100.0,0.02546296296296296,4320
+all,All 24 holdout problems,DE,Differential Evolution,200.0,0.02662037037037037,4320
+all,All 24 holdout problems,DE,Differential Evolution,500.0,0.02662037037037037,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,0.002,0.006944444444444444,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,0.005,0.006944444444444444,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,0.01,0.006944444444444444,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,0.02,0.006944444444444444,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,0.05,0.006944444444444444,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,0.1,0.006944444444444444,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,0.2,0.006944444444444444,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,0.5,0.006944444444444444,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,1.0,0.006944444444444444,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,2.0,0.2708333333333333,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,5.0,0.3229166666666667,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,10.0,0.3576388888888889,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,20.0,0.3710648148148148,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,40.0,0.4201388888888889,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,50.0,0.4215277777777778,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,100.0,0.44074074074074077,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,200.0,0.4412037037037037,4320
+all,All 24 holdout problems,MS_LBFGSB,Multi-start L-BFGS-B,500.0,0.4412037037037037,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,0.002,0.003472222222222222,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,0.005,0.005324074074074074,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,0.01,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,0.02,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,0.05,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,0.1,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,0.2,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,0.5,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,1.0,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,2.0,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,5.0,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,10.0,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,20.0,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,40.0,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,50.0,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,100.0,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,200.0,0.006944444444444444,4320
+all,All 24 holdout problems,LHS,Latin Hypercube Sampling,500.0,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,0.002,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,0.005,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,0.01,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,0.02,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,0.05,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,0.1,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,0.2,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,0.5,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,1.0,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,2.0,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,5.0,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,10.0,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,20.0,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,40.0,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,50.0,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,100.0,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,200.0,0.006944444444444444,4320
+all,All 24 holdout problems,Random,Random Search,500.0,0.006944444444444444,4320
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.002,0.0,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.005,0.0,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.01,0.0,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.02,0.0,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.05,0.0,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.1,0.0,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.2,0.09090909090909091,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.5,0.3787878787878788,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,1.0,0.3787878787878788,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,2.0,0.3787878787878788,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,5.0,0.38535353535353534,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,10.0,0.5065656565656566,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,20.0,0.5454545454545454,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,40.0,0.5454545454545454,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,50.0,0.545959595959596,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,100.0,0.648989898989899,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,200.0,0.65,1980
+small_2_20,Small: 2–20 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,500.0,0.65,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,0.002,0.0,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,0.005,0.0,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,0.01,0.0,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,0.02,0.0,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,0.05,0.0,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,0.1,0.0,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,0.2,0.0,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,0.5,0.0,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,1.0,0.0,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,2.0,0.0,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,5.0,0.000505050505050505,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,10.0,0.0025252525252525255,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,20.0,0.03787878787878788,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,40.0,0.10858585858585859,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,50.0,0.15757575757575756,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,100.0,0.4161616161616162,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,200.0,0.5131313131313131,1980
+small_2_20,Small: 2–20 variables,CMA_ES,CMA-ES,500.0,0.5131313131313131,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.002,0.0,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.005,0.0,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.01,0.0,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.02,0.0,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.05,0.0,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.1,0.0,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.2,0.0,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.5,0.0,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,1.0,0.0,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,2.0,0.0,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,5.0,0.0,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,10.0,0.00404040404040404,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,20.0,0.030303030303030304,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,40.0,0.10353535353535354,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,50.0,0.1409090909090909,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,100.0,0.40050505050505053,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,200.0,0.49343434343434345,1980
+small_2_20,Small: 2–20 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,500.0,0.49343434343434345,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,0.002,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,0.005,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,0.01,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,0.02,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,0.05,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,0.1,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,0.2,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,0.5,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,1.0,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,2.0,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,5.0,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,10.0,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,20.0,0.0,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,40.0,0.0025252525252525255,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,50.0,0.0035353535353535356,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,100.0,0.04040404040404041,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,200.0,0.04292929292929293,1980
+small_2_20,Small: 2–20 variables,DE,Differential Evolution,500.0,0.04292929292929293,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.002,0.0,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.005,0.0,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.01,0.0,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.02,0.0,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.05,0.0,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.1,0.0,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.2,0.0,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.5,0.0,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,1.0,0.0,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,2.0,0.2878787878787879,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,5.0,0.4015151515151515,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,10.0,0.44696969696969696,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,20.0,0.4762626262626263,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,40.0,0.5833333333333334,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,50.0,0.5863636363636363,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,100.0,0.6282828282828283,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,200.0,0.6292929292929293,1980
+small_2_20,Small: 2–20 variables,MS_LBFGSB,Multi-start L-BFGS-B,500.0,0.6292929292929293,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,0.002,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,0.005,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,0.01,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,0.02,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,0.05,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,0.1,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,0.2,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,0.5,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,1.0,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,2.0,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,5.0,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,10.0,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,20.0,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,40.0,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,50.0,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,100.0,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,200.0,0.0,1980
+small_2_20,Small: 2–20 variables,LHS,Latin Hypercube Sampling,500.0,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,0.002,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,0.005,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,0.01,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,0.02,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,0.05,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,0.1,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,0.2,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,0.5,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,1.0,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,2.0,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,5.0,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,10.0,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,20.0,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,40.0,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,50.0,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,100.0,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,200.0,0.0,1980
+small_2_20,Small: 2–20 variables,Random,Random Search,500.0,0.0,1980
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.002,0.0,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.005,0.0,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.01,0.0,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.02,0.0,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.05,0.0,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.1,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.2,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.5,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,1.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,2.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,5.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,10.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,20.0,0.42936507936507934,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,40.0,0.4976190476190476,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,50.0,0.5444444444444444,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,100.0,0.5444444444444444,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,200.0,0.5444444444444444,1260
+medium_21_100,Medium: 21–100 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,500.0,0.5444444444444444,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,0.002,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,0.005,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,0.01,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,0.02,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,0.05,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,0.1,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,0.2,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,0.5,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,1.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,2.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,5.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,10.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,20.0,0.007142857142857143,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,40.0,0.11984126984126985,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,50.0,0.15714285714285714,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,100.0,0.15714285714285714,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,200.0,0.15714285714285714,1260
+medium_21_100,Medium: 21–100 variables,CMA_ES,CMA-ES,500.0,0.15714285714285714,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.002,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.005,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.01,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.02,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.05,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.1,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.2,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.5,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,1.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,2.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,5.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,10.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,20.0,0.002380952380952381,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,40.0,0.11031746031746031,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,50.0,0.14365079365079364,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,100.0,0.14365079365079364,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,200.0,0.14365079365079364,1260
+medium_21_100,Medium: 21–100 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,500.0,0.14365079365079364,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,0.002,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,0.005,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,0.01,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,0.02,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,0.05,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,0.1,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,0.2,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,0.5,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,1.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,2.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,5.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,10.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,20.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,40.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,50.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,100.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,200.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,DE,Differential Evolution,500.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.002,0.0,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.005,0.0,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.01,0.0,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.02,0.0,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.05,0.0,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.1,0.0,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.2,0.0,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.5,0.0,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,1.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,2.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,5.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,10.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,20.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,40.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,50.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,100.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,200.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,MS_LBFGSB,Multi-start L-BFGS-B,500.0,0.42857142857142855,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,0.002,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,0.005,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,0.01,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,0.02,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,0.05,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,0.1,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,0.2,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,0.5,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,1.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,2.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,5.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,10.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,20.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,40.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,50.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,100.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,200.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,LHS,Latin Hypercube Sampling,500.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,0.002,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,0.005,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,0.01,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,0.02,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,0.05,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,0.1,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,0.2,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,0.5,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,1.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,2.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,5.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,10.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,20.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,40.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,50.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,100.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,200.0,0.0,1260
+medium_21_100,Medium: 21–100 variables,Random,Random Search,500.0,0.0,1260
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.002,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.005,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.01,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.02,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.05,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.1,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.2,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,0.5,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,1.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,2.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,5.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,10.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,20.0,0.08703703703703704,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,40.0,0.39166666666666666,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,50.0,0.43333333333333335,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,100.0,0.43333333333333335,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,200.0,0.43333333333333335,1080
+large_101_500,Large: 101–500 variables,BasinGraph_v2,BasinGraph 2.0.0-rc1,500.0,0.43333333333333335,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,0.002,0.018518518518518517,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,0.005,0.024074074074074074,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,0.01,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,0.02,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,0.05,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,0.1,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,0.2,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,0.5,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,1.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,2.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,5.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,10.0,0.03333333333333333,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,20.0,0.08888888888888889,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,40.0,0.20833333333333334,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,50.0,0.23148148148148148,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,100.0,0.23148148148148148,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,200.0,0.23148148148148148,1080
+large_101_500,Large: 101–500 variables,CMA_ES,CMA-ES,500.0,0.23148148148148148,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.002,0.018518518518518517,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.005,0.023148148148148147,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.01,0.024074074074074074,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.02,0.025925925925925925,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.05,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.1,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.2,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,0.5,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,1.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,2.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,5.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,10.0,0.028703703703703703,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,20.0,0.0824074074074074,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,40.0,0.18333333333333332,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,50.0,0.21666666666666667,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,100.0,0.21666666666666667,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,200.0,0.21666666666666667,1080
+large_101_500,Large: 101–500 variables,BIPOP_CMA_ES,BIPOP-CMA-ES,500.0,0.21666666666666667,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,0.002,0.018518518518518517,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,0.005,0.024074074074074074,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,0.01,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,0.02,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,0.05,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,0.1,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,0.2,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,0.5,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,1.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,2.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,5.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,10.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,20.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,40.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,50.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,100.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,200.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,DE,Differential Evolution,500.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.002,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.005,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.01,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.02,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.05,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.1,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.2,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,0.5,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,1.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,2.0,0.05555555555555555,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,5.0,0.05555555555555555,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,10.0,0.1111111111111111,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,20.0,0.1111111111111111,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,40.0,0.1111111111111111,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,50.0,0.1111111111111111,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,100.0,0.1111111111111111,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,200.0,0.1111111111111111,1080
+large_101_500,Large: 101–500 variables,MS_LBFGSB,Multi-start L-BFGS-B,500.0,0.1111111111111111,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,0.002,0.013888888888888888,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,0.005,0.021296296296296296,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,0.01,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,0.02,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,0.05,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,0.1,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,0.2,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,0.5,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,1.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,2.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,5.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,10.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,20.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,40.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,50.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,100.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,200.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,LHS,Latin Hypercube Sampling,500.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,0.002,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,0.005,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,0.01,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,0.02,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,0.05,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,0.1,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,0.2,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,0.5,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,1.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,2.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,5.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,10.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,20.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,40.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,50.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,100.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,200.0,0.027777777777777776,1080
+large_101_500,Large: 101–500 variables,Random,Random Search,500.0,0.027777777777777776,1080

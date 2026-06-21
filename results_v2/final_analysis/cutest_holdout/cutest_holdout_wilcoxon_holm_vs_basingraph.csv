@@ -1,0 +1,7 @@
+baseline,baseline_display,problems,wilcoxon_statistic,raw_p_value,rank_biserial_effect_positive_favors_basingraph,median_baseline_minus_basingraph_gap,basingraph_lower_median_gap_problems,basingraph_higher_median_gap_problems,tied_problems,holm_adjusted_p_value,reject_after_holm_0_05
+DE,Differential Evolution,24,0.0,1.1920928955078125e-07,1.0,0.44045647643858815,24,0,0,7.152557373046875e-07,True
+LHS,Latin Hypercube Sampling,24,0.0,1.1920928955078125e-07,1.0,0.5212718512755747,24,0,0,7.152557373046875e-07,True
+Random,Random Search,24,0.0,1.1920928955078125e-07,1.0,0.5226920213605941,24,0,0,7.152557373046875e-07,True
+CMA_ES,CMA-ES,24,75.0,0.03148162364959717,0.5,0.004260955104574866,19,5,0,0.08078312873840332,False
+MS_LBFGSB,Multi-start L-BFGS-B,24,49.0,0.03656128916854718,0.5333333333333333,0.0008031397895461884,16,4,4,0.08078312873840332,False
+BIPOP_CMA_ES,BIPOP-CMA-ES,24,73.0,0.026927709579467773,0.5133333333333333,0.004331489615531283,19,5,0,0.08078312873840332,False

@@ -1,0 +1,8 @@
+phase,mean_budget_fraction,median_budget_fraction,minimum_budget_fraction,maximum_budget_fraction
+archive_fallback,0.09768333333333333,0.1,0.055,0.1
+budget_completion,0.4651638888888889,0.4856,0.319,0.52
+center_local,,,,
+coordinate_sweep,0.29999999999999993,0.3,0.3,0.3
+far_basin,,,,
+final_polish,0.04334999999999999,0.05,0.022,0.05
+initial_design,0.049236111111111105,0.049,0.039,0.0516
