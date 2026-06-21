@@ -1,17 +1,18 @@
 cff-version: 1.2.0
-message: "If you use BasinGraph, please cite the software and associated article."
 title: "BasinGraph: geometry-controlled basin-graph optimization"
-version: 1.0.0
-date-released: 2026-06-19
+version: 2.0.0
+date-released: 2026-06-21
+license: BSD-3-Clause
 type: software
+abstract: "Geometry-controlled nonconvex optimization with an operational basin-state archive and directed observed-transition graph. The result-bearing implementation is BasinGraph 2.0.0-rc1."
+message: "If you use this software, please cite the Zenodo software record and associated article."
 authors:
-  - family-names: "Xu"
-    given-names: "Kaijie"
-    email: "kjxu@xidian.edu.cn"
-    affiliation: "Xidian University and University of British Columbia"
+  - given-names: Kaijie
+    family-names: Xu
+    affiliation: "Xidian University; University of British Columbia"
     orcid: "https://orcid.org/0000-0003-4408-9070"
 repository-code: "https://github.com/xwxkj/BasinGraph"
-license: "BSD-3-Clause"
+doi: "10.5281/zenodo.20765883"
 keywords:
   - global optimization
   - derivative-free optimization

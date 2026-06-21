@@ -1,14 +1,19 @@
 {
-  "title": "BasinGraph: geometry-controlled basin-graph optimization",
-  "description": "Source code, benchmark protocols, figure-generation scripts, and reproducibility metadata for BasinGraph.",
-  "upload_type": "software",
   "creators": [
     {
       "name": "Xu, Kaijie",
       "orcid": "0000-0003-4408-9070",
-      "affiliation": "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China; Department of Chemical and Biological Engineering, University of British Columbia, Vancouver, BC V6T 1Z3, Canada"
+      "affiliation": "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China; Department of Chemical and Biological Engineering, University of British Columbia, Vancouver, BC V6T 1Z3, Canada",
+      "type": "ProjectLeader"
     }
   ],
+  "title": "BasinGraph: geometry-controlled basin-graph optimization",
+  "version": "2.0.0",
+  "access_right": "open",
+  "upload_type": "software",
+  "language": "eng",
+  "license": "bsd-3-clause",
+  "description": "Public software release of the selected BasinGraph 2.0.0-rc1 implementation used for the prospective COCO/BBOB and CUTEst holdouts. Exact options hash: 031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69.",
   "keywords": [
     "global optimization",
     "derivative-free optimization",
@@ -17,16 +22,16 @@
     "COCO/BBOB",
     "CUTEst"
   ],
-  "version": "1.0.0",
-  "publication_date": "2026-06-19",
   "related_identifiers": [
     {
-      "identifier": "https://doi.org/10.5281/zenodo.20765047",
-      "relation": "isSupplementTo",
+      "identifier": "https://doi.org/10.5281/zenodo.10.5281/zenodo.20788903",
+      "relation": "isSupplementedBy",
       "resource_type": "dataset"
+    },
+    {
+      "identifier": "https://github.com/xwxkj/BasinGraph",
+      "relation": "isIdenticalTo",
+      "resource_type": "software"
     }
-  ],
-  "notes": "Software source code is released under the BSD-3-Clause license.",
-  "access_right": "open",
-  "license": "bsd-3-clause"
+  ]
 }

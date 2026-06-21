@@ -1,0 +1,13 @@
+{
+  "status": "B10_SOFTWARE_RELEASE_METADATA_OK",
+  "branch": "route-b/finalize-rc1-consistent",
+  "head": "d9d53526ba0368fb0d07db1ec5f5a5b6a40a7a66",
+  "codefreeze": "8c2696b6f61e50d1836f5a661485b933604f46fc",
+  "dataset_doi": "10.5281/zenodo.10.5281/zenodo.20788903",
+  "release_date": "2026-06-21",
+  "files": [
+    ".zenodo.json",
+    "CITATION.cff",
+    "RELEASE_NOTES_v2.0.0.md"
+  ]
+}
