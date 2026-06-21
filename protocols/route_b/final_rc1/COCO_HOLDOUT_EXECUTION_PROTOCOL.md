@@ -8,7 +8,7 @@
 - selected-candidate tag:
   `route-b-v2.0.0-rc1-selected-final-candidate`;
 - runner-freeze tag:
-  `route-b-v2.0.0-rc1-holdout-runner-freeze`.
+  `route-b-v2.0.0-rc1-holdout-runner-freeze-v2`.
 
 ## Holdout partition
 
@@ -43,3 +43,11 @@ Each problem uses the same deterministic seed for all algorithms:
 6. any pooled 1-15 result must be explicitly secondary.
 
 No algorithm modification is permitted after opening this holdout.
+
+## COCO instance-construction semantics
+
+Actual BBOB instance identifiers 4-15 are supplied through the suite-instance argument:
+
+`cocoex.Suite("bbob", "instances: 4-15", suite_options)`.
+
+The `instance_indices` suite option is not used because it filters ordinal positions in an instantiated suite rather than actual instance numbers. A zero-evaluation preflight verifies 1,440 IDs with instances exactly 4-15 before an observer is attached.

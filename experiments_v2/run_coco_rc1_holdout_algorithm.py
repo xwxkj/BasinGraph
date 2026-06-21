@@ -57,7 +57,7 @@ EXPECTED_OPTIONS_HASH = (
 )
 CODE_FREEZE_TAG = "route-b-v2.0.0-rc1-codefreeze"
 FINAL_CANDIDATE_TAG = "route-b-v2.0.0-rc1-selected-final-candidate"
-RUNNER_FREEZE_TAG = "route-b-v2.0.0-rc1-holdout-runner-freeze"
+RUNNER_FREEZE_TAG = "route-b-v2.0.0-rc1-holdout-runner-freeze-v2"
 
 FUNCTIONS = list(range(1, 25))
 DIMENSIONS = [2, 3, 5, 10, 20]
@@ -386,12 +386,46 @@ def main() -> None:
 
     suite = cocoex.Suite(
         "bbob",
-        "",
-        (
-            "dimensions: 2,3,5,10,20 "
-            "function_indices: 1-24 "
-            "instance_indices: 4-15"
-        ),
+        "instances: 4-15",
+        "dimensions: 2,3,5,10,20 function_indices: 1-24",
+    )
+
+    # Validate actual IDs before attaching an observer or evaluating.
+    suite_ids = list(suite.ids())
+    parsed_ids = [parse_problem_id(pid) for pid in suite_ids]
+    observed_functions = sorted({f for f, _, _ in parsed_ids})
+    observed_instances = sorted({i for _, i, _ in parsed_ids})
+    observed_dimensions = sorted({d for _, _, d in parsed_ids})
+
+    suite_preflight = {
+        "status": "COCO_HOLDOUT_SUITE_PREFLIGHT_OK",
+        "suite_instance": "instances: 4-15",
+        "problem_count": len(suite_ids),
+        "functions": observed_functions,
+        "instances": observed_instances,
+        "dimensions": observed_dimensions,
+        "objective_evaluations_performed": 0,
+    }
+
+    if len(suite_ids) != 24 * 5 * 12:
+        raise RuntimeError(
+            f"Unexpected holdout problem count: {len(suite_ids)}"
+        )
+    if observed_functions != list(range(1, 25)):
+        raise RuntimeError(
+            f"Unexpected holdout functions: {observed_functions}"
+        )
+    if observed_instances != list(range(4, 16)):
+        raise RuntimeError(
+            f"Unexpected actual holdout instances: {observed_instances}"
+        )
+    if observed_dimensions != [2, 3, 5, 10, 20]:
+        raise RuntimeError(
+            f"Unexpected holdout dimensions: {observed_dimensions}"
+        )
+
+    (algorithm_root / "suite_preflight.json").write_text(
+        json.dumps(suite_preflight, indent=2)
     )
     result_folder = (
         f"routeb_v2_holdout/{args.run_id}/{args.algorithm}"
