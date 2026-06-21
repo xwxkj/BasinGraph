@@ -1,0 +1,19 @@
+{
+  "status": "STEP_B7C_COCO_HOLDOUT_ANALYSIS_OK",
+  "run_id": "v2rc1_coco_holdout_20260621T051443Z",
+  "package_core_hashes_verified": true,
+  "cocopp_manifest_entries": 631,
+  "cocopp_manifest_failures": 0,
+  "records": 10080,
+  "problems": 1440,
+  "algorithms": 7,
+  "development_instance_leakage": false,
+  "implementation_version": "2.0.0-rc1",
+  "options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "basingraph_mean_final_value_rank": 3.3586805555555554,
+  "basingraph_strict_final_target_successes": 437,
+  "development_mean_final_value_rank": 3.3912037037037037,
+  "common_dimension_mean_ecdf_delta_at_100_FE_per_dim": -0.0007942999397326603,
+  "common_dimension_mean_ecdf_delta_at_1000_FE_per_dim": -0.01391158160749506,
+  "archive_saturation_fraction": 1.0
+}

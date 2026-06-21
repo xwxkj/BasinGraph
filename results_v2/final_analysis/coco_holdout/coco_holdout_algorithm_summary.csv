@@ -1,0 +1,8 @@
+algorithm,algorithm_display,mean_final_value_rank,median_final_value_rank,final_value_best_or_tied,strict_final_target_successes,strict_final_target_success_rate,median_budget_ratio,records
+BIPOP_CMA_ES,BIPOP-CMA-ES,2.082986111111111,2.0,1010,767,0.5326388888888889,1.0,1440
+CMA_ES,CMA-ES,2.6649305555555554,2.0,751,681,0.47291666666666665,0.408,1440
+BasinGraph_v2,BasinGraph 2.0.0-rc1,3.3586805555555554,3.0,450,437,0.3034722222222222,1.0,1440
+DE,Differential Evolution,3.490972222222222,3.0,403,380,0.2638888888888889,1.0,1440
+MS_LBFGSB,Multi-start L-BFGS-B,4.524652777777778,4.0,390,363,0.2520833333333333,0.4041,1440
+Random,Random Search,5.8694444444444445,6.0,1,0,0.0,1.0,1440
+LHS,Latin Hypercube Sampling,6.008333333333334,6.0,2,0,0.0,1.0,1440
