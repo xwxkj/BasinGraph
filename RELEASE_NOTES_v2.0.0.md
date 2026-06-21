@@ -6,6 +6,6 @@ Public distribution of the byte-frozen BasinGraph 2.0.0-rc1 implementation.
 - Selected-candidate tag: `route-b-v2.0.0-rc1-selected-final-candidate`
 - COCO evidence tag: `route-b-v2.0.0-rc1-coco-holdout-freeze`
 - CUTEst evidence tag: `route-b-v2.0.0-rc1-cutest-holdout-freeze`
-- Reproducibility dataset: https://doi.org/10.5281/zenodo.10.5281/zenodo.20788903
+- Reproducibility dataset: https://doi.org/10.5281/zenodo.20788903
 
 Software is licensed under BSD-3-Clause.
