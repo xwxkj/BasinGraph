@@ -1,4 +1,4 @@
-"""Exact global and phase-level function-evaluation accounting."""
+"""Exact global, phase and local function-evaluation accounting."""
 
 from __future__ import annotations
 
@@ -13,6 +13,10 @@ class BudgetExhausted(RuntimeError):
 
 
 class PhaseBudgetExhausted(RuntimeError):
+    pass
+
+
+class LocalBudgetExhausted(RuntimeError):
     pass
 
 
@@ -43,42 +47,60 @@ class EvaluationLedger:
     def dimension(self) -> int:
         return int(self.lb.size)
 
-    def project(self, x: np.ndarray) -> np.ndarray:
-        return np.clip(np.asarray(x, dtype=float).reshape(-1), self.lb, self.ub)
+    def project(self, point: np.ndarray) -> np.ndarray:
+        return np.clip(
+            np.asarray(point, dtype=float).reshape(-1),
+            self.lb,
+            self.ub,
+        )
 
     @contextmanager
-    def phase(self, name: str, limit: int | None = None) -> Iterator[None]:
-        previous_phase = self.current_phase
+    def phase(
+        self,
+        name: str,
+        limit: int | None,
+    ) -> Iterator[None]:
+        previous_name = self.current_phase
         previous_limit = self.current_phase_limit
         self.current_phase = str(name)
-        self.current_phase_limit = None if limit is None else int(max(0, limit))
-        self.phase_evaluations.setdefault(self.current_phase, 0)
+        self.current_phase_limit = (
+            None
+            if limit is None
+            else int(max(0, limit))
+        )
+        self.phase_evaluations.setdefault(
+            self.current_phase,
+            0,
+        )
         try:
             yield
         finally:
-            self.current_phase = previous_phase
+            self.current_phase = previous_name
             self.current_phase_limit = previous_limit
 
-    def evaluate(self, x: np.ndarray) -> float:
+    def evaluate(self, point: np.ndarray) -> float:
         if self.nfe >= self.max_evals:
             raise BudgetExhausted()
 
-        used_in_phase = self.phase_evaluations.get(self.current_phase, 0)
+        used = self.phase_evaluations.get(
+            self.current_phase,
+            0,
+        )
         if (
             self.current_phase_limit is not None
-            and used_in_phase >= self.current_phase_limit
+            and used >= self.current_phase_limit
         ):
             raise PhaseBudgetExhausted()
 
-        z = self.project(x)
-        value = float(self.objective(z))
+        projected = self.project(point)
+        value = float(self.objective(projected))
 
         self.nfe += 1
-        self.phase_evaluations[self.current_phase] = used_in_phase + 1
+        self.phase_evaluations[self.current_phase] = used + 1
 
         if np.isfinite(value) and value < self.fbest:
             self.fbest = value
-            self.xbest = z.copy()
+            self.xbest = projected.copy()
 
         self.history.append((self.nfe, float(self.fbest)))
         return value
