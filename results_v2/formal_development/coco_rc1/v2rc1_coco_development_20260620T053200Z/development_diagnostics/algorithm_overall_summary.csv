@@ -1,0 +1,8 @@
+algorithm,algorithm_display,mean_rank,median_rank,wins,median_budget_ratio,problems
+BIPOP_CMA_ES,BIPOP-CMA-ES,2.0694444444444446,2.0,153,1.0,216
+CMA_ES,CMA-ES,2.689814814814815,2.0,120,0.384,216
+DE,Differential Evolution,3.321759259259259,3.0,69,1.0,216
+BasinGraph_v2,BasinGraph v2.0.0-rc1,3.388888888888889,3.0,71,1.0,216
+MS_LBFGSB,Multi-start L-BFGS-B,4.622685185185185,4.0,60,0.34155,216
+Random,Random Search,5.824074074074074,6.0,0,1.0,216
+LHS,Latin Hypercube Sampling,6.083333333333333,6.0,0,1.0,216

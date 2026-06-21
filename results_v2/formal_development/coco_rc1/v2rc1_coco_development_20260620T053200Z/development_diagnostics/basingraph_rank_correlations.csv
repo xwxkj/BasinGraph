@@ -1,0 +1,19 @@
+feature,spearman_rho_with_rank,p_value,interpretation
+phase_center_local_fraction,0.15908958693048264,0.019595881562749808,positive rho means larger feature is associated with worse rank
+diag_ruggedness_score,0.15168934460719993,0.025790670820278267,positive rho means larger feature is associated with worse rank
+diag_sign_change_rate,0.13796033363922416,0.04281346345512492,positive rho means larger feature is associated with worse rank
+phase_archive_fallback_fraction,0.12031359014125301,0.07766534522222944,positive rho means larger feature is associated with worse rank
+phase_final_polish_fraction,0.08648084747164636,0.20551241269623158,positive rho means larger feature is associated with worse rank
+phase_far_basin_fraction,0.07510744202088009,0.3082677646882603,positive rho means larger feature is associated with worse rank
+mean_edge_accessibility,0.06887227235162777,0.31367770816994217,positive rho means larger feature is associated with worse rank
+positive_improvement_edge_fraction,0.059549976715249184,0.38381030624886525,positive rho means larger feature is associated with worse rank
+diag_boundary_signal,0.05179985440354297,0.4488159581472725,positive rho means larger feature is associated with worse rank
+phase_initial_design_fraction,0.05088733233762684,0.45685797360863406,positive rho means larger feature is associated with worse rank
+mean_node_novelty,0.04187196685373751,0.5404799067470333,positive rho means larger feature is associated with worse rank
+phase_coordinate_sweep_fraction,-0.05134163967785459,0.45284417276474187,positive rho means larger feature is associated with worse rank
+phase_budget_completion_fraction,-0.07260999781241184,0.28807433116017495,positive rho means larger feature is associated with worse rank
+graph_edges,-0.07704920591466217,0.25953381713540974,positive rho means larger feature is associated with worse rank
+graph_edges_per_node,-0.07704920591466217,0.25953381713540974,positive rho means larger feature is associated with worse rank
+mean_node_visits,-0.09273776447260401,0.17446975419811994,positive rho means larger feature is associated with worse rank
+archive_nodes,,,positive rho means larger feature is associated with worse rank
+diag_anisotropy,,,positive rho means larger feature is associated with worse rank
