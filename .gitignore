@@ -45,3 +45,10 @@ results_v2/formal_development/coco_rc1/*/*.tar.gz
 exdata/routeb_v2_development/
 ppdata/
 logs_v2/
+
+# Prospective COCO holdout large artifacts
+results_v2/formal_holdout/coco_rc1/*/BasinGraph_v2/details/
+results_v2/formal_holdout/coco_rc1/*/*.tar.gz
+exdata/routeb_v2_holdout/
+ppdata/rc1_holdout_*/
+logs_v2/
