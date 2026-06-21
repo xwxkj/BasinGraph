@@ -45,3 +45,12 @@ results_v2/formal_development/coco_rc1/*/*.tar.gz
 exdata/routeb_v2_development/
 ppdata/
 logs_v2/
+
+# Route B rc2 development large artifacts
+results_v2/formal_development/coco_rc2/*/details/
+results_v2/formal_development/coco_rc2/*/*.tar.gz
+results_v2/rc1_rc2_review_package/
+results_v2/BasinGraph_rc1_vs_rc2_COCO_development_review_*.tar.gz
+exdata/routeb_v2_rc2_development/
+ppdata/rc1_vs_rc2_*/
+logs_v2/
