@@ -1,0 +1,78 @@
+{
+  "status": "RC1_DEVELOPMENT_EVIDENCE_FROZEN",
+  "created_utc": "2026-06-21T01:26:57.351816+00:00",
+  "development_run_id": "v2rc1_coco_development_20260620T053200Z",
+  "development_instances": [
+    1,
+    2,
+    3
+  ],
+  "holdout_accessed": false,
+  "rc1_implementation": "2.0.0-rc1",
+  "rc1_options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "rc1_algorithm_freeze_tag": "route-b-v2.0.0-rc1-ablationfreeze",
+  "rc1_algorithm_freeze_commit": "438b9d302ba85e220bbd225b6b80cc71ec4f5090",
+  "rc1_protocol_freeze_tag": "route-b-v2.0.0-rc1-protocolfreeze",
+  "rc1_protocol_freeze_commit": "49d99c471d1b8ee565b1d0dcf00a0c60f99a17bd",
+  "plan_freeze_commit_parent": "188ae2724fd4fc172e798095f2d0b4f5e29176af",
+  "rows": 1512,
+  "problems": 216,
+  "basingraph_final_value_mean_rank": 3.388888888888889,
+  "basingraph_final_value_wins": 71,
+  "basingraph_group_mean_ranks": {
+    "High conditioning / unimodal (f10-f14)": 3.7777777777777777,
+    "Low/moderate conditioning (f6-f9)": 3.4444444444444446,
+    "Multimodal with global structure (f15-f19)": 3.422222222222222,
+    "Multimodal with weak structure (f20-f24)": 3.111111111111111,
+    "Separable (f1-f5)": 3.2
+  },
+  "archive_saturation_fraction": 1.0,
+  "mean_archive_nodes": 80.0,
+  "mean_graph_edges": 163.23611111111111,
+  "mean_graph_edges_per_node": 2.0404513888888887,
+  "center_local_activation_fraction": 0.9953703703703703,
+  "far_basin_activation_fraction": 0.8611111111111112,
+  "center_local_rank_correlation": {
+    "spearman_rho": 0.1590895869304826,
+    "p_value": 0.0195958815627498
+  },
+  "cocopp_aggregate_target_fractions": {
+    "2D": {
+      "10d": 0.1441,
+      "100d": 0.5365,
+      "1000d": 0.7436
+    },
+    "5D": {
+      "10d": 0.0591,
+      "100d": 0.34,
+      "1000d": 0.5605
+    },
+    "10D": {
+      "10d": 0.1268,
+      "100d": 0.2876,
+      "1000d": 0.463
+    }
+  },
+  "cocopp_high_conditioning_1000d": {
+    "2D": 0.868,
+    "5D": 0.715,
+    "10D": 0.6118
+  },
+  "hardest_target_successes": {
+    "2D": 40,
+    "5D": 22,
+    "10D": 15,
+    "total": 77,
+    "total_problems": 216
+  },
+  "source_files": {
+    "results_v2/formal_development/coco_rc1/v2rc1_coco_development_20260620T053200Z/coco_v2_development_raw_results.csv": "cfb1ddc1dc088594adb9816a72ada44f6bce6cb450a2d6144749604412a0ffcc",
+    "results_v2/formal_development/coco_rc1/v2rc1_coco_development_20260620T053200Z/validation_report.json": "3e2044ef998da6707df5edbfde61bdc8a48fe3237acd0b6f84f8e7447549f050",
+    "results_v2/formal_development/coco_rc1/v2rc1_coco_development_20260620T053200Z/development_diagnostics/development_diagnostic_report.json": "d0f77973bb9921aeef17cfd0c5e55cb13fe1efe9a4b2fef89001394279d56fd6",
+    "results_v2/formal_development/coco_rc1/v2rc1_coco_development_20260620T053200Z/development_diagnostics/algorithm_function_group_summary.csv": "c9f4e79567d9ddc5a03a0abb2ba63a290558a717a7adddbdae5315e056fc06d9",
+    "results_v2/formal_development/coco_rc1/v2rc1_coco_development_20260620T053200Z/development_diagnostics/basingraph_internal_by_group_dimension.csv": "b71affff70261183fcd5575a308f73e934ed46f6dd9adb53ef5c6f789583f0ca",
+    "results_v2/formal_development/coco_rc1/v2rc1_coco_development_20260620T053200Z/development_diagnostics/basingraph_rank_correlations.csv": "9cb75e9aaca07d1fbe9afa63c366ab313d7b7746dd1be6afe7a4e0516dd4a41f",
+    "results_v2/formal_development/coco_rc1/v2rc1_coco_development_20260620T053200Z/development_diagnostics/algorithm_overall_summary.csv": "fff13972bd8e1f1d545521ce5d8de452419fcb93516511ac6a4ba67ec5725ba5"
+  },
+  "cocopp_output_path": "/Users/macbookpro-kaijiexu/Documents/BasinGraph202606/release/BasinGraph/ppdata/Basin_CMA_E_BIPOP_DE_MS_LB_LHS_Rando_et_al_061922h3843"
+}

@@ -1,0 +1,71 @@
+{
+  "status": "RC2_DEVELOPMENT_ACCEPTANCE_GATE_FROZEN",
+  "development_only": true,
+  "prospective_holdout_must_remain_unopened": true,
+  "comparison": "paired rc2 versus rc1 on identical COCO instances 1-3",
+  "integrity_gates_all_required": {
+    "implementation_version": "2.0.0-rc2",
+    "all_runs_complete": true,
+    "exact_function_evaluation_accounting": true,
+    "phase_evaluation_sum_equals_nfe": true,
+    "all_archive_nodes_certified": true,
+    "raw_probe_nodes_in_archive": 0,
+    "graph_edges_reference_certified_active_nodes_only": true,
+    "landscape_anisotropy_not_constant_on_bbob": true,
+    "principal_direction_phase_exercised": true
+  },
+  "mechanism_gates_all_required": {
+    "archive_saturation_fraction_max": 0.75,
+    "maximum_group_dimension_mean_edges_per_node": 3.0,
+    "center_local_activation_fraction_max": 0.8
+  },
+  "noninferiority_gates_all_required": {
+    "aggregate_ecdf_100d_max_absolute_drop_per_dimension": 0.02,
+    "fixed_budget_mean_rank_max": 3.49,
+    "weak_structure_multimodal_mean_rank_max": 3.21
+  },
+  "improvement_gates_require_at_least": 2,
+  "improvement_gates": {
+    "mean_aggregate_ecdf_1000d_min_gain": 0.02,
+    "mean_high_conditioning_ecdf_1000d_5d_10d_min_gain": 0.03,
+    "hardest_target_successes_min": 82,
+    "fixed_budget_mean_rank_target": 3.34
+  },
+  "rc1_reference": {
+    "aggregate_ecdf": {
+      "2D": {
+        "10d": 0.1441,
+        "100d": 0.5365,
+        "1000d": 0.7436
+      },
+      "5D": {
+        "10d": 0.0591,
+        "100d": 0.34,
+        "1000d": 0.5605
+      },
+      "10D": {
+        "10d": 0.1268,
+        "100d": 0.2876,
+        "1000d": 0.463
+      }
+    },
+    "high_conditioning_1000d": {
+      "2D": 0.868,
+      "5D": 0.715,
+      "10D": 0.6118
+    },
+    "hardest_target_successes": {
+      "2D": 40,
+      "5D": 22,
+      "10D": 15,
+      "total": 77,
+      "total_problems": 216
+    },
+    "fixed_budget_mean_rank": 3.388888888888889,
+    "weak_structure_multimodal_mean_rank": 3.111111111111111
+  },
+  "decision": {
+    "accept_rc2": "all integrity, mechanism and noninferiority gates pass, and at least two improvement gates pass",
+    "reject_rc2": "otherwise retain rc1 or explicitly terminate optimization development; do not inspect holdout"
+  }
+}
