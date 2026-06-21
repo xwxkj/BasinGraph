@@ -1,0 +1,23 @@
+{
+  "status": "RC2_REJECTED_ON_FROZEN_DEVELOPMENT_GATE",
+  "decision_date": "2026-06-20",
+  "rc1_run_id": "v2rc1_coco_development_20260620T053200Z",
+  "rc2_run_id": "v2rc2_coco_development_20260621T035558Z",
+  "development_only": true,
+  "holdout_accessed": false,
+  "paired_problems": 216,
+  "rc2_better": 64,
+  "rc2_worse": 90,
+  "ties": 62,
+  "integrity_gates_passed": true,
+  "mechanism_gates_passed": true,
+  "fixed_budget_mean_rank": 3.5324074074074074,
+  "fixed_budget_noninferiority_limit": 3.49,
+  "hardest_target_successes": 69,
+  "hardest_target_success_target": 82,
+  "known_improvement_gates_passed": 0,
+  "required_improvement_gates": 2,
+  "final_decision": "Reject rc2 without opening holdout",
+  "rc3_authorized": false,
+  "next_candidate": "rc1 with exact paper-code semantic alignment"
+}
