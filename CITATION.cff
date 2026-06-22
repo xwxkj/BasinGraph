@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 title: "BasinGraph: geometry-controlled basin-graph optimization"
-version: 2.0.0
-date-released: 2026-06-21
+version: 2.0.1
+date-released: 2026-06-22
 license: BSD-3-Clause
 type: software
 abstract: "Geometry-controlled nonconvex optimization with an operational basin-state archive and directed observed-transition graph. The result-bearing implementation is BasinGraph 2.0.0-rc1."

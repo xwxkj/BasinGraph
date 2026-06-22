@@ -1,13 +1,14 @@
 # Large data archives
 
-Large raw benchmark outputs are intentionally excluded from GitHub.
+Large raw benchmark outputs are intentionally excluded from GitHub. The
+reproducibility dataset version 2.0.1 at
+https://doi.org/10.5281/zenodo.20791231 contains:
 
-The Zenodo release should contain:
-
-1. final official COCO/BBOB observer logs and cocopp output;
-2. CUTEst 10,500-row raw result table and all convergence histories;
-3. MATLAB full-parallel raw results;
-4. Source Data for each manuscript figure;
+1. prospective official COCO/BBOB observer logs and cocopp output;
+2. prospective CUTEst raw records and all atomic improvement histories;
+3. Source Data and figure sources;
+4. frozen protocols, analysis plans and excluded-attempt audits;
 5. SHA-256 manifests and environment metadata.
 
-Insert the Zenodo DOI here after release.
+The historical dataset version 2.0.0 remains in the Zenodo version chain but
+is not the version cited by the final manuscript.

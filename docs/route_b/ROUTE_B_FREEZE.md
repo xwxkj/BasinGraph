@@ -1,38 +1,21 @@
-# Route B freeze: full BasinGraph v2.0.0
+# Route B freeze: selected BasinGraph rc1
 
-This branch implements the full BasinGraph algorithm and supersedes the earlier
-development implementation used in the initial v1.0.0 validation package.
+## Final selected candidate
 
-## Frozen legacy status
+The result-bearing implementation is BasinGraph 2.0.0-rc1 with options hash
+`031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69` and tag
+`route-b-v2.0.0-rc1-selected-final-candidate`.
 
-The following materials are retained only as legacy/development evidence:
+## Final prospective evidence
 
-- BasinGraph v1.0.0 software release
-- original official COCO/BBOB validation
-- original pre-registered CUTEst validation
-- original Zenodo reproducibility dataset
-- independent MATLAB v3.3 validation package
+- COCO/BBOB: actual instances 4-15, 24 functions, dimensions 2, 3, 5, 10 and
+  20, seven algorithms and budget 1,000d.
+- CUTEst: 24 held-out instances, 30 paired seeds and seven algorithms.
 
-These materials must not be presented as final evidence for the full
-BasinGraph v2.0.0 algorithm.
+Development records, rejected rc2 records and excluded execution attempts are
+retained as audit evidence and are not pooled with the final holdouts.
 
-## Route B target
+## Public release policy
 
-The goal of this branch is to implement a complete BasinGraph optimizer with:
-
-1. explicit basin-node archive;
-2. merge rule for basin identity;
-3. directed transition graph;
-4. edge cost, improvement, barrier and accessibility metadata;
-5. multi-bracket coordinate-Brent basin sweep;
-6. geometry diagnostics including anisotropy, boundary signal and ruggedness;
-7. graph-aware archive fallback;
-8. budget-completion probing;
-9. full logging of archive and graph outputs;
-10. new official COCO/BBOB, CUTEst, AppliedMath and ablation results.
-
-## Version target
-
-The new version will be released as:
-
-BasinGraph v2.0.0
+Software v2.0.1 is a documentation-only cleanup. It removes obsolete legacy
+statements and does not modify the selected algorithm or any reported result.

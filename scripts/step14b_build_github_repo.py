@@ -245,8 +245,8 @@ def main():
     ):
         copied.append("protocols")
 
-    # Figure source and independent MATLAB validation if present.
-    for name in ["figure_source", "matlab_validation", "analysis"]:
+    # Figure source and final analysis products if present.
+    for name in ["figure_source", "analysis"]:
         if copy_tree_if_present(
             PROJECT_ROOT / name,
             REPO_ROOT / name,
@@ -336,7 +336,7 @@ not committed to GitHub. They will be deposited on Zenodo and linked by DOI.
 - Official noiseless COCO/BBOB: 24 functions, dimensions 2, 3, 5, 10 and 20,
   15 instances, and a budget of 1,000d evaluations.
 - Pre-registered CUTEst: 50 instances, seven algorithms, and 30 paired seeds.
-- Independent MATLAB full-parallel validation and applied-mathematics tests.
+
 
 ## Installation
 
@@ -488,9 +488,8 @@ The Zenodo release should contain:
 
 1. final official COCO/BBOB observer logs and cocopp output;
 2. CUTEst 10,500-row raw result table and all convergence histories;
-3. MATLAB full-parallel raw results;
-4. Source Data for each manuscript figure;
-5. SHA-256 manifests and environment metadata.
+3. Source Data for each manuscript figure;
+4. SHA-256 manifests and environment metadata.
 
 Insert the Zenodo DOI here after release.
 """

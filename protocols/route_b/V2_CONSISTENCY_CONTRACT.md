@@ -1,12 +1,11 @@
-
-# BasinGraph v2.0.0 consistency contract
+# BasinGraph final consistency contract
 
 ## Non-negotiable rule
 
-No manuscript claim, figure, table, COCO result, CUTEst result, AppliedMath result
-or ablation result may be reported as BasinGraph v2.0.0 unless it was generated
-by the `basingraph_v2` implementation on this branch or by a later tagged v2
-successor.
+No manuscript claim, figure or table may be attributed to the selected
+BasinGraph candidate unless it is supported by the byte-frozen
+`basingraph_v2` implementation, options hash `031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69`, and the frozen
+prospective COCO/BBOB or CUTEst evidence.
 
 ## Required public objects
 
@@ -29,14 +28,9 @@ successor.
 - event_log
 - message
 
-## Required result regeneration
+## Final evidence boundary
 
-The following must be rerun after v2.0.0 implementation freeze:
-
-1. official COCO/BBOB;
-2. pre-registered CUTEst;
-3. AppliedMath suite;
-4. ablation suite;
-5. MATLAB consistency tests, if MATLAB is retained as an independent validation.
-
-Earlier v1.0.0 results and DOI records remain historical/development evidence only.
+Primary external evidence consists only of the prospective COCO/BBOB and
+CUTEst holdouts. Development records, rejected candidate records and legacy
+archives remain historical/audit material and must not be presented as final
+performance evidence.
