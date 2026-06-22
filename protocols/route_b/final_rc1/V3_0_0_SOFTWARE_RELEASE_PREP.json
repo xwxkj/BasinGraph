@@ -1,0 +1,17 @@
+{
+  "status": "V3_0_0_SOFTWARE_RELEASE_PREPARED",
+  "version": "3.0.0",
+  "publication_date": "2026-06-22",
+  "dataset_doi": "10.5281/zenodo.20800093",
+  "result_bearing_implementation": "2.0.0-rc1",
+  "algorithm_changed": false,
+  "parameters_changed": false,
+  "benchmark_runs_changed": false,
+  "numerical_results_changed": false,
+  "prepared_from_commit": "5f768bc650b9ebe19b898f7dd1521ca150ec7a57",
+  "files": {
+    ".zenodo.json": "ae685c320d496cad6c596cf4d38bec4f963556e959d0ff4036a0028be7267116",
+    "CITATION.cff": "2a2bf16bf52cc837d0620c34a552efbbac42c449fea91c187f6fba529ef3eeee",
+    "RELEASE_NOTES_v3.0.0.md": "ecac98ba83bda99bc9f682887684c8e2c2f3aeac396fcbd3d733dbfca3c4b188"
+  }
+}

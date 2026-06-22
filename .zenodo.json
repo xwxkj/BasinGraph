@@ -7,13 +7,13 @@
       "type": "ProjectLeader"
     }
   ],
-  "title": "BasinGraph: geometry-controlled basin-graph optimization",
-  "version": "2.0.1",
+  "title": "BasinGraph: geometry-controlled operational search-state optimization",
+  "version": "3.0.0",
   "access_right": "open",
   "upload_type": "software",
   "language": "eng",
-  "license": "bsd-3-clause",
-  "description": "Documentation-only cleanup for the selected BasinGraph 2.0.0-rc1 implementation. Obsolete legacy-validation statements were removed; algorithm source, frozen options and reported results are unchanged.",
+  "license": "BSD-3-Clause",
+  "description": "Documentation and archive-composition release for the selected BasinGraph 2.0.0-rc1 implementation. The optimizer source, frozen options, benchmark runs, raw results and numerical conclusions are unchanged. This release aligns the public software archive with the prospective COCO/BBOB and CUTEst evidence and excludes legacy validation and applied-problem benchmark materials from the current archive.",
   "keywords": [
     "global optimization",
     "derivative-free optimization",
@@ -29,7 +29,7 @@
       "resource_type": "software"
     },
     {
-      "identifier": "10.5281/zenodo.20791231",
+      "identifier": "10.5281/zenodo.20800093",
       "relation": "isSupplementedBy",
       "scheme": "doi",
       "resource_type": "dataset"

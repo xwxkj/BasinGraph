@@ -2,7 +2,7 @@
 
 Large raw benchmark outputs are intentionally excluded from GitHub. The
 reproducibility dataset version 2.0.1 at
-https://doi.org/10.5281/zenodo.20791231 contains:
+https://doi.org/10.5281/zenodo.20800093 contains:
 
 1. prospective official COCO/BBOB observer logs and cocopp output;
 2. prospective CUTEst raw records and all atomic improvement histories;

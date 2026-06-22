@@ -49,7 +49,7 @@ CUTEst additionally requires SIFDecode, CUTEst, MASTSIF and PyCUTEst. See
 
 ## Reproducibility data
 
-- Dataset version 2.0.1 DOI: https://doi.org/10.5281/zenodo.20791231
+- Dataset version 2.0.1 DOI: https://doi.org/10.5281/zenodo.20800093
 - Dataset all-versions DOI: https://doi.org/10.5281/zenodo.20765046
 
 The v2.0.1 dataset contains the prospective COCO/BBOB and CUTEst evidence,
