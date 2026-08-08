@@ -27,7 +27,7 @@ SHA-256 file for return.
 
 Available runner modes:
 
-- `smoke`: 24 runs;
+- `smoke`: 32 runs, including a 25D controller-activation probe;
 - `pilot`: 112 runs;
 - `full-mini`: 280 runs.
 
