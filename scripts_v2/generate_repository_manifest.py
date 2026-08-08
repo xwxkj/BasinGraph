@@ -74,6 +74,8 @@ def walked_files() -> list[Path]:
 def main() -> None:
     args = parse_args()
     output_path = (ROOT / args.output).resolve()
+    scope_path = output_path.with_suffix(".scope.json")
+    self_outputs = {output_path, scope_path}
 
     candidates = walked_files() if args.include_untracked else tracked_files()
     if not candidates:
@@ -83,7 +85,7 @@ def main() -> None:
     for path in sorted(candidates, key=lambda item: item.relative_to(ROOT).as_posix()):
         if not path.is_file():
             continue
-        if path.resolve() == output_path:
+        if path.resolve() in self_outputs:
             continue
         relative = path.relative_to(ROOT).as_posix()
         if relative.startswith(EXCLUDED_PREFIXES):
@@ -107,12 +109,12 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(rows)
 
-    scope_path = output_path.with_suffix(".scope.json")
     scope = {
         "status": "REPOSITORY_MANIFEST_GENERATED",
         "root": str(ROOT),
         "manifest": str(output_path.relative_to(ROOT)),
         "manifest_self_excluded": True,
+        "scope_file_self_excluded": True,
         "tracked_files_preferred": not args.include_untracked,
         "excluded_parts": sorted(EXCLUDED_PARTS),
         "excluded_prefixes": list(EXCLUDED_PREFIXES),
