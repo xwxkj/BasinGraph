@@ -34,6 +34,7 @@ def main() -> None:
         writer = csv.DictWriter(
             handle,
             fieldnames=["relative_path", "sha256", "size_bytes"],
+            lineterminator="\n",
         )
         writer.writeheader()
         writer.writerows(rows)
