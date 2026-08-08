@@ -1,7 +1,7 @@
 # BasinGraph
 
-[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20791905.svg)](https://doi.org/10.5281/zenodo.20791905)
-[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20800093.svg)](https://doi.org/10.5281/zenodo.20800093)
+[![Result-bearing software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20789002.svg)](https://doi.org/10.5281/zenodo.20789002)
+[![Reproducibility dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20788903.svg)](https://doi.org/10.5281/zenodo.20788903)
 
 BasinGraph is a geometry-controlled basin-graph optimizer for nonconvex
 mathematical models. It maintains a fixed-capacity archive of operational
@@ -93,16 +93,18 @@ A deterministic repository manifest can be generated with:
 python scripts_v2/generate_repository_manifest.py
 ```
 
-## Archives and DOI records
+## Public archives used by the manuscript
 
-| Resource | Version-specific DOI | All-versions DOI |
-|---|---|---|
-| Software archive v3.0.0 | `10.5281/zenodo.20791905` | `10.5281/zenodo.20765883` |
-| Reproducibility dataset v3.0.0 | `10.5281/zenodo.20800093` | `10.5281/zenodo.20800092` |
+| Resource | Public version-specific DOI |
+|---|---|
+| Result-bearing software archive v2.0.0 | `10.5281/zenodo.20789002` |
+| Reproducibility dataset v2.0.0 | `10.5281/zenodo.20788903` |
 
-Software release v3.0.0 is a documentation and archive-composition release.
+The GitHub release `v3.0.0` is a documentation and archive-composition release.
 It does not change the result-bearing optimizer, frozen options, benchmark
-runs, raw results, statistical analyses or numerical conclusions.
+runs, raw results, statistical analyses or numerical conclusions. Reserved or
+unverified DOI values in historical release-preparation files are retained only
+as provenance and are not used as the authoritative manuscript citations.
 
 ## Licence
 
