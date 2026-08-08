@@ -6,6 +6,7 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .venv/
+.venv-b21/
 venv/
 
 # macOS / editors
@@ -31,6 +32,11 @@ logs/
 processed_results/
 archive/
 manuscript/
+
+# B21 local smoke, pilot and evidence-extension outputs
+results_b21/
+logs_b21/
+B21_RETURN_*.zip
 
 # Secrets / local configuration
 .env
