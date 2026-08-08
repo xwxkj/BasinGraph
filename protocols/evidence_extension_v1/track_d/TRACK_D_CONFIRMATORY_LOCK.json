@@ -1,0 +1,77 @@
+{
+  "status": "TRACK_D_CONFIRMATORY_PROTOCOL_FROZEN",
+  "frozen_date": "2026-08-08",
+  "suite": "bbob-largescale",
+  "functions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "dimensions": [
+    40,
+    80,
+    160,
+    320
+  ],
+  "instances": [
+    16,
+    17,
+    18
+  ],
+  "budget_multiplier": 200,
+  "algorithms": [
+    "BasinGraph",
+    "CMA_ES",
+    "L_SHADE_1_0_1",
+    "L_SRTDE",
+    "MS_LBFGSB"
+  ],
+  "expected_problems_per_algorithm": 288,
+  "expected_rows": 1440,
+  "base_seed": 20260808,
+  "seed_formula": "base_seed + 100000*function + 1000*dimension + instance",
+  "overhead_probe": {
+    "functions": [
+      1,
+      10,
+      20
+    ],
+    "dimensions": [
+      40,
+      80,
+      160,
+      320
+    ],
+    "instances": [
+      1
+    ],
+    "budget_multiplier": 50,
+    "workers": 1,
+    "expected_rows": 60
+  },
+  "primary_endpoint": "official cocopp target-runtime plus registered sequential optimizer-side overhead",
+  "candidate_changes_allowed": false,
+  "baseline_parameter_changes_allowed": false,
+  "protocol_revision": "1.0.0"
+}

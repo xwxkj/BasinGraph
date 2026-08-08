@@ -1,0 +1,133 @@
+{
+  "status": "TRACK_D_SOURCE_IDENTITY_FROZEN",
+  "identity_version": "1.0.0",
+  "date": "2026-08-08",
+  "repository": "xwxkj/BasinGraph",
+  "branch": "ncs-evidence-v1-track-d",
+  "materialization_parent_main_commit": "6e92e70e27e433d5ad951540218cc7b6340f36b3",
+  "track_b_merge_commit": "e567b085b5ec6621a57fc3f7bd66d758ea10ddeb",
+  "track_b_frozen_source": "e405cb5d34e7a26242d2c9b77a03f63f1b19c54a",
+  "candidate_tag": "route-b-v2.0.0-rc1-selected-final-candidate",
+  "candidate_commit": "adbc0ecdf1153044188f0508321c47001ad9bdb0",
+  "implementation_version": "2.0.0-rc1",
+  "full_options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "suite": "bbob-largescale",
+  "confirmatory_partition": {
+    "functions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "dimensions": [
+      40,
+      80,
+      160,
+      320
+    ],
+    "instances": [
+      16,
+      17,
+      18
+    ],
+    "budget_multiplier": 200,
+    "algorithms": 5,
+    "expected_rows": 1440
+  },
+  "registered_overhead_probe": {
+    "functions": [
+      1,
+      10,
+      20
+    ],
+    "dimensions": [
+      40,
+      80,
+      160,
+      320
+    ],
+    "instances": [
+      1
+    ],
+    "budget_multiplier": 50,
+    "workers": 1,
+    "expected_rows": 60
+  },
+  "implementation_notice": {
+    "BasinGraph": "Immutable basingraph_v2 candidate with archive capacity 80 and frozen options hash.",
+    "CMA_ES": "pycma CMAEvolutionStrategy wrapper frozen in Track B.",
+    "L_SHADE_1_0_1": "Source-aligned transparent Python port of corrected L-SHADE 1.0.1 frozen in Track B; not a byte-identical official executable.",
+    "L_SRTDE": "Transparent source-guided Python port frozen in Track B with registered deviations; not the GPL C++ executable.",
+    "MS_LBFGSB": "Repeated SciPy bounded L-BFGS-B wrapper frozen in Track B."
+  },
+  "measurement_notice": {
+    "objective_time": "Cumulative perf_counter time around the observed COCO problem call.",
+    "optimizer_side_time": "Total optimizer wall time minus observed objective-call time.",
+    "peak_rss": "Process ru_maxrss measured before result serialization and normalized by platform; the shard-level maximum is the primary memory summary.",
+    "parallel_wall_time": "Secondary and descriptive only.",
+    "scaling_slopes": "Empirical log2-log2 summaries, not asymptotic complexity proofs."
+  },
+  "git_blobs": {
+    ".github/workflows/b21-track-d-ci.yml": "04c81cabe73344cf65489d05a5d677535cea6601",
+    "START_B21_TRACK_D_CONFIRMATORY.command": "4c51a7210dfc067ad44a20730df2cd182187f1d7",
+    "START_B21_TRACK_D_SMOKE.command": "3494ca1cb0e5e5c5f0c7affb9f60ab1e65bd03ec",
+    "basingraph_v2/__init__.py": "15e3bdb10ff0503e980f3be553204145a1fb1735",
+    "basingraph_v2/archive.py": "db76d713f991c2ee0597c6b33f8a63d06ddf2079",
+    "basingraph_v2/diagnostics.py": "fb8bffa18e647c2718f4cf1bbd6a5c0f376db445",
+    "basingraph_v2/evaluation.py": "d699f4d5ee5ed7fcc669b2343eb45bad920a4fa3",
+    "basingraph_v2/graph.py": "f1793412ed53344040e4846860a9340cec8d505a",
+    "basingraph_v2/line_search.py": "bfacbd1e41c6f56a873ff5849a07a20b61828865",
+    "basingraph_v2/optimizer.py": "4433d2b92075dcd858529f7f13342631847def4c",
+    "basingraph_v2/types.py": "cc73af58c206b620b486eb5519106a114d22fab4",
+    "evidence_extension_v1/track_b/modern_baselines.py": "52b09839b2bb5d13df16dfb03d986a77e4cfc08f",
+    "evidence_extension_v1/track_d/README.md": "734a58ba11609aa1ecb76eff33cfd19cb7088109",
+    "evidence_extension_v1/track_d/__init__.py": "e85ae5e36d9766ce09137bd065effcba8688c7dd",
+    "evidence_extension_v1/track_d/common.py": "fd328ad0ade3f5aa199fe0de2cd5d9875b45bdaf",
+    "evidence_extension_v1/track_d/finalize_track_d.py": "1d2f40ec1333314b5652e09f1e0b26a4a0c1e094",
+    "evidence_extension_v1/track_d/generate_protocol_manifest.py": "1ba47ff649f998e89a893c029354c2ca0e9ff4e0",
+    "evidence_extension_v1/track_d/preflight_track_d.py": "f83df54570fbe44bb4655102b9d926db39f10b9b",
+    "evidence_extension_v1/track_d/run_track_d_all.py": "b3904130b44cc4ea94bce622d2fd8caa7822652e",
+    "evidence_extension_v1/track_d/run_track_d_mac.sh": "a7d007bec6a9438d41b7079b928f44f084097f55",
+    "evidence_extension_v1/track_d/run_track_d_shard.py": "c27986b00e230a7f5bb38e8ef821f6559682d8da",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_ALGORITHM_SPECIFICATIONS.json": "3bb3641126d0cfe504c335cd036a59a77d00f29c",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_ANALYSIS_PLAN.md": "96e3e796329bfeb078c68eb0bc96179611a0c43e",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_BASELINE_PROVENANCE.csv": "4bd95454f9b1875c5d7484dd20f08f0ff23f167c",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_CONFIRMATORY_LOCK.json": "4fffc17a58721307b79335b85c1aa9ab272bea45",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_CONFIRMATORY_PROTOCOL.md": "67179be3d33ebc22df07633835a9a75fb1084165",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_EXPECTED_RUN_MATRIX.csv": "44ba7486b29316a3ebe6915856ac78c5bb020590",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_FUNCTION_GROUPS.csv": "d88ed24ce1ca4435ca21c393294b3f416a341586",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_INSTANCE_PARTITION.json": "aaf258e53ded9a671279d9f56cac3cdb64de5c70",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_MACHINE_CONTRACT.json": "f1adf13040bcf38a6e7791bfe3d5f03370e17248",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_PARAMETER_TABLE.csv": "7d0e89ec74baeb46ad7439d2d7e3bbdf87bc58d6",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_REQUIREMENTS_LOCK.txt": "838bde55cf5c0159da35cdaa3930663974f6ec64",
+    "protocols/evidence_extension_v1/track_d/TRACK_D_SMOKE_PROTOCOL.md": "e6242e8c9554687cba693d24122249553847aa3a",
+    "tests_v2/test_track_d_contract.py": "4df139d41c067b0088c89192237d0d4bd4157a69"
+  },
+  "excluded_from_self_identity": [
+    "protocols/evidence_extension_v1/track_d/TRACK_D_SOURCE_IDENTITY.json",
+    "protocols/evidence_extension_v1/track_d/MANIFEST_SHA256.csv"
+  ],
+  "algorithm_source_changes_allowed": false,
+  "post_freeze_runner_changes_require_new_identity": true,
+  "confirmatory_objective_evaluations_before_freeze": 0
+}

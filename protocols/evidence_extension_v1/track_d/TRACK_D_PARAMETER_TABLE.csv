@@ -1,0 +1,15 @@
+algorithm,parameter,value,note
+BasinGraph,implementation,2.0.0-rc1,immutable result-bearing candidate
+BasinGraph,options hash,031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69,no Track D tuning
+BasinGraph,archive capacity,80,fixed across dimensions
+CMA_ES,implementation,pycma CMAEvolutionStrategy,unchanged Track B wrapper
+L_SHADE_1_0_1,initial population,18D,minimum 4
+L_SHADE_1_0_1,memory size,6,corrected 1.0.1 source-aligned port
+L_SHADE_1_0_1,archive rate,2.6,random replacement correction retained
+L_SHADE_1_0_1,p-best rate,0.11,frozen
+L_SRTDE,initial population,20D,minimum 4
+L_SRTDE,memory size,5,transparent source-guided port
+MS_LBFGSB,first start,bound midpoint,unchanged Track B wrapper
+MS_LBFGSB,subsequent starts,alternating incumbent perturbation and uniform start,unchanged Track B wrapper
+Track_D,confirmatory budget,200D,functions 1-24; dimensions 40-320; instances 16-18
+Track_D,overhead budget,50D,sequential one-worker functions 1 10 20 instance 1

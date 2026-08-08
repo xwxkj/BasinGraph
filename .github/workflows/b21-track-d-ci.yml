@@ -1,0 +1,132 @@
+name: B21 Track D preflight and smoke
+
+on:
+  pull_request:
+    paths:
+      - 'basingraph_v2/**'
+      - 'evidence_extension_v1/track_b/modern_baselines.py'
+      - 'evidence_extension_v1/track_d/**'
+      - 'protocols/evidence_extension_v1/track_d/**'
+      - 'tests_v2/test_track_d_contract.py'
+      - 'START_B21_TRACK_D_*.command'
+      - '.github/workflows/b21-track-d-ci.yml'
+  push:
+    branches: [ncs-evidence-v1-track-d]
+    paths:
+      - 'evidence_extension_v1/track_d/**'
+      - 'protocols/evidence_extension_v1/track_d/**'
+      - 'tests_v2/test_track_d_contract.py'
+      - 'START_B21_TRACK_D_*.command'
+      - '.github/workflows/b21-track-d-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  track-d-smoke:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: '3.11'
+          - os: macos-latest
+            python: '3.11'
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 75
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Install frozen Track D environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r protocols/evidence_extension_v1/track_d/TRACK_D_REQUIREMENTS_LOCK.txt
+          python -m pip install -e . --no-deps
+          python -m pip install pytest
+
+      - name: Compile sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m compileall -q evidence_extension_v1/track_d tests_v2/test_track_d_contract.py
+          bash -n evidence_extension_v1/track_d/run_track_d_mac.sh
+          bash -n START_B21_TRACK_D_SMOKE.command
+          bash -n START_B21_TRACK_D_CONFIRMATORY.command
+
+      - name: Run frozen contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pytest -q tests_v2/test_track_d_contract.py
+
+      - name: Generate protocol and repository manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python evidence_extension_v1/track_d/generate_protocol_manifest.py
+          python scripts_v2/generate_repository_manifest.py
+          git diff --exit-code -- protocols/evidence_extension_v1/track_d/MANIFEST_SHA256.csv
+
+      - name: Step 0 identity audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts_v2/audit_step0_identity.py \
+            --require-manifest \
+            --output results_b21/track_d/identity_audit_ci.json
+
+      - name: Track D zero-evaluation preflights
+        shell: bash
+        run: |
+          set -euo pipefail
+          python evidence_extension_v1/track_d/preflight_track_d.py \
+            --mode smoke \
+            --output results_b21/track_d/preflight_smoke_ci.json
+          python evidence_extension_v1/track_d/preflight_track_d.py \
+            --mode overhead \
+            --output results_b21/track_d/preflight_overhead_ci.json
+          python evidence_extension_v1/track_d/preflight_track_d.py \
+            --mode confirmatory \
+            --authorize-confirmatory \
+            --output results_b21/track_d/preflight_confirmatory_ci.json
+
+      - name: Track D 30-run smoke and official cocopp
+        shell: bash
+        run: |
+          set -euo pipefail
+          export OMP_NUM_THREADS=1
+          export MKL_NUM_THREADS=1
+          export OPENBLAS_NUM_THREADS=1
+          export VECLIB_MAXIMUM_THREADS=1
+          export NUMEXPR_NUM_THREADS=1
+          RUN_ID="b21_track_d_ci_${{ runner.os }}"
+          python evidence_extension_v1/track_d/run_track_d_all.py \
+            --mode smoke \
+            --run-id "${RUN_ID}" \
+            --workers 2 \
+            --base-seed 20260808
+          python evidence_extension_v1/track_d/finalize_track_d.py \
+            --mode smoke \
+            --run-id "${RUN_ID}" \
+            --base-seed 20260808
+
+      - name: Upload Track D smoke
+        uses: actions/upload-artifact@v4
+        with:
+          name: track-d-${{ runner.os }}
+          if-no-files-found: error
+          retention-days: 90
+          path: |
+            results_b21/track_d/
+            protocols/evidence_extension_v1/track_d/
+            exdata/b21_track_d/
+            ppdata/

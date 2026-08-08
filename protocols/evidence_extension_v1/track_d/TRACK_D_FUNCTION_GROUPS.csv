@@ -1,0 +1,6 @@
+function_start,function_end,group_id,group_name
+1,5,G1,separable
+6,9,G2,low_or_moderate_conditioning
+10,14,G3,highly_conditioned_unimodal
+15,19,G4,multimodal_adequate_global_structure
+20,24,G5,multimodal_weak_global_structure
