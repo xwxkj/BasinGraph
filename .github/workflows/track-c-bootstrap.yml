@@ -43,6 +43,15 @@ jobs:
               --output "data/nist/${name}.dat"
           done
 
+      - name: Install frozen Track C environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r protocols/evidence_extension_v1/track_c/TRACK_C_REQUIREMENTS_LOCK.txt
+          python -m pip install -e . --no-deps
+          python -m pip install pytest
+
       - name: Materialize protocol locks, provenance and source identity
         shell: bash
         run: |
@@ -57,10 +66,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python -m pip install --upgrade pip setuptools wheel
-          python -m pip install -r protocols/evidence_extension_v1/track_c/TRACK_C_REQUIREMENTS_LOCK.txt
-          python -m pip install -e . --no-deps
-          python -m pip install pytest
           python -m pytest -q tests_v2/test_track_c_contract.py
 
       - name: Commit frozen Track C payload
