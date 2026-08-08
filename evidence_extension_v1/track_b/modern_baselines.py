@@ -560,12 +560,14 @@ def optimize_lsrtde(
     max_evals: int,
     seed: int = 0,
 ) -> dict[str, Any]:
-    """Python port of the public L-SRTDE CEC-2024 core algorithm.
+    """Transparent Python port of the public L-SRTDE CEC-2024 core.
 
-    The mutation, success-rate adaptation, crossover-memory update and linear
-    population reduction follow the public C++ source.  Only the objective and
-    per-coordinate bounds interface are generalized from the original CEC
-    harness.
+    Mutation, success-rate adaptation, crossover-memory update and linear
+    population reduction follow the public C++ core.  Registered deviations are
+    the NumPy random generator, arbitrary finite bounds/external objective,
+    pre-replacement success-delta measurement, stable elite reduction and
+    front-index normalization after population reduction.  This is not the GPL
+    C++ executable.
     """
 
     rng = np.random.default_rng(seed)
@@ -582,7 +584,7 @@ def optimize_lsrtde(
             bo,
             algorithm="L_SRTDE",
             message="budget_exhausted_during_initialization",
-            implementation="python_port_official_CEC2024_core",
+            implementation="transparent_python_port_public_CEC2024_core",
         )
 
     initial_size = len(population)
@@ -703,12 +705,19 @@ def optimize_lsrtde(
         bo,
         algorithm="L_SRTDE",
         message="budget_exhausted" if bo.remaining == 0 else "completed",
-        implementation="python_port_official_CEC2024_core",
+        implementation="transparent_python_port_public_CEC2024_core",
         metadata={
             "official_source_commit": "fa7291054a83ce5f46132c4045c6a7878e9611e9",
             "initial_population": 20 * dimension,
             "minimum_population": minimum_size,
             "memory_size": memory_size,
+            "registered_deviations": [
+                "NumPy Generator rather than std::mt19937/distributions",
+                "arbitrary finite per-coordinate bounds and external objective",
+                "success delta measured before cyclic-front replacement",
+                "stable elite reduction for front and population",
+                "front replacement index normalized after reduction",
+            ],
         },
     )
 

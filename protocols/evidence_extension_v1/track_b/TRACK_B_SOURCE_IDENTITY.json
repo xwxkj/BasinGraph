@@ -1,6 +1,6 @@
 {
   "status": "TRACK_B_SOURCE_IDENTITY_FROZEN",
-  "identity_version": "1.0.2",
+  "identity_version": "1.0.3",
   "date": "2026-08-08",
   "repository": "xwxkj/BasinGraph",
   "branch": "ncs-evidence-v1-track-b",
@@ -60,7 +60,7 @@
   "implementation_notice": {
     "L_SHADE_1_0_1": "Source-aligned transparent Python port of corrected L-SHADE 1.0.1; not a byte-identical official executable.",
     "jSO": "Source-aligned transparent Python port of public jSO CEC-2017 source; not a byte-identical official executable.",
-    "L_SRTDE": "Frozen Python port of the published L-SRTDE algorithmic specification; not the GPL C++ executable.",
+    "L_SRTDE": "Transparent source-guided Python port of the public L-SRTDE CEC-2024 core with registered deviations; not the GPL C++ executable.",
     "DIRECT_L": "SciPy optimize.direct with locally_biased=True.",
     "CMA_ES": "pycma implementation.",
     "BIPOP_CMA_ES": "pycma BIPOP restart implementation.",
@@ -82,19 +82,20 @@
     "evidence_extension_v1/track_b/common.py": "dc9b7066dfc79cbc2cd0d0609e691124061c2282",
     "evidence_extension_v1/track_b/finalize_track_b.py": "21b578a78199259f3e595b3e9af51fcaad5d3ab1",
     "evidence_extension_v1/track_b/generate_protocol_manifest.py": "ae130d0a94ca932f3fd213cab7ef6a69340fca96",
-    "evidence_extension_v1/track_b/modern_baselines.py": "d78b52009dcfba9432a17e01bac5691faac883e0",
+    "evidence_extension_v1/track_b/modern_baselines.py": "52b09839b2bb5d13df16dfb03d986a77e4cfc08f",
     "evidence_extension_v1/track_b/preflight_track_b.py": "4b2c2f85a0a102f726aec0b7bb8ab12ecf77fa3a",
     "evidence_extension_v1/track_b/run_track_b_all.py": "e5197e46289ba62d7fd81071028236b138702762",
     "evidence_extension_v1/track_b/run_track_b_mac.sh": "74887a0d68db8b2553edab02750d1a0374ee5cad",
     "evidence_extension_v1/track_b/run_track_b_shard.py": "93c40f54c72e36ad8e686b171b5ea868ecc9a1d9",
     "protocols/evidence_extension_v1/track_b/B21_TRACK_B_CI_TEMPLATE.yml": "bc1598800326a8fd58ea92af383e5ca299294a61",
-    "protocols/evidence_extension_v1/track_b/TRACK_B_ALGORITHM_SPECIFICATIONS.json": "7b8232716c6bdfb1927a3daffeeeff8d55b50976",
+    "protocols/evidence_extension_v1/track_b/TRACK_B_ALGORITHM_SPECIFICATIONS.json": "333fe11225ed189128101fe60ce198cd79e093d6",
     "protocols/evidence_extension_v1/track_b/TRACK_B_AMENDMENT_001.md": "2b8ebfd2fe811d62749a343f1a79969575255f34",
     "protocols/evidence_extension_v1/track_b/TRACK_B_AMENDMENT_002.md": "6fed14241459ac33f7a054e78a0454a7cdbf3f47",
+    "protocols/evidence_extension_v1/track_b/TRACK_B_AMENDMENT_003.md": "f59b7c3354ef5c97fbac2908504a40d8ee6b2bf9",
     "protocols/evidence_extension_v1/track_b/TRACK_B_ANALYSIS_PLAN.md": "19740af16ded9922d83887f5f14db97a55fed5ab",
-    "protocols/evidence_extension_v1/track_b/TRACK_B_BASELINE_PROVENANCE.csv": "4d1fd63370d5fef643dd419417d7092372ca19b3",
-    "protocols/evidence_extension_v1/track_b/TRACK_B_CONFIRMATORY_LOCK.json": "d9a1e08d0dfb39bad97504d1e8f3278ce682bc06",
-    "protocols/evidence_extension_v1/track_b/TRACK_B_CONFIRMATORY_PROTOCOL.md": "a02eb5a9b5391d67b1e434537233bf922af6216a",
+    "protocols/evidence_extension_v1/track_b/TRACK_B_BASELINE_PROVENANCE.csv": "3265e7da5ab0f8164fbf49a914665da2694a994d",
+    "protocols/evidence_extension_v1/track_b/TRACK_B_CONFIRMATORY_LOCK.json": "0de5e5348f985e2a880ae5023dbd3aa26a4b1e2e",
+    "protocols/evidence_extension_v1/track_b/TRACK_B_CONFIRMATORY_PROTOCOL.md": "711fc5f4f3864558d8b7eb46fb6a370b53efc38d",
     "protocols/evidence_extension_v1/track_b/TRACK_B_EXPECTED_RUN_MATRIX.csv": "1b3e5aaf2d43343584523f844f8e8e025353c912",
     "protocols/evidence_extension_v1/track_b/TRACK_B_FUNCTION_GROUPS.csv": "0c5716ce30e09d933d0df3da64d2dd6e232f6aed",
     "protocols/evidence_extension_v1/track_b/TRACK_B_INSTANCE_PARTITION.json": "7af5bdb7a7b860c3206429ec7705f8456928e595",
@@ -128,6 +129,15 @@
         "source-style archive replacement",
         "C++-style positive count rounding"
       ],
+      "smoke_rerun_required": true
+    },
+    {
+      "id": "TRACK_B_AMENDMENT_003",
+      "previous_smoke_commit": "80254991b434c4780790aaecf0d264c578dd6ab7",
+      "confirmatory_objective_evaluations_before_amendment": 0,
+      "numerical_operations_changed": false,
+      "parameters_changed": false,
+      "provenance_clarification": true,
       "smoke_rerun_required": true
     }
   ]

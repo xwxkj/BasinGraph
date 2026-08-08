@@ -3,6 +3,7 @@
 Status: **frozen and amended before confirmatory evaluation**  
 Amendment 001: jSO initial population corrected to `round(25 ln(D) sqrt(D))`; confirmatory objective evaluations before the amendment: **0**.  
 Amendment 002: L-SHADE/jSO success-history, CR-sentinel, archive, rounding and jSO memory/p-best rules aligned with their public source specifications; confirmatory objective evaluations before the amendment: **0**.  
+Amendment 003: L-SRTDE port deviations and non-official executable status made explicit; no numerical operation or parameter changed; confirmatory objective evaluations before the amendment: **0**.  
 Protocol date: 2026-08-08  
 Track A merge commit: `c955bdba08a6a50316248b6c1dd9ff61f1a4840b`  
 Result-bearing candidate commit: `adbc0ecdf1153044188f0508321c47001ad9bdb0`
@@ -55,8 +56,7 @@ budget. Bounds, objective wrappers, problem IDs and seeds are shared.
 - CMA-ES and BIPOP-CMA-ES: public pycma interfaces;
 - L-SHADE 1.0.1: source-aligned transparent Python port based on the corrected author release;
 - jSO: source-aligned transparent Python port of the public CEC-2017 algorithm, including the registered population, memory, p-best and archive rules;
-- L-SRTDE: transparent Python port of the public CEC-2024 C++ core, generalized
-  only to arbitrary finite per-coordinate bounds and an external objective;
+- L-SRTDE: transparent source-guided Python port of the public CEC-2024 C++ core; registered deviations include the random generator, objective/bounds adapter, pre-replacement success-delta measurement, stable elite reduction and front-index normalization;
 - DIRECT-L: `scipy.optimize.direct(..., locally_biased=True)`;
 - multi-start L-BFGS-B: repeated SciPy bounded minimizations until budget
   exhaustion.

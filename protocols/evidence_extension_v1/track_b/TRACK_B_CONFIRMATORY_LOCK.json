@@ -62,7 +62,7 @@
   "primary_endpoint": "official cocopp target-runtime analysis",
   "candidate_changes_allowed": false,
   "baseline_parameter_changes_allowed": false,
-  "protocol_revision": "1.0.2",
+  "protocol_revision": "1.0.3",
   "amendments": [
     {
       "id": "TRACK_B_AMENDMENT_001",
@@ -84,6 +84,17 @@
       ],
       "reason": "alignment with the corrected L-SHADE release and public jSO CEC-2017 source",
       "effect": "all earlier Track B smoke gates are superseded; a new development-only smoke is required"
+    },
+    {
+      "id": "TRACK_B_AMENDMENT_003",
+      "date": "2026-08-08",
+      "timing": "after development-only smoke and before confirmatory evaluation",
+      "confirmatory_objective_evaluations_before_amendment": 0,
+      "change": "clarify L-SRTDE transparent-port deviations and replace official-looking implementation label",
+      "numerical_operations_changed": false,
+      "parameters_changed": false,
+      "reason": "prevent the port from being misrepresented as the GPL C++ executable",
+      "effect": "source identity changes; a final development-only smoke is required"
     }
   ]
 }

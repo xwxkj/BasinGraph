@@ -54,8 +54,15 @@
     {
       "id": "L_SRTDE",
       "display": "L-SRTDE",
-      "implementation": "Python port of public CEC-2024 C++ core",
-      "license_or_status": "GPL-3.0 source basis; port kept separate"
+      "implementation": "transparent source-guided Python port of public CEC-2024 C++ core",
+      "license_or_status": "GPL-3.0 source basis; port kept separate",
+      "registered_deviations": [
+        "NumPy Generator",
+        "arbitrary finite per-coordinate bounds and external objective",
+        "pre-replacement success-delta measurement",
+        "stable elite reduction",
+        "front replacement-index normalization after reduction"
+      ]
     },
     {
       "id": "DIRECT_L",
@@ -72,9 +79,10 @@
   ],
   "count": 8,
   "no_post_freeze_tuning": true,
-  "protocol_revision": "1.0.2",
+  "protocol_revision": "1.0.3",
   "amendments": [
     "TRACK_B_AMENDMENT_001",
-    "TRACK_B_AMENDMENT_002"
+    "TRACK_B_AMENDMENT_002",
+    "TRACK_B_AMENDMENT_003"
   ]
 }
