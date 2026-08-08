@@ -1,0 +1,1613 @@
+{
+  "xbest": [
+    0.2527999546931677,
+    -1.1568000697496708
+  ],
+  "fbest": 79.48,
+  "nfe": 200,
+  "history": [
+    [
+      1,
+      80.88209408
+    ],
+    [
+      2,
+      80.88209408
+    ],
+    [
+      3,
+      80.88209408
+    ],
+    [
+      4,
+      80.88209408
+    ],
+    [
+      5,
+      80.88209408
+    ],
+    [
+      6,
+      80.88209408
+    ],
+    [
+      7,
+      80.88209408
+    ],
+    [
+      8,
+      80.88209408
+    ],
+    [
+      9,
+      80.88209408
+    ],
+    [
+      10,
+      80.88209408
+    ],
+    [
+      11,
+      80.88209408
+    ],
+    [
+      12,
+      80.88209408
+    ],
+    [
+      13,
+      80.88209408
+    ],
+    [
+      14,
+      80.88209408
+    ],
+    [
+      15,
+      80.88209408
+    ],
+    [
+      16,
+      80.88209408
+    ],
+    [
+      17,
+      80.88209408
+    ],
+    [
+      18,
+      80.88209408
+    ],
+    [
+      19,
+      80.60209567450696
+    ],
+    [
+      20,
+      80.60209567450696
+    ],
+    [
+      21,
+      80.60209567450696
+    ],
+    [
+      22,
+      80.60209567450696
+    ],
+    [
+      23,
+      80.60209567450696
+    ],
+    [
+      24,
+      80.60209567450696
+    ],
+    [
+      25,
+      80.60209567450696
+    ],
+    [
+      26,
+      80.60209567450696
+    ],
+    [
+      27,
+      80.60209567450696
+    ],
+    [
+      28,
+      80.60209567450696
+    ],
+    [
+      29,
+      80.60209567450696
+    ],
+    [
+      30,
+      80.60209567450696
+    ],
+    [
+      31,
+      80.60209567450696
+    ],
+    [
+      32,
+      80.60209567450696
+    ],
+    [
+      33,
+      80.60209567450696
+    ],
+    [
+      34,
+      80.60209567450696
+    ],
+    [
+      35,
+      80.60209567450696
+    ],
+    [
+      36,
+      79.48000140194958
+    ],
+    [
+      37,
+      79.48000140194452
+    ],
+    [
+      38,
+      79.48000140194452
+    ],
+    [
+      39,
+      79.48
+    ],
+    [
+      40,
+      79.48
+    ],
+    [
+      41,
+      79.48
+    ],
+    [
+      42,
+      79.48
+    ],
+    [
+      43,
+      79.48
+    ],
+    [
+      44,
+      79.48
+    ],
+    [
+      45,
+      79.48
+    ],
+    [
+      46,
+      79.48
+    ],
+    [
+      47,
+      79.48
+    ],
+    [
+      48,
+      79.48
+    ],
+    [
+      49,
+      79.48
+    ],
+    [
+      50,
+      79.48
+    ],
+    [
+      51,
+      79.48
+    ],
+    [
+      52,
+      79.48
+    ],
+    [
+      53,
+      79.48
+    ],
+    [
+      54,
+      79.48
+    ],
+    [
+      55,
+      79.48
+    ],
+    [
+      56,
+      79.48
+    ],
+    [
+      57,
+      79.48
+    ],
+    [
+      58,
+      79.48
+    ],
+    [
+      59,
+      79.48
+    ],
+    [
+      60,
+      79.48
+    ],
+    [
+      61,
+      79.48
+    ],
+    [
+      62,
+      79.48
+    ],
+    [
+      63,
+      79.48
+    ],
+    [
+      64,
+      79.48
+    ],
+    [
+      65,
+      79.48
+    ],
+    [
+      66,
+      79.48
+    ],
+    [
+      67,
+      79.48
+    ],
+    [
+      68,
+      79.48
+    ],
+    [
+      69,
+      79.48
+    ],
+    [
+      70,
+      79.48
+    ],
+    [
+      71,
+      79.48
+    ],
+    [
+      72,
+      79.48
+    ],
+    [
+      73,
+      79.48
+    ],
+    [
+      74,
+      79.48
+    ],
+    [
+      75,
+      79.48
+    ],
+    [
+      76,
+      79.48
+    ],
+    [
+      77,
+      79.48
+    ],
+    [
+      78,
+      79.48
+    ],
+    [
+      79,
+      79.48
+    ],
+    [
+      80,
+      79.48
+    ],
+    [
+      81,
+      79.48
+    ],
+    [
+      82,
+      79.48
+    ],
+    [
+      83,
+      79.48
+    ],
+    [
+      84,
+      79.48
+    ],
+    [
+      85,
+      79.48
+    ],
+    [
+      86,
+      79.48
+    ],
+    [
+      87,
+      79.48
+    ],
+    [
+      88,
+      79.48
+    ],
+    [
+      89,
+      79.48
+    ],
+    [
+      90,
+      79.48
+    ],
+    [
+      91,
+      79.48
+    ],
+    [
+      92,
+      79.48
+    ],
+    [
+      93,
+      79.48
+    ],
+    [
+      94,
+      79.48
+    ],
+    [
+      95,
+      79.48
+    ],
+    [
+      96,
+      79.48
+    ],
+    [
+      97,
+      79.48
+    ],
+    [
+      98,
+      79.48
+    ],
+    [
+      99,
+      79.48
+    ],
+    [
+      100,
+      79.48
+    ],
+    [
+      101,
+      79.48
+    ],
+    [
+      102,
+      79.48
+    ],
+    [
+      103,
+      79.48
+    ],
+    [
+      104,
+      79.48
+    ],
+    [
+      105,
+      79.48
+    ],
+    [
+      106,
+      79.48
+    ],
+    [
+      107,
+      79.48
+    ],
+    [
+      108,
+      79.48
+    ],
+    [
+      109,
+      79.48
+    ],
+    [
+      110,
+      79.48
+    ],
+    [
+      111,
+      79.48
+    ],
+    [
+      112,
+      79.48
+    ],
+    [
+      113,
+      79.48
+    ],
+    [
+      114,
+      79.48
+    ],
+    [
+      115,
+      79.48
+    ],
+    [
+      116,
+      79.48
+    ],
+    [
+      117,
+      79.48
+    ],
+    [
+      118,
+      79.48
+    ],
+    [
+      119,
+      79.48
+    ],
+    [
+      120,
+      79.48
+    ],
+    [
+      121,
+      79.48
+    ],
+    [
+      122,
+      79.48
+    ],
+    [
+      123,
+      79.48
+    ],
+    [
+      124,
+      79.48
+    ],
+    [
+      125,
+      79.48
+    ],
+    [
+      126,
+      79.48
+    ],
+    [
+      127,
+      79.48
+    ],
+    [
+      128,
+      79.48
+    ],
+    [
+      129,
+      79.48
+    ],
+    [
+      130,
+      79.48
+    ],
+    [
+      131,
+      79.48
+    ],
+    [
+      132,
+      79.48
+    ],
+    [
+      133,
+      79.48
+    ],
+    [
+      134,
+      79.48
+    ],
+    [
+      135,
+      79.48
+    ],
+    [
+      136,
+      79.48
+    ],
+    [
+      137,
+      79.48
+    ],
+    [
+      138,
+      79.48
+    ],
+    [
+      139,
+      79.48
+    ],
+    [
+      140,
+      79.48
+    ],
+    [
+      141,
+      79.48
+    ],
+    [
+      142,
+      79.48
+    ],
+    [
+      143,
+      79.48
+    ],
+    [
+      144,
+      79.48
+    ],
+    [
+      145,
+      79.48
+    ],
+    [
+      146,
+      79.48
+    ],
+    [
+      147,
+      79.48
+    ],
+    [
+      148,
+      79.48
+    ],
+    [
+      149,
+      79.48
+    ],
+    [
+      150,
+      79.48
+    ],
+    [
+      151,
+      79.48
+    ],
+    [
+      152,
+      79.48
+    ],
+    [
+      153,
+      79.48
+    ],
+    [
+      154,
+      79.48
+    ],
+    [
+      155,
+      79.48
+    ],
+    [
+      156,
+      79.48
+    ],
+    [
+      157,
+      79.48
+    ],
+    [
+      158,
+      79.48
+    ],
+    [
+      159,
+      79.48
+    ],
+    [
+      160,
+      79.48
+    ],
+    [
+      161,
+      79.48
+    ],
+    [
+      162,
+      79.48
+    ],
+    [
+      163,
+      79.48
+    ],
+    [
+      164,
+      79.48
+    ],
+    [
+      165,
+      79.48
+    ],
+    [
+      166,
+      79.48
+    ],
+    [
+      167,
+      79.48
+    ],
+    [
+      168,
+      79.48
+    ],
+    [
+      169,
+      79.48
+    ],
+    [
+      170,
+      79.48
+    ],
+    [
+      171,
+      79.48
+    ],
+    [
+      172,
+      79.48
+    ],
+    [
+      173,
+      79.48
+    ],
+    [
+      174,
+      79.48
+    ],
+    [
+      175,
+      79.48
+    ],
+    [
+      176,
+      79.48
+    ],
+    [
+      177,
+      79.48
+    ],
+    [
+      178,
+      79.48
+    ],
+    [
+      179,
+      79.48
+    ],
+    [
+      180,
+      79.48
+    ],
+    [
+      181,
+      79.48
+    ],
+    [
+      182,
+      79.48
+    ],
+    [
+      183,
+      79.48
+    ],
+    [
+      184,
+      79.48
+    ],
+    [
+      185,
+      79.48
+    ],
+    [
+      186,
+      79.48
+    ],
+    [
+      187,
+      79.48
+    ],
+    [
+      188,
+      79.48
+    ],
+    [
+      189,
+      79.48
+    ],
+    [
+      190,
+      79.48
+    ],
+    [
+      191,
+      79.48
+    ],
+    [
+      192,
+      79.48
+    ],
+    [
+      193,
+      79.48
+    ],
+    [
+      194,
+      79.48
+    ],
+    [
+      195,
+      79.48
+    ],
+    [
+      196,
+      79.48
+    ],
+    [
+      197,
+      79.48
+    ],
+    [
+      198,
+      79.48
+    ],
+    [
+      199,
+      79.48
+    ],
+    [
+      200,
+      79.48
+    ]
+  ],
+  "archive": [
+    {
+      "node_id": 29,
+      "center": [
+        0.2527999546931677,
+        -1.1568000697496708
+      ],
+      "f_center": 79.48,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 4,
+      "created_nfe": 41,
+      "last_updated_nfe": 165,
+      "novelty": 0.3233067157203327,
+      "source": "center_local"
+    },
+    {
+      "node_id": 18,
+      "center": [
+        0.2527998914302048,
+        -2.1911268523907763
+      ],
+      "f_center": 80.54983203757662,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 19,
+      "last_updated_nfe": 165,
+      "novelty": 0.323306626252989,
+      "source": "coordinate_multibracket"
+    },
+    {
+      "node_id": 1,
+      "center": [
+        0.25279992952641206,
+        0.0
+      ],
+      "f_center": 80.81818624,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 1,
+      "last_updated_nfe": 200,
+      "novelty": 0.35751308890321454,
+      "source": "coordinate_multibracket"
+    },
+    {
+      "node_id": 25,
+      "center": [
+        -1.4365601921284608,
+        -1.394799815160384
+      ],
+      "f_center": 82.39058177076468,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 26,
+      "last_updated_nfe": 26,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 26,
+      "center": [
+        -0.7229727638377401,
+        -2.724569017254653
+      ],
+      "f_center": 82.89003217811117,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 27,
+      "last_updated_nfe": 27,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 16,
+      "center": [
+        2.345951745822452,
+        -0.9926251763405549
+      ],
+      "f_center": 83.8882376037632,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 17,
+      "last_updated_nfe": 17,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 24,
+      "center": [
+        -1.7587011125063734,
+        -3.035771972460322
+      ],
+      "f_center": 87.05667239890582,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 25,
+      "last_updated_nfe": 25,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 15,
+      "center": [
+        0.6993773101949108,
+        1.9806066399857505
+      ],
+      "f_center": 89.52275171860761,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 16,
+      "last_updated_nfe": 16,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 23,
+      "center": [
+        1.8099837841183994,
+        -3.9320125454179156
+      ],
+      "f_center": 89.60662600976629,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 24,
+      "last_updated_nfe": 24,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 20,
+      "center": [
+        3.3285592429801625,
+        0.45669957447304377
+      ],
+      "f_center": 91.5436757976026,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 21,
+      "last_updated_nfe": 21,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 19,
+      "center": [
+        3.7900957534040174,
+        -1.8451945513656702
+      ],
+      "f_center": 92.46634830540005,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 20,
+      "last_updated_nfe": 20,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 8,
+      "center": [
+        0.0,
+        -5.0
+      ],
+      "f_center": 94.31409408,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 8,
+      "last_updated_nfe": 8,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 10,
+      "center": [
+        -2.901324134714784,
+        1.188385694621175
+      ],
+      "f_center": 94.92839499944608,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 10,
+      "last_updated_nfe": 10,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 27,
+      "center": [
+        1.1224968582935428,
+        2.686260267692985
+      ],
+      "f_center": 95.00548484644614,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 28,
+      "last_updated_nfe": 28,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 12,
+      "center": [
+        4.164391697004717,
+        -0.42426330930006007
+      ],
+      "f_center": 95.31715960729787,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 12,
+      "last_updated_nfe": 12,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 28,
+      "center": [
+        2.5363979035990756,
+        2.4289806858914726
+      ],
+      "f_center": 97.55264251263442,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 29,
+      "last_updated_nfe": 29,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 13,
+      "center": [
+        -0.09611742342550134,
+        3.3747625796005956
+      ],
+      "f_center": 100.1368027812063,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 13,
+      "last_updated_nfe": 13,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 22,
+      "center": [
+        -3.560155881095713,
+        -4.00762962343022
+      ],
+      "f_center": 102.14586209300967,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 23,
+      "last_updated_nfe": 23,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 17,
+      "center": [
+        -4.212593631976785,
+        0.8055661530857545
+      ],
+      "f_center": 103.27062120727541,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 18,
+      "last_updated_nfe": 18,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 7,
+      "center": [
+        5.0,
+        0.0
+      ],
+      "f_center": 103.35409408000001,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 7,
+      "last_updated_nfe": 7,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 21,
+      "center": [
+        -3.298293134101713,
+        -4.804283174549127
+      ],
+      "f_center": 105.39439595568331,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 22,
+      "last_updated_nfe": 22,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 6,
+      "center": [
+        -5.0,
+        0.0
+      ],
+      "f_center": 108.41009408,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 6,
+      "last_updated_nfe": 6,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 5,
+      "center": [
+        5.0,
+        -5.0
+      ],
+      "f_center": 116.78609408,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 5,
+      "last_updated_nfe": 5,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 9,
+      "center": [
+        0.0,
+        5.0
+      ],
+      "f_center": 117.45009408000001,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 9,
+      "last_updated_nfe": 9,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 14,
+      "center": [
+        4.6135033367972955,
+        3.6451244802695264
+      ],
+      "f_center": 121.55421230576684,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 15,
+      "last_updated_nfe": 15,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 2,
+      "center": [
+        -5.0,
+        -5.0
+      ],
+      "f_center": 121.84209408000001,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 2,
+      "last_updated_nfe": 2,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 11,
+      "center": [
+        -2.2248619832266057,
+        4.949564797578697
+      ],
+      "f_center": 122.90649994423472,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 11,
+      "last_updated_nfe": 11,
+      "novelty": 1.0,
+      "source": "anchor"
+    },
+    {
+      "node_id": 4,
+      "center": [
+        -4.96241421797118,
+        4.369098152204469
+      ],
+      "f_center": 137.21400972786552,
+      "radius": 0.6320204368234731,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 2,
+      "created_nfe": 4,
+      "last_updated_nfe": 14,
+      "novelty": 0.8938118734527235,
+      "source": "anchor"
+    },
+    {
+      "node_id": 3,
+      "center": [
+        5.0,
+        5.0
+      ],
+      "f_center": 139.92209408000002,
+      "radius": 0.282842712474619,
+      "curvature_proxy": 0.7795187907884576,
+      "visits": 1,
+      "created_nfe": 3,
+      "last_updated_nfe": 3,
+      "novelty": 1.0,
+      "source": "anchor"
+    }
+  ],
+  "graph_edges": [
+    {
+      "source_id": 18,
+      "target_id": 29,
+      "evaluations": 20,
+      "best_improvement": 1.0698320375766173,
+      "barrier_proxy": 37.881600000000006,
+      "accessibility": 0.016983234151245887,
+      "created_nfe": 165,
+      "last_updated_nfe": 165,
+      "attempts": 1,
+      "source_mode": "coordinate_multibracket"
+    }
+  ],
+  "diagnostics": {
+    "dimension": 2,
+    "mean_scale": 10.0,
+    "max_scale": 10.0,
+    "anisotropy": 1.0,
+    "boundary_signal": -0.28369079389927626,
+    "ruggedness_score": 0.2757862942817521,
+    "sign_change_rate": 0.0,
+    "finite_anchor_fraction": 1.0
+  },
+  "event_log": [
+    {
+      "nfe": 1,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 1,
+        "f_center": 80.88209408
+      }
+    },
+    {
+      "nfe": 2,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 2,
+        "f_center": 121.84209408000001
+      }
+    },
+    {
+      "nfe": 3,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 3,
+        "f_center": 139.92209408000002
+      }
+    },
+    {
+      "nfe": 4,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 4,
+        "f_center": 144.97809408
+      }
+    },
+    {
+      "nfe": 5,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 5,
+        "f_center": 116.78609408
+      }
+    },
+    {
+      "nfe": 6,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 6,
+        "f_center": 108.41009408
+      }
+    },
+    {
+      "nfe": 7,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 7,
+        "f_center": 103.35409408000001
+      }
+    },
+    {
+      "nfe": 8,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 8,
+        "f_center": 94.31409408
+      }
+    },
+    {
+      "nfe": 9,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 9,
+        "f_center": 117.45009408000001
+      }
+    },
+    {
+      "nfe": 10,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 10,
+        "f_center": 94.92839499944608
+      }
+    },
+    {
+      "nfe": 11,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 11,
+        "f_center": 122.90649994423472
+      }
+    },
+    {
+      "nfe": 12,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 12,
+        "f_center": 95.31715960729787
+      }
+    },
+    {
+      "nfe": 13,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 13,
+        "f_center": 100.1368027812063
+      }
+    },
+    {
+      "nfe": 14,
+      "event": "basin_node_merged",
+      "message": "anchor",
+      "payload": {
+        "node_id": 4,
+        "f_center": 137.21400972786552
+      }
+    },
+    {
+      "nfe": 15,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 14,
+        "f_center": 121.55421230576684
+      }
+    },
+    {
+      "nfe": 16,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 15,
+        "f_center": 89.52275171860761
+      }
+    },
+    {
+      "nfe": 17,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 16,
+        "f_center": 83.8882376037632
+      }
+    },
+    {
+      "nfe": 18,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 17,
+        "f_center": 103.27062120727541
+      }
+    },
+    {
+      "nfe": 19,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 18,
+        "f_center": 80.60209567450696
+      }
+    },
+    {
+      "nfe": 20,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 19,
+        "f_center": 92.46634830540005
+      }
+    },
+    {
+      "nfe": 21,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 20,
+        "f_center": 91.5436757976026
+      }
+    },
+    {
+      "nfe": 22,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 21,
+        "f_center": 105.39439595568331
+      }
+    },
+    {
+      "nfe": 23,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 22,
+        "f_center": 102.14586209300967
+      }
+    },
+    {
+      "nfe": 24,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 23,
+        "f_center": 89.60662600976629
+      }
+    },
+    {
+      "nfe": 25,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 24,
+        "f_center": 87.05667239890582
+      }
+    },
+    {
+      "nfe": 26,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 25,
+        "f_center": 82.39058177076468
+      }
+    },
+    {
+      "nfe": 27,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 26,
+        "f_center": 82.89003217811117
+      }
+    },
+    {
+      "nfe": 28,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 27,
+        "f_center": 95.00548484644614
+      }
+    },
+    {
+      "nfe": 29,
+      "event": "basin_node_created",
+      "message": "anchor",
+      "payload": {
+        "node_id": 28,
+        "f_center": 97.55264251263442
+      }
+    },
+    {
+      "nfe": 29,
+      "event": "diagnostics",
+      "message": "geometry diagnostics computed",
+      "payload": {
+        "dimension": 2,
+        "mean_scale": 10.0,
+        "max_scale": 10.0,
+        "anisotropy": 1.0,
+        "boundary_signal": -0.28369079389927626,
+        "ruggedness_score": 0.2757862942817521,
+        "sign_change_rate": 0.0,
+        "finite_anchor_fraction": 1.0
+      }
+    },
+    {
+      "nfe": 41,
+      "event": "basin_node_created",
+      "message": "center_local",
+      "payload": {
+        "node_id": 29,
+        "f_center": 79.48
+      }
+    },
+    {
+      "nfe": 41,
+      "event": "center_local",
+      "message": "center-local contraction completed",
+      "payload": {
+        "used": 12,
+        "node_id": 29
+      }
+    },
+    {
+      "nfe": 103,
+      "event": "basin_node_merged",
+      "message": "coordinate_multibracket",
+      "payload": {
+        "node_id": 29,
+        "f_center": 79.48
+      }
+    },
+    {
+      "nfe": 103,
+      "event": "basin_node_merged",
+      "message": "coordinate_multibracket",
+      "payload": {
+        "node_id": 29,
+        "f_center": 79.48
+      }
+    },
+    {
+      "nfe": 165,
+      "event": "basin_node_merged",
+      "message": "coordinate_multibracket",
+      "payload": {
+        "node_id": 18,
+        "f_center": 80.54983203757662
+      }
+    },
+    {
+      "nfe": 165,
+      "event": "basin_node_merged",
+      "message": "coordinate_multibracket",
+      "payload": {
+        "node_id": 29,
+        "f_center": 79.48
+      }
+    },
+    {
+      "nfe": 200,
+      "event": "basin_node_merged",
+      "message": "coordinate_multibracket",
+      "payload": {
+        "node_id": 1,
+        "f_center": 80.81818624
+      }
+    }
+  ],
+  "message": "budget_exhausted"
+}

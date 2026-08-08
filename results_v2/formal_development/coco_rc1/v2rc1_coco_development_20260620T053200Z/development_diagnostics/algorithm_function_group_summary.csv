@@ -1,0 +1,36 @@
+function_group,algorithm,mean_rank,median_rank,wins,problems
+High conditioning / unimodal (f10-f14),BIPOP_CMA_ES,1.8666666666666667,2.0,36,45
+High conditioning / unimodal (f10-f14),CMA_ES,1.9666666666666666,2.0,37,45
+High conditioning / unimodal (f10-f14),DE,3.7,5.0,15,45
+High conditioning / unimodal (f10-f14),MS_LBFGSB,3.7111111111111112,4.0,5,45
+High conditioning / unimodal (f10-f14),BasinGraph_v2,3.7777777777777777,4.0,4,45
+High conditioning / unimodal (f10-f14),Random,6.466666666666667,6.0,0,45
+High conditioning / unimodal (f10-f14),LHS,6.511111111111111,7.0,0,45
+Low/moderate conditioning (f6-f9),BIPOP_CMA_ES,1.6388888888888888,1.5,35,36
+Low/moderate conditioning (f6-f9),CMA_ES,2.3333333333333335,2.0,28,36
+Low/moderate conditioning (f6-f9),BasinGraph_v2,3.4444444444444446,3.0,22,36
+Low/moderate conditioning (f6-f9),DE,3.5694444444444446,4.0,14,36
+Low/moderate conditioning (f6-f9),MS_LBFGSB,4.625,4.0,21,36
+Low/moderate conditioning (f6-f9),Random,6.111111111111111,6.0,0,36
+Low/moderate conditioning (f6-f9),LHS,6.277777777777778,6.0,0,36
+Multimodal with global structure (f15-f19),BIPOP_CMA_ES,2.011111111111111,1.0,30,45
+Multimodal with global structure (f15-f19),CMA_ES,2.922222222222222,3.0,8,45
+Multimodal with global structure (f15-f19),DE,3.0555555555555554,3.0,8,45
+Multimodal with global structure (f15-f19),BasinGraph_v2,3.422222222222222,4.0,10,45
+Multimodal with global structure (f15-f19),Random,5.088888888888889,5.0,0,45
+Multimodal with global structure (f15-f19),MS_LBFGSB,5.722222222222222,7.0,6,45
+Multimodal with global structure (f15-f19),LHS,5.777777777777778,6.0,0,45
+Multimodal with weak structure (f20-f24),BIPOP_CMA_ES,2.611111111111111,2.0,16,45
+Multimodal with weak structure (f20-f24),DE,3.0555555555555554,3.0,13,45
+Multimodal with weak structure (f20-f24),BasinGraph_v2,3.111111111111111,3.0,9,45
+Multimodal with weak structure (f20-f24),CMA_ES,3.6,3.0,17,45
+Multimodal with weak structure (f20-f24),MS_LBFGSB,4.555555555555555,5.0,4,45
+Multimodal with weak structure (f20-f24),Random,5.4,6.0,0,45
+Multimodal with weak structure (f20-f24),LHS,5.666666666666667,6.0,0,45
+Separable (f1-f5),BIPOP_CMA_ES,2.1333333333333333,2.0,36,45
+Separable (f1-f5),CMA_ES,2.5555555555555554,2.0,30,45
+Separable (f1-f5),BasinGraph_v2,3.2,3.0,26,45
+Separable (f1-f5),DE,3.2777777777777777,3.0,19,45
+Separable (f1-f5),MS_LBFGSB,4.5,4.0,24,45
+Separable (f1-f5),Random,6.111111111111111,6.0,0,45
+Separable (f1-f5),LHS,6.222222222222222,6.0,0,45

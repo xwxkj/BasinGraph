@@ -1,0 +1,8 @@
+algorithm,source,implementation,version_policy,modification
+BasinGraph_v2,this work,basingraph_v2,final v2.0.0 tag,not applicable
+CMA_ES,pycma,cma,frozen environment lock,objective/budget wrapper only
+BIPOP_CMA_ES,pycma fmin2,"restarts=9, bipop=True",frozen environment lock,objective/budget wrapper only
+DE,self-contained reference implementation,repository baseline,final v2.0.0 source snapshot,none
+MS_LBFGSB,SciPy,scipy.optimize.minimize L-BFGS-B,frozen environment lock,multistart/budget wrapper
+LHS,self-contained,repository baseline,final v2.0.0 source snapshot,none
+Random,self-contained,repository baseline,final v2.0.0 source snapshot,none

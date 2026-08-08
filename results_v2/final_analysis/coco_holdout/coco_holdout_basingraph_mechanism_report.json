@@ -1,0 +1,10 @@
+{
+  "active_archive_capacity": 80,
+  "runs": 1440,
+  "archive_saturation_fraction": 1.0,
+  "mean_graph_edges": 153.32222222222222,
+  "median_graph_edges": 99.0,
+  "minimum_graph_edges": 53,
+  "maximum_graph_edges": 721,
+  "interpretation": "The archive is a fixed-capacity operational memory and must not be described as a complete enumeration of mathematical basins."
+}

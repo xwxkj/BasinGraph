@@ -1,14 +1,19 @@
 {
-  "title": "BasinGraph: geometry-controlled basin-graph optimization",
-  "description": "Source code, benchmark protocols, figure-generation scripts, and reproducibility metadata for BasinGraph.",
-  "upload_type": "software",
   "creators": [
     {
       "name": "Xu, Kaijie",
       "orcid": "0000-0003-4408-9070",
-      "affiliation": "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China; Department of Chemical and Biological Engineering, University of British Columbia, Vancouver, BC V6T 1Z3, Canada"
+      "affiliation": "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China; Department of Chemical and Biological Engineering, University of British Columbia, Vancouver, BC V6T 1Z3, Canada",
+      "type": "ProjectLeader"
     }
   ],
+  "title": "BasinGraph: geometry-controlled operational search-state optimization",
+  "version": "3.0.1",
+  "access_right": "open",
+  "upload_type": "software",
+  "language": "eng",
+  "license": "BSD-3-Clause",
+  "description": "Repository-identity repair and NCS evidence-extension scaffolding for BasinGraph. The public import path is aligned with the immutable BasinGraph 2.0.0-rc1 result-bearing implementation. The frozen options, original prospective COCO/BBOB and CUTEst runs, raw results, statistical analyses and numerical conclusions are unchanged.",
   "keywords": [
     "global optimization",
     "derivative-free optimization",
@@ -17,16 +22,24 @@
     "COCO/BBOB",
     "CUTEst"
   ],
-  "version": "1.0.0",
-  "publication_date": "2026-06-19",
   "related_identifiers": [
     {
-      "identifier": "https://doi.org/10.5281/zenodo.20765047",
-      "relation": "isSupplementTo",
+      "identifier": "https://github.com/xwxkj/BasinGraph",
+      "relation": "isIdenticalTo",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "10.5281/zenodo.20789002",
+      "relation": "isNewVersionOf",
+      "scheme": "doi",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "10.5281/zenodo.20788903",
+      "relation": "isSupplementedBy",
+      "scheme": "doi",
       "resource_type": "dataset"
     }
   ],
-  "notes": "Software source code is released under the BSD-3-Clause license.",
-  "access_right": "open",
-  "license": "bsd-3-clause"
+  "publication_date": "2026-08-07"
 }

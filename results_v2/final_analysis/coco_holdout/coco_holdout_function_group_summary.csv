@@ -1,0 +1,36 @@
+function_group,algorithm,mean_final_value_rank,final_value_best_or_tied,strict_final_target_successes,strict_final_target_success_rate,records
+High conditioning / unimodal f10-f14,CMA_ES,1.7916666666666667,249,253,0.8433333333333334,300
+High conditioning / unimodal f10-f14,BIPOP_CMA_ES,1.8316666666666668,238,252,0.84,300
+High conditioning / unimodal f10-f14,BasinGraph_v2,3.6766666666666667,17,42,0.14,300
+High conditioning / unimodal f10-f14,MS_LBFGSB,3.7533333333333334,11,44,0.14666666666666667,300
+High conditioning / unimodal f10-f14,DE,4.006666666666667,78,94,0.31333333333333335,300
+High conditioning / unimodal f10-f14,LHS,6.45,0,0,0.0,300
+High conditioning / unimodal f10-f14,Random,6.49,0,0,0.0,300
+Low/moderate conditioning f6-f9,BIPOP_CMA_ES,1.5895833333333333,234,220,0.9166666666666666,240
+Low/moderate conditioning f6-f9,CMA_ES,2.0229166666666667,194,194,0.8083333333333333,240
+Low/moderate conditioning f6-f9,BasinGraph_v2,3.56875,126,155,0.6458333333333334,240
+Low/moderate conditioning f6-f9,DE,3.9208333333333334,69,82,0.3416666666666667,240
+Low/moderate conditioning f6-f9,MS_LBFGSB,4.547916666666667,130,137,0.5708333333333333,240
+Low/moderate conditioning f6-f9,Random,6.079166666666667,0,0,0.0,240
+Low/moderate conditioning f6-f9,LHS,6.270833333333333,0,0,0.0,240
+Multimodal with global structure f15-f19,BIPOP_CMA_ES,2.0533333333333332,175,60,0.2,300
+Multimodal with global structure f15-f19,CMA_ES,2.8,59,24,0.08,300
+Multimodal with global structure f15-f19,DE,3.145,52,32,0.10666666666666667,300
+Multimodal with global structure f15-f19,BasinGraph_v2,3.51,53,7,0.023333333333333334,300
+Multimodal with global structure f15-f19,Random,5.206666666666667,0,0,0.0,300
+Multimodal with global structure f15-f19,MS_LBFGSB,5.638333333333334,40,0,0.0,300
+Multimodal with global structure f15-f19,LHS,5.6466666666666665,0,0,0.0,300
+Multimodal with weak structure f20-f24,BIPOP_CMA_ES,2.7533333333333334,112,50,0.16666666666666666,300
+Multimodal with weak structure f20-f24,BasinGraph_v2,2.8633333333333333,90,60,0.2,300
+Multimodal with weak structure f20-f24,DE,3.235,73,54,0.18,300
+Multimodal with weak structure f20-f24,CMA_ES,3.9133333333333336,58,29,0.09666666666666666,300
+Multimodal with weak structure f20-f24,MS_LBFGSB,4.211666666666667,53,25,0.08333333333333333,300
+Multimodal with weak structure f20-f24,LHS,5.486666666666666,2,0,0.0,300
+Multimodal with weak structure f20-f24,Random,5.536666666666667,1,0,0.0,300
+Separable f1-f5,BIPOP_CMA_ES,2.0883333333333334,251,185,0.6166666666666667,300
+Separable f1-f5,CMA_ES,2.6683333333333334,191,181,0.6033333333333334,300
+Separable f1-f5,BasinGraph_v2,3.216666666666667,164,173,0.5766666666666667,300
+Separable f1-f5,DE,3.2333333333333334,131,118,0.3933333333333333,300
+Separable f1-f5,MS_LBFGSB,4.476666666666667,156,157,0.5233333333333333,300
+Separable f1-f5,Random,6.076666666666667,0,0,0.0,300
+Separable f1-f5,LHS,6.24,0,0,0.0,300

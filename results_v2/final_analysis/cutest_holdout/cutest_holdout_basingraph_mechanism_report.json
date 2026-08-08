@@ -1,0 +1,11 @@
+{
+  "runs": 720,
+  "archive_capacity": 80,
+  "archive_saturation_fraction": 1.0,
+  "mean_archive_nodes": 80.0,
+  "mean_graph_edges": 68.99444444444444,
+  "median_graph_edges": 77.0,
+  "minimum_graph_edges": 20,
+  "maximum_graph_edges": 89,
+  "interpretation": "The archive is fixed-capacity operational search memory. It must not be interpreted as a complete enumeration of mathematical attraction basins."
+}

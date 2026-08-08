@@ -1,0 +1,18 @@
+{
+  "test": "Friedman test",
+  "block_unit": "24 holdout problems",
+  "algorithms": [
+    "BasinGraph_v2",
+    "CMA_ES",
+    "BIPOP_CMA_ES",
+    "DE",
+    "MS_LBFGSB",
+    "LHS",
+    "Random"
+  ],
+  "statistic": 107.82089552238806,
+  "degrees_of_freedom": 6,
+  "p_value": 5.8265839499194574e-21,
+  "alpha": 0.05,
+  "reject_equal_performance": true
+}

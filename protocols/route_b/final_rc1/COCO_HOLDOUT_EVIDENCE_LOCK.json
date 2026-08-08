@@ -1,0 +1,62 @@
+{
+  "status": "V2_RC1_COCO_HOLDOUT_EVIDENCE_FROZEN",
+  "created_utc": "2026-06-21T16:54:55.795068+00:00",
+  "run_id": "v2rc1_coco_holdout_20260621T051443Z",
+  "implementation_version": "2.0.0-rc1",
+  "options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "instances": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "dimensions": [
+    2,
+    3,
+    5,
+    10,
+    20
+  ],
+  "rows": 10080,
+  "problems": 1440,
+  "algorithms": 7,
+  "successful_run_only": true,
+  "excluded_runs": [
+    "v2rc1_coco_holdout_20260621T044935Z",
+    "v2rc1_coco_holdout_20260621T052812Z"
+  ],
+  "development_instance_leakage": false,
+  "all_runs_completed": true,
+  "performance_analysis_performed_by_this_step": false,
+  "code_freeze_commit": "8c2696b6f61e50d1836f5a661485b933604f46fc",
+  "candidate_commit": "adbc0ecdf1153044188f0508321c47001ad9bdb0",
+  "runner_commit": "9682591217f8b67ebf02c75ac4e33a1e94b467c1",
+  "cocopp_directory": "ppdata/rc1_holdout_v2rc1_coco_holdout_20260621T051443Z",
+  "cocopp_file_count": 631,
+  "cocopp_total_bytes": 39702184,
+  "files": {
+    "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T051443Z/coco_rc1_holdout_raw_results.csv": "c7c28637fa7c8ff65c3ec08afcf62be6b7dd0c2bae3e1475f57ece8e5a477fb9",
+    "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T051443Z/validation_report.json": "bdc2c92e28bd641a93959aa68680b41a9e72e279d02cf3e90f14636b87fba8e4",
+    "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T051443Z/launch_metadata.json": "37a21ea92e3c173c9deddb908e4759c99466540a311b00b58b97c241ec2790c7",
+    "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T051443Z/BasinGraph_holdout_detail_manifest.csv": "95a4ccf3c513455180df4e07d1c2fc52c1abe1487c0eb0a59153065a9110489d",
+    "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T051443Z/HOLDOUT_RECORD.md": "0ad6b6d280a4419afe992e5023a35a2f34c9421eb814e04a364dec4772826191",
+    "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T051443Z/cocopp_output_path.txt": "1fc4a7a20fd1096a9e6bd74e709f14f2bfd1df5ac6ac21310a440a5ae52ba6d5",
+    "protocols/route_b/final_rc1/RC1_PAPER_CODE_CONTRACT.json": "d8ecfb4b6c90e8b01ed99e9c43e9657509cf2cd9c440acf228aa4c9743c8f287",
+    "protocols/route_b/final_rc1/RC1_FINAL_SELECTION_DECISION.json": "a6ad3a245a7b610d46b660e84ce7901ca0c5358ab5f1c31417d682283b5eb707",
+    "protocols/route_b/final_rc1/COCO_HOLDOUT_SUITE_PREFLIGHT.json": "a15787be9e546e180ddae09c68acae1f94b3e792ee0082d15bd87c279504a228",
+    "protocols/route_b/final_rc1/COCO_HOLDOUT_FINAL_RUN_ID.txt": "f18605f80892b58d9e7fe8ac12f6416d904a18ad9619c37dc67a687480964fa7",
+    "protocols/route_b/final_rc1/aborted_holdout_attempts/v2rc1_coco_holdout_20260621T044935Z.json": "5564569fc0ebae0ef0a1146ec842ad31fe2b780f6a0b94a37367fad1e3b2096b",
+    "protocols/route_b/final_rc1/incomplete_holdout_attempts/v2rc1_coco_holdout_20260621T052812Z.json": "c76352ed5dfe24011aedd348e5c155a2a1f4475a789be253b7f730c8baa41a1a",
+    "protocols/route_b/final_rc1/COCO_HOLDOUT_COCOPP_MANIFEST_SHA256.csv": "79e492b27b2f206648afb6223bce107043a53f52b1f178e5ff376b24b2c6b8b1",
+    "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T051443Z/BasinGraph_holdout_details.tar.gz": "5f7db1d9d6469fe35f8181de2f5eeb64401119d1edef02f90285ed134587ea62",
+    "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T051443Z/COCO_holdout_observer_logs.tar.gz": "d80cbb058073518f6337e72e4adaa02c6eaa1de2a3e78a7716dca80e92389f43"
+  }
+}

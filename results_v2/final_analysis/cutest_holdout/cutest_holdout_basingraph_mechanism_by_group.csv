@@ -1,0 +1,4 @@
+dimension_group,runs,mean_archive_nodes,archive_saturation_fraction,mean_graph_edges,median_graph_edges,mean_event_log_length
+large_101_500,180,80.0,1.0,73.51666666666667,78.0,4060.1555555555556
+medium_21_100,210,80.0,1.0,60.44761904761905,78.0,737.2238095238096
+small_2_20,330,80.0,1.0,71.96666666666667,77.0,314.3878787878788

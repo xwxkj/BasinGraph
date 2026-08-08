@@ -1,0 +1,61 @@
+{
+  "status": "frozen_before_formal_v2_runs",
+  "variants": [
+    "Full",
+    "NoGraphGuidance",
+    "SingleBracket",
+    "NoFarBasin",
+    "NoGeometryController",
+    "NoArchiveFallback",
+    "NoFinalPolish"
+  ],
+  "coco": {
+    "functions": [
+      1,
+      3,
+      5,
+      6,
+      8,
+      10,
+      12,
+      15,
+      17,
+      20,
+      21,
+      24
+    ],
+    "dimensions": [
+      5,
+      10
+    ],
+    "instances": [
+      1,
+      2,
+      3
+    ],
+    "seeds": [
+      20260619,
+      20260620,
+      20260621,
+      20260622,
+      20260623
+    ],
+    "budget_multiplier": 1000
+  },
+  "cutest": {
+    "development_list": "protocols/route_b/formal_v2_protocol/CUTEST_V2_ABLATION_DEVELOPMENT_15.csv",
+    "seeds": [
+      20260619,
+      20260620,
+      20260621,
+      20260622,
+      20260623,
+      20260624,
+      20260625,
+      20260626,
+      20260627,
+      20260628
+    ],
+    "budget": "min(20000, max(1000, 50*n))"
+  }
+}

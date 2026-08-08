@@ -1,0 +1,21 @@
+{
+  "status": "V2_CUTEST_MINI_OK",
+  "rows": 24,
+  "expected_rows": 24,
+  "problems": [
+    "FBRAIN2LS",
+    "DIAGIQT[N=50]",
+    "HS110[N=200]"
+  ],
+  "algorithms": [
+    "BasinGraph_v2",
+    "CMA_ES",
+    "BIPOP_CMA_ES",
+    "Multi_start_LBFGSB"
+  ],
+  "seeds": [
+    20260619,
+    20260620
+  ],
+  "raw_results": "results_v2/cutest_mini/cutest_v2_mini_raw_results.csv"
+}

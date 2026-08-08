@@ -1,17 +1,18 @@
 cff-version: 1.2.0
-message: "If you use BasinGraph, please cite the software and associated article."
 title: "BasinGraph: geometry-controlled basin-graph optimization"
-version: 1.0.0
-date-released: 2026-06-19
+version: 2.0.0
+date-released: 2026-06-21
+license: BSD-3-Clause
 type: software
+abstract: "Public archive of the selected BasinGraph 2.0.0-rc1 implementation used for the prospective COCO/BBOB and CUTEst holdouts. The frozen options hash is 031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69. Later repository releases may update documentation and packaging without changing the result-bearing optimizer."
+message: "Please cite the result-bearing Zenodo software record and the associated article."
 authors:
-  - family-names: "Xu"
-    given-names: "Kaijie"
-    email: "kjxu@xidian.edu.cn"
-    affiliation: "Xidian University and University of British Columbia"
+  - given-names: Kaijie
+    family-names: Xu
+    affiliation: "Xidian University; University of British Columbia"
     orcid: "https://orcid.org/0000-0003-4408-9070"
 repository-code: "https://github.com/xwxkj/BasinGraph"
-license: "BSD-3-Clause"
+doi: "10.5281/zenodo.20789002"
 keywords:
   - global optimization
   - derivative-free optimization

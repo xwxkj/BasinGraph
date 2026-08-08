@@ -1,0 +1,11 @@
+category,language,reason
+allowed,operational basin-state node,Exact meaning of rc1 BasinNode.
+allowed,candidate basin representative,Does not imply local-minimum certification.
+allowed,directed graph of observed search transitions,Matches edge creation.
+allowed,barrier proxy,Matches the stored sampled proxy.
+allowed,domain anisotropy,Matches max/min box width.
+prohibited,certified basin node,Certification exists only in rejected rc2.
+prohibited,every node is a local minimum,Raw finite evaluations can enter the rc1 archive.
+prohibited,exact attraction-basin decomposition,Not established by rc1.
+prohibited,exact energy barrier,Only a barrier proxy is stored.
+prohibited,objective curvature anisotropy,rc1 stores domain anisotropy.

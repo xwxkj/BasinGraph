@@ -1,0 +1,55 @@
+{
+  "status": "CUTEST_HOLDOUT_ANALYSIS_PLAN_FROZEN",
+  "created_utc": "2026-06-21T18:28:29.191747+00:00",
+  "run_id": "v2rc1_cutest_holdout_20260621T175759Z",
+  "performance_values_inspected_before_freeze": false,
+  "primary_analysis": {
+    "name": "target-runtime ECDF and ERT",
+    "problem_reference_value": "For each problem, f_ref is the minimum final fbest across all 7 algorithms and 30 paired seeds. This symmetric best-observed reference is defined before reading values.",
+    "normalization_scale": "s_p = max(abs(f_at_cutest_x0 - f_ref), 1e-12*(1+abs(f_ref)))",
+    "target_definition": "f_target(p,tau) = f_ref + tau*s_p",
+    "relative_targets": [
+      0.1,
+      0.01,
+      0.001,
+      0.0001,
+      1e-05,
+      1e-06
+    ],
+    "runtime": "First objective-evaluation index in the improvement history whose best-so-far value is <= f_target.",
+    "failure_cost": "The full prescribed problem budget is charged to an unsuccessful run.",
+    "ert": "For each problem, algorithm and target: sum(success runtimes + full budgets for failures) / number of successes; ERT is infinite when no run succeeds.",
+    "data_profile_x": "Function evaluations divided by problem dimension.",
+    "aggregation_unit": "Problem-seed-target triples for ECDF; problem-target blocks for ERT comparison."
+  },
+  "secondary_analysis": {
+    "final_normalized_gap": "max(fbest-f_ref,0)/s_p",
+    "task_rank": "Rank final fbest within each problem-seed block; average ties.",
+    "problem_summary": "Median final normalized gap and mean task rank over 30 seeds.",
+    "pairwise_counts": "BasinGraph better/worse/tied against each baseline on problem-seed final values with a scale-aware tolerance."
+  },
+  "confirmatory_statistics": {
+    "block_unit": "24 holdout problems",
+    "algorithm_score": "Per-problem median final normalized gap over 30 seeds.",
+    "omnibus_test": "Friedman test across seven algorithms.",
+    "post_hoc": "Paired two-sided Wilcoxon signed-rank tests comparing BasinGraph with each baseline.",
+    "multiplicity": "Holm correction over six comparisons.",
+    "effect_size": "Paired rank-biserial correlation, reported with direction.",
+    "alpha": 0.05
+  },
+  "stratified_reporting": {
+    "groups": [
+      "small_2_20",
+      "medium_21_100",
+      "large_101_500"
+    ],
+    "status": "Descriptive ECDF, ERT, final-gap and rank summaries; no separate confirmatory claim because group problem counts are 11, 7 and 6."
+  },
+  "interpretation_rules": [
+    "Primary claims rely on target-runtime ECDF/ERT.",
+    "Final-value ranks are secondary.",
+    "Report the prospective holdout separately from the 50-problem development/comparability set.",
+    "Do not modify any algorithm or parameter after this holdout.",
+    "Use operational basin-state terminology from the frozen contract."
+  ]
+}

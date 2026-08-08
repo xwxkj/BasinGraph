@@ -1,0 +1,53 @@
+{
+  "status": "V2_COCO_DEVELOPMENT_DIAGNOSTIC_OK",
+  "run_id": "v2rc1_coco_development_20260620T053200Z",
+  "development_only": true,
+  "holdout_accessed": false,
+  "raw_results_sha256": "cfb1ddc1dc088594adb9816a72ada44f6bce6cb450a2d6144749604412a0ffcc",
+  "validation_report_sha256": "3e2044ef998da6707df5edbfde61bdc8a48fe3237acd0b6f84f8e7447549f050",
+  "cocopp_output_path": "/Users/macbookpro-kaijiexu/Documents/BasinGraph202606/release/BasinGraph/ppdata/Basin_CMA_E_BIPOP_DE_MS_LB_LHS_Rando_et_al_061922h3843",
+  "basingraph_overall_mean_rank": 3.388888888888889,
+  "basingraph_overall_wins": 71,
+  "internal_summary": {
+    "runs": 216,
+    "archive_saturation_fraction": 1.0,
+    "mean_archive_nodes": 80.0,
+    "mean_graph_edges": 163.23611111111111,
+    "mean_graph_edges_per_node": 2.0404513888888887,
+    "mean_positive_improvement_edge_fraction": 0.46889741768010973,
+    "center_local_activation_fraction": 0.9953703703703703,
+    "far_basin_activation_fraction": 0.8611111111111112,
+    "mean_phase_fractions": {
+      "phase_archive_fallback_fraction": 0.08410231481481481,
+      "phase_budget_completion_fraction": 0.594400925925926,
+      "phase_center_local_fraction": 0.06657906976744188,
+      "phase_coordinate_sweep_fraction": 0.20689722222222218,
+      "phase_far_basin_fraction": 0.008481720430107526,
+      "phase_final_polish_fraction": 0.03129166666666666,
+      "phase_initial_design_fraction": 0.009733333333333335
+    }
+  },
+  "hypotheses": [
+    {
+      "priority": "high",
+      "finding": "The active archive reaches capacity in at least 80% of development runs.",
+      "candidate_revision": "Replace objective-only archive eviction with a quality-diversity-accessibility retention rule, or increase merge adaptivity. Validate only on the development partition."
+    },
+    {
+      "priority": "high",
+      "finding": "BasinGraph v2 mean fixed-budget final-value rank is 3.389 on the development partition.",
+      "candidate_revision": "Inspect function-group and cocopp target-runtime results before final freeze; do not open holdout."
+    },
+    {
+      "priority": "positive",
+      "finding": "Mean rank improves with dimension across the observed 2D-to-10D development range.",
+      "candidate_revision": "Preserve the graph/far-basin mechanisms while targeting low-dimensional and smooth-function weaknesses."
+    },
+    {
+      "priority": "diagnostic",
+      "finding": "Weakest BasinGraph development groups: High conditioning / unimodal (f10-f14) (mean rank 3.778); Low/moderate conditioning (f6-f9) (mean rank 3.444)",
+      "candidate_revision": "Use only development instances and the existing development-only ablation protocol to test targeted changes."
+    }
+  ],
+  "decision_rule": "No algorithm revision may be accepted solely from final-value ranks. A revision requires concordant evidence from development cocopp target-runtime output, function-group diagnostics and development-only ablation."
+}

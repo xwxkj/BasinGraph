@@ -1,0 +1,283 @@
+{
+  "status": "ABORTED_HOLDOUT_RUNNER_SELECTION_ERROR",
+  "run_id": "v2rc1_coco_holdout_20260621T044935Z",
+  "recorded_utc": "2026-06-21T05:13:20.613246+00:00",
+  "root_cause": "The runner used suite_options instance_indices: 4-15. COCO interprets these as ordinal positions in the suite instance list, not as actual BBOB instance identifiers. Actual identifiers 4-15 must be supplied with suite_instance='instances: 4-15'.",
+  "observed_failure_problem_id": "bbob_f001_i71_d02",
+  "partial_basingraph_detail_files": [
+    "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/BasinGraph_v2/details/bbob_f001_i04_d02.json.gz",
+    "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/BasinGraph_v2/details/bbob_f001_i05_d02.json.gz"
+  ],
+  "problem_ids_visible_in_paths": [
+    "bbob_f001_i04_d02",
+    "bbob_f001_i05_d02"
+  ],
+  "performance_summary_generated": false,
+  "performance_values_inspected": false,
+  "operator_review_scope": "Only exception logs, file paths and file counts were inspected.",
+  "algorithm_source_or_options_modified": false,
+  "disposition": "Retain as an audit record, exclude all partial files from final analysis, apply a runner-only fix, and rerun all algorithms under a new run ID.",
+  "file_count": 52,
+  "files": [
+    {
+      "relative_path": "logs_v2/v2rc1_coco_holdout_20260621T044935Z/BIPOP_CMA_ES.log",
+      "sha256": "9a5bd5f6d683253916903695049cd38817da4559fc7cbf13526f6341fe068f0f",
+      "size_bytes": 562
+    },
+    {
+      "relative_path": "logs_v2/v2rc1_coco_holdout_20260621T044935Z/BasinGraph_v2.log",
+      "sha256": "2c8c48d5acf2c29a07b328e5e4adc72042977dea05820a4ea668f9d3486b1d30",
+      "size_bytes": 563
+    },
+    {
+      "relative_path": "logs_v2/v2rc1_coco_holdout_20260621T044935Z/CMA_ES.log",
+      "sha256": "167156f2295675dfb5484f92bc6a023e299a0a2417cab37bc23ca00fd5b6c88b",
+      "size_bytes": 556
+    },
+    {
+      "relative_path": "logs_v2/v2rc1_coco_holdout_20260621T044935Z/DE.log",
+      "sha256": "67a49dc0532c9b5160128b0578a36f0735b220fda40a9c9c6186efc70165edc5",
+      "size_bytes": 552
+    },
+    {
+      "relative_path": "logs_v2/v2rc1_coco_holdout_20260621T044935Z/LHS.log",
+      "sha256": "e2a04774cab3775f8b094e3c53277811c52972496e1099eb36338490c18b8380",
+      "size_bytes": 553
+    },
+    {
+      "relative_path": "logs_v2/v2rc1_coco_holdout_20260621T044935Z/MS_LBFGSB.log",
+      "sha256": "959c3df8c1c2cd95627c15c9aa3195d2fd9ba93d8c2da7a04ba51298a6ff943e",
+      "size_bytes": 559
+    },
+    {
+      "relative_path": "logs_v2/v2rc1_coco_holdout_20260621T044935Z/Random.log",
+      "sha256": "25003da6e2a967f8a4aa87bf91afcf8b89ecb6af8efedb1a7af1ff4e42c934de",
+      "size_bytes": 556
+    },
+    {
+      "relative_path": "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/BIPOP_CMA_ES/run_metadata.json",
+      "sha256": "525335cd3b016ba464e8f2c62e7d29d962967f3da9de136c53127d727d095517",
+      "size_bytes": 2813
+    },
+    {
+      "relative_path": "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/BasinGraph_v2/details/bbob_f001_i04_d02.json.gz",
+      "sha256": "c7e1cd464c49d52a8eb56c4e638f6a05466e0408f6fc7bdf5113e3270ec27e3f",
+      "size_bytes": 54876
+    },
+    {
+      "relative_path": "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/BasinGraph_v2/details/bbob_f001_i05_d02.json.gz",
+      "sha256": "f9e4a73174f3764e1492f8f0f308b2fd16b98c847902e1a7ab95acd80d0832ba",
+      "size_bytes": 58677
+    },
+    {
+      "relative_path": "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/BasinGraph_v2/run_metadata.json",
+      "sha256": "91ea34e5a58cdc8045973fe5f730125b6a6efb804eba7cb3ab124c3ac6da36f1",
+      "size_bytes": 2822
+    },
+    {
+      "relative_path": "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/CMA_ES/run_metadata.json",
+      "sha256": "e93dda3751fd370a844c2c3de45f82a67cbb080d61fa8f32d81e31e1bbdcf734",
+      "size_bytes": 2801
+    },
+    {
+      "relative_path": "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/DE/run_metadata.json",
+      "sha256": "51907db77bc6a69b4cc8b76adbe13827c729f5f0c0d088751fb89bdee700b3b2",
+      "size_bytes": 2813
+    },
+    {
+      "relative_path": "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/LHS/run_metadata.json",
+      "sha256": "3b20fc4a7d14104c0d98ba1f1d4a588297fde7ff0d818cef2d7294541c2de631",
+      "size_bytes": 2816
+    },
+    {
+      "relative_path": "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/MS_LBFGSB/run_metadata.json",
+      "sha256": "3978b6794fcc720cf3106619eb5454d4b3eac640e05cc658f742710bfc892e43",
+      "size_bytes": 2818
+    },
+    {
+      "relative_path": "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/Random/run_metadata.json",
+      "sha256": "f7c0f2213242db24365e96a04712268bda585570abd45ea3f33f668bfbe5e028",
+      "size_bytes": 2808
+    },
+    {
+      "relative_path": "results_v2/formal_holdout/coco_rc1/v2rc1_coco_holdout_20260621T044935Z/launch_metadata.json",
+      "sha256": "7c68dce30266f4e976271ef63ec41da1cbc00579e1a9a8c6cc478ab81ff3e0f9",
+      "size_bytes": 319
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/BIPOP_CMA_ES/bbobexp_f1.info",
+      "sha256": "6ca5ac2432a5139a9a5b5e42d1eeb7f2c245b520b04adcf1c9a94ae6a1b25d0c",
+      "size_bytes": 281
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/BIPOP_CMA_ES/data_f1/bbobexp_f1_DIM2.dat",
+      "sha256": "6eedd2dfac4e73de8ad366ece64ee88940548c2feb5d8a17676c63df4bd8f82f",
+      "size_bytes": 4705
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/BIPOP_CMA_ES/data_f1/bbobexp_f1_DIM2.mdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/BIPOP_CMA_ES/data_f1/bbobexp_f1_DIM2.rdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/BIPOP_CMA_ES/data_f1/bbobexp_f1_DIM2.tdat",
+      "sha256": "2474679de83382ebf8d8d482b573da7b7cb3adaffc388ed63e460b4355553d24",
+      "size_bytes": 10018
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/BasinGraph_v2/bbobexp_f1.info",
+      "sha256": "e35d1748015774117a6cc80a2754879c403ba4a419e47f55a2867d778c600fb5",
+      "size_bytes": 282
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/BasinGraph_v2/data_f1/bbobexp_f1_DIM2.dat",
+      "sha256": "1823bd18bdf2e988f64c9b71a9a736f4bef79bad246501a4ff85a8c64a2700a6",
+      "size_bytes": 1399
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/BasinGraph_v2/data_f1/bbobexp_f1_DIM2.mdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/BasinGraph_v2/data_f1/bbobexp_f1_DIM2.rdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/BasinGraph_v2/data_f1/bbobexp_f1_DIM2.tdat",
+      "sha256": "74973ff5de0bb3d35516c0089f615dd3f2dd7de245961437dba610592b73b617",
+      "size_bytes": 10018
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/CMA_ES/bbobexp_f1.info",
+      "sha256": "a0b9b50e5d01b51c95ede1db408fc955a87a8c2438c984497c1e39aaf92e1d43",
+      "size_bytes": 273
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/CMA_ES/data_f1/bbobexp_f1_DIM2.dat",
+      "sha256": "c57797c2ac695ae8a82baa3a81426f7525a017e1194a16691f9d96ef8146eab2",
+      "size_bytes": 4628
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/CMA_ES/data_f1/bbobexp_f1_DIM2.mdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/CMA_ES/data_f1/bbobexp_f1_DIM2.rdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/CMA_ES/data_f1/bbobexp_f1_DIM2.tdat",
+      "sha256": "71f64a3256738eb93453f0f0de7505bf9d63d6cc5e9a9628893e63d07bd99602",
+      "size_bytes": 7896
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/DE/bbobexp_f1.info",
+      "sha256": "c537dae688238f8cb83c67abbaf7a795fb3a42f4fda4ad9e087ef6b4e5733f42",
+      "size_bytes": 271
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/DE/data_f1/bbobexp_f1_DIM2.dat",
+      "sha256": "2930f25c5eee9f3f83b106ee0156737bf2167e7f0d9370758bc2f4756c5561c1",
+      "size_bytes": 4230
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/DE/data_f1/bbobexp_f1_DIM2.mdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/DE/data_f1/bbobexp_f1_DIM2.rdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/DE/data_f1/bbobexp_f1_DIM2.tdat",
+      "sha256": "2fd7cf3947324acb43181c128b55ea9b5684591bdd24c3c9d61fa2fdf6270bb5",
+      "size_bytes": 10018
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/LHS/bbobexp_f1.info",
+      "sha256": "02e35883df38fd55238703832246a40621eb0ee7420cb1826091f198e0ef6c8b",
+      "size_bytes": 272
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/LHS/data_f1/bbobexp_f1_DIM2.dat",
+      "sha256": "239abc3cb9e466c0bdd5c37a0fcf35f5afaa13c682262d68f86953b186c68410",
+      "size_bytes": 1881
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/LHS/data_f1/bbobexp_f1_DIM2.mdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/LHS/data_f1/bbobexp_f1_DIM2.rdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/LHS/data_f1/bbobexp_f1_DIM2.tdat",
+      "sha256": "c427f1250a1da383f576d5a55c641810c6fc5ab744935b3f8af98b6793d71b43",
+      "size_bytes": 10018
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/MS_LBFGSB/bbobexp_f1.info",
+      "sha256": "fce6b1d4d5167ba3982572d54b4590f26927bcffe33ff664f4e5dfdea2e3a993",
+      "size_bytes": 274
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/MS_LBFGSB/data_f1/bbobexp_f1_DIM2.dat",
+      "sha256": "3dd6945f51ba4726c99da2956bce5cedf0f16d4e50219160011caee6f38d150c",
+      "size_bytes": 1151
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/MS_LBFGSB/data_f1/bbobexp_f1_DIM2.mdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/MS_LBFGSB/data_f1/bbobexp_f1_DIM2.rdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/MS_LBFGSB/data_f1/bbobexp_f1_DIM2.tdat",
+      "sha256": "5777543077fd271a3f40f350f1451ef26dccb6c2a65413930d8138f076e28547",
+      "size_bytes": 4422
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/Random/bbobexp_f1.info",
+      "sha256": "f27bfa2253dfc1dd71497777c8c3997e11e7914ecfef90080fd55794c809388d",
+      "size_bytes": 275
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/Random/data_f1/bbobexp_f1_DIM2.dat",
+      "sha256": "0fa6999f7c047979f0858ccd9b709dff89a9ae940bf4525235a9215b6e8f7a9f",
+      "size_bytes": 1645
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/Random/data_f1/bbobexp_f1_DIM2.mdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/Random/data_f1/bbobexp_f1_DIM2.rdat",
+      "sha256": "9bb004ee044575e8636585768a468b76cf8ff99c6d1182ebd98611963e4af667",
+      "size_bytes": 358
+    },
+    {
+      "relative_path": "exdata/routeb_v2_holdout/v2rc1_coco_holdout_20260621T044935Z/Random/data_f1/bbobexp_f1_DIM2.tdat",
+      "sha256": "71b37dddf286363ff8b846f62e2af86acfa21271c3cd395095bf0bc8e7a687d3",
+      "size_bytes": 10018
+    }
+  ]
+}

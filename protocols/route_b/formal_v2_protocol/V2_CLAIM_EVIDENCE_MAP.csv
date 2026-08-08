@@ -1,0 +1,6 @@
+claim,required_evidence,source
+The implementation explicitly maintains basin nodes and directed transition edges.,serialized archive/graph outputs and integrity tests,unit tests; final run JSON; graph integrity logs
+Graph guidance affects search decisions.,NoGraphGuidance ablation under identical paired protocol,final ablation design
+BasinGraph v2 is competitive on standard black-box optimization.,prospective COCO holdout instances 4-15,official cocopp ECDF/ERT
+BasinGraph v2 generalizes to nonlinear optimization problems.,prospective CUTEst holdout 24 plus frozen development 50,performance/data profiles and problem-level statistics
+Module-level interpretations are supported.,frozen paired ablation on development data only,COCO/CUTEst ablation tables

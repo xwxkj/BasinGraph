@@ -1,0 +1,13 @@
+{
+  "status": "V2_RC1_SMOKE_PROVENANCE_OK",
+  "created_utc": "2026-06-20T04:46:42.043585+00:00",
+  "implementation_version": "2.0.0-rc1",
+  "git_commit": "8c2696b6f61e50d1836f5a661485b933604f46fc",
+  "options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "detailed_result_files": 18,
+  "total_archive_nodes": 1368,
+  "total_graph_edges": 3791,
+  "phase_accounting_verified": true,
+  "graph_referential_integrity_verified": true,
+  "paper_code_contract": "protocols/route_b/V2_RC1_ALGORITHM_SPEC.md"
+}

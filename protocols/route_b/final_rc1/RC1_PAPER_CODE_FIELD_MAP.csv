@@ -1,0 +1,9 @@
+paper_object,code_object,serialized_field,exact_interpretation
+operational basin-state node,BasinNode,archive[],active archive representative; not certified
+representative point,BasinNode.center,archive[].center,best stored point for the node
+observed transition,TransitionEdge,graph_edges[],directed algorithmic transition
+barrier proxy,TransitionEdge.barrier_proxy,graph_edges[].barrier_proxy,sample-derived proxy
+accessibility,TransitionEdge.accessibility,graph_edges[].accessibility,1/(1+barrier proxy+evaluations) on creation
+domain anisotropy,GeometryDiagnostics.anisotropy,diagnostics.anisotropy,max box width / min box width
+phase FE accounting,EvaluationLedger.phase_evaluations,phase_evaluations,exact objective calls by phase
+best-value trajectory,EvaluationLedger.history,history,best-so-far after each evaluation

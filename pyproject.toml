@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "basingraph-optimizer"
-version = "1.0.0"
-description = "Geometry-controlled basin-graph optimization"
+version = "3.0.1.dev0"
+description = "Geometry-controlled nonconvex optimization with bounded operational memory and an observed-transition graph"
 readme = "README.md"
 license = {text = "BSD-3-Clause"}
 requires-python = ">=3.11"
@@ -15,15 +15,16 @@ authors = [
   {name = "Xukun Yin", email = "xkyin@xidian.edu.cn"},
 ]
 dependencies = [
-  "numpy",
-  "scipy",
-  "pandas",
-  "matplotlib",
+  "numpy>=1.24,<3",
+  "scipy>=1.10,<1.18",
+  "pandas>=2,<4",
+  "matplotlib>=3.7,<4",
 ]
 
 [project.optional-dependencies]
 coco = ["cma", "coco-experiment", "cocopp"]
 cutest = ["pycutest==1.8.2"]
+test = ["pytest>=7"]
 
 [tool.setuptools.packages.find]
-include = ["basingraph*"]
+include = ["basingraph", "basingraph_v2"]

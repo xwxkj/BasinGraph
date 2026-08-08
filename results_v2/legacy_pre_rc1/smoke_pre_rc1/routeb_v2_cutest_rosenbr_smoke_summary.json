@@ -1,0 +1,10 @@
+{
+  "problem": "ROSENBR",
+  "dimension": 2,
+  "budget": 300,
+  "nfe": 300,
+  "fbest": 0.005782065301218144,
+  "archive_nodes": 34,
+  "graph_edges": 5,
+  "message": "budget_exhausted"
+}

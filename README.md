@@ -1,68 +1,113 @@
 # BasinGraph
 
-[![DOI](https://zenodo.org/badge/1274531480.svg)](https://doi.org/10.5281/zenodo.20765883)
+[![Result-bearing software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20789002.svg)](https://doi.org/10.5281/zenodo.20789002)
+[![Reproducibility dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20788903.svg)](https://doi.org/10.5281/zenodo.20788903)
 
-BasinGraph is a geometry-controlled basin-graph optimization framework for
-nonconvex mathematical models.
+BasinGraph is a geometry-controlled basin-graph optimizer for nonconvex
+mathematical models. It maintains a fixed-capacity archive of operational
+search-state representatives and a directed graph of observed transitions,
+while counting every objective call in a single evaluation ledger.
 
-## Repository contents
+## Result-bearing implementation
 
-- `basingraph/`: proposed optimizer.
-- `baselines/`: standardized benchmark implementations and wrappers.
-- `experiments/`: COCO/BBOB and benchmark runners.
-- `scripts/`: reproducible experiment and analysis entry points.
-- `protocols/`: frozen benchmark protocols and manifests.
-- `reproducibility/`: lightweight Source Data, summary tables, and metadata.
-- `environments/`: dependency locks and CUTEst environment information.
+The implementation that produced the reported prospective COCO/BBOB and
+CUTEst results is immutable and is identified by all of the following:
 
-Large COCO observer logs, CUTEst run-level histories, and full raw archives are
-not committed to GitHub. They are deposited on Zenodo at https://doi.org/10.5281/zenodo.20765047.
+- algorithm name in the manuscript: `BasinGraph`;
+- internal implementation version: `2.0.0-rc1`;
+- selected-candidate tag: `route-b-v2.0.0-rc1-selected-final-candidate`;
+- selected-candidate commit: `adbc0ecdf1153044188f0508321c47001ad9bdb0`;
+- source package: `basingraph_v2/`;
+- result-bearing entry point: `basingraph_v2.optimizer.minimize_basingraph_v2`;
+- frozen options hash: `031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69`;
+- active-archive capacity: `80`.
 
-## Main validation
+The public compatibility API forwards to that exact implementation:
 
-- Official noiseless COCO/BBOB: 24 functions, dimensions 2, 3, 5, 10 and 20,
-  15 instances, and a budget of 1,000d evaluations.
-- Pre-registered CUTEst: 50 instances, seven algorithms, and 30 paired seeds.
-- Independent MATLAB full-parallel validation and applied-mathematics tests.
+```python
+from basingraph import BasinGraphOptions, minimize_basingraph
+
+result = minimize_basingraph(
+    objective,
+    lower_bounds,
+    upper_bounds,
+    max_evals=10_000,
+    seed=0,
+    options=BasinGraphOptions(),
+)
+```
+
+The historical simplified optimizer formerly exposed from
+`basingraph/optimizer.py` is not the result-bearing manuscript implementation.
+Its history remains available through earlier repository commits and tags.
+
+## Prospective evidence already reported
+
+- Official noiseless COCO/BBOB holdout: functions 1–24; dimensions 2, 3, 5,
+  10 and 20; actual instances 4–15; seven algorithms; budget `1,000d`;
+  10,080 run-level records.
+- Prospective CUTEst holdout: 24 performance-independently selected problems;
+  30 paired seeds; seven algorithms; 5,040 run-level records.
+
+COCO/BBOB instances 1–3 and the 50-problem CUTEst development/comparability
+set are retained separately and are not pooled with the prospective holdouts.
+
+## Repository layout
+
+- `basingraph_v2/`: frozen result-bearing optimizer implementation.
+- `basingraph/`: public compatibility import that forwards to
+  `basingraph_v2/`.
+- `baselines/`: frozen comparator implementations and wrappers.
+- `experiments_v2/`: prospective COCO/BBOB and CUTEst runners.
+- `analysis_v2/`: validation and analysis scripts.
+- `scripts_v2/`: reproducibility, integrity and release workflows.
+- `protocols/`: frozen protocols, machine contracts and manifests.
+- `results_v2/final_analysis/`: lightweight final analysis outputs.
+- `evidence_extension_v1/`: newly registered NCS evidence-extension runners;
+  these do not alter the frozen candidate or the original holdouts.
 
 ## Installation
 
-Create the COCO environment from the archived dependency lock or install:
+Python 3.11 or later is recommended.
 
 ```bash
-python -m pip install numpy scipy pandas matplotlib cma coco-experiment cocopp
+python -m pip install --upgrade pip
+python -m pip install -e .
 ```
 
-CUTEst requires SIFDecode, CUTEst, MASTSIF and PyCUTEst. See
-`protocols/` and `environments/` for the frozen toolchain information.
+COCO/BBOB additionally requires `cma`, `coco-experiment` and `cocopp`.
+CUTEst additionally requires SIFDecode, CUTEst, MASTSIF and PyCUTEst; the
+frozen toolchain is documented under `protocols/` and `environments/`.
 
-## Reproduction
+## Identity audit
 
-Experiment entry points are documented in `scripts/`. The final public release
-will contain a DOI-backed Zenodo archive with raw logs and convergence histories.
+Run the repository identity audit before any new experiment:
 
-## Citation
+```bash
+python scripts_v2/audit_step0_identity.py
+```
 
-See `CITATION.cff`.
+A deterministic repository manifest can be generated with:
 
-## License
+```bash
+python scripts_v2/generate_repository_manifest.py
+```
 
-BasinGraph is released under the BSD-3-Clause license. See `LICENSE`.
+## Public archives used by the manuscript
 
-## Software archive
+| Resource | Public version-specific DOI |
+|---|---|
+| Result-bearing software archive v2.0.0 | `10.5281/zenodo.20789002` |
+| Reproducibility dataset v2.0.0 | `10.5281/zenodo.20788903` |
 
-- Version 1.0.0 DOI: https://doi.org/10.5281/zenodo.20765884
-- All-versions DOI: https://doi.org/10.5281/zenodo.20765883
-- Reproducibility Dataset DOI: https://doi.org/10.5281/zenodo.20765047
+The GitHub release `v3.0.0` is a documentation and archive-composition release.
+It does not change the result-bearing optimizer, frozen options, benchmark
+runs, raw results, statistical analyses or numerical conclusions. Reserved or
+unverified DOI values in historical release-preparation files are retained only
+as provenance and are not used as the authoritative manuscript citations.
 
-## Data and reproducibility archive
+## Licence
 
-The official COCO/BBOB logs, pre-registered CUTEst results, MATLAB
-validation, Source Data and frozen protocols are openly available on
-Zenodo:
-
-- Version-specific Dataset DOI: https://doi.org/10.5281/zenodo.20765047
-- All-versions Dataset DOI: https://doi.org/10.5281/zenodo.20765046
-
-The version-specific DOI identifies the exact files supporting the
-reported study.
+BasinGraph source code is released under the BSD-3-Clause licence. Benchmark
+libraries and externally developed comparator implementations retain their
+original licences.
