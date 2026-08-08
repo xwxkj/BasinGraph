@@ -1,0 +1,106 @@
+name: Materialize B21 Track B frozen payload
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-b]
+    paths:
+      - '.github/workflows/track-b-bootstrap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reconstruct and verify payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .github/track_b_payload/p* > /tmp/track_b_payload.b64
+          test "$(wc -c < /tmp/track_b_payload.b64 | tr -d ' ')" = "38952"
+          base64 --decode /tmp/track_b_payload.b64 > /tmp/track_b_payload.tar.xz
+          echo "bb9213bc8ae625408c809f772fead307fa71941fc58c108d4ec3471d3a3a1cd0  /tmp/track_b_payload.tar.xz" | sha256sum -c -
+          tar -xJf /tmp/track_b_payload.tar.xz -C .
+      - name: Freeze Track B source identity and protocol manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          chmod +x START_B21_TRACK_B_SMOKE.command START_B21_TRACK_B_CONFIRMATORY.command
+          chmod +x evidence_extension_v1/track_b/*.py evidence_extension_v1/track_b/*.sh
+          python - <<'PY'
+          from pathlib import Path
+          import json, subprocess
+
+          root = Path('.')
+          paths = [
+              'START_B21_TRACK_B_SMOKE.command',
+              'START_B21_TRACK_B_CONFIRMATORY.command',
+              '.github/workflows/b21-track-b-ci.yml',
+              'tests_v2/test_track_b_contract.py',
+          ]
+          paths += [
+              p.as_posix() for p in sorted((root / 'basingraph_v2').glob('*.py'))
+          ]
+          paths += [
+              p.as_posix() for p in sorted((root / 'evidence_extension_v1/track_b').glob('*'))
+              if p.is_file()
+          ]
+          protocol_root = root / 'protocols/evidence_extension_v1/track_b'
+          paths += [
+              p.as_posix() for p in sorted(protocol_root.glob('*'))
+              if p.is_file() and p.name not in {'TRACK_B_SOURCE_IDENTITY.json', 'MANIFEST_SHA256.csv'}
+          ]
+          blobs = {}
+          for path in paths:
+              blobs[path] = subprocess.check_output(
+                  ['git', 'hash-object', path], text=True
+              ).strip()
+          identity = {
+              'status': 'TRACK_B_SOURCE_IDENTITY_FROZEN',
+              'date': '2026-08-08',
+              'repository': 'xwxkj/BasinGraph',
+              'track_a_merge_commit': 'c955bdba08a6a50316248b6c1dd9ff61f1a4840b',
+              'candidate_tag': 'route-b-v2.0.0-rc1-selected-final-candidate',
+              'candidate_commit': 'adbc0ecdf1153044188f0508321c47001ad9bdb0',
+              'implementation_version': '2.0.0-rc1',
+              'full_options_hash': '031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69',
+              'confirmatory_partition': {
+                  'suite': 'bbob',
+                  'functions': list(range(1, 25)),
+                  'dimensions': [5, 20],
+                  'instances': list(range(21, 31)),
+                  'budget_multiplier': 1000,
+                  'algorithms': 8,
+                  'expected_rows': 3840,
+              },
+              'implementation_notice': {
+                  'L_SHADE_1_0_1': 'Frozen Python port of the corrected L-SHADE 1.0.1 algorithmic specification; not a byte-identical official executable.',
+                  'jSO': 'Frozen Python port of the published jSO algorithmic specification; not a byte-identical official executable.',
+                  'L_SRTDE': 'Frozen Python port of the published L-SRTDE algorithmic specification; not the GPL C++ executable.',
+                  'DIRECT_L': 'SciPy optimize.direct with locally_biased=True.',
+                  'CMA_ES': 'pycma implementation.',
+                  'BIPOP_CMA_ES': 'pycma BIPOP restart implementation.',
+                  'MS_LBFGSB': 'SciPy L-BFGS-B multistart wrapper.',
+              },
+              'git_blobs': blobs,
+          }
+          out = protocol_root / 'TRACK_B_SOURCE_IDENTITY.json'
+          out.write_text(json.dumps(identity, indent=2), encoding='utf-8')
+          PY
+          python evidence_extension_v1/track_b/generate_protocol_manifest.py
+      - name: Commit frozen Track B package
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .github/track_b_payload
+          rm -f .github/workflows/track-b-bootstrap.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Freeze B21 Track B modern-baseline protocol and Mac runner"
+          git push origin HEAD:ncs-evidence-v1-track-b
