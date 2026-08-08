@@ -1,0 +1,58 @@
+{
+  "status": "TRACK_A_CONFIRMATORY_RESULT_FREEZE_OK",
+  "decision": "HOLD_PRESERVE_FROZEN_CANDIDATE_PROCEED_TRACK_B",
+  "freeze_date": "2026-08-08",
+  "run_id": "b21_track_a_confirmatory_20260808T052204Z",
+  "source_commit": "142b8128a414b11fdb159fd1e74e485875ac309b",
+  "implementation_version": "2.0.0-rc1",
+  "full_options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "matrix": {
+    "suite": "bbob",
+    "functions": "1-24",
+    "dimensions": [5, 20],
+    "instances": "16-20",
+    "budget_evaluations_per_dimension": 1000,
+    "variants": 8,
+    "problems": 240,
+    "runs": 1920
+  },
+  "integrity": {
+    "result_zip_sha256": "ff3f42c1a17d8b786c9e0d5e16cef30f093a2953c30d4eca89bd6147d03b732c",
+    "observer_archive_sha256": "02214e8fa02b635fc054ad09af598b8d3a4fa38662257c74f5b1342873b069a5",
+    "raw_results_sha256": "18e37b6277a950051c54f875fb251819327e3e9abce5ef572525b12a50b137a7",
+    "result_manifest_entries": 478,
+    "observer_files": 1920,
+    "all_runs_completed": true,
+    "internal_budget_exact": true,
+    "observer_budget_exact": true,
+    "phase_accounting_exact": true,
+    "archive_capacity_valid": true,
+    "graph_referential_integrity": true,
+    "history_monotone": true,
+    "cocopp_completed": true
+  },
+  "primary_target_runtime": {
+    "full_target_fraction_300D": 0.3763071895424837,
+    "best_300D_variant": "SingleBracket",
+    "best_target_fraction_300D": 0.3834967320261438,
+    "full_target_fraction_1000D": 0.4536764705882353,
+    "best_1000D_variant": "NoGeometryController",
+    "best_target_fraction_1000D": 0.4568627450980392,
+    "full_mean_log10_normalized_runtime": 2.324039,
+    "best_mean_log10_normalized_runtime_variant": "NoGraphGuidance",
+    "best_mean_log10_normalized_runtime": 2.319600,
+    "interpretation": "Except for NoCenterLocal, aggregate primary ECDF differences were small and strongly dependent on dimension, function group and budget. Full was not the official aggregate ECDF leader in either dimension."
+  },
+  "secondary_final_values": {
+    "friedman_statistic": 20.962673302523996,
+    "friedman_p_value": 0.0038257898309473205,
+    "full_mean_final_rank": 4.808333333333334,
+    "holm_significant_ablations_better_than_full": [
+      "SingleBracket",
+      "NoFarBasin",
+      "NoArchiveFallback"
+    ]
+  },
+  "claim_boundary": "Track A supports conditional, geometry- and budget-dependent mechanism effects. It does not support a claim that every BasinGraph module improves aggregate performance uniformly.",
+  "non_negotiable_next_step": "Do not modify the frozen 2.0.0-rc1 candidate on the basis of instances 16-20. Preserve all unfavorable results and proceed to the disjoint modern-baseline Track B."
+}
