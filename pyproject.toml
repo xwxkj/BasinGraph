@@ -15,10 +15,10 @@ authors = [
   {name = "Xukun Yin", email = "xkyin@xidian.edu.cn"},
 ]
 dependencies = [
-  "numpy",
-  "scipy",
-  "pandas",
-  "matplotlib",
+  "numpy>=1.24,<3",
+  "scipy>=1.10,<1.18",
+  "pandas>=2,<4",
+  "matplotlib>=3.7,<4",
 ]
 
 [project.optional-dependencies]
