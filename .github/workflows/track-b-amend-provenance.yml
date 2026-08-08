@@ -1,0 +1,186 @@
+name: Clarify Track B L-SRTDE provenance before confirmatory access
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-b]
+    paths:
+      - '.github/workflows/track-b-amend-provenance.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  amend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply provenance clarification
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import csv
+          import json
+          import subprocess
+
+          root = Path('.')
+          previous_smoke_commit = '80254991b434c4780790aaecf0d264c578dd6ab7'
+
+          def replace_once(text: str, old: str, new: str, label: str) -> str:
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'{label}: expected one match, found {count}')
+              return text.replace(old, new, 1)
+
+          # Clarify the L-SRTDE port identity without changing any numerical
+          # operation or parameter.
+          path = root / 'evidence_extension_v1/track_b/modern_baselines.py'
+          text = path.read_text(encoding='utf-8')
+          text = replace_once(
+              text,
+              '''    \"\"\"Python port of the public L-SRTDE CEC-2024 core algorithm.\n\n    The mutation, success-rate adaptation, crossover-memory update and linear\n    population reduction follow the public C++ source.  Only the objective and\n    per-coordinate bounds interface are generalized from the original CEC\n    harness.\n    \"\"\"\n''',
+              '''    \"\"\"Transparent Python port of the public L-SRTDE CEC-2024 core.\n\n    Mutation, success-rate adaptation, crossover-memory update and linear\n    population reduction follow the public C++ core.  Registered deviations are\n    the NumPy random generator, arbitrary finite bounds/external objective,\n    pre-replacement success-delta measurement, stable elite reduction and\n    front-index normalization after population reduction.  This is not the GPL\n    C++ executable.\n    \"\"\"\n''',
+              'L-SRTDE docstring',
+          )
+          text = text.replace(
+              'implementation="python_port_official_CEC2024_core"',
+              'implementation="transparent_python_port_public_CEC2024_core"',
+          )
+          text = replace_once(
+              text,
+              '''            "memory_size": memory_size,\n        },\n    )\n\n\ndef optimize_cmaes(\n''',
+              '''            "memory_size": memory_size,\n            "registered_deviations": [\n                "NumPy Generator rather than std::mt19937/distributions",\n                "arbitrary finite per-coordinate bounds and external objective",\n                "success delta measured before cyclic-front replacement",\n                "stable elite reduction for front and population",\n                "front replacement index normalized after reduction",\n            ],\n        },\n    )\n\n\ndef optimize_cmaes(\n''',
+              'L-SRTDE metadata',
+          )
+          path.write_text(text, encoding='utf-8')
+
+          protocol_root = root / 'protocols/evidence_extension_v1/track_b'
+
+          path = protocol_root / 'TRACK_B_BASELINE_PROVENANCE.csv'
+          rows = list(csv.DictReader(path.open(encoding='utf-8')))
+          for row in rows:
+              if row['algorithm'] == 'L_SRTDE':
+                  row['verified_status'] = 'transparent source-guided port; not the GPL C++ executable'
+                  row['deviation_from_source'] = (
+                      'NumPy RNG; arbitrary finite bounds/external objective; '
+                      'success delta measured before cyclic-front replacement; '
+                      'stable elite reduction; front-index normalization'
+                  )
+          with path.open('w', newline='', encoding='utf-8') as handle:
+              writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+              writer.writeheader()
+              writer.writerows(rows)
+
+          path = protocol_root / 'TRACK_B_ALGORITHM_SPECIFICATIONS.json'
+          data = json.loads(path.read_text(encoding='utf-8'))
+          for item in data['algorithms']:
+              if item['id'] == 'L_SRTDE':
+                  item['implementation'] = 'transparent source-guided Python port of public CEC-2024 C++ core'
+                  item['registered_deviations'] = [
+                      'NumPy Generator',
+                      'arbitrary finite per-coordinate bounds and external objective',
+                      'pre-replacement success-delta measurement',
+                      'stable elite reduction',
+                      'front replacement-index normalization after reduction',
+                  ]
+                  break
+          data['protocol_revision'] = '1.0.3'
+          data['amendments'] = [
+              'TRACK_B_AMENDMENT_001',
+              'TRACK_B_AMENDMENT_002',
+              'TRACK_B_AMENDMENT_003',
+          ]
+          path.write_text(json.dumps(data, indent=2) + '\n', encoding='utf-8')
+
+          path = protocol_root / 'TRACK_B_CONFIRMATORY_PROTOCOL.md'
+          protocol = path.read_text(encoding='utf-8')
+          amendment2 = 'Amendment 002: L-SHADE/jSO success-history, CR-sentinel, archive, rounding and jSO memory/p-best rules aligned with their public source specifications; confirmatory objective evaluations before the amendment: **0**.  \n'
+          amendment3 = 'Amendment 003: L-SRTDE port deviations and non-official executable status made explicit; no numerical operation or parameter changed; confirmatory objective evaluations before the amendment: **0**.  \n'
+          if amendment3 not in protocol:
+              protocol = replace_once(protocol, amendment2, amendment2 + amendment3, 'Protocol amendment 003')
+          protocol = protocol.replace(
+              '- L-SRTDE: transparent Python port of the public CEC-2024 C++ core, generalized\n  only to arbitrary finite per-coordinate bounds and an external objective;\n',
+              '- L-SRTDE: transparent source-guided Python port of the public CEC-2024 C++ core; registered deviations include the random generator, objective/bounds adapter, pre-replacement success-delta measurement, stable elite reduction and front-index normalization;\n',
+          )
+          path.write_text(protocol, encoding='utf-8')
+
+          path = protocol_root / 'TRACK_B_CONFIRMATORY_LOCK.json'
+          lock = json.loads(path.read_text(encoding='utf-8'))
+          lock['protocol_revision'] = '1.0.3'
+          lock.setdefault('amendments', []).append({
+              'id': 'TRACK_B_AMENDMENT_003',
+              'date': '2026-08-08',
+              'timing': 'after development-only smoke and before confirmatory evaluation',
+              'confirmatory_objective_evaluations_before_amendment': 0,
+              'change': 'clarify L-SRTDE transparent-port deviations and replace official-looking implementation label',
+              'numerical_operations_changed': False,
+              'parameters_changed': False,
+              'reason': 'prevent the port from being misrepresented as the GPL C++ executable',
+              'effect': 'source identity changes; a final development-only smoke is required',
+          })
+          path.write_text(json.dumps(lock, indent=2) + '\n', encoding='utf-8')
+
+          amendment = protocol_root / 'TRACK_B_AMENDMENT_003.md'
+          amendment.write_text('''# Track B Amendment 003: L-SRTDE provenance clarification\n\nStatus: **registered before confirmatory evaluation**  \nDate: 2026-08-08  \nConfirmatory objective evaluations before amendment: **0**\n\n## Trigger\n\nThe final provenance review found that the result metadata label\n`python_port_official_CEC2024_core` could be read as implying an official\nexecutable.  Track B uses a transparent Python port, not the GPL C++ binary.\n\n## Clarification\n\nThe implementation label is now\n`transparent_python_port_public_CEC2024_core`.  The registered deviations are\nNumPy random-number generation, arbitrary finite per-coordinate bounds and an\nexternal objective, success-delta measurement before cyclic-front replacement,\nstable elite reduction, and replacement-index normalization after population\nreduction.\n\nNo numerical operation, parameter, seed, budget, problem partition or endpoint\nwas changed in this amendment.  The source-identity commit changes, so a final\ndevelopment-only smoke remains mandatory before confirmatory access.\n''', encoding='utf-8')
+
+          identity_path = protocol_root / 'TRACK_B_SOURCE_IDENTITY.json'
+          identity = json.loads(identity_path.read_text(encoding='utf-8'))
+          identity['identity_version'] = '1.0.3'
+          identity['implementation_notice']['L_SRTDE'] = (
+              'Transparent source-guided Python port of the public L-SRTDE '
+              'CEC-2024 core with registered deviations; not the GPL C++ executable.'
+          )
+          amendments = identity.setdefault('amendments', [])
+          amendments.append({
+              'id': 'TRACK_B_AMENDMENT_003',
+              'previous_smoke_commit': previous_smoke_commit,
+              'confirmatory_objective_evaluations_before_amendment': 0,
+              'numerical_operations_changed': False,
+              'parameters_changed': False,
+              'provenance_clarification': True,
+              'smoke_rerun_required': True,
+          })
+          tracked_paths = list(identity['git_blobs'])
+          amendment_rel = amendment.as_posix()
+          if amendment_rel not in tracked_paths:
+              tracked_paths.append(amendment_rel)
+          blobs = {}
+          for rel in sorted(tracked_paths):
+              if not Path(rel).is_file():
+                  raise SystemExit(f'Source-identity path missing: {rel}')
+              blobs[rel] = subprocess.check_output(
+                  ['git', 'hash-object', rel], text=True
+              ).strip()
+          identity['git_blobs'] = blobs
+          identity_path.write_text(json.dumps(identity, indent=2) + '\n', encoding='utf-8')
+
+          subprocess.run(
+              ['python', 'evidence_extension_v1/track_b/generate_protocol_manifest.py'],
+              check=True,
+          )
+          PY
+
+      - name: Run contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r protocols/evidence_extension_v1/track_b/TRACK_B_REQUIREMENTS_LOCK.txt
+          python -m pip install -e . --no-deps
+          python -m pip install pytest
+          python -m pytest -q tests_v2/test_track_b_contract.py
+
+      - name: Commit provenance clarification
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evidence_extension_v1/track_b/modern_baselines.py \
+                  protocols/evidence_extension_v1/track_b
+          git commit -m "Clarify Track B L-SRTDE port provenance before confirmatory access"
+          git push origin HEAD:ncs-evidence-v1-track-b
