@@ -26,6 +26,10 @@ jobs:
           echo '9dc6faaf4f7eb7957d1edee36102333a1286f927c561659f292bf3e577030994  /tmp/track_d_payload.tar.xz' | sha256sum --check -
           tar -xJf /tmp/track_d_payload.tar.xz -C .
           rm -rf .track_d_bootstrap
+          # GitHub App tokens cannot create workflow files. The validated CI
+          # workflow is added through the connected user action after this
+          # payload commit succeeds.
+          rm -f .github/workflows/b21-track-d-ci.yml
 
       - name: Validate materialized payload
         shell: bash
@@ -49,7 +53,6 @@ jobs:
                   evidence_extension_v1/track_d \
                   protocols/evidence_extension_v1/track_d \
                   tests_v2/test_track_d_contract.py \
-                  .github/workflows/b21-track-d-ci.yml \
                   .track_d_bootstrap
           git commit -m 'Materialize frozen B21 Track D scalability runner'
           git push origin HEAD:ncs-evidence-v1-track-d
