@@ -162,6 +162,18 @@ def _initial_population(
     return population, fitness
 
 
+def _jso_initial_population_size(dimension: int) -> int:
+    """Return the registered jSO initial population size.
+
+    The published jSO specification uses N_init = 25 ln(D) sqrt(D).
+    """
+
+    dimension = int(dimension)
+    if dimension < 1:
+        raise ValueError("dimension must be positive")
+    return max(4, int(round(25.0 * math.log(dimension) * math.sqrt(dimension))))
+
+
 def optimize_lshade_101(
     objective: Callable[[np.ndarray], float],
     lb: np.ndarray,
@@ -318,12 +330,17 @@ def optimize_jso(
     max_evals: int,
     seed: int = 0,
 ) -> dict[str, Any]:
-    """Paper-faithful jSO Python port with frozen CEC-2017 parameters."""
+    """Paper-faithful jSO Python port with frozen CEC-2017 parameters.
+
+    The registered initial population is round(25 ln(D) sqrt(D)),
+    with a minimum population of four.
+    """
 
     rng = np.random.default_rng(seed)
     bo = BudgetedObjective(objective, lb, ub, max_evals)
     dimension = bo.dimension
-    initial_size = max(4, 25 * dimension)
+    registered_initial_size = _jso_initial_population_size(dimension)
+    initial_size = registered_initial_size
     minimum_size = 4
     memory_size = 5
     archive_rate = 1.0
@@ -466,7 +483,8 @@ def optimize_jso(
         message="budget_exhausted" if bo.remaining == 0 else "completed",
         implementation="paper_faithful_python_port_CEC2017",
         metadata={
-            "initial_population": 25 * dimension,
+            "initial_population": registered_initial_size,
+            "initial_population_formula": "round(25*ln(D)*sqrt(D))",
             "minimum_population": minimum_size,
             "memory_size": memory_size,
             "archive_rate": archive_rate,

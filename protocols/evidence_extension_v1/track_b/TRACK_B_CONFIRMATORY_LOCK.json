@@ -61,5 +61,17 @@
   "seed_formula": "base_seed + 100000*function + 1000*dimension + instance",
   "primary_endpoint": "official cocopp target-runtime analysis",
   "candidate_changes_allowed": false,
-  "baseline_parameter_changes_allowed": false
+  "baseline_parameter_changes_allowed": false,
+  "protocol_revision": "1.0.1",
+  "amendments": [
+    {
+      "id": "TRACK_B_AMENDMENT_001",
+      "date": "2026-08-08",
+      "timing": "after development-only smoke and before confirmatory evaluation",
+      "confirmatory_objective_evaluations_before_amendment": 0,
+      "change": "jSO initial population: 25D -> round(25*ln(D)*sqrt(D))",
+      "reason": "alignment with the published jSO CEC-2017 specification",
+      "effect": "v1 smoke is engineering-only and superseded; rerun smoke required"
+    }
+  ]
 }

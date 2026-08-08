@@ -16,7 +16,10 @@ from evidence_extension_v1.track_b.common import (
     MODE_CONFIG,
     seed_for,
 )
-from evidence_extension_v1.track_b.modern_baselines import OPTIMIZERS
+from evidence_extension_v1.track_b.modern_baselines import (
+    OPTIMIZERS,
+    _jso_initial_population_size,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -77,6 +80,12 @@ def test_track_b_protocol_files_agree() -> None:
     assert identity["pairwise_disjoint"] is True
     assert [item["id"] for item in algorithms["algorithms"]] == ALGORITHMS
     assert algorithms["no_post_freeze_tuning"] is True
+
+
+def test_jso_registered_initial_population_formula() -> None:
+    assert _jso_initial_population_size(5) == 90
+    assert _jso_initial_population_size(20) == 335
+
 
 
 def test_track_b_seed_formula() -> None:

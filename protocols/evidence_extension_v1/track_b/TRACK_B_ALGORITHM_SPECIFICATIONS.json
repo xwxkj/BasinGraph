@@ -29,7 +29,12 @@
       "id": "jSO",
       "display": "jSO",
       "implementation": "paper-faithful Python port of published CEC-2017 algorithm",
-      "license_or_status": "research port; source basis documented"
+      "license_or_status": "research port; source basis documented",
+      "registered_initial_population": "round(25*ln(D)*sqrt(D))",
+      "registered_values": {
+        "D5": 90,
+        "D20": 335
+      }
     },
     {
       "id": "L_SRTDE",
@@ -51,5 +56,7 @@
     }
   ],
   "count": 8,
-  "no_post_freeze_tuning": true
+  "no_post_freeze_tuning": true,
+  "protocol_revision": "1.0.1",
+  "amendment": "TRACK_B_AMENDMENT_001"
 }
