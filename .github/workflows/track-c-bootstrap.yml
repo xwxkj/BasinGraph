@@ -1,0 +1,79 @@
+name: Materialize B21 Track C frozen payload
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-c]
+    paths:
+      - '.github/workflows/track-c-bootstrap.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reassemble, verify and extract frozen payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .track_c_bootstrap/part_*.txt > /tmp/track_c_payload.b64
+          base64 --decode /tmp/track_c_payload.b64 > /tmp/track_c_payload.tar.xz
+          echo '48f8f60207282f6879ba006430ea51524f286acd6df63564179c5be813bd39bb  /tmp/track_c_payload.tar.xz' | sha256sum --check -
+          tar -xJf /tmp/track_c_payload.tar.xz -C .
+          find evidence_extension_v1/track_c -type d -name '__pycache__' -prune -exec rm -rf '{}' +
+          find evidence_extension_v1/track_c -type f -name '*.pyc' -delete
+          rm -rf .track_c_bootstrap
+
+      - name: Retrieve frozen NIST StRD ASCII files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p data/nist
+          commit='fe389bbbd1fe936cd73742bd81fc6fce7ac92858'
+          base="https://raw.githubusercontent.com/lmfit/lmfit-py/${commit}/NIST_STRD"
+          for name in Chwirut1 Roszman1 ENSO Eckerle4 Bennett5 BoxBOD; do
+            curl --fail --location --retry 4 --retry-delay 2 \
+              "${base}/${name}.dat" \
+              --output "data/nist/${name}.dat"
+          done
+
+      - name: Materialize protocol locks, provenance and source identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python evidence_extension_v1/track_c/materialize_track_c.py
+          python -m compileall -q evidence_extension_v1/track_c tests_v2/test_track_c_contract.py
+          bash -n evidence_extension_v1/track_c/run_track_c_mac.sh
+          bash -n START_B21_TRACK_C_SMOKE.command
+          bash -n START_B21_TRACK_C_CONFIRMATORY.command
+
+      - name: Run frozen Track C contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r protocols/evidence_extension_v1/track_c/TRACK_C_REQUIREMENTS_LOCK.txt
+          python -m pip install -e . --no-deps
+          python -m pip install pytest
+          python -m pytest -q tests_v2/test_track_c_contract.py
+
+      - name: Commit frozen Track C payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A .track_c_bootstrap \
+                     START_B21_TRACK_C_SMOKE.command \
+                     START_B21_TRACK_C_CONFIRMATORY.command \
+                     evidence_extension_v1/track_c \
+                     protocols/evidence_extension_v1/track_c \
+                     tests_v2/test_track_c_contract.py \
+                     data/nist
+          git commit -m 'Materialize frozen B21 Track C scientific-application runner'
+          git push origin HEAD:ncs-evidence-v1-track-c
