@@ -1,0 +1,70 @@
+name: B21 Track A preflight and smoke
+
+on:
+  pull_request:
+    paths:
+      - 'basingraph_v2/**'
+      - 'evidence_extension_v1/track_a/**'
+      - 'protocols/evidence_extension_v1/track_a/**'
+      - 'tests_v2/test_track_a_contract.py'
+      - '.github/workflows/b21-track-a-ci.yml'
+      - 'pyproject.toml'
+  workflow_dispatch:
+
+jobs:
+  track-a-smoke:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ['3.11']
+    runs-on: ${{ matrix.os }}
+    env:
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      VECLIB_MAXIMUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      B21_NO_OPEN: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install frozen Track A environment
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r protocols/evidence_extension_v1/track_a/TRACK_A_REQUIREMENTS_LOCK.txt
+          python -m pip install -e . --no-deps
+          python -m pip install pytest
+      - name: Compile sources
+        run: python -m compileall -q basingraph basingraph_v2 evidence_extension_v1/track_a
+      - name: Run frozen contract tests
+        run: python -m pytest -q tests_v2
+      - name: Generate protocol and repository manifests
+        run: |
+          python evidence_extension_v1/track_a/generate_protocol_manifest.py
+          python scripts_v2/generate_repository_manifest.py
+      - name: Step 0 identity audit
+        run: |
+          python scripts_v2/audit_step0_identity.py --require-manifest --output results_b21/track_a/ci_identity.json
+      - name: Track A zero-evaluation preflight
+        run: python evidence_extension_v1/track_a/preflight_track_a.py --mode smoke --output results_b21/track_a/ci_preflight.json
+      - name: Track A smoke shards and official cocopp
+        run: |
+          python evidence_extension_v1/track_a/run_track_a_all.py --mode smoke --workers 2 --run-id ci_track_a_smoke
+          python evidence_extension_v1/track_a/finalize_track_a.py --mode smoke --run-id ci_track_a_smoke
+      - name: Upload Track A smoke
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: track-a-${{ runner.os }}
+          path: |
+            protocols/evidence_extension_v1/track_a/MANIFEST_SHA256.csv
+            results_b21/track_a/ci_identity.json
+            results_b21/track_a/ci_preflight.json
+            results_b21/track_a/ci_track_a_smoke
+          if-no-files-found: warn

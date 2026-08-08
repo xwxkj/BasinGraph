@@ -1,0 +1,57 @@
+{
+  "status": "TRACK_A_VARIANTS_FROZEN",
+  "full_options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "variants": {
+    "Full": {
+      "overrides": {},
+      "options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69"
+    },
+    "NoGraphGuidance": {
+      "overrides": {
+        "enable_graph_guidance": false
+      },
+      "options_hash": "03559d7f1644f41c688bd3ead64c203f26d6d1d0ede601a9989815eb3bdf53cb"
+    },
+    "SingleBracket": {
+      "overrides": {
+        "enable_multibracket": false
+      },
+      "options_hash": "9c61fd97c8097c8549adeab1b6648a65b7b4c2718cb5db60293ae9da7809893e"
+    },
+    "NoFarBasin": {
+      "overrides": {
+        "enable_far_basin": false
+      },
+      "options_hash": "3c060ce6816467d958fd50a3261a81567980b95e47fc80991814c5ebf327e901"
+    },
+    "NoGeometryController": {
+      "overrides": {
+        "enable_geometry_controller": false
+      },
+      "options_hash": "5f960c9ad8dbffdcdab02255a65f0af9a32e4b4033369d1e9aff966ee67aaf08"
+    },
+    "NoArchiveFallback": {
+      "overrides": {
+        "enable_archive_fallback": false
+      },
+      "options_hash": "42be50fc4ff72e0f85d05980ad0147689443e555aed7ec0dd7b6108268762faf"
+    },
+    "NoFinalPolish": {
+      "overrides": {
+        "enable_final_polish": false
+      },
+      "options_hash": "eb468aa3c622b8c476ec5c18db08e480bb0de4aaa0f5efe15530014c54c69719"
+    },
+    "NoCenterLocal": {
+      "overrides": {
+        "center_local_max_dim": -1,
+        "local_mode_min_score": {
+          "special_float": "Infinity"
+        }
+      },
+      "options_hash": "430a976a9f14f76ae18c2d990204cabac067d7af956949649c9d23bd7f630bb0"
+    }
+  },
+  "unused_budget_rule": "flows unchanged to budget_completion",
+  "variant_specific_retuning": false
+}

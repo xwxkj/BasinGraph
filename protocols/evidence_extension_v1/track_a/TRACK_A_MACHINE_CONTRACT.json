@@ -1,0 +1,28 @@
+{
+  "status": "TRACK_A_MACHINE_CONTRACT_FROZEN",
+  "python": {
+    "minimum": "3.11",
+    "maximum_tested_family": "3.14"
+  },
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "coco-experiment": "2.8.2",
+    "cocopp": "2.8.7",
+    "matplotlib": "3.11.0"
+  },
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "default_parallel_shards": 4,
+  "supported_execution": [
+    "macOS arm64/x86_64",
+    "Ubuntu x86_64"
+  ],
+  "objective_parallelism": "one process per variant-dimension shard; numerical libraries single-threaded"
+}
