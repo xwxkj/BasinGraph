@@ -1,0 +1,80 @@
+{
+  "suite": "bbob-largescale",
+  "engineering_smoke": {
+    "functions": [
+      1,
+      10,
+      20
+    ],
+    "dimensions": [
+      40,
+      80
+    ],
+    "instances": [
+      1
+    ],
+    "budget_multiplier": 50,
+    "expected_rows": 30
+  },
+  "registered_overhead": {
+    "functions": [
+      1,
+      10,
+      20
+    ],
+    "dimensions": [
+      40,
+      80,
+      160,
+      320
+    ],
+    "instances": [
+      1
+    ],
+    "budget_multiplier": 50,
+    "expected_rows": 60
+  },
+  "confirmatory": {
+    "functions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "dimensions": [
+      40,
+      80,
+      160,
+      320
+    ],
+    "instances": [
+      16,
+      17,
+      18
+    ],
+    "budget_multiplier": 200,
+    "expected_rows": 1440
+  },
+  "development_and_confirmatory_instances_disjoint": true,
+  "standard_bbob_tracks_are_separate_suite": true
+}

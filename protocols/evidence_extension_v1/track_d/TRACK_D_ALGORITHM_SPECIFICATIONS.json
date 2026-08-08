@@ -1,0 +1,47 @@
+{
+  "status": "TRACK_D_ALGORITHM_SPECIFICATIONS_FROZEN",
+  "algorithms": [
+    {
+      "id": "BasinGraph",
+      "implementation": "basingraph_v2.optimizer.minimize_basingraph_v2",
+      "version": "2.0.0-rc1",
+      "options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+      "archive_capacity": 80,
+      "Track_D_changes": null
+    },
+    {
+      "id": "CMA_ES",
+      "implementation": "pycma CMAEvolutionStrategy wrapper frozen in Track B",
+      "package_version": "4.4.4",
+      "Track_D_changes": null
+    },
+    {
+      "id": "L_SHADE_1_0_1",
+      "implementation": "source-aligned transparent Python port frozen in Track B",
+      "official_executable": false,
+      "initial_population": "18D",
+      "minimum_population": 4,
+      "memory_size": 6,
+      "archive_rate": 2.6,
+      "p_best_rate": 0.11,
+      "Track_D_changes": null
+    },
+    {
+      "id": "L_SRTDE",
+      "implementation": "transparent source-guided Python port frozen in Track B",
+      "official_executable": false,
+      "initial_population": "20D",
+      "minimum_population": 4,
+      "memory_size": 5,
+      "registered_deviations_retained": true,
+      "Track_D_changes": null
+    },
+    {
+      "id": "MS_LBFGSB",
+      "implementation": "repeated SciPy bounded L-BFGS-B wrapper frozen in Track B",
+      "scipy_version": "1.17.1",
+      "Track_D_changes": null
+    }
+  ],
+  "no_post_freeze_tuning": true
+}

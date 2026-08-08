@@ -1,0 +1,6 @@
+algorithm,implementation,source_or_package,version_or_commit,Track_D_status,deviation_or_note
+BasinGraph,basingraph_v2 optimizer,xwxkj/BasinGraph,adbc0ecdf1153044188f0508321c47001ad9bdb0,immutable result-bearing implementation,none
+CMA_ES,pycma CMAEvolutionStrategy,pycma,4.4.4,public package interface,Track B wrapper reused unchanged
+L_SHADE_1_0_1,source-aligned transparent Python port,corrected L-SHADE release,1.0.1,not byte-identical official executable,NumPy generator and arbitrary-bounds objective adapter as registered in Track B
+L_SRTDE,transparent source-guided Python port,public CEC-2024 C++ core,fa7291054a83ce5f46132c4045c6a7878e9611e9,not GPL C++ executable,registered Track B deviations retained
+MS_LBFGSB,repeated scipy.optimize.minimize L-BFGS-B,SciPy,1.17.1,public package interface,Track B wrapper reused unchanged

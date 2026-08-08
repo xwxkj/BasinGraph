@@ -1,0 +1,19 @@
+{
+  "status": "TRACK_D_MACHINE_CONTRACT_FROZEN",
+  "primary_machine": "user Apple Silicon Mac",
+  "operating_system": "macOS",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "overhead_workers": 1,
+  "confirmatory_default_workers": 4,
+  "cross_machine_results_must_not_be_pooled": true,
+  "parallel_confirmatory_wall_time_is_secondary": true,
+  "peak_memory_source": "resource.getrusage(RUSAGE_SELF).ru_maxrss normalized by platform",
+  "objective_time_definition": "cumulative perf_counter duration around observed COCO problem call",
+  "optimizer_overhead_definition": "total optimizer wall time minus observed objective-call time"
+}
