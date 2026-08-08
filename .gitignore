@@ -37,6 +37,11 @@ manuscript/
 results_b21/
 logs_b21/
 B21_RETURN_*.zip
+B21_RETURN_*.zip.sha256
+
+# Generated root audit files; regenerate with scripts_v2/generate_repository_manifest.py
+/MANIFEST_SHA256.csv
+/MANIFEST_SHA256.scope.json
 
 # Secrets / local configuration
 .env
