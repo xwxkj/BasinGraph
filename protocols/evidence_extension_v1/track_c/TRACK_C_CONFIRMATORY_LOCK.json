@@ -1,0 +1,12 @@
+{
+  "status": "TRACK_C_CONFIRMATORY_LOCKED",
+  "protocol_revision": "1.0.0",
+  "suite": "heterogeneous scientific applications and NIST StRD",
+  "algorithms": 7,
+  "c1_runs": 1890,
+  "c2_runs": 420,
+  "total_runs": 2310,
+  "confirmatory_objective_evaluations_before_freeze": 0,
+  "algorithm_source_changes_allowed": false,
+  "unfavorable_results_retained": true
+}

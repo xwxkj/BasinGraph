@@ -1,0 +1,34 @@
+domain,task_name,task_id,dimension,f_ref,f_base,reference_type
+c1,elliptic_pde_inverse,elliptic_pde_inverse_i11_d6,6,6.45636967857929e-06,0.05460083226830845,registered generative/reference construction
+c1,elliptic_pde_inverse,elliptic_pde_inverse_i12_d8,8,4.5988161281299204e-06,1.078652319110664,registered generative/reference construction
+c1,elliptic_pde_inverse,elliptic_pde_inverse_i13_d10,10,1.1806975504457249e-05,0.6881244402103301,registered generative/reference construction
+c1,lorenz63_calibration,lorenz63_calibration_i11_d6,6,0.00022611905634169403,0.0928804715936095,registered generative/reference construction
+c1,lorenz63_calibration,lorenz63_calibration_i12_d6,6,0.0001735885938568617,0.052852991282457386,registered generative/reference construction
+c1,lorenz63_calibration,lorenz63_calibration_i13_d6,6,0.000276002867545436,0.06698473947885032,registered generative/reference construction
+c1,phase_retrieval,phase_retrieval_i11_d16,16,0.0,1.0,registered generative/reference construction
+c1,phase_retrieval,phase_retrieval_i12_d24,24,0.0,1.0,registered generative/reference construction
+c1,phase_retrieval,phase_retrieval_i13_d32,32,0.0,1.0,registered generative/reference construction
+c1,noisy_phase_retrieval,noisy_phase_retrieval_i11_d16,16,0.0005674884288807378,1.0,registered generative/reference construction
+c1,noisy_phase_retrieval,noisy_phase_retrieval_i12_d24,24,0.00040374286461495885,1.0,registered generative/reference construction
+c1,noisy_phase_retrieval,noisy_phase_retrieval_i13_d32,32,0.0004197928178080916,1.0,registered generative/reference construction
+c1,matrix_factorization,matrix_factorization_i11_d36,36,1.8243750145578756e-09,1.0,registered generative/reference construction
+c1,matrix_factorization,matrix_factorization_i12_d60,60,1.567091205622182e-10,1.0,registered generative/reference construction
+c1,matrix_factorization,matrix_factorization_i13_d96,96,4.679522997885382e-10,1.0,registered generative/reference construction
+c1,large_matrix_factorization,large_matrix_factorization_i11_d120,120,5.224663766667793e-11,1.0,registered generative/reference construction
+c1,large_matrix_factorization,large_matrix_factorization_i12_d200,200,1.4051370907584171e-09,1.0,registered generative/reference construction
+c1,large_matrix_factorization,large_matrix_factorization_i13_d320,320,8.18408825028449e-12,1.0,registered generative/reference construction
+c1,burgers_control,burgers_control_i11_d8,8,7.139893659826397e-06,0.00010022085355927395,registered generative/reference construction
+c1,burgers_control,burgers_control_i12_d12,12,7.124576814060437e-06,0.00010638535729539125,registered generative/reference construction
+c1,burgers_control,burgers_control_i13_d16,16,7.977869468950969e-06,0.00011723360147402623,registered generative/reference construction
+c1,allen_cahn_energy,allen_cahn_energy_i11_d32,32,0.9313768562055471,3.879520597232427,registered generative/reference construction
+c1,allen_cahn_energy,allen_cahn_energy_i12_d64,64,0.9387277077277149,4.504444195464677,registered generative/reference construction
+c1,allen_cahn_energy,allen_cahn_energy_i13_d96,96,0.9412354687618117,4.167564056222778,registered generative/reference construction
+c1,sparse_nonlinear_inverse,sparse_nonlinear_inverse_i11_d20,20,4.05235640385879e-05,1.00000002,registered generative/reference construction
+c1,sparse_nonlinear_inverse,sparse_nonlinear_inverse_i12_d40,40,3.849518050489617e-05,1.00000002,registered generative/reference construction
+c1,sparse_nonlinear_inverse,sparse_nonlinear_inverse_i13_d80,80,2.9329745871926247e-05,1.00000002,registered generative/reference construction
+c2,Chwirut1,Chwirut1_i0_d3,3,1.0000000000039213,20.99774751004591,NIST certified parameter vector and official far start
+c2,Roszman1,Roszman1_i0_d4,4,0.9999999999993698,1032.2568975153529,NIST certified parameter vector and official far start
+c2,ENSO,ENSO_i0_d9,9,1.0000000000036922,1.4633934368028878,NIST certified parameter vector and official far start
+c2,Eckerle4,Eckerle4_i0_d3,3,1.0000000000187703,493.5147601700234,NIST certified parameter vector and official far start
+c2,Bennett5,Bennett5_i0_d3,3,0.9999999999933743,125985629.40635252,NIST certified parameter vector and official far start
+c2,BoxBOD,BoxBOD_i0_d2,2,0.9999999999619471,159.57274417297654,NIST certified parameter vector and official far start
