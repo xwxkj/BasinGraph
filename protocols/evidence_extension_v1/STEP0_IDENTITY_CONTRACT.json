@@ -1,0 +1,43 @@
+{
+  "contract_version": "1.0.0",
+  "status": "B21_STEP0_IDENTITY_FROZEN",
+  "date": "2026-08-07",
+  "repository": "xwxkj/BasinGraph",
+  "result_bearing": {
+    "manuscript_name": "BasinGraph",
+    "internal_implementation_version": "2.0.0-rc1",
+    "selected_candidate_tag": "route-b-v2.0.0-rc1-selected-final-candidate",
+    "selected_candidate_commit": "adbc0ecdf1153044188f0508321c47001ad9bdb0",
+    "package": "basingraph_v2",
+    "function": "basingraph_v2.optimizer.minimize_basingraph_v2",
+    "options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+    "archive_capacity": 80,
+    "line_coarse_samples": 11,
+    "line_refine_top_k": 3,
+    "phase_fractions": {
+      "initial_design": 0.10,
+      "center_local": 0.15,
+      "coordinate_sweep": 0.30,
+      "far_basin": 0.15,
+      "archive_fallback": 0.10,
+      "final_polish": 0.05,
+      "budget_completion": "remainder"
+    }
+  },
+  "public_records": {
+    "software_doi": "10.5281/zenodo.20789002",
+    "dataset_doi": "10.5281/zenodo.20788903"
+  },
+  "immutable_original_evidence": {
+    "coco_actual_instances": "4-15",
+    "cutest_holdout_problems": 24,
+    "cutest_paired_seeds": 30
+  },
+  "b21_extension_root": "evidence_extension_v1",
+  "forbidden_changes": [
+    "modify basingraph_v2 source",
+    "modify frozen BasinGraphOptions defaults",
+    "overwrite original prospective results",
+    "pool smoke or development runs with confirmatory evidence"
+  ]
+}
