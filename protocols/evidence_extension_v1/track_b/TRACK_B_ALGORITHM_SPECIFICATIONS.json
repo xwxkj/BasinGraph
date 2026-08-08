@@ -1,0 +1,55 @@
+{
+  "status": "TRACK_B_ALGORITHM_SPECIFICATIONS_FROZEN",
+  "algorithms": [
+    {
+      "id": "BasinGraph",
+      "display": "BasinGraph",
+      "implementation": "immutable selected candidate",
+      "license_or_status": "BSD-3-Clause"
+    },
+    {
+      "id": "CMA_ES",
+      "display": "CMA-ES",
+      "implementation": "pycma CMAEvolutionStrategy",
+      "license_or_status": "BSD-3-Clause"
+    },
+    {
+      "id": "BIPOP_CMA_ES",
+      "display": "BIPOP-CMA-ES",
+      "implementation": "pycma fmin2 bipop interface",
+      "license_or_status": "BSD-3-Clause"
+    },
+    {
+      "id": "L_SHADE_1_0_1",
+      "display": "L-SHADE 1.0.1",
+      "implementation": "paper-faithful Python port of corrected author release",
+      "license_or_status": "research port; source basis documented"
+    },
+    {
+      "id": "jSO",
+      "display": "jSO",
+      "implementation": "paper-faithful Python port of published CEC-2017 algorithm",
+      "license_or_status": "research port; source basis documented"
+    },
+    {
+      "id": "L_SRTDE",
+      "display": "L-SRTDE",
+      "implementation": "Python port of public CEC-2024 C++ core",
+      "license_or_status": "GPL-3.0 source basis; port kept separate"
+    },
+    {
+      "id": "DIRECT_L",
+      "display": "DIRECT-L",
+      "implementation": "SciPy C-backed direct wrapper with locally_biased=True",
+      "license_or_status": "BSD-3-Clause"
+    },
+    {
+      "id": "MS_LBFGSB",
+      "display": "Multi-start L-BFGS-B",
+      "implementation": "SciPy repeated bounded minimize",
+      "license_or_status": "BSD-3-Clause"
+    }
+  ],
+  "count": 8,
+  "no_post_freeze_tuning": true
+}

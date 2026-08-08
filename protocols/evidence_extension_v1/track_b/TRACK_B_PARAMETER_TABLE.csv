@@ -1,0 +1,11 @@
+algorithm,parameter,value,secondary_value,note
+BasinGraph,all,frozen options hash,031b9c3d...,immutable selected candidate
+CMA_ES,population,pycma default,library default,bounds and seed frozen
+BIPOP_CMA_ES,restart strategy,BIPOP,restarts=9,pycma public interface
+L_SHADE_1_0_1,initial population,18D,,minimum 4
+L_SHADE_1_0_1,memory size,6,,archive rate 2.6; p=0.11
+jSO,initial population,25D,,minimum 4
+jSO,memory size,5,,archive rate 1.0; p from 0.25 to 0.125
+L_SRTDE,initial population,20D,,minimum 4; memory size 5
+DIRECT_L,locally_biased,True,,vol_tol=0; len_tol=0
+MS_LBFGSB,start sequence,center/random/elite perturbation,,ftol=1e-12; gtol=1e-8
