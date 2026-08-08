@@ -22,19 +22,34 @@
     {
       "id": "L_SHADE_1_0_1",
       "display": "L-SHADE 1.0.1",
-      "implementation": "paper-faithful Python port of corrected author release",
-      "license_or_status": "research port; source basis documented"
+      "implementation": "source-aligned transparent Python port of corrected author release",
+      "license_or_status": "research port; source basis documented",
+      "registered_source_rules": [
+        "strict-improvement success history",
+        "negative CR-memory sentinel",
+        "C++-style count rounding",
+        "random archive replacement and active-prefix truncation"
+      ]
     },
     {
       "id": "jSO",
       "display": "jSO",
-      "implementation": "paper-faithful Python port of published CEC-2017 algorithm",
+      "implementation": "source-aligned transparent Python port of public CEC-2017 source",
       "license_or_status": "research port; source basis documented",
       "registered_initial_population": "round(25*ln(D)*sqrt(D))",
       "registered_values": {
         "D5": 90,
         "D20": 335
-      }
+      },
+      "registered_source_rules": [
+        "initial population round(25*ln(D)*sqrt(D))",
+        "fixed 0.9 sampling slot",
+        "half-old half-new memory update",
+        "negative CR-memory sentinel",
+        "early p-best target exclusion",
+        "strict-improvement success history",
+        "random archive replacement and active-prefix truncation"
+      ]
     },
     {
       "id": "L_SRTDE",
@@ -57,6 +72,9 @@
   ],
   "count": 8,
   "no_post_freeze_tuning": true,
-  "protocol_revision": "1.0.1",
-  "amendment": "TRACK_B_AMENDMENT_001"
+  "protocol_revision": "1.0.2",
+  "amendments": [
+    "TRACK_B_AMENDMENT_001",
+    "TRACK_B_AMENDMENT_002"
+  ]
 }

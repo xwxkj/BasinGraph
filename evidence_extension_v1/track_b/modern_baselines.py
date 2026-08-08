@@ -119,6 +119,46 @@ def _weighted_lehmer(values: np.ndarray, weights: np.ndarray) -> float:
     return float(np.sum(weights * values * values) / denominator)
 
 
+def _round_half_up_positive(value: float) -> int:
+    """Match C/C++ round for non-negative algorithmic counts."""
+
+    value = float(value)
+    if value < 0:
+        raise ValueError("value must be non-negative")
+    return int(math.floor(value + 0.5))
+
+
+def _sample_cr_from_memory(
+    rng: np.random.Generator,
+    location: float,
+    scale: float = 0.1,
+) -> float:
+    """Sample CR, preserving the negative L-SHADE/jSO sentinel."""
+
+    if float(location) < 0.0:
+        return 0.0
+    return float(np.clip(rng.normal(float(location), scale), 0.0, 1.0))
+
+
+def _success_history_cr(
+    values: np.ndarray,
+    weights: np.ndarray,
+) -> float:
+    """Return the weighted Lehmer CR memory or the -1 sentinel."""
+
+    values = np.asarray(values, dtype=float)
+    weights = np.asarray(weights, dtype=float)
+    if float(np.sum(weights * values)) <= 0.0:
+        return -1.0
+    return _weighted_lehmer(values, weights)
+
+
+def _jso_blend_memory(old_value: float, new_value: float) -> float:
+    """Apply the jSO half-old, half-new memory update."""
+
+    return 0.5 * (float(old_value) + float(new_value))
+
+
 def _repair_midpoint(
     trial: np.ndarray,
     parent: np.ndarray,
@@ -139,14 +179,25 @@ def _archive_insert(
     capacity: int,
     rng: np.random.Generator,
 ) -> None:
-    archive.extend(np.asarray(point, dtype=float).copy() for point in points)
+    """Update the external archive using source-style random replacement.
+
+    New successful parents fill unused slots and then replace uniformly random
+    active slots.  When population reduction lowers capacity, the active prefix
+    is truncated, matching the C/C++ archive-count update.
+    """
+
+    capacity = int(capacity)
     if capacity <= 0:
         archive.clear()
         return
     if len(archive) > capacity:
-        keep = rng.choice(len(archive), size=capacity, replace=False)
-        selected = [archive[int(index)] for index in keep]
-        archive[:] = selected
+        del archive[capacity:]
+    for point in points:
+        candidate = np.asarray(point, dtype=float).copy()
+        if len(archive) < capacity:
+            archive.append(candidate)
+        else:
+            archive[int(rng.integers(capacity))] = candidate
 
 
 def _initial_population(
@@ -171,7 +222,7 @@ def _jso_initial_population_size(dimension: int) -> int:
     dimension = int(dimension)
     if dimension < 1:
         raise ValueError("dimension must be positive")
-    return max(4, int(round(25.0 * math.log(dimension) * math.sqrt(dimension))))
+    return max(4, _round_half_up_positive(25.0 * math.log(dimension) * math.sqrt(dimension)))
 
 
 def optimize_lshade_101(
@@ -181,7 +232,7 @@ def optimize_lshade_101(
     max_evals: int,
     seed: int = 0,
 ) -> dict[str, Any]:
-    """Corrected L-SHADE 1.0.1 paper-faithful Python port.
+    """Corrected L-SHADE 1.0.1 source-aligned Python port.
 
     Frozen parameters follow the corrected public release: initial population
     ``18D``, minimum population 4, history size 6, archive rate 2.6 and
@@ -205,7 +256,7 @@ def optimize_lshade_101(
             bo,
             algorithm="L_SHADE_1_0_1",
             message="budget_exhausted_during_initialization",
-            implementation="paper_faithful_python_port_corrected_1.0.1",
+            implementation="source_aligned_python_port_corrected_1.0.1",
         )
 
     initial_size = len(population)
@@ -230,9 +281,10 @@ def optimize_lshade_101(
                     break
                 memory_slot = int(rng.integers(memory_size))
                 f_scale = _sample_cauchy_positive(rng, memory_f[memory_slot])
-                cr = float(np.clip(rng.normal(memory_cr[memory_slot], 0.1), 0.0, 1.0))
+                cr = _sample_cr_from_memory(rng, memory_cr[memory_slot])
 
-                p_count = max(2, int(math.ceil(p_rate * population_size)))
+                p_count = max(2, _round_half_up_positive(p_rate * population_size))
+                p_count = min(p_count, population_size)
                 pbest = int(order[int(rng.integers(p_count))])
 
                 candidates = [index for index in range(population_size) if index != i]
@@ -262,14 +314,15 @@ def optimize_lshade_101(
                 if trial_value <= fitness[i]:
                     next_population[i] = trial
                     next_fitness[i] = trial_value
-                    replaced_parents.append(population[i].copy())
-                    successful_f.append(f_scale)
-                    successful_cr.append(cr)
-                    improvements.append(max(fitness[i] - trial_value, 0.0))
+                    if trial_value < fitness[i]:
+                        replaced_parents.append(population[i].copy())
+                        successful_f.append(f_scale)
+                        successful_cr.append(cr)
+                        improvements.append(fitness[i] - trial_value)
 
             population = next_population
             fitness = next_fitness
-            archive_capacity = int(round(archive_rate * len(population)))
+            archive_capacity = _round_half_up_positive(archive_rate * len(population))
             _archive_insert(archive, replaced_parents, archive_capacity, rng)
 
             if successful_f:
@@ -282,27 +335,22 @@ def optimize_lshade_101(
                     np.asarray(successful_f), weights
                 )
                 successful_cr_array = np.asarray(successful_cr)
-                if np.max(successful_cr_array) <= 0:
-                    memory_cr[memory_index] = 0.0
-                else:
-                    memory_cr[memory_index] = _weighted_lehmer(
-                        successful_cr_array, weights
-                    )
+                memory_cr[memory_index] = _success_history_cr(
+                    successful_cr_array, weights
+                )
                 memory_index = (memory_index + 1) % memory_size
 
-            target_size = int(
-                round(
-                    initial_size
-                    + (minimum_size - initial_size)
-                    * (bo.nfe / bo.max_evals)
-                )
+            target_size = _round_half_up_positive(
+                initial_size
+                + (minimum_size - initial_size)
+                * (bo.nfe / bo.max_evals)
             )
             target_size = max(minimum_size, min(target_size, len(population)))
             if len(population) > target_size:
                 keep = np.argsort(fitness)[:target_size]
                 population = population[keep]
                 fitness = fitness[keep]
-                archive_capacity = int(round(archive_rate * target_size))
+                archive_capacity = _round_half_up_positive(archive_rate * target_size)
                 _archive_insert(archive, [], archive_capacity, rng)
 
     except BudgetExhausted:
@@ -312,7 +360,7 @@ def optimize_lshade_101(
         bo,
         algorithm="L_SHADE_1_0_1",
         message="budget_exhausted" if bo.remaining == 0 else "completed",
-        implementation="paper_faithful_python_port_corrected_1.0.1",
+        implementation="source_aligned_python_port_corrected_1.0.1",
         metadata={
             "initial_population": 18 * dimension,
             "minimum_population": minimum_size,
@@ -330,7 +378,7 @@ def optimize_jso(
     max_evals: int,
     seed: int = 0,
 ) -> dict[str, Any]:
-    """Paper-faithful jSO Python port with frozen CEC-2017 parameters.
+    """Source-aligned jSO Python port with frozen CEC-2017 parameters.
 
     The registered initial population is round(25 ln(D) sqrt(D)),
     with a minimum population of four.
@@ -354,15 +402,14 @@ def optimize_jso(
             bo,
             algorithm="jSO",
             message="budget_exhausted_during_initialization",
-            implementation="paper_faithful_python_port_CEC2017",
+            implementation="source_aligned_python_port_CEC2017",
         )
 
     initial_size = len(population)
     memory_f = np.full(memory_size, 0.3, dtype=float)
     memory_cr = np.full(memory_size, 0.8, dtype=float)
-    memory_f[-1] = 0.9
-    memory_cr[-1] = 0.9
     memory_index = 0
+    p_rate = p_max
     archive: list[np.ndarray] = []
 
     try:
@@ -370,7 +417,6 @@ def optimize_jso(
             progress = bo.nfe / bo.max_evals
             population_size = len(population)
             order = np.argsort(fitness)
-            p_rate = p_max + (p_min - p_max) * progress
             successful_f: list[float] = []
             successful_cr: list[float] = []
             improvements: list[float] = []
@@ -382,10 +428,16 @@ def optimize_jso(
                 if bo.remaining <= 0:
                     break
                 slot = int(rng.integers(memory_size))
-                f_scale = _sample_cauchy_positive(rng, memory_f[slot])
+                if slot == memory_size - 1:
+                    mu_f = 0.9
+                    mu_cr = 0.9
+                else:
+                    mu_f = memory_f[slot]
+                    mu_cr = memory_cr[slot]
+                f_scale = _sample_cauchy_positive(rng, mu_f)
                 if progress < 0.6:
                     f_scale = min(f_scale, 0.7)
-                cr = float(np.clip(rng.normal(memory_cr[slot], 0.1), 0.0, 1.0))
+                cr = _sample_cr_from_memory(rng, mu_cr)
                 if progress < 0.25:
                     cr = max(cr, 0.7)
                 elif progress < 0.50:
@@ -398,8 +450,11 @@ def optimize_jso(
                 else:
                     weighted_f = 1.2 * f_scale
 
-                p_count = max(2, int(math.ceil(p_rate * population_size)))
+                p_count = max(2, _round_half_up_positive(p_rate * population_size))
+                p_count = min(p_count, population_size)
                 pbest = int(order[int(rng.integers(p_count))])
+                while progress < 0.50 and pbest == i:
+                    pbest = int(order[int(rng.integers(p_count))])
                 candidates = [index for index in range(population_size) if index != i]
                 r1 = int(rng.choice(candidates))
                 union_size = population_size + len(archive)
@@ -427,17 +482,18 @@ def optimize_jso(
                 if trial_value <= fitness[i]:
                     next_population[i] = trial
                     next_fitness[i] = trial_value
-                    replaced_parents.append(population[i].copy())
-                    successful_f.append(f_scale)
-                    successful_cr.append(cr)
-                    improvements.append(max(fitness[i] - trial_value, 0.0))
+                    if trial_value < fitness[i]:
+                        replaced_parents.append(population[i].copy())
+                        successful_f.append(f_scale)
+                        successful_cr.append(cr)
+                        improvements.append(fitness[i] - trial_value)
 
             population = next_population
             fitness = next_fitness
             _archive_insert(
                 archive,
                 replaced_parents,
-                int(round(archive_rate * len(population))),
+                _round_half_up_positive(archive_rate * len(population)),
                 rng,
             )
 
@@ -447,20 +503,20 @@ def optimize_jso(
                     weights = np.full(len(weights), 1.0 / len(weights))
                 else:
                     weights /= weights.sum()
-                memory_f[memory_index] = _weighted_lehmer(
-                    np.asarray(successful_f), weights
-                )
-                memory_cr[memory_index] = _weighted_lehmer(
+                old_f = memory_f[memory_index]
+                old_cr = memory_cr[memory_index]
+                new_f = _weighted_lehmer(np.asarray(successful_f), weights)
+                new_cr = _success_history_cr(
                     np.asarray(successful_cr), weights
                 )
-                memory_index = (memory_index + 1) % (memory_size - 1)
+                memory_f[memory_index] = _jso_blend_memory(old_f, new_f)
+                memory_cr[memory_index] = _jso_blend_memory(old_cr, new_cr)
+                memory_index = (memory_index + 1) % memory_size
 
-            target_size = int(
-                round(
-                    initial_size
-                    + (minimum_size - initial_size)
-                    * (bo.nfe / bo.max_evals)
-                )
+            target_size = _round_half_up_positive(
+                initial_size
+                + (minimum_size - initial_size)
+                * (bo.nfe / bo.max_evals)
             )
             target_size = max(minimum_size, min(target_size, len(population)))
             if len(population) > target_size:
@@ -470,9 +526,10 @@ def optimize_jso(
                 _archive_insert(
                     archive,
                     [],
-                    int(round(archive_rate * target_size)),
+                    _round_half_up_positive(archive_rate * target_size),
                     rng,
                 )
+                p_rate = p_max * (1.0 - 0.5 * bo.nfe / bo.max_evals)
 
     except BudgetExhausted:
         pass
@@ -481,7 +538,7 @@ def optimize_jso(
         bo,
         algorithm="jSO",
         message="budget_exhausted" if bo.remaining == 0 else "completed",
-        implementation="paper_faithful_python_port_CEC2017",
+        implementation="source_aligned_python_port_CEC2017",
         metadata={
             "initial_population": registered_initial_size,
             "initial_population_formula": "round(25*ln(D)*sqrt(D))",
@@ -489,6 +546,9 @@ def optimize_jso(
             "memory_size": memory_size,
             "archive_rate": archive_rate,
             "p_range": [p_min, p_max],
+            "memory_update": "half_old_plus_half_new_weighted_lehmer",
+            "fixed_sampling_slot": 0.9,
+            "early_pbest_excludes_target_until_fraction": 0.50,
         },
     )
 

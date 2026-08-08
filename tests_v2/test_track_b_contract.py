@@ -18,7 +18,12 @@ from evidence_extension_v1.track_b.common import (
 )
 from evidence_extension_v1.track_b.modern_baselines import (
     OPTIMIZERS,
+    _archive_insert,
+    _jso_blend_memory,
     _jso_initial_population_size,
+    _round_half_up_positive,
+    _sample_cr_from_memory,
+    _success_history_cr,
 )
 
 
@@ -85,6 +90,26 @@ def test_track_b_protocol_files_agree() -> None:
 def test_jso_registered_initial_population_formula() -> None:
     assert _jso_initial_population_size(5) == 90
     assert _jso_initial_population_size(20) == 335
+
+
+
+def test_registered_rounding_and_memory_rules() -> None:
+    assert _round_half_up_positive(2.5) == 3
+    rng = np.random.default_rng(19)
+    assert _sample_cr_from_memory(rng, -0.1) == 0.0
+    weights = np.asarray([0.4, 0.6])
+    assert _success_history_cr(np.asarray([0.0, 0.0]), weights) == -1.0
+    assert np.isclose(_jso_blend_memory(0.8, -1.0), -0.1)
+
+
+def test_registered_archive_random_replacement_and_truncation() -> None:
+    rng = np.random.default_rng(29)
+    archive = [np.asarray([0.0]), np.asarray([1.0])]
+    _archive_insert(archive, [np.asarray([2.0])], 2, rng)
+    assert len(archive) == 2
+    assert any(np.array_equal(point, np.asarray([2.0])) for point in archive)
+    _archive_insert(archive, [], 1, rng)
+    assert len(archive) == 1
 
 
 

@@ -2,6 +2,7 @@
 
 Status: **frozen and amended before confirmatory evaluation**  
 Amendment 001: jSO initial population corrected to `round(25 ln(D) sqrt(D))`; confirmatory objective evaluations before the amendment: **0**.  
+Amendment 002: L-SHADE/jSO success-history, CR-sentinel, archive, rounding and jSO memory/p-best rules aligned with their public source specifications; confirmatory objective evaluations before the amendment: **0**.  
 Protocol date: 2026-08-08  
 Track A merge commit: `c955bdba08a6a50316248b6c1dd9ff61f1a4840b`  
 Result-bearing candidate commit: `adbc0ecdf1153044188f0508321c47001ad9bdb0`
@@ -52,8 +53,8 @@ budget. Bounds, objective wrappers, problem IDs and seeds are shared.
 
 - BasinGraph: immutable `basingraph_v2` implementation and frozen options hash;
 - CMA-ES and BIPOP-CMA-ES: public pycma interfaces;
-- L-SHADE 1.0.1: transparent Python port based on the corrected author release;
-- jSO: transparent Python port of the published CEC-2017 algorithm, with initial population `round(25 ln(D) sqrt(D))`;
+- L-SHADE 1.0.1: source-aligned transparent Python port based on the corrected author release;
+- jSO: source-aligned transparent Python port of the public CEC-2017 algorithm, including the registered population, memory, p-best and archive rules;
 - L-SRTDE: transparent Python port of the public CEC-2024 C++ core, generalized
   only to arbitrary finite per-coordinate bounds and an external objective;
 - DIRECT-L: `scipy.optimize.direct(..., locally_biased=True)`;

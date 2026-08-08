@@ -62,7 +62,7 @@
   "primary_endpoint": "official cocopp target-runtime analysis",
   "candidate_changes_allowed": false,
   "baseline_parameter_changes_allowed": false,
-  "protocol_revision": "1.0.1",
+  "protocol_revision": "1.0.2",
   "amendments": [
     {
       "id": "TRACK_B_AMENDMENT_001",
@@ -72,6 +72,18 @@
       "change": "jSO initial population: 25D -> round(25*ln(D)*sqrt(D))",
       "reason": "alignment with the published jSO CEC-2017 specification",
       "effect": "v1 smoke is engineering-only and superseded; rerun smoke required"
+    },
+    {
+      "id": "TRACK_B_AMENDMENT_002",
+      "date": "2026-08-08",
+      "timing": "after development-only smoke and before confirmatory evaluation",
+      "confirmatory_objective_evaluations_before_amendment": 0,
+      "changes": [
+        "L-SHADE: strict-improvement success history, CR=-1 sentinel, source-style archive update and C++-style count rounding",
+        "jSO: fixed 0.9 sampling slot, half-old half-new memory update, CR sentinel, early p-best exclusion, strict-improvement success history, source-style archive update and C++-style count rounding"
+      ],
+      "reason": "alignment with the corrected L-SHADE release and public jSO CEC-2017 source",
+      "effect": "all earlier Track B smoke gates are superseded; a new development-only smoke is required"
     }
   ]
 }

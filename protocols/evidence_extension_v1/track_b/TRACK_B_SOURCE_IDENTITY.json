@@ -1,6 +1,6 @@
 {
   "status": "TRACK_B_SOURCE_IDENTITY_FROZEN",
-  "identity_version": "1.0.1",
+  "identity_version": "1.0.2",
   "date": "2026-08-08",
   "repository": "xwxkj/BasinGraph",
   "branch": "ncs-evidence-v1-track-b",
@@ -58,8 +58,8 @@
     "expected_rows": 3840
   },
   "implementation_notice": {
-    "L_SHADE_1_0_1": "Frozen Python port of the corrected L-SHADE 1.0.1 algorithmic specification; not a byte-identical official executable.",
-    "jSO": "Frozen Python port of the published jSO specification with initial population round(25*ln(D)*sqrt(D)); not a byte-identical official executable.",
+    "L_SHADE_1_0_1": "Source-aligned transparent Python port of corrected L-SHADE 1.0.1; not a byte-identical official executable.",
+    "jSO": "Source-aligned transparent Python port of public jSO CEC-2017 source; not a byte-identical official executable.",
     "L_SRTDE": "Frozen Python port of the published L-SRTDE algorithmic specification; not the GPL C++ executable.",
     "DIRECT_L": "SciPy optimize.direct with locally_biased=True.",
     "CMA_ES": "pycma implementation.",
@@ -82,26 +82,27 @@
     "evidence_extension_v1/track_b/common.py": "dc9b7066dfc79cbc2cd0d0609e691124061c2282",
     "evidence_extension_v1/track_b/finalize_track_b.py": "21b578a78199259f3e595b3e9af51fcaad5d3ab1",
     "evidence_extension_v1/track_b/generate_protocol_manifest.py": "ae130d0a94ca932f3fd213cab7ef6a69340fca96",
-    "evidence_extension_v1/track_b/modern_baselines.py": "4a32b41ae9f9a52a195e0c450d60787b7cd9c9e0",
+    "evidence_extension_v1/track_b/modern_baselines.py": "d78b52009dcfba9432a17e01bac5691faac883e0",
     "evidence_extension_v1/track_b/preflight_track_b.py": "4b2c2f85a0a102f726aec0b7bb8ab12ecf77fa3a",
     "evidence_extension_v1/track_b/run_track_b_all.py": "e5197e46289ba62d7fd81071028236b138702762",
     "evidence_extension_v1/track_b/run_track_b_mac.sh": "74887a0d68db8b2553edab02750d1a0374ee5cad",
     "evidence_extension_v1/track_b/run_track_b_shard.py": "93c40f54c72e36ad8e686b171b5ea868ecc9a1d9",
     "protocols/evidence_extension_v1/track_b/B21_TRACK_B_CI_TEMPLATE.yml": "bc1598800326a8fd58ea92af383e5ca299294a61",
-    "protocols/evidence_extension_v1/track_b/TRACK_B_ALGORITHM_SPECIFICATIONS.json": "43d982dd2ca2e72e73841fb16a8cc594dbe66263",
+    "protocols/evidence_extension_v1/track_b/TRACK_B_ALGORITHM_SPECIFICATIONS.json": "7b8232716c6bdfb1927a3daffeeeff8d55b50976",
     "protocols/evidence_extension_v1/track_b/TRACK_B_AMENDMENT_001.md": "2b8ebfd2fe811d62749a343f1a79969575255f34",
+    "protocols/evidence_extension_v1/track_b/TRACK_B_AMENDMENT_002.md": "6fed14241459ac33f7a054e78a0454a7cdbf3f47",
     "protocols/evidence_extension_v1/track_b/TRACK_B_ANALYSIS_PLAN.md": "19740af16ded9922d83887f5f14db97a55fed5ab",
-    "protocols/evidence_extension_v1/track_b/TRACK_B_BASELINE_PROVENANCE.csv": "2c1e4700e823429d635e1da0aa7fe4d44de617c9",
-    "protocols/evidence_extension_v1/track_b/TRACK_B_CONFIRMATORY_LOCK.json": "017fe342b071b6f751a0b94f3587b1c4aee32fab",
-    "protocols/evidence_extension_v1/track_b/TRACK_B_CONFIRMATORY_PROTOCOL.md": "92259eba2c0c57b0d2de66cb1e4377b05d8731ee",
+    "protocols/evidence_extension_v1/track_b/TRACK_B_BASELINE_PROVENANCE.csv": "4d1fd63370d5fef643dd419417d7092372ca19b3",
+    "protocols/evidence_extension_v1/track_b/TRACK_B_CONFIRMATORY_LOCK.json": "d9a1e08d0dfb39bad97504d1e8f3278ce682bc06",
+    "protocols/evidence_extension_v1/track_b/TRACK_B_CONFIRMATORY_PROTOCOL.md": "a02eb5a9b5391d67b1e434537233bf922af6216a",
     "protocols/evidence_extension_v1/track_b/TRACK_B_EXPECTED_RUN_MATRIX.csv": "1b3e5aaf2d43343584523f844f8e8e025353c912",
     "protocols/evidence_extension_v1/track_b/TRACK_B_FUNCTION_GROUPS.csv": "0c5716ce30e09d933d0df3da64d2dd6e232f6aed",
     "protocols/evidence_extension_v1/track_b/TRACK_B_INSTANCE_PARTITION.json": "7af5bdb7a7b860c3206429ec7705f8456928e595",
     "protocols/evidence_extension_v1/track_b/TRACK_B_MACHINE_CONTRACT.json": "0e626dac5cf711dcd6249df717514989a6283ff3",
-    "protocols/evidence_extension_v1/track_b/TRACK_B_PARAMETER_TABLE.csv": "74beb7d7b9b5e4c413f849b3f862c0745a9321c7",
+    "protocols/evidence_extension_v1/track_b/TRACK_B_PARAMETER_TABLE.csv": "05302ace7419b3af322e8e1e93b16f62fb0a8354",
     "protocols/evidence_extension_v1/track_b/TRACK_B_REQUIREMENTS_LOCK.txt": "838bde55cf5c0159da35cdaa3930663974f6ec64",
     "protocols/evidence_extension_v1/track_b/TRACK_B_SMOKE_PROTOCOL.md": "2672be878623bc7b8c278071c652c6f4341d057e",
-    "tests_v2/test_track_b_contract.py": "ed769b9dc2aa6bc59a4df4d7288aeeae81b09731"
+    "tests_v2/test_track_b_contract.py": "3d0bd60dba473fe53bb1d2b75e20f2e4fb33ba0a"
   },
   "excluded_from_self_identity": [
     "protocols/evidence_extension_v1/track_b/TRACK_B_SOURCE_IDENTITY.json",
@@ -109,11 +110,25 @@
   ],
   "algorithm_source_changes_allowed": false,
   "post_freeze_runner_changes_require_new_identity": true,
-  "amendment": {
-    "id": "TRACK_B_AMENDMENT_001",
-    "previous_smoke_commit": "66a421a5726c017035202c16d5d6e861ad57445f",
-    "confirmatory_objective_evaluations_before_amendment": 0,
-    "jso_initial_population": "round(25*ln(D)*sqrt(D))",
-    "smoke_rerun_required": true
-  }
+  "amendments": [
+    {
+      "id": "TRACK_B_AMENDMENT_001",
+      "previous_smoke_commit": "66a421a5726c017035202c16d5d6e861ad57445f",
+      "confirmatory_objective_evaluations_before_amendment": 0,
+      "jso_initial_population": "round(25*ln(D)*sqrt(D))",
+      "smoke_rerun_required": true
+    },
+    {
+      "id": "TRACK_B_AMENDMENT_002",
+      "previous_smoke_commit": "9b30cd7f89552af3488132b091b6d6d5765731ac",
+      "confirmatory_objective_evaluations_before_amendment": 0,
+      "source_alignment": [
+        "L-SHADE success-history and CR sentinel",
+        "jSO memory, p-best and success-history rules",
+        "source-style archive replacement",
+        "C++-style positive count rounding"
+      ],
+      "smoke_rerun_required": true
+    }
+  ]
 }
