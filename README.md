@@ -1,73 +1,111 @@
-# BasinGraph [![DOI](https://zenodo.org/badge/1274531480.svg)](https://doi.org/10.5281/zenodo.20765883)
+# BasinGraph
 
-BasinGraph is a geometry-controlled optimization framework that maintains a
-fixed-capacity archive of operational basin-state representatives and a
-directed graph of observed search transitions.
+[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20791905.svg)](https://doi.org/10.5281/zenodo.20791905)
+[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20800093.svg)](https://doi.org/10.5281/zenodo.20800093)
 
-## Selected result-bearing implementation
+BasinGraph is a geometry-controlled basin-graph optimizer for nonconvex
+mathematical models. It maintains a fixed-capacity archive of operational
+search-state representatives and a directed graph of observed transitions,
+while counting every objective call in a single evaluation ledger.
 
-- Implementation: `BasinGraph 2.0.0-rc1`
-- Selected-candidate tag: `route-b-v2.0.0-rc1-selected-final-candidate`
-- Options hash: `031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69`
+## Result-bearing implementation
 
-Software release `v2.0.1` is a documentation-only cleanup. It does not change
-the selected algorithm, benchmark code, frozen options, raw results or
-numerical conclusions.
+The implementation that produced the reported prospective COCO/BBOB and
+CUTEst results is immutable and is identified by all of the following:
 
-## Prospective validation
+- algorithm name in the manuscript: `BasinGraph`;
+- internal implementation version: `2.0.0-rc1`;
+- selected-candidate tag: `route-b-v2.0.0-rc1-selected-final-candidate`;
+- selected-candidate commit: `adbc0ecdf1153044188f0508321c47001ad9bdb0`;
+- source package: `basingraph_v2/`;
+- result-bearing entry point: `basingraph_v2.optimizer.minimize_basingraph_v2`;
+- frozen options hash: `031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69`;
+- active-archive capacity: `80`.
 
-- Official noiseless COCO/BBOB holdout: 24 functions; dimensions 2, 3, 5, 10
-  and 20; actual instances 4-15; seven algorithms; budget 1,000d; 10,080
-  records.
-- Prospective CUTEst holdout: 24 performance-independently selected instances;
-  30 paired seeds; seven algorithms; 5,040 records.
+The public compatibility API forwards to that exact implementation:
 
-COCO instances 1-3 and the 50-instance CUTEst development/comparability set
-are retained separately and are not pooled with the prospective holdouts.
+```python
+from basingraph import BasinGraphOptions, minimize_basingraph
 
-## Repository contents
+result = minimize_basingraph(
+    objective,
+    lower_bounds,
+    upper_bounds,
+    max_evals=10_000,
+    seed=0,
+    options=BasinGraphOptions(),
+)
+```
 
-- `basingraph_v2/`: selected optimizer implementation.
+The historical simplified optimizer formerly exposed from
+`basingraph/optimizer.py` is not the result-bearing manuscript implementation.
+Its history remains available through earlier repository commits and tags.
+
+## Prospective evidence already reported
+
+- Official noiseless COCO/BBOB holdout: functions 1–24; dimensions 2, 3, 5,
+  10 and 20; actual instances 4–15; seven algorithms; budget `1,000d`;
+  10,080 run-level records.
+- Prospective CUTEst holdout: 24 performance-independently selected problems;
+  30 paired seeds; seven algorithms; 5,040 run-level records.
+
+COCO/BBOB instances 1–3 and the 50-problem CUTEst development/comparability
+set are retained separately and are not pooled with the prospective holdouts.
+
+## Repository layout
+
+- `basingraph_v2/`: frozen result-bearing optimizer implementation.
+- `basingraph/`: public compatibility import that forwards to
+  `basingraph_v2/`.
 - `baselines/`: frozen comparator implementations and wrappers.
-- `experiments_v2/`: COCO/BBOB and CUTEst runners.
+- `experiments_v2/`: prospective COCO/BBOB and CUTEst runners.
 - `analysis_v2/`: validation and analysis scripts.
-- `scripts_v2/`: reproducibility and release workflows.
+- `scripts_v2/`: reproducibility, integrity and release workflows.
 - `protocols/`: frozen protocols, machine contracts and manifests.
-- `results_v2/final_analysis/`: lightweight final analysis tables and text.
-- `environments/`: dependency and CUTEst toolchain records.
-
-Large observer logs, atomic histories and raw archives are deposited on Zenodo.
+- `results_v2/final_analysis/`: lightweight final analysis outputs.
+- `evidence_extension_v1/`: newly registered NCS evidence-extension runners;
+  these do not alter the frozen candidate or the original holdouts.
 
 ## Installation
 
+Python 3.11 or later is recommended.
+
 ```bash
-python -m pip install numpy scipy pandas matplotlib cma coco-experiment cocopp
+python -m pip install --upgrade pip
+python -m pip install -e .
 ```
 
-CUTEst additionally requires SIFDecode, CUTEst, MASTSIF and PyCUTEst. See
-`protocols/` and `environments/` for the frozen toolchain records.
+COCO/BBOB additionally requires `cma`, `coco-experiment` and `cocopp`.
+CUTEst additionally requires SIFDecode, CUTEst, MASTSIF and PyCUTEst; the
+frozen toolchain is documented under `protocols/` and `environments/`.
 
-## Reproducibility data
+## Identity audit
 
-- Dataset version 2.0.1 DOI: https://doi.org/10.5281/zenodo.20800093
-- Dataset all-versions DOI: https://doi.org/10.5281/zenodo.20765046
+Run the repository identity audit before any new experiment:
 
-The v2.0.1 dataset contains the prospective COCO/BBOB and CUTEst evidence,
-Source Data, protocols, manuscript files and integrity records. Obsolete
-legacy implementation materials are intentionally excluded.
+```bash
+python scripts_v2/audit_step0_identity.py
+```
 
-## Software archive
+A deterministic repository manifest can be generated with:
 
-- Software all-versions DOI: https://doi.org/10.5281/zenodo.20765883
-- Version 2.0.0 DOI: https://doi.org/10.5281/zenodo.20789002
+```bash
+python scripts_v2/generate_repository_manifest.py
+```
 
-The version-specific DOI for software release v2.0.1 is added to the current
-branch after Zenodo completes the GitHub release archive.
+## Archives and DOI records
 
-## Citation
+| Resource | Version-specific DOI | All-versions DOI |
+|---|---|---|
+| Software archive v3.0.0 | `10.5281/zenodo.20791905` | `10.5281/zenodo.20765883` |
+| Reproducibility dataset v3.0.0 | `10.5281/zenodo.20800093` | `10.5281/zenodo.20800092` |
 
-See `CITATION.cff`.
+Software release v3.0.0 is a documentation and archive-composition release.
+It does not change the result-bearing optimizer, frozen options, benchmark
+runs, raw results, statistical analyses or numerical conclusions.
 
-## License
+## Licence
 
-BasinGraph is released under the BSD-3-Clause license. See `LICENSE`.
+BasinGraph source code is released under the BSD-3-Clause licence. Benchmark
+libraries and externally developed comparator implementations retain their
+original licences.
