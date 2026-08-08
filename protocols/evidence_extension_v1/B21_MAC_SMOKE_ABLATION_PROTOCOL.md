@@ -45,15 +45,18 @@ The pilot uses seven deterministic engineering tasks chosen before execution:
 - far-basin double well, 5D;
 - boundary quartic, 8D.
 
-The `smoke` mode uses the shifted sphere, shifted Rastrigin and far-basin
-double-well subset. These tasks are not part of the planned confirmatory
-BBOB/CUTEst extension.
+The `smoke` mode uses shifted sphere, shifted Rastrigin, far-basin double well
+and a 25D shifted sphere. The 25D task is a controller-activation probe: the
+frozen controller disables center-local contraction above 20 dimensions,
+whereas `NoGeometryController` enables it, so this switch is guaranteed to
+exercise a distinct phase path. These tasks are not part of the planned
+confirmatory BBOB/CUTEst extension.
 
 ## Modes
 
 | Mode | Tasks | Variants | Seeds | Runs | Purpose |
 |---|---:|---:|---:|---:|---|
-| `smoke` | 3 | 8 | 1 | 24 | installation and mechanism-path check |
+| `smoke` | 4 | 8 | 1 | 32 | installation and mechanism-path check |
 | `pilot` | 7 | 8 | 2 | 112 | first Mac engineering ablation |
 | `full-mini` | 7 | 8 | 5 | 280 | optional expanded engineering check |
 
