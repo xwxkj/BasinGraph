@@ -22,6 +22,16 @@
       "archive_fallback": 0.10,
       "final_polish": 0.05,
       "budget_completion": "remainder"
+    },
+    "source_git_blob_sha1": {
+      "basingraph_v2/__init__.py": "15e3bdb10ff0503e980f3be553204145a1fb1735",
+      "basingraph_v2/archive.py": "db76d713f991c2ee0597c6b33f8a63d06ddf2079",
+      "basingraph_v2/diagnostics.py": "fb8bffa18e647c2718f4cf1bbd6a5c0f376db445",
+      "basingraph_v2/evaluation.py": "d699f4d5ee5ed7fcc669b2343eb45bad920a4fa3",
+      "basingraph_v2/graph.py": "f1793412ed53344040e4846860a9340cec8d505a",
+      "basingraph_v2/line_search.py": "bfacbd1e41c6f56a873ff5849a07a20b61828865",
+      "basingraph_v2/optimizer.py": "4433d2b92075dcd858529f7f13342631847def4c",
+      "basingraph_v2/types.py": "cc73af58c206b620b486eb5519106a114d22fab4"
     }
   },
   "public_records": {
