@@ -1,0 +1,74 @@
+name: B21 Step 0 identity and smoke
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  identity-and-smoke:
+    name: ${{ matrix.os }} / Python 3.11
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install package and test dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -e '.[test]'
+
+      - name: Compile Python sources
+        run: python -m compileall -q basingraph basingraph_v2 scripts_v2 evidence_extension_v1
+
+      - name: Generate repository manifest
+        run: python scripts_v2/generate_repository_manifest.py
+
+      - name: Run Step 0 identity audit
+        run: |
+          python scripts_v2/audit_step0_identity.py \
+            --require-manifest \
+            --output results_b21/step0/identity_audit_ci.json
+
+      - name: Run frozen implementation unit tests
+        run: python -m pytest -q tests_v2
+
+      - name: Run B21 smoke ablation
+        env:
+          OMP_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          VECLIB_MAXIMUM_THREADS: "1"
+          NUMEXPR_NUM_THREADS: "1"
+        run: |
+          python evidence_extension_v1/run_b21_mac_smoke_ablation.py \
+            --mode smoke \
+            --workers 2 \
+            --output results_b21/ci_smoke
+
+      - name: Upload audit and smoke outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b21-step0-${{ runner.os }}
+          path: |
+            results_b21/step0/identity_audit_ci.json
+            results_b21/ci_smoke
+            MANIFEST_SHA256.csv
+            MANIFEST_SHA256.scope.json
+          if-no-files-found: warn
