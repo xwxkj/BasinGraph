@@ -1,0 +1,100 @@
+{
+  "status": "TRACK_B_CONFIRMATORY_PROTOCOL_FROZEN",
+  "frozen_date": "2026-08-08",
+  "suite": "bbob",
+  "functions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "dimensions": [
+    5,
+    20
+  ],
+  "instances": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "budget_multiplier": 1000,
+  "algorithms": [
+    "BasinGraph",
+    "CMA_ES",
+    "BIPOP_CMA_ES",
+    "L_SHADE_1_0_1",
+    "jSO",
+    "L_SRTDE",
+    "DIRECT_L",
+    "MS_LBFGSB"
+  ],
+  "expected_problems_per_algorithm": 480,
+  "expected_rows": 3840,
+  "base_seed": 20260808,
+  "seed_formula": "base_seed + 100000*function + 1000*dimension + instance",
+  "primary_endpoint": "official cocopp target-runtime analysis",
+  "candidate_changes_allowed": false,
+  "baseline_parameter_changes_allowed": false,
+  "protocol_revision": "1.0.3",
+  "amendments": [
+    {
+      "id": "TRACK_B_AMENDMENT_001",
+      "date": "2026-08-08",
+      "timing": "after development-only smoke and before confirmatory evaluation",
+      "confirmatory_objective_evaluations_before_amendment": 0,
+      "change": "jSO initial population: 25D -> round(25*ln(D)*sqrt(D))",
+      "reason": "alignment with the published jSO CEC-2017 specification",
+      "effect": "v1 smoke is engineering-only and superseded; rerun smoke required"
+    },
+    {
+      "id": "TRACK_B_AMENDMENT_002",
+      "date": "2026-08-08",
+      "timing": "after development-only smoke and before confirmatory evaluation",
+      "confirmatory_objective_evaluations_before_amendment": 0,
+      "changes": [
+        "L-SHADE: strict-improvement success history, CR=-1 sentinel, source-style archive update and C++-style count rounding",
+        "jSO: fixed 0.9 sampling slot, half-old half-new memory update, CR sentinel, early p-best exclusion, strict-improvement success history, source-style archive update and C++-style count rounding"
+      ],
+      "reason": "alignment with the corrected L-SHADE release and public jSO CEC-2017 source",
+      "effect": "all earlier Track B smoke gates are superseded; a new development-only smoke is required"
+    },
+    {
+      "id": "TRACK_B_AMENDMENT_003",
+      "date": "2026-08-08",
+      "timing": "after development-only smoke and before confirmatory evaluation",
+      "confirmatory_objective_evaluations_before_amendment": 0,
+      "change": "clarify L-SRTDE transparent-port deviations and replace official-looking implementation label",
+      "numerical_operations_changed": false,
+      "parameters_changed": false,
+      "reason": "prevent the port from being misrepresented as the GPL C++ executable",
+      "effect": "source identity changes; a final development-only smoke is required"
+    }
+  ]
+}

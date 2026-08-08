@@ -1,0 +1,9 @@
+algorithm,display_name,implementation,source_basis,verified_status,license_note,deviation_from_source
+BasinGraph,BasinGraph,basingraph_v2.optimizer.minimize_basingraph_v2,selected candidate commit adbc0ec...,immutable result-bearing implementation,BSD-3-Clause,none
+CMA_ES,CMA-ES,pycma CMAEvolutionStrategy,cma 4.4.4 public package,library implementation,BSD-3-Clause,repeated native restarts only if stop criteria trigger before budget
+BIPOP_CMA_ES,BIPOP-CMA-ES,"pycma fmin2(restarts=9,bipop=True)",cma 4.4.4 public package,library implementation,BSD-3-Clause,external strict budget wrapper
+L_SHADE_1_0_1,L-SHADE 1.0.1,frozen Python port,Ryoji Tanabe corrected 1.0.1 release and CEC-2014 paper,source-aligned transparent port; not byte-identical official executable,source basis cited,NumPy RNG and arbitrary finite bounds/objective adapter; corrected random archive replacement retained
+jSO,jSO,frozen Python port,public CEC-2017 jSO C++ source mirror and Brest et al. paper,source-aligned transparent port; not byte-identical official executable,source basis cited,NumPy RNG and arbitrary finite bounds/objective adapter
+L_SRTDE,L-SRTDE,frozen Python port,VladimirStanovov/L-SRTDE_CEC-2024 commit fa729105...,transparent source-guided port; not the GPL C++ executable,official source GPL-3.0; port provenance explicit,NumPy RNG; arbitrary finite bounds/external objective; success delta measured before cyclic-front replacement; stable elite reduction; front-index normalization
+DIRECT_L,DIRECT-L,scipy.optimize.direct(locally_biased=True),SciPy 1.17.1,library implementation,BSD-3-Clause,strict external budget wrapper; vol_tol=len_tol=0
+MS_LBFGSB,Multi-start L-BFGS-B,scipy.optimize.minimize L-BFGS-B repeated starts,SciPy 1.17.1,library implementation,BSD-3-Clause,registered restart schedule until budget

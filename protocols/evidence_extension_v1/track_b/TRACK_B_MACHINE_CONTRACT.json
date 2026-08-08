@@ -1,0 +1,16 @@
+{
+  "status": "TRACK_B_MACHINE_CONTRACT_FROZEN",
+  "primary_machine": "user Mac Apple Silicon",
+  "python": "3.11 or later supported by frozen wheels",
+  "workers_default": 4,
+  "blas_threads_per_process": 1,
+  "environment_variables": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "wall_time_secondary": true,
+  "objective_evaluations_primary": true
+}
