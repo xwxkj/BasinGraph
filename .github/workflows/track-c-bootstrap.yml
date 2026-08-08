@@ -1,6 +1,6 @@
 name: Materialize B21 Track C frozen payload
 
-# Diagnostic retry after installing the frozen Track C environment.
+# Registered pre-evaluation correction of the elliptic interface assembly.
 on:
   push:
     branches: [ncs-evidence-v1-track-c]
@@ -30,6 +30,47 @@ jobs:
           find evidence_extension_v1/track_c -type f -name '*.pyc' -delete
           rm -rf .track_c_bootstrap
 
+          python - <<'PY'
+          from pathlib import Path
+
+          tasks = Path('evidence_extension_v1/track_c/tasks.py')
+          text = tasks.read_text(encoding='utf-8')
+          old = '''        left = np.empty(n)\n        right = np.empty(n)\n        left[0] = k_nodes[0]\n        left[1:] = k_half\n        right[:-1] = k_half\n        right[-1] = k_nodes[-1]\n'''
+          new = '''        # k_half contains the n+1 conductivity values at interfaces.\n        left = k_half[:-1]\n        right = k_half[1:]\n'''
+          if text.count(old) != 1:
+              raise SystemExit(
+                  f'Expected one elliptic interface block, found {text.count(old)}.'
+              )
+          tasks.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          tests = Path('tests_v2/test_track_c_contract.py')
+          test_text = tests.read_text(encoding='utf-8')
+          test_block = '''\n\ndef test_elliptic_pde_interface_discretization() -> None:\n    import numpy as np\n    from evidence_extension_v1.track_c.tasks import make_c1_task\n\n    task = make_c1_task("elliptic_pde_inverse", 11)\n    assert task.dimension == 6\n    assert np.isfinite(task.objective(task.reference_x))\n'''
+          if 'test_elliptic_pde_interface_discretization' not in test_text:
+              tests.write_text(test_text + test_block, encoding='utf-8')
+
+          note = Path(
+              'protocols/evidence_extension_v1/track_c/'
+              'TRACK_C_IMPLEMENTATION_NOTE_001.md'
+          )
+          note.write_text(
+              '# Track C implementation note 001: elliptic interface assembly\n\n'
+              'Status: **registered before any Track C objective evaluation**  \n'
+              'Date: 2026-08-08  \n'
+              'Track C confirmatory objective evaluations before correction: **0**\n\n'
+              'The development preflight identified a shape inconsistency in the '
+              'one-dimensional elliptic finite-volume interface assembly. The '
+              '`n+1` harmonic-interface sequence is now split into its left and '
+              'right `n`-entry views (`k_half[:-1]` and `k_half[1:]`). This is '
+              'the standard conservative tridiagonal assembly for `n` interior '
+              'unknowns. No development, confirmatory or observed-data result '
+              'was produced before this correction. The correction is covered '
+              'by a permanent construction test and is part of the frozen Track C '
+              'source identity.\n',
+              encoding='utf-8',
+          )
+          PY
+
       - name: Retrieve frozen NIST StRD ASCII files
         shell: bash
         run: |
@@ -51,12 +92,6 @@ jobs:
           python -m pip install -r protocols/evidence_extension_v1/track_c/TRACK_C_REQUIREMENTS_LOCK.txt
           python -m pip install -e . --no-deps
           python -m pip install pytest
-
-      - name: Inspect elliptic discretization before materialization
-        shell: bash
-        run: |
-          set -euo pipefail
-          nl -ba evidence_extension_v1/track_c/tasks.py | sed -n '75,115p'
 
       - name: Materialize protocol locks, provenance and source identity
         shell: bash
