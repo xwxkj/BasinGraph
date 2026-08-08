@@ -160,7 +160,12 @@ def main() -> None:
         data_root,
     ]:
         for path in sorted(base.rglob("*")):
-            if path.is_file() and path.name not in {"TRACK_C_SOURCE_IDENTITY.json", "MANIFEST_SHA256.csv"}:
+            if (
+                path.is_file()
+                and "__pycache__" not in path.parts
+                and path.suffix != ".pyc"
+                and path.name not in {"TRACK_C_SOURCE_IDENTITY.json", "MANIFEST_SHA256.csv"}
+            ):
                 paths.append(path)
     paths.extend(
         [
@@ -180,8 +185,9 @@ def main() -> None:
     parent = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     identity = {
         "status": "TRACK_C_SOURCE_IDENTITY_FROZEN",
-        "identity_version": "1.0.0",
+        "identity_version": "1.0.1",
         "date": retrieved,
+        "identity_revision": "exclude generated Python bytecode from portable source identity",
         "repository": "xwxkj/BasinGraph",
         "branch": "ncs-evidence-v1-track-c",
         "materialization_parent_commit": parent,
