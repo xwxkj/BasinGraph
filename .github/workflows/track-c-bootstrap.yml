@@ -1,6 +1,6 @@
 name: Materialize B21 Track C frozen payload
 
-# Final retry after all checksum-verified payload segments were committed.
+# Diagnostic retry after installing the frozen Track C environment.
 on:
   push:
     branches: [ncs-evidence-v1-track-c]
@@ -51,6 +51,12 @@ jobs:
           python -m pip install -r protocols/evidence_extension_v1/track_c/TRACK_C_REQUIREMENTS_LOCK.txt
           python -m pip install -e . --no-deps
           python -m pip install pytest
+
+      - name: Inspect elliptic discretization before materialization
+        shell: bash
+        run: |
+          set -euo pipefail
+          nl -ba evidence_extension_v1/track_c/tasks.py | sed -n '75,115p'
 
       - name: Materialize protocol locks, provenance and source identity
         shell: bash
