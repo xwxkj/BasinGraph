@@ -5,8 +5,11 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
+import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -34,9 +37,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--mode", choices=("smoke", "confirmatory"), required=True)
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--base-seed", type=int, default=20260808)
-    parser.add_argument("--result-root", default="results_b21/track_a")
-    parser.add_argument("--skip-cocopp", action="store_true")
-    parser.add_argument("--authorize-confirmatory", action="store_true")
+    parser.add_argument(
+        "--result-root",
+        default="results_b21/track_a",
+    )
+    parser.add_argument(
+        "--skip-cocopp",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--authorize-confirmatory",
+        action="store_true",
+    )
     return parser.parse_args()
 
 
@@ -58,11 +70,13 @@ def write_manifest(root: Path) -> None:
     for path in sorted(root.rglob("*")):
         if not path.is_file() or path == manifest:
             continue
-        rows.append({
-            "relative_path": path.relative_to(root).as_posix(),
-            "sha256": sha256_file(path),
-            "size_bytes": path.stat().st_size,
-        })
+        rows.append(
+            {
+                "relative_path": path.relative_to(root).as_posix(),
+                "sha256": sha256_file(path),
+                "size_bytes": path.stat().st_size,
+            }
+        )
     with manifest.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(
             handle,
@@ -70,6 +84,7 @@ def write_manifest(root: Path) -> None:
         )
         writer.writeheader()
         writer.writerows(rows)
+
 
 
 def bool_series(series: pd.Series) -> pd.Series:
@@ -82,9 +97,9 @@ def bool_series(series: pd.Series) -> pd.Series:
 
 
 def paired_statistics(frame: pd.DataFrame) -> pd.DataFrame:
-    full = frame[frame["variant"] == "Full"][["problem_id", "fbest"]].rename(
-        columns={"fbest": "full_fbest"}
-    )
+    full = frame[frame["variant"] == "Full"][
+        ["problem_id", "fbest"]
+    ].rename(columns={"fbest": "full_fbest"})
     rows = []
     raw_p = []
     for variant in VARIANT_ORDER[1:]:
@@ -116,19 +131,24 @@ def paired_statistics(frame: pd.DataFrame) -> pd.DataFrame:
             if worse + better
             else 0.0
         )
-        rows.append({
-            "ablation": variant,
-            "paired_problems": len(delta),
-            "ablation_worse_than_full": worse,
-            "ablation_better_than_full": better,
-            "ties": ties,
-            "median_f_difference_ablation_minus_full": float(np.median(delta)),
-            "wilcoxon_statistic": statistic,
-            "raw_p": p_value,
-            "rank_biserial_positive_means_full_better": rank_biserial,
-        })
+        rows.append(
+            {
+                "ablation": variant,
+                "paired_problems": len(delta),
+                "ablation_worse_than_full": worse,
+                "ablation_better_than_full": better,
+                "ties": ties,
+                "median_f_difference_ablation_minus_full": float(
+                    np.median(delta)
+                ),
+                "wilcoxon_statistic": statistic,
+                "raw_p": p_value,
+                "rank_biserial_positive_means_full_better": rank_biserial,
+            }
+        )
         raw_p.append(p_value)
-    for row, value in zip(rows, holm_adjust(raw_p)):
+    adjusted = holm_adjust(raw_p)
+    for row, value in zip(rows, adjusted):
         row["holm_p"] = value
     return pd.DataFrame(rows)
 
@@ -138,23 +158,29 @@ def checkpoint_summary(frame: pd.DataFrame) -> pd.DataFrame:
     for row in frame.itertuples(index=False):
         checkpoints = json.loads(row.checkpoint_fbest_json)
         for checkpoint, value in checkpoints.items():
-            expanded.append({
-                "problem_id": row.problem_id,
-                "variant": row.variant,
-                "dimension": int(row.dimension),
-                "function_group_id": row.function_group_id,
-                "checkpoint_evaluations_per_dimension": int(checkpoint),
-                "fbest": float(value),
-            })
+            expanded.append(
+                {
+                    "problem_id": row.problem_id,
+                    "variant": row.variant,
+                    "dimension": int(row.dimension),
+                    "function_group_id": row.function_group_id,
+                    "checkpoint_evaluations_per_dimension": int(checkpoint),
+                    "fbest": float(value),
+                }
+            )
     data = pd.DataFrame(expanded)
     data["rank"] = data.groupby(
         ["problem_id", "checkpoint_evaluations_per_dimension"]
     )["fbest"].rank(method="average", ascending=True)
     return (
-        data.groupby([
-            "variant", "dimension", "function_group_id",
-            "checkpoint_evaluations_per_dimension",
-        ])
+        data.groupby(
+            [
+                "variant",
+                "dimension",
+                "function_group_id",
+                "checkpoint_evaluations_per_dimension",
+            ]
+        )
         .agg(
             mean_rank=("rank", "mean"),
             median_rank=("rank", "median"),
@@ -188,7 +214,9 @@ def main() -> None:
 
     checks = {
         "expected_rows": len(frame) == config["expected_rows"],
-        "all_completed": bool((frame["runner_status"] == "completed").all()),
+        "all_completed": bool(
+            (frame["runner_status"] == "completed").all()
+        ),
         "unique_variant_problem": not frame.duplicated(
             ["variant", "problem_id"]
         ).any(),
@@ -209,10 +237,12 @@ def main() -> None:
         "phase_accounting": bool(
             (frame["phase_sum"] == frame["budget"]).all()
         ),
-        "archive_capacity": bool((
-            (frame["archive_nodes"] >= 1)
-            & (frame["archive_nodes"] <= 80)
-        ).all()),
+        "archive_capacity": bool(
+            (
+                (frame["archive_nodes"] >= 1)
+                & (frame["archive_nodes"] <= 80)
+            ).all()
+        ),
         "graph_integrity": bool(
             bool_series(frame["graph_referential_integrity"]).all()
         ),
@@ -220,7 +250,8 @@ def main() -> None:
             bool_series(frame["history_monotone"]).all()
         ),
         "seed_formula": all(
-            int(row.seed) == seed_for(
+            int(row.seed)
+            == seed_for(
                 args.base_seed,
                 int(row.function_index),
                 int(row.dimension),
@@ -229,21 +260,28 @@ def main() -> None:
             for row in frame.itertuples(index=False)
         ),
         "variant_hashes": all(
-            set(frame.loc[
-                frame["variant"] == variant,
-                "options_hash",
-            ].unique()) == {expected_hash}
+            set(
+                frame.loc[
+                    frame["variant"] == variant,
+                    "options_hash",
+                ].unique()
+            )
+            == {expected_hash}
             for variant, expected_hash in hashes.items()
         ),
     }
 
     frame["final_target_hit"] = bool_series(frame["final_target_hit"])
     frame["rank"] = frame.groupby("problem_id")["fbest"].rank(
-        method="average", ascending=True
+        method="average",
+        ascending=True,
     )
     frame["win"] = frame.groupby("problem_id")["fbest"].transform(
         lambda values: np.isclose(
-            values, values.min(), rtol=1e-12, atol=1e-14
+            values,
+            values.min(),
+            rtol=1e-12,
+            atol=1e-14,
         )
     )
     summary = (
@@ -263,14 +301,17 @@ def main() -> None:
     summary["variant_order"] = summary["variant"].map(
         {name: index for index, name in enumerate(VARIANT_ORDER)}
     )
-    summary.sort_values(["mean_final_rank", "variant_order"], inplace=True)
+    summary.sort_values(
+        ["mean_final_rank", "variant_order"],
+        inplace=True,
+    )
     summary.drop(columns=["variant_order"], inplace=True)
     summary.to_csv(run_root / "variant_summary.csv", index=False)
 
     group_summary = (
-        frame.groupby([
-            "variant", "dimension", "function_group_id", "function_group"
-        ])
+        frame.groupby(
+            ["variant", "dimension", "function_group_id", "function_group"]
+        )
         .agg(
             mean_final_rank=("rank", "mean"),
             median_final_rank=("rank", "median"),
@@ -281,24 +322,29 @@ def main() -> None:
         .reset_index()
     )
     group_summary.to_csv(
-        run_root / "function_group_dimension_summary.csv", index=False
+        run_root / "function_group_dimension_summary.csv",
+        index=False,
     )
 
     phase_rows = []
     for row in frame.itertuples(index=False):
         mapping = json.loads(row.phase_evaluations_json)
         for phase, evaluations in mapping.items():
-            phase_rows.append({
-                "variant": row.variant,
-                "dimension": int(row.dimension),
-                "function_group_id": row.function_group_id,
-                "phase": phase,
-                "evaluations": int(evaluations),
-                "fraction": int(evaluations) / int(row.budget),
-            })
+            phase_rows.append(
+                {
+                    "variant": row.variant,
+                    "dimension": int(row.dimension),
+                    "function_group_id": row.function_group_id,
+                    "phase": phase,
+                    "evaluations": int(evaluations),
+                    "fraction": int(evaluations) / int(row.budget),
+                }
+            )
     phase_summary = (
         pd.DataFrame(phase_rows)
-        .groupby(["variant", "dimension", "function_group_id", "phase"])
+        .groupby(
+            ["variant", "dimension", "function_group_id", "phase"]
+        )
         .agg(
             mean_evaluations=("evaluations", "mean"),
             mean_fraction=("fraction", "mean"),
@@ -309,17 +355,19 @@ def main() -> None:
     )
     phase_summary.to_csv(run_root / "phase_summary.csv", index=False)
 
-    paired_statistics(frame).to_csv(
-        run_root / "pairwise_final_values.csv", index=False
-    )
-    checkpoint_summary(frame).to_csv(
-        run_root / "checkpoint_rank_summary.csv", index=False
-    )
+    pairwise = paired_statistics(frame)
+    pairwise.to_csv(run_root / "pairwise_final_values.csv", index=False)
 
-    pivot = frame.pivot(index="problem_id", columns="variant", values="fbest")
-    friedman = friedmanchisquare(
-        *[pivot[name].to_numpy() for name in VARIANT_ORDER]
+    checkpoints = checkpoint_summary(frame)
+    checkpoints.to_csv(run_root / "checkpoint_rank_summary.csv", index=False)
+
+    pivot = frame.pivot(
+        index="problem_id",
+        columns="variant",
+        values="fbest",
     )
+    friedman_values = [pivot[name].to_numpy() for name in VARIANT_ORDER]
+    friedman = friedmanchisquare(*friedman_values)
     friedman_report = {
         "statistic": float(friedman.statistic),
         "p_value": float(friedman.pvalue),
@@ -329,10 +377,14 @@ def main() -> None:
         "secondary_descriptive_test": True,
     }
     (run_root / "friedman_final_values.json").write_text(
-        json.dumps(friedman_report, indent=2), encoding="utf-8"
+        json.dumps(friedman_report, indent=2),
+        encoding="utf-8",
     )
 
     observer_paths = []
+    complete_observers: dict[str, dict[int, Path]] = {
+        variant: {} for variant in VARIANT_ORDER
+    }
     for variant in VARIANT_ORDER:
         for dimension in config["dimensions"]:
             shard = run_root / "shards" / f"{variant}_d{dimension}"
@@ -340,19 +392,71 @@ def main() -> None:
                 (shard / "SHARD_COMPLETE.json").read_text(encoding="utf-8")
             )
             observer = Path(complete["observer_absolute"])
-            key = f"observer_exists::{variant}_d{dimension}"
-            checks[key] = observer.is_dir()
-            if observer.is_dir():
+            if not observer.is_dir():
+                checks[f"observer_exists::{variant}_d{dimension}"] = False
+            else:
+                checks[f"observer_exists::{variant}_d{dimension}"] = True
                 observer_paths.append(observer)
+                complete_observers[variant][int(dimension)] = observer
+
+    # cocopp operates folder-wise: one input folder corresponds to one
+    # algorithm, while dimensions/batches may live in subfolders. Build a
+    # clean, derived staging tree containing only the completed attempt for
+    # each variant/dimension. Hard links avoid duplicating observer bytes.
+    staging_root = (
+        ROOT
+        / "exdata"
+        / "b21_track_a_cocopp_inputs"
+        / args.run_id
+        / args.mode
+    )
+    if staging_root.exists():
+        shutil.rmtree(staging_root)
+    staging_root.mkdir(parents=True)
+
+    def link_or_copy(source: str, destination: str) -> str:
+        try:
+            os.link(source, destination)
+        except OSError:
+            shutil.copy2(source, destination)
+        return destination
+
+    cocopp_input_paths = []
+    for variant in VARIANT_ORDER:
+        variant_root = staging_root / variant
+        variant_root.mkdir(parents=True)
+        for dimension in config["dimensions"]:
+            source = complete_observers[variant].get(int(dimension))
+            if source is None:
+                continue
+            shutil.copytree(
+                source,
+                variant_root / f"d{dimension}",
+                copy_function=link_or_copy,
+            )
+        cocopp_input_paths.append(variant_root)
+
+    checks["cocopp_input_count"] = (
+        len(cocopp_input_paths) == len(VARIANT_ORDER)
+    )
+    checks["cocopp_input_algorithm_names"] = (
+        {path.name for path in cocopp_input_paths} == set(VARIANT_ORDER)
+    )
 
     pp_root = run_root / "cocopp"
     cocopp_log = run_root / "cocopp.log"
     cocopp_status = "skipped"
     if not args.skip_cocopp:
-        command = [sys.executable, "-m", "cocopp", "-o", str(pp_root)]
+        command = [
+            sys.executable,
+            "-m",
+            "cocopp",
+            "-o",
+            str(pp_root),
+        ]
         if args.mode == "smoke":
             command.extend(["--in-a-hurry", "1000", "--no-svg"])
-        command.extend(str(path) for path in observer_paths)
+        command.extend(str(path) for path in cocopp_input_paths)
         with cocopp_log.open("w", encoding="utf-8") as handle:
             process = subprocess.run(
                 command,
@@ -360,12 +464,24 @@ def main() -> None:
                 stdout=handle,
                 stderr=subprocess.STDOUT,
             )
-        cocopp_status = "completed" if process.returncode == 0 else "failed"
+        cocopp_status = (
+            "completed" if process.returncode == 0 else "failed"
+        )
         checks["cocopp_completed"] = process.returncode == 0
         checks["cocopp_index"] = (pp_root / "index.html").is_file()
 
-    (run_root / "complete_observer_paths.txt").write_text(
-        "\n".join(str(path.relative_to(ROOT)) for path in observer_paths)
+    observer_list = run_root / "complete_observer_paths.txt"
+    observer_list.write_text(
+        "\n".join(
+            str(path.relative_to(ROOT)) for path in observer_paths
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    (run_root / "cocopp_input_paths.txt").write_text(
+        "\n".join(
+            str(path.relative_to(ROOT)) for path in cocopp_input_paths
+        )
         + "\n",
         encoding="utf-8",
     )
@@ -390,7 +506,8 @@ def main() -> None:
         "friedman_final_values": friedman_report,
     }
     (run_root / "validation_report.json").write_text(
-        json.dumps(report, indent=2), encoding="utf-8"
+        json.dumps(report, indent=2),
+        encoding="utf-8",
     )
     write_manifest(run_root)
 
@@ -401,7 +518,9 @@ def main() -> None:
     print(f"Output: {run_root}")
 
     if report["status"].endswith("FAILED"):
-        failed = {name: value for name, value in checks.items() if not value}
+        failed = {
+            name: value for name, value in checks.items() if not value
+        }
         print(json.dumps(failed, indent=2), file=sys.stderr)
         raise SystemExit(1)
 
