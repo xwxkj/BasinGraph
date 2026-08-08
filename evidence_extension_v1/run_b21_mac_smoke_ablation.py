@@ -169,6 +169,16 @@ def task_specifications() -> list[dict[str, Any]]:
             "budget": 1800,
             "stratum": "boundary",
         },
+        {
+            "task": "HighDimSphere_D25",
+            "dimension": 25,
+            "lb": [-5.0] * 25,
+            "ub": [5.0] * 25,
+            "known_optimum": 0.0,
+            "budget": 1800,
+            "stratum": "controller_activation",
+            "smoke_only": True,
+        },
     ]
 
 
@@ -179,9 +189,10 @@ def task_specs_for_mode(mode: str) -> list[dict[str, Any]]:
             "ShiftedSphere_D5",
             "ShiftedRastrigin_D5",
             "FarBasinDoubleWell_D5",
+            "HighDimSphere_D25",
         }
         return [spec for spec in specs if spec["task"] in selected]
-    return specs
+    return [spec for spec in specs if not spec.get("smoke_only", False)]
 
 
 def evaluate_task(task: str, x: np.ndarray) -> float:
@@ -190,6 +201,10 @@ def evaluate_task(task: str, x: np.ndarray) -> float:
 
     if task == "ShiftedSphere_D5":
         shift = np.asarray([1.2, -0.8, 0.5, -1.3, 1.7])
+        return float(np.sum((x - shift) ** 2))
+
+    if task == "HighDimSphere_D25":
+        shift = np.linspace(-1.5, 1.5, dimension)
         return float(np.sum((x - shift) ** 2))
 
     if task == "Rosenbrock_D5":
