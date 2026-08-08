@@ -1,5 +1,6 @@
 name: Materialize B21 Track C frozen payload
 
+# Retry after the complete, checksum-verified payload split was committed.
 on:
   push:
     branches: [ncs-evidence-v1-track-c]
