@@ -1,0 +1,54 @@
+name: Repair Track C amendment workflow syntax
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-c]
+    paths:
+      - '.github/workflows/fix-track-c-amend.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Replace literal line-break escape in amendment script
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('.github/workflows/track-c-amend-analysis.yml')
+          text = path.read_text(encoding='utf-8')
+          bad = (
+              r"content += (\n                      '"
+              + r"\n\n## Implementation note 003\n\n"
+              + "'"
+          )
+          good = (
+              "content += (\n                      '"
+              + r"\n\n## Implementation note 003\n\n"
+              + "'"
+          )
+          count = text.count(bad)
+          if count != 1:
+              raise SystemExit(f'Expected one malformed sequence, found {count}.')
+          path.write_text(text.replace(bad, good, 1), encoding='utf-8')
+          print('TRACK_C_AMEND_WORKFLOW_SYNTAX_REPAIRED')
+          PY
+
+      - name: Commit repaired amendment workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .github/workflows/track-c-amend-analysis.yml
+          git commit -m 'Repair Track C amendment workflow syntax'
+          git push origin HEAD:ncs-evidence-v1-track-c
