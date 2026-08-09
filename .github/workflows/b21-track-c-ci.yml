@@ -88,7 +88,7 @@ jobs:
             --authorize-confirmatory \
             --output results_b21/track_c/ci/preflight_confirmatory.json
 
-      - name: Run 35-run development-only smoke
+      - name: Run 35-run development-only smoke and descriptive references
         shell: bash
         run: |
           set -euo pipefail
@@ -97,6 +97,10 @@ jobs:
             --mode smoke \
             --run-id "${RUN_ID}" \
             --workers 2
+          python evidence_extension_v1/track_c/task_specific_references.py \
+            --mode smoke \
+            --output \
+            "results_b21/track_c/${RUN_ID}/task_specific_reference_results.csv"
           python evidence_extension_v1/track_c/finalize_track_c.py \
             --mode smoke \
             --run-id "${RUN_ID}"
