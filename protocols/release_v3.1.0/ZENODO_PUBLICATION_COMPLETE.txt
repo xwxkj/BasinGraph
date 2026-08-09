@@ -1,0 +1,8 @@
+BasinGraph Zenodo v3.1.0 publication completed and verified.
+
+Software DOI: https://doi.org/10.5281/zenodo.21857175
+Data DOI: https://doi.org/10.5281/zenodo.20791231
+Software record ID: 21857175
+Data record ID: 20791231
+Release-source commit: 2084438e679f61660de497f5464fbe5636373163
+Published UTC: 2026-08-09T05:30:00.980691+00:00

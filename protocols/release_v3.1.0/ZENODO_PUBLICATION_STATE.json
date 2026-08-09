@@ -1,0 +1,123 @@
+{
+  "status": "PUBLISHED_AND_VERIFIED",
+  "created_utc": "2026-08-09T05:29:08.671503+00:00",
+  "software_draft_id": 21857175,
+  "data_draft_id": 20791231,
+  "software_doi": "10.5281/zenodo.21857175",
+  "data_doi": "10.5281/zenodo.20791231",
+  "release_commit": "2084438e679f61660de497f5464fbe5636373163",
+  "software_files": [
+    {
+      "name": "xwxkj-BasinGraph-v3.1.0-source.zip",
+      "size_bytes": 5084225,
+      "sha256": "1996c1d0f295b993361a5e0258764e0a13c1819c233726f63b56a6924c84eb9c"
+    },
+    {
+      "name": "README_ZENODO_SOFTWARE_v3.1.0.md",
+      "size_bytes": 516,
+      "sha256": "04439c00a76ea263d56ce6779caefa1cec44a5e9687289a5e002f2c6065a28ba"
+    },
+    {
+      "name": "zenodo_software_metadata_v3.1.0.json",
+      "size_bytes": 2709,
+      "sha256": "f28c1593d05a37d25eb8dbf3544fe78dce213ef0c0ff2cfdab88a3d79191d7e5"
+    },
+    {
+      "name": "SOFTWARE_SHA256SUMS.txt",
+      "size_bytes": 303,
+      "sha256": "784dc1530756bb3f5fc2c809266b1af0c99d297cc41fe91971488c9654e3b6e6"
+    }
+  ],
+  "data_files": [
+    {
+      "name": "BasinGraph_B22_integrated_evidence_release_v3.1.0_with_DOIs.zip",
+      "size_bytes": 81266366,
+      "sha256": "a37d45c66f81e57564b68c2204aaadf2b6758871b6eeb79c28037c39ad4c79c7"
+    },
+    {
+      "name": "BasinGraph_B22_integrated_evidence_release_v3.1.0_with_DOIs.zip.sha256",
+      "size_bytes": 130,
+      "sha256": "0ce8b3e2e754e1f4effbdee0397203b8d4c40e1768b45c5f85f9f0223cfaea90"
+    },
+    {
+      "name": "BasinGraph_B22_submission_materials_with_DOIs.zip",
+      "size_bytes": 13805926,
+      "sha256": "828da841de19a79852e0e9ab2514edbb9cc80341a79cb1f66938c07551c0675c"
+    },
+    {
+      "name": "BasinGraph_B22_submission_materials_with_DOIs.zip.sha256",
+      "size_bytes": 116,
+      "sha256": "df30eef4fd561a78b46c407c821bd76b3f7a844e9313a98d1444e13b063ba6dd"
+    },
+    {
+      "name": "BasinGraph_Source_Data_B22_with_DOIs.xlsx",
+      "size_bytes": 116486,
+      "sha256": "48aaf54df0631c6cf0905774a9a638a39abf5c260ca72afba3c177f7ea317323"
+    },
+    {
+      "name": "Manuscript_CNS_2026-0808_B22_submission_clean.docx",
+      "size_bytes": 3842450,
+      "sha256": "4318a4d7526873b05f8b4c11e339779cc42be5c5123d055c01d7a5fa3aed8194"
+    },
+    {
+      "name": "Manuscript_CNS_2026-0808_B22_with_DOIs_redline.docx",
+      "size_bytes": 3842253,
+      "sha256": "8b4f21ee7cc7b5a0b83ee51010f378c482d66439fd377fb6fb395070f8288182"
+    },
+    {
+      "name": "BasinGraph_Supplementary_Information_B22_with_DOIs.docx",
+      "size_bytes": 1655843,
+      "sha256": "79146b65e9752b020c22d3e6dd71112c35f92a4e158c7e469c979a0634b68184"
+    },
+    {
+      "name": "BasinGraph_Supplementary_Information_B22_with_DOIs.pdf",
+      "size_bytes": 1079076,
+      "sha256": "866fd1891fd3b911f4bfb509dcd94662071abfbb48a1cacb4cefef0e53b84fd2"
+    },
+    {
+      "name": "README_ZENODO_DATA_v3.1.0.md",
+      "size_bytes": 528,
+      "sha256": "7beb99a5c0911b3c9f0fc3aa59aee6129f4877c943bc3bcc9dcd08dd51ecf0e7"
+    },
+    {
+      "name": "zenodo_data_metadata_v3.1.0.json",
+      "size_bytes": 2931,
+      "sha256": "b945e061e4230017f4fc2d9c478f7c16a12831e12627505470633298445e756b"
+    },
+    {
+      "name": "ZENODO_RESERVED_DOIS_v3.1.0.json",
+      "size_bytes": 1781,
+      "sha256": "90648eceaf3a63a2a0257ce7bde66a4f3ad3df98543b8e3d073f264c02f6d71"
+    },
+    {
+      "name": "DATA_SHA256SUMS.txt",
+      "size_bytes": 1385,
+      "sha256": "bb98ce8fb9e8ca9ff8e3e8c55d217a41a01162212ea6a978f79f2f43c145438b"
+    }
+  ],
+  "uploaded_utc": "2026-08-09T05:29:43.485287+00:00",
+  "published_utc": "2026-08-09T05:30:00.980691+00:00",
+  "software_public_record_id": 21857175,
+  "data_public_record_id": 20791231,
+  "software_public_file_names": [
+    "README_ZENODO_SOFTWARE_v3.1.0.md",
+    "SOFTWARE_SHA256SUMS.txt",
+    "xwxkj-BasinGraph-v3.1.0-source.zip",
+    "zenodo_software_metadata_v3.1.0.json"
+  ],
+  "data_public_file_names": [
+    "BasinGraph_B22_integrated_evidence_release_v3.1.0_with_DOIs.zip",
+    "BasinGraph_B22_integrated_evidence_release_v3.1.0_with_DOIs.zip.sha256",
+    "BasinGraph_B22_submission_materials_with_DOIs.zip",
+    "BasinGraph_B22_submission_materials_with_DOIs.zip.sha256",
+    "BasinGraph_Source_Data_B22_with_DOIs.xlsx",
+    "BasinGraph_Supplementary_Information_B22_with_DOIs.docx",
+    "BasinGraph_Supplementary_Information_B22_with_DOIs.pdf",
+    "DATA_SHA256SUMS.txt",
+    "Manuscript_CNS_2026-0808_B22_submission_clean.docx",
+    "Manuscript_CNS_2026-0808_B22_with_DOIs_redline.docx",
+    "README_ZENODO_DATA_v3.1.0.md",
+    "ZENODO_RESERVED_DOIS_v3.1.0.json",
+    "zenodo_data_metadata_v3.1.0.json"
+  ]
+}
