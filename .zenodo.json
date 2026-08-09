@@ -5,27 +5,38 @@
       "orcid": "0000-0003-4408-9070",
       "affiliation": "School of Information Mechanics and Sensing Engineering, Xidian University, Xi'an 710071, China; Department of Chemical and Biological Engineering, University of British Columbia, Vancouver, BC V6T 1Z3, Canada",
       "type": "ProjectLeader"
-    }
+    },
+    {"name": "Cao, Yankai"},
+    {"name": "Tang, Xiaoan"},
+    {"name": "Yang, Shanlin"},
+    {"name": "Quan, Yinghui"},
+    {"name": "Nie, Weike"},
+    {"name": "Yin, Xukun"},
+    {"name": "Zhang, Qiang"},
+    {"name": "Feng, Dazheng"}
   ],
-  "title": "BasinGraph: geometry-controlled operational search-state optimization",
-  "version": "3.0.1",
+  "title": "BasinGraph: bounded operational search-state optimization",
+  "version": "3.1.0",
   "access_right": "open",
   "upload_type": "software",
   "language": "eng",
   "license": "BSD-3-Clause",
-  "description": "Repository-identity repair and NCS evidence-extension scaffolding for BasinGraph. The public import path is aligned with the immutable BasinGraph 2.0.0-rc1 result-bearing implementation. The frozen options, original prospective COCO/BBOB and CUTEst runs, raw results, statistical analyses and numerical conclusions are unchanged.",
+  "description": "Version 3.1.0 integrates the frozen BasinGraph 2.0.0-rc1 result-bearing implementation with documentation and reproducibility metadata for the registered Track A-D/C evidence extensions. The optimizer maintains a fixed-capacity archive of operational search-state representatives, a directed graph of observed transitions and exact objective-evaluation accounting. This release does not revise the result-bearing candidate, its options hash or any confirmatory outcome. It adds evidence manifests, protocol references, Source Data mappings, figure sources and claim-boundary documentation for mechanism ablation, modern-baseline comparisons, 40-320-dimensional scalability and scientific-model and NIST observed-data applications.",
   "keywords": [
-    "global optimization",
-    "derivative-free optimization",
     "nonconvex optimization",
-    "basin graph",
+    "derivative-free optimization",
+    "scientific optimization",
+    "finite-budget optimization",
+    "operational search state",
+    "directed transition graph",
     "COCO/BBOB",
-    "CUTEst"
+    "CUTEst",
+    "reproducibility"
   ],
   "related_identifiers": [
     {
       "identifier": "https://github.com/xwxkj/BasinGraph",
-      "relation": "isIdenticalTo",
+      "relation": "isSupplementTo",
       "resource_type": "software"
     },
     {
@@ -35,11 +46,12 @@
       "resource_type": "software"
     },
     {
-      "identifier": "10.5281/zenodo.20788903",
+      "identifier": "10.5281/zenodo.20791231",
       "relation": "isSupplementedBy",
       "scheme": "doi",
       "resource_type": "dataset"
     }
   ],
-  "publication_date": "2026-08-07"
+  "publication_date": "2026-08-08",
+  "notes": "Published version-specific software DOI: 10.5281/zenodo.21857175. Release-source commit: 2084438e679f61660de497f5464fbe5636373163. Result-bearing candidate: BasinGraph 2.0.0-rc1; candidate commit adbc0ecdf1153044188f0508321c47001ad9bdb0; options hash 031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69."
 }
