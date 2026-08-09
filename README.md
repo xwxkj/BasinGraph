@@ -1,7 +1,7 @@
 # BasinGraph
 
 [![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21857175.svg)](https://doi.org/10.5281/zenodo.21857175)
-[![Integrated evidence DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20791231.svg)](https://doi.org/10.5281/zenodo.20791231)
+[![Clean evidence DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21863259.svg)](https://doi.org/10.5281/zenodo.21863259)
 
 BasinGraph is a geometry-controlled optimizer for finite-budget nonconvex and
 scientific optimization. It maintains a fixed-capacity archive of operational
@@ -118,9 +118,17 @@ python scripts_v2/generate_repository_manifest.py
 | Resource | Version | DOI |
 |---|---:|---|
 | Current software archive | 3.1.0 | `10.5281/zenodo.21857175` |
-| Current integrated evidence dataset | 3.1.0 | `10.5281/zenodo.20791231` |
+| Submission-facing clean evidence record | 3.1.0-clean | `10.5281/zenodo.21863259` |
+| Complete timestamped priority/provenance record | 3.1.0 | `10.5281/zenodo.20791231` |
 | Original result-bearing software archive | 2.0.0 | `10.5281/zenodo.20789002` |
 | Original prospective reproducibility dataset | 2.0.0 | `10.5281/zenodo.20788903` |
+
+The clean evidence record excludes author manuscripts, redline drafts, internal
+submission packages and deposition-management files. It retains the complete
+scientific evidence, Source Data, Supplementary Information, figures, logs,
+analyses, provenance reports and integrity manifests. The complete v3.1.0
+record remains unchanged as the earliest full public priority and provenance
+record.
 
 The v3.1.0 software archive is identical to release-source commit
 `2084438e679f61660de497f5464fbe5636373163`. The result-bearing optimizer itself
@@ -130,6 +138,6 @@ frozen options hash shown above.
 ## Licence
 
 BasinGraph source code is released under the BSD-3-Clause licence. Research
-outputs and documentation in the integrated evidence record are released under
-CC BY 4.0. Benchmark libraries and externally developed comparator
-implementations retain their original licences.
+outputs and documentation in the evidence records are released under CC BY
+4.0. Benchmark libraries and externally developed comparator implementations
+retain their original licences.
