@@ -5,7 +5,8 @@
 Published 8 August 2026.
 
 - Software DOI: https://doi.org/10.5281/zenodo.21857175
-- Integrated evidence DOI: https://doi.org/10.5281/zenodo.20791231
+- Submission-facing clean evidence DOI: https://doi.org/10.5281/zenodo.21863259
+- Complete timestamped priority/provenance DOI: https://doi.org/10.5281/zenodo.20791231
 - Release-source commit: `2084438e679f61660de497f5464fbe5636373163`
 - Result-bearing candidate commit: `adbc0ecdf1153044188f0508321c47001ad9bdb0`
 - Result-bearing implementation: `2.0.0-rc1`
@@ -33,6 +34,20 @@ The release integrates:
 
 The extension therefore contains 9,510 general-purpose confirmatory runs, 60
 sequential overhead runs and 18 descriptive task-specific references.
+
+## Clean public evidence edition
+
+The preferred submission-facing reproducibility record is the independent
+clean public evidence edition at https://doi.org/10.5281/zenodo.21863259. It
+excludes author manuscripts, redline drafts, internal submission packages,
+internal claim-audit documents and deposition-management files while retaining
+all scientific evidence, Source Data, Supplementary Information, figures,
+logs, analyses, provenance reports and integrity records.
+
+The complete record at https://doi.org/10.5281/zenodo.20791231 remains public
+and unchanged as the earliest full timestamped priority and provenance record.
+No code, data, protocol, run, statistic, figure or numerical conclusion differs
+between the clean and complete records.
 
 ## Main evidence boundary
 
