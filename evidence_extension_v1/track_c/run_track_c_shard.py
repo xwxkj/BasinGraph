@@ -33,6 +33,7 @@ from evidence_extension_v1.track_c.common import (
     PAIRED_SEEDS,
     SMOKE_TASKS,
     TARGET_RATIOS,
+    checkpoint_multipliers,
     normalize_gap,
     seed_for_c1,
     seed_for_nist,
@@ -71,7 +72,7 @@ def first_hit(history: list[tuple[int, float]], target: float, budget: int) -> i
 
 def checkpoint_gaps(task: ScientificTask, history: list[tuple[int, float]]) -> dict[str, float]:
     ordered = sorted((int(n), float(v)) for n, v in history)
-    points = sorted(set([1, 3, 10, 30, 100, 300, task.budget_multiplier]))
+    points = checkpoint_multipliers(task.budget_multiplier)
     out: dict[str, float] = {}
     cursor = 0
     best = float("inf")

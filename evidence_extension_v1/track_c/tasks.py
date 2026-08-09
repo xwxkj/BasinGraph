@@ -27,6 +27,7 @@ class ScientificTask:
     f_base: float
     reference_x: Array
     metadata: dict[str, Any]
+    specialized_reference: Callable[[], dict[str, Any]] | None = None
 
     @property
     def task_id(self) -> str:
@@ -220,10 +221,83 @@ def _make_phase(instance: int, noisy: bool) -> ScientificTask:
     base = np.zeros(d)
     f_ref, f_base = _safe_reference(objective, truth, base)
     family = "noisy_phase_retrieval" if noisy else "phase_retrieval"
+
+    def specialized_reference() -> dict[str, Any]:
+        covariance = matrix.T @ (measurements[:, None] * matrix) / m
+        _, eigenvectors = np.linalg.eigh(covariance)
+        norm_estimate = math.sqrt(
+            max(float(np.mean(measurements)) * d, 1e-12)
+        )
+        vector = np.clip(
+            norm_estimate * eigenvectors[:, -1],
+            -2.0,
+            2.0,
+        )
+        current = objective(vector)
+        best = vector.copy()
+        best_value = current
+        evaluations = 1
+        step = 0.25
+        iterations = 0
+        for iterations in range(1, 501):
+            projected = matrix @ vector
+            gradient = (4.0 / (m * scale)) * matrix.T @ (
+                (projected * projected - measurements) * projected
+            )
+            norm_sq = float(np.dot(gradient, gradient))
+            if not np.isfinite(norm_sq) or norm_sq <= 1e-24:
+                break
+            local_step = step
+            accepted = False
+            candidate = vector
+            candidate_value = current
+            for _ in range(24):
+                candidate = np.clip(
+                    vector - local_step * gradient,
+                    -2.0,
+                    2.0,
+                )
+                candidate_value = objective(candidate)
+                evaluations += 1
+                if (
+                    candidate_value
+                    <= current - 1e-4 * local_step * norm_sq
+                    or local_step <= 1e-12
+                ):
+                    accepted = True
+                    break
+                local_step *= 0.5
+            if not accepted:
+                break
+            if candidate_value < best_value:
+                best_value = candidate_value
+                best = candidate.copy()
+            change = float(np.linalg.norm(candidate - vector))
+            vector = candidate
+            current = candidate_value
+            step = min(1.0, local_step * 1.25)
+            if change <= 1e-10 * max(
+                1.0,
+                float(np.linalg.norm(vector)),
+            ):
+                break
+        return {
+            "method": "spectral_wirtinger_flow",
+            "xbest": best,
+            "fbest": best_value,
+            "iterations": iterations,
+            "objective_evaluations": evaluations,
+            "metadata": {
+                "spectral_initialization": True,
+                "backtracking": True,
+            },
+        }
+
     return ScientificTask(
         "c1", family, instance, d, 200,
         -2.0 * np.ones(d), 2.0 * np.ones(d), objective, metrics,
         f_ref, f_base, truth, {"measurements": m, "noise_sigma": sigma},
+        specialized_reference,
     )
 
 
@@ -278,11 +352,73 @@ def _make_matrix_factorization(instance: int, large: bool) -> ScientificTask:
     f_ref, f_base = _safe_reference(objective, truth, base)
     family = "large_matrix_factorization" if large else "matrix_factorization"
     budget_multiplier = 75 if large else 150
+
+    def specialized_reference() -> dict[str, Any]:
+        reference_rng = np.random.default_rng(
+            260_000 + instance + (10_000 if large else 0)
+        )
+        best_vector = base.copy()
+        best_value = objective(best_vector)
+        evaluations = 1
+        total_iterations = 0
+        ridge = 1e-8
+        row_observations = [
+            np.flatnonzero(rows == row) for row in range(m)
+        ]
+        col_observations = [
+            np.flatnonzero(cols == col) for col in range(n)
+        ]
+        for _restart in range(3):
+            u = reference_rng.normal(0.0, 0.25, (m, rank))
+            v = reference_rng.normal(0.0, 0.25, (n, rank))
+            for _ in range(80):
+                total_iterations += 1
+                for row_index, locations in enumerate(row_observations):
+                    if len(locations):
+                        design = v[cols[locations]]
+                        u[row_index] = np.linalg.solve(
+                            design.T @ design + ridge * np.eye(rank),
+                            design.T @ observations[locations],
+                        )
+                for col_index, locations in enumerate(col_observations):
+                    if len(locations):
+                        design = u[rows[locations]]
+                        v[col_index] = np.linalg.solve(
+                            design.T @ design + ridge * np.eye(rank),
+                            design.T @ observations[locations],
+                        )
+                u_norm = max(float(np.linalg.norm(u)), 1e-12)
+                v_norm = max(float(np.linalg.norm(v)), 1e-12)
+                balance_scale = math.sqrt(v_norm / u_norm)
+                u *= balance_scale
+                v /= balance_scale
+                vector = np.clip(
+                    np.concatenate([u.ravel(), v.ravel()]),
+                    -3.0,
+                    3.0,
+                )
+                value = objective(vector)
+                evaluations += 1
+                if value < best_value:
+                    best_value = value
+                    best_vector = vector.copy()
+            if best_value <= 1e-14:
+                break
+        return {
+            "method": "alternating_ridge_least_squares",
+            "xbest": best_vector,
+            "fbest": best_value,
+            "iterations": total_iterations,
+            "objective_evaluations": evaluations,
+            "metadata": {"restarts": 3, "ridge": ridge},
+        }
+
     return ScientificTask(
         "c1", family, instance, d, budget_multiplier,
         -3.0 * np.ones(d), 3.0 * np.ones(d), objective, metrics,
         f_ref, f_base, truth,
         {"matrix_shape": [m, n], "rank": rank, "sample_count": sample_count},
+        specialized_reference,
     )
 
 

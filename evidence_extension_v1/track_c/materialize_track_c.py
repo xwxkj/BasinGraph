@@ -54,6 +54,8 @@ def main() -> None:
             {
                 "dataset": name,
                 "official_url": NIST_URL.format(name=name),
+                "retrieval_mirror": "https://raw.githubusercontent.com/lmfit/lmfit-py/fe389bbbd1fe936cd73742bd81fc6fce7ac92858/NIST_STRD/{name}.dat".format(name=name),
+                "mirror_commit": "fe389bbbd1fe936cd73742bd81fc6fce7ac92858",
                 "repository_path": path.relative_to(ROOT).as_posix(),
                 "sha256": digest,
                 "size_bytes": path.stat().st_size,
@@ -185,9 +187,9 @@ def main() -> None:
     parent = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     identity = {
         "status": "TRACK_C_SOURCE_IDENTITY_FROZEN",
-        "identity_version": "1.0.1",
+        "identity_version": "1.1.0",
         "date": retrieved,
-        "identity_revision": "exclude generated Python bytecode from portable source identity",
+        "identity_revision": "portable identity, available-checkpoint semantics, paired primary inference and registered descriptive task-specific references",
         "repository": "xwxkj/BasinGraph",
         "branch": "ncs-evidence-v1-track-c",
         "materialization_parent_commit": parent,
@@ -222,6 +224,8 @@ def main() -> None:
         "post_freeze_runner_changes_require_new_identity": True,
         "confirmatory_objective_evaluations_before_freeze": 0,
         "reference_construction_tasks": len(references),
+        "task_specific_reference_tasks": 18,
+        "checkpoint_semantics": "available checkpoints plus explicit registered final budget",
     }
     (protocol_root / "TRACK_C_SOURCE_IDENTITY.json").write_text(
         json.dumps(identity, indent=2) + "\n", encoding="utf-8"

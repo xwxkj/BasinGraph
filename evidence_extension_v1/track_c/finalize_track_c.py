@@ -27,6 +27,7 @@ from evidence_extension_v1.track_c.common import (
     EXPECTED_OPTIONS_HASH,
     NIST_DATASETS,
     TARGET_RATIOS,
+    checkpoint_multipliers,
     normalize_gap,
     sha256_file,
     verify_source_identity,
@@ -110,7 +111,7 @@ def primary_target_table(frame: pd.DataFrame) -> pd.DataFrame:
         hit_evals = json.loads(row.target_hit_evaluations_json)
         targets = [float(row.f_ref) + ratio * max(float(row.f_base) - float(row.f_ref), 1e-15) for ratio in TARGET_RATIOS]
         final_value = float(row.fbest)
-        checkpoints = sorted(set([1, 3, 10, 30, 100, 300, int(row.budget_multiplier)]))
+        checkpoints = checkpoint_multipliers(int(row.budget_multiplier))
         for target_index, (ratio, target, hit) in enumerate(zip(TARGET_RATIOS, targets, hit_evals)):
             success = final_value <= target
             for checkpoint in checkpoints:
@@ -127,12 +128,118 @@ def primary_target_table(frame: pd.DataFrame) -> pd.DataFrame:
                         "target_index": target_index,
                         "target_ratio": ratio,
                         "checkpoint_evaluations_per_dimension": checkpoint,
+                        "is_final_checkpoint": checkpoint == int(row.budget_multiplier),
                         "reached": reached,
                         "evaluations": int(hit) if success else int(row.budget),
                         "budget": int(row.budget),
                     }
                 )
     return pd.DataFrame(records)
+
+
+def paired_target_statistics(primary: pd.DataFrame) -> pd.DataFrame:
+    rows: list[dict[str, object]] = []
+    endpoint_specs: list[tuple[str, pd.DataFrame]] = [
+        ("final_registered_budget", primary[primary.is_final_checkpoint])
+    ]
+    for checkpoint in sorted(
+        primary.checkpoint_evaluations_per_dimension.unique()
+    ):
+        endpoint_specs.append(
+            (
+                f"checkpoint_{int(checkpoint)}d",
+                primary[
+                    primary.checkpoint_evaluations_per_dimension == checkpoint
+                ],
+            )
+        )
+
+    rng = np.random.default_rng(20260808)
+    for endpoint, subset in endpoint_specs:
+        block = (
+            subset.groupby(
+                ["domain", "task_id", "paired_seed", "algorithm"],
+                as_index=False,
+            )
+            .agg(target_fraction=("reached", "mean"))
+        )
+        basin = block[block.algorithm == "BasinGraph"][
+            ["domain", "task_id", "paired_seed", "target_fraction"]
+        ].rename(columns={"target_fraction": "basingraph_fraction"})
+        endpoint_rows: list[dict[str, object]] = []
+        raw_p: list[float] = []
+        for algorithm in ALGORITHMS[1:]:
+            paired = block[block.algorithm == algorithm][
+                ["domain", "task_id", "paired_seed", "target_fraction"]
+            ].merge(
+                basin,
+                on=["domain", "task_id", "paired_seed"],
+                validate="one_to_one",
+            )
+            difference = (
+                paired.basingraph_fraction.to_numpy(float)
+                - paired.target_fraction.to_numpy(float)
+            )
+            nonzero = difference[
+                ~np.isclose(difference, 0.0, rtol=1e-12, atol=1e-14)
+            ]
+            if len(nonzero):
+                test = wilcoxon(
+                    nonzero,
+                    alternative="two-sided",
+                    zero_method="wilcox",
+                    method="auto",
+                )
+                statistic = float(test.statistic)
+                p_value = float(test.pvalue)
+            else:
+                statistic = 0.0
+                p_value = 1.0
+
+            if len(difference):
+                samples = rng.integers(
+                    0,
+                    len(difference),
+                    size=(2000, len(difference)),
+                )
+                bootstrap = difference[samples].mean(axis=1)
+                low, high = np.quantile(bootstrap, [0.025, 0.975])
+            else:
+                low = high = 0.0
+
+            bg_better = int(np.sum(difference > 1e-14))
+            baseline_better = int(np.sum(difference < -1e-14))
+            ties = int(len(difference) - bg_better - baseline_better)
+            endpoint_rows.append(
+                {
+                    "endpoint": endpoint,
+                    "baseline": algorithm,
+                    "baseline_display": DISPLAY_NAMES[algorithm],
+                    "paired_blocks": len(difference),
+                    "basingraph_better_blocks": bg_better,
+                    "baseline_better_blocks": baseline_better,
+                    "ties": ties,
+                    "mean_fraction_difference_basingraph_minus_baseline": (
+                        float(np.mean(difference)) if len(difference) else 0.0
+                    ),
+                    "bootstrap_95_low": float(low),
+                    "bootstrap_95_high": float(high),
+                    "wilcoxon_statistic": statistic,
+                    "raw_p": p_value,
+                    "rank_biserial_positive_means_basingraph_better": (
+                        (bg_better - baseline_better)
+                        / max(bg_better + baseline_better, 1)
+                    ),
+                }
+            )
+            raw_p.append(p_value)
+        for row, adjusted in zip(
+            endpoint_rows,
+            holm_adjust(raw_p),
+        ):
+            row["holm_p"] = adjusted
+        rows.extend(endpoint_rows)
+    return pd.DataFrame(rows)
 
 
 def write_manifest(root: Path) -> None:
@@ -167,7 +274,15 @@ def main() -> None:
     frame["history_monotone"] = bool_series(frame["history_monotone"])
     frame["graph_referential_integrity"] = bool_series(frame["graph_referential_integrity"])
     key = ["domain", "task_id", "paired_seed", "algorithm"]
+    reference_path = run_root / "task_specific_reference_results.csv"
+    expected_reference_rows = 3 if args.mode == "smoke" else 18
+    reference_rows = (
+        len(pd.read_csv(reference_path)) if reference_path.is_file() else 0
+    )
     checks: dict[str, bool] = {
+        "task_specific_reference_rows": (
+            reference_rows == expected_reference_rows
+        ),
         "expected_rows": len(frame) == EXPECTED_ROWS[args.mode],
         "all_completed": bool((frame.runner_status == "completed").all()),
         "unique_runs": not frame.duplicated(key).any(),
@@ -244,7 +359,30 @@ def main() -> None:
         )
         .reset_index()
     )
-    checkpoint_summary.to_csv(run_root / "target_fraction_summary.csv", index=False)
+    checkpoint_summary.to_csv(
+        run_root / "target_fraction_summary.csv",
+        index=False,
+    )
+
+    final_target_summary = (
+        primary[primary.is_final_checkpoint]
+        .groupby(["algorithm", "domain"])
+        .agg(
+            target_fraction=("reached", "mean"),
+            records=("reached", "size"),
+        )
+        .reset_index()
+    )
+    final_target_summary.to_csv(
+        run_root / "final_registered_budget_target_fraction.csv",
+        index=False,
+    )
+
+    primary_pairwise = paired_target_statistics(primary)
+    primary_pairwise.to_csv(
+        run_root / "pairwise_target_fraction.csv",
+        index=False,
+    )
 
     family_target = (
         primary.groupby(

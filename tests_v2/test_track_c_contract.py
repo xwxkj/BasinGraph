@@ -14,6 +14,7 @@ from evidence_extension_v1.track_c.common import (
     NIST_DATASETS,
     PAIRED_SEEDS,
     TARGET_RATIOS,
+    checkpoint_multipliers,
     seed_for_c1,
     seed_for_nist,
 )
@@ -116,3 +117,21 @@ def test_elliptic_pde_interface_discretization() -> None:
     task = make_c1_task("elliptic_pde_inverse", 11)
     assert task.dimension == 6
     assert np.isfinite(task.objective(task.reference_x))
+
+
+def test_checkpoint_availability_and_final_budget() -> None:
+    assert checkpoint_multipliers(75) == [1, 3, 10, 30, 75]
+    assert checkpoint_multipliers(100) == [1, 3, 10, 30, 100]
+    assert checkpoint_multipliers(150) == [1, 3, 10, 30, 100, 150]
+    assert checkpoint_multipliers(300) == [1, 3, 10, 30, 100, 300]
+    assert checkpoint_multipliers(1000) == [1, 3, 10, 30, 100, 300, 1000]
+
+
+def test_registered_task_specific_reference_hooks() -> None:
+    assert callable(
+        make_c1_task("phase_retrieval", 1).specialized_reference
+    )
+    assert callable(
+        make_c1_task("matrix_factorization", 1).specialized_reference
+    )
+    assert callable(make_nist_task("BoxBOD").specialized_reference)

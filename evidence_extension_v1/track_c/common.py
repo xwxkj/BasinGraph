@@ -143,6 +143,15 @@ def target_values(f_ref: float, f_base: float) -> list[float]:
     return [float(f_ref + ratio * scale) for ratio in TARGET_RATIOS]
 
 
+def checkpoint_multipliers(budget_multiplier: int) -> list[int]:
+    available = [
+        value
+        for value in CHECKPOINTS_PER_DIMENSION
+        if value <= int(budget_multiplier)
+    ]
+    return sorted(set([*available, int(budget_multiplier)]))
+
+
 def verify_source_identity(*, require_clean: bool = True) -> dict[str, Any]:
     if IMPLEMENTATION_VERSION != EXPECTED_IMPLEMENTATION:
         raise RuntimeError(

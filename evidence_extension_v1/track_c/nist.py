@@ -9,6 +9,7 @@ import re
 from typing import Callable
 
 import numpy as np
+from scipy.optimize import least_squares
 
 from .common import ROOT
 from .tasks import ScientificTask
@@ -188,6 +189,7 @@ def make_nist_task(name: str) -> ScientificTask:
     center, radius = _coordinate_system(spec)
     certified = np.asarray(spec.certified, dtype=float)
     start1 = np.asarray(spec.start1, dtype=float)
+    start2 = np.asarray(spec.start2, dtype=float)
 
     def physical(z: np.ndarray) -> np.ndarray:
         return center + radius * np.asarray(z, dtype=float)
@@ -205,6 +207,7 @@ def make_nist_task(name: str) -> ScientificTask:
 
     z_certified = (certified - center) / radius
     z_start1 = (start1 - center) / radius
+    z_start2 = (start2 - center) / radius
     f_ref = float(objective(z_certified))
     f_base = float(objective(z_start1))
     if f_base <= f_ref + 1e-12:
@@ -216,6 +219,49 @@ def make_nist_task(name: str) -> ScientificTask:
             "certified_rss_ratio": float(objective(z)),
             "certified_parameter_scaled_error": float(np.linalg.norm((beta - certified) / radius)),
             "physical_parameter_norm": float(np.linalg.norm(beta)),
+        }
+
+    def specialized_reference() -> dict[str, object]:
+        residual_scale = math.sqrt(spec.certified_rss)
+
+        def residual(z: np.ndarray) -> np.ndarray:
+            predicted = spec.model(physical(z), x)
+            if not np.all(np.isfinite(predicted)):
+                return np.full_like(y, 1e100)
+            return (predicted - y) / residual_scale
+
+        best_z = z_start1.copy()
+        best_value = objective(best_z)
+        evaluations = 0
+        statuses: list[int] = []
+        for start in [z_start1, z_start2]:
+            fit = least_squares(
+                residual,
+                np.clip(start, -1.0, 1.0),
+                bounds=(-np.ones_like(start), np.ones_like(start)),
+                max_nfev=20_000,
+                xtol=1e-13,
+                ftol=1e-13,
+                gtol=1e-13,
+                x_scale="jac",
+            )
+            value = objective(fit.x)
+            evaluations += int(fit.nfev) + 1
+            statuses.append(int(fit.status))
+            if value < best_value:
+                best_value = value
+                best_z = fit.x.copy()
+        return {
+            "method": "scipy_least_squares_official_far_near_starts",
+            "xbest": best_z,
+            "fbest": best_value,
+            "iterations": evaluations,
+            "objective_evaluations": evaluations,
+            "metadata": {
+                "starts": 2,
+                "statuses": statuses,
+                "max_nfev_per_start": 20_000,
+            },
         }
 
     return ScientificTask(
@@ -241,4 +287,5 @@ def make_nist_task(name: str) -> ScientificTask:
             "certified_z": z_certified.tolist(),
             "description": spec.description,
         },
+        specialized_reference=specialized_reference,
     )
