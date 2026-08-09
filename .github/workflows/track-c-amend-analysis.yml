@@ -1,0 +1,428 @@
+name: Amend B21 Track C analysis and references before confirmatory access
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-c]
+    paths:
+      - '.github/workflows/track-c-amend-analysis.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  amend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install frozen Track C environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r protocols/evidence_extension_v1/track_c/TRACK_C_REQUIREMENTS_LOCK.txt
+          python -m pip install -e . --no-deps
+          python -m pip install pytest
+
+      - name: Add deterministic task-specific reference runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > evidence_extension_v1/track_c/task_specific_references.py <<'PY'
+          #!/usr/bin/env python3
+          """Run registered descriptive task-specific references for Track C."""
+
+          from __future__ import annotations
+
+          import argparse
+          import csv
+          import json
+          from pathlib import Path
+          import sys
+          import time
+          from datetime import datetime, timezone
+
+          import numpy as np
+
+          ROOT = Path(__file__).resolve().parents[2]
+          if str(ROOT) not in sys.path:
+              sys.path.insert(0, str(ROOT))
+
+          from evidence_extension_v1.track_c.common import C1_INSTANCES, NIST_DATASETS, verify_source_identity
+          from evidence_extension_v1.track_c.nist import make_nist_task
+          from evidence_extension_v1.track_c.tasks import make_c1_task
+
+          SMOKE_REFERENCES = [
+              ("c1", "phase_retrieval", 1),
+              ("c1", "matrix_factorization", 1),
+              ("c2", "BoxBOD", 0),
+          ]
+          CONFIRMATORY_REFERENCES = (
+              [("c1", family, instance) for family in [
+                  "phase_retrieval",
+                  "noisy_phase_retrieval",
+                  "matrix_factorization",
+                  "large_matrix_factorization",
+              ] for instance in C1_INSTANCES]
+              + [("c2", name, 0) for name in NIST_DATASETS]
+          )
+
+
+          def parse_args() -> argparse.Namespace:
+              parser = argparse.ArgumentParser()
+              parser.add_argument("--mode", choices=("smoke", "confirmatory"), required=True)
+              parser.add_argument("--output", required=True)
+              parser.add_argument("--authorize-confirmatory", action="store_true")
+              return parser.parse_args()
+
+
+          def main() -> None:
+              args = parse_args()
+              if args.mode == "confirmatory" and not args.authorize_confirmatory:
+                  raise RuntimeError("Task-specific confirmatory references require authorization.")
+              identity = verify_source_identity(require_clean=True)
+              specifications = SMOKE_REFERENCES if args.mode == "smoke" else CONFIRMATORY_REFERENCES
+              rows: list[dict[str, object]] = []
+              for domain, name, instance in specifications:
+                  task = make_c1_task(name, instance) if domain == "c1" else make_nist_task(name)
+                  if task.specialized_reference is None:
+                      raise RuntimeError(f"No registered task-specific reference for {task.task_id}")
+                  started = time.perf_counter()
+                  result = task.specialized_reference()
+                  elapsed = time.perf_counter() - started
+                  xbest = np.asarray(result["xbest"], dtype=float)
+                  fbest = float(result["fbest"])
+                  if xbest.shape != (task.dimension,):
+                      raise RuntimeError(f"Reference shape mismatch for {task.task_id}: {xbest.shape}")
+                  if not np.all(np.isfinite(xbest)) or not np.isfinite(fbest):
+                      raise RuntimeError(f"Non-finite reference result for {task.task_id}")
+                  if np.any(xbest < task.lb - 1e-12) or np.any(xbest > task.ub + 1e-12):
+                      raise RuntimeError(f"Reference result outside bounds for {task.task_id}")
+                  metrics = task.metrics(xbest)
+                  rows.append(
+                      {
+                          "mode": args.mode,
+                          "domain": domain,
+                          "task_name": name,
+                          "task_id": task.task_id,
+                          "instance": instance,
+                          "dimension": task.dimension,
+                          "method": str(result["method"]),
+                          "fbest": fbest,
+                          "normalized_gap": float(max(0.0, (fbest - task.f_ref) / max(task.f_base - task.f_ref, 1e-15))),
+                          "iterations": int(result.get("iterations", 0)),
+                          "objective_evaluations": int(result.get("objective_evaluations", 0)),
+                          "wall_time_seconds": elapsed,
+                          "secondary_metrics_json": json.dumps(metrics, sort_keys=True, allow_nan=False),
+                          "method_metadata_json": json.dumps(result.get("metadata", {}), sort_keys=True, allow_nan=False),
+                          "xbest_json": json.dumps(xbest.tolist(), separators=(",", ":")),
+                      }
+                  )
+              expected = 3 if args.mode == "smoke" else 18
+              if len(rows) != expected:
+                  raise RuntimeError(f"Reference count mismatch: {len(rows)} != {expected}")
+              output = Path(args.output)
+              output.parent.mkdir(parents=True, exist_ok=True)
+              with output.open("w", newline="", encoding="utf-8") as handle:
+                  writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+                  writer.writeheader()
+                  writer.writerows(rows)
+              report = {
+                  "status": "TRACK_C_TASK_SPECIFIC_REFERENCES_OK",
+                  "created_utc": datetime.now(timezone.utc).isoformat(),
+                  "mode": args.mode,
+                  "rows": len(rows),
+                  "source_identity_version": identity.get("identity_version"),
+                  "output": str(output),
+              }
+              output.with_suffix(".json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+              print("TRACK_C_TASK_SPECIFIC_REFERENCES_OK")
+              print(json.dumps(report, indent=2))
+
+
+          if __name__ == "__main__":
+              main()
+          PY
+          chmod +x evidence_extension_v1/track_c/task_specific_references.py
+
+      - name: Apply registered task, checkpoint and analysis amendments
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          def replace_once(path: str, old: str, new: str) -> None:
+              file = Path(path)
+              text = file.read_text(encoding='utf-8')
+              if text.count(old) != 1:
+                  raise SystemExit(f'{path}: expected one replacement, found {text.count(old)}')
+              file.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          # ScientificTask gains a non-serialized deterministic reference hook.
+          replace_once(
+              'evidence_extension_v1/track_c/tasks.py',
+              '    metadata: dict[str, Any]\n\n    @property\n',
+              '    metadata: dict[str, Any]\n    specialized_reference: Callable[[], dict[str, Any]] | None = None\n\n    @property\n',
+          )
+
+          phase_old = '''    base = np.zeros(d)\n    f_ref, f_base = _safe_reference(objective, truth, base)\n    family = "noisy_phase_retrieval" if noisy else "phase_retrieval"\n    return ScientificTask(\n        "c1", family, instance, d, 200,\n        -2.0 * np.ones(d), 2.0 * np.ones(d), objective, metrics,\n        f_ref, f_base, truth, {"measurements": m, "noise_sigma": sigma},\n    )\n'''
+          phase_new = '''    base = np.zeros(d)\n    f_ref, f_base = _safe_reference(objective, truth, base)\n    family = "noisy_phase_retrieval" if noisy else "phase_retrieval"\n\n    def specialized_reference() -> dict[str, Any]:\n        covariance = matrix.T @ (measurements[:, None] * matrix) / m\n        _, eigenvectors = np.linalg.eigh(covariance)\n        norm_estimate = math.sqrt(max(float(np.mean(measurements)) * d, 1e-12))\n        vector = np.clip(norm_estimate * eigenvectors[:, -1], -2.0, 2.0)\n        current = objective(vector)\n        best = vector.copy()\n        best_value = current\n        evaluations = 1\n        step = 0.25\n        iterations = 0\n        for iterations in range(1, 501):\n            projected = matrix @ vector\n            gradient = (4.0 / (m * scale)) * matrix.T @ ((projected * projected - measurements) * projected)\n            norm_sq = float(np.dot(gradient, gradient))\n            if not np.isfinite(norm_sq) or norm_sq <= 1e-24:\n                break\n            local_step = step\n            accepted = False\n            candidate = vector\n            candidate_value = current\n            for _ in range(24):\n                candidate = np.clip(vector - local_step * gradient, -2.0, 2.0)\n                candidate_value = objective(candidate)\n                evaluations += 1\n                if candidate_value <= current - 1e-4 * local_step * norm_sq or local_step <= 1e-12:\n                    accepted = True\n                    break\n                local_step *= 0.5\n            if not accepted:\n                break\n            if candidate_value < best_value:\n                best_value = candidate_value\n                best = candidate.copy()\n            change = float(np.linalg.norm(candidate - vector))\n            vector = candidate\n            current = candidate_value\n            step = min(1.0, local_step * 1.25)\n            if change <= 1e-10 * max(1.0, float(np.linalg.norm(vector))):\n                break\n        return {\n            "method": "spectral_wirtinger_flow",\n            "xbest": best,\n            "fbest": best_value,\n            "iterations": iterations,\n            "objective_evaluations": evaluations,\n            "metadata": {"spectral_initialization": True, "backtracking": True},\n        }\n\n    return ScientificTask(\n        "c1", family, instance, d, 200,\n        -2.0 * np.ones(d), 2.0 * np.ones(d), objective, metrics,\n        f_ref, f_base, truth, {"measurements": m, "noise_sigma": sigma},\n        specialized_reference,\n    )\n'''
+          replace_once('evidence_extension_v1/track_c/tasks.py', phase_old, phase_new)
+
+          factor_old = '''    base = np.zeros(d)\n    f_ref, f_base = _safe_reference(objective, truth, base)\n    family = "large_matrix_factorization" if large else "matrix_factorization"\n    budget_multiplier = 75 if large else 150\n    return ScientificTask(\n        "c1", family, instance, d, budget_multiplier,\n        -3.0 * np.ones(d), 3.0 * np.ones(d), objective, metrics,\n        f_ref, f_base, truth,\n        {"matrix_shape": [m, n], "rank": rank, "sample_count": sample_count},\n    )\n'''
+          factor_new = '''    base = np.zeros(d)\n    f_ref, f_base = _safe_reference(objective, truth, base)\n    family = "large_matrix_factorization" if large else "matrix_factorization"\n    budget_multiplier = 75 if large else 150\n\n    def specialized_reference() -> dict[str, Any]:\n        reference_rng = np.random.default_rng(260_000 + instance + (10_000 if large else 0))\n        best_vector = base.copy()\n        best_value = objective(best_vector)\n        evaluations = 1\n        total_iterations = 0\n        ridge = 1e-8\n        row_observations = [np.flatnonzero(rows == row) for row in range(m)]\n        col_observations = [np.flatnonzero(cols == col) for col in range(n)]\n        for _restart in range(3):\n            u = reference_rng.normal(0.0, 0.25, (m, rank))\n            v = reference_rng.normal(0.0, 0.25, (n, rank))\n            for _ in range(80):\n                total_iterations += 1\n                for row_index, locations in enumerate(row_observations):\n                    if len(locations):\n                        design = v[cols[locations]]\n                        u[row_index] = np.linalg.solve(\n                            design.T @ design + ridge * np.eye(rank),\n                            design.T @ observations[locations],\n                        )\n                for col_index, locations in enumerate(col_observations):\n                    if len(locations):\n                        design = u[rows[locations]]\n                        v[col_index] = np.linalg.solve(\n                            design.T @ design + ridge * np.eye(rank),\n                            design.T @ observations[locations],\n                        )\n                u_norm = max(float(np.linalg.norm(u)), 1e-12)\n                v_norm = max(float(np.linalg.norm(v)), 1e-12)\n                balance_scale = math.sqrt(v_norm / u_norm)\n                u *= balance_scale\n                v /= balance_scale\n                vector = np.clip(np.concatenate([u.ravel(), v.ravel()]), -3.0, 3.0)\n                value = objective(vector)\n                evaluations += 1\n                if value < best_value:\n                    best_value = value\n                    best_vector = vector.copy()\n            if best_value <= 1e-14:\n                break\n        return {\n            "method": "alternating_ridge_least_squares",\n            "xbest": best_vector,\n            "fbest": best_value,\n            "iterations": total_iterations,\n            "objective_evaluations": evaluations,\n            "metadata": {"restarts": 3, "ridge": ridge},\n        }\n\n    return ScientificTask(\n        "c1", family, instance, d, budget_multiplier,\n        -3.0 * np.ones(d), 3.0 * np.ones(d), objective, metrics,\n        f_ref, f_base, truth,\n        {"matrix_shape": [m, n], "rank": rank, "sample_count": sample_count},\n        specialized_reference,\n    )\n'''
+          replace_once('evidence_extension_v1/track_c/tasks.py', factor_old, factor_new)
+
+          # NIST least-squares anchors from the official far and near starts.
+          replace_once(
+              'evidence_extension_v1/track_c/nist.py',
+              'import numpy as np\n\nfrom .common',
+              'import numpy as np\nfrom scipy.optimize import least_squares\n\nfrom .common',
+          )
+          replace_once(
+              'evidence_extension_v1/track_c/nist.py',
+              '    start1 = np.asarray(spec.start1, dtype=float)\n',
+              '    start1 = np.asarray(spec.start1, dtype=float)\n    start2 = np.asarray(spec.start2, dtype=float)\n',
+          )
+          replace_once(
+              'evidence_extension_v1/track_c/nist.py',
+              '    z_start1 = (start1 - center) / radius\n',
+              '    z_start1 = (start1 - center) / radius\n    z_start2 = (start2 - center) / radius\n',
+          )
+          nist_marker = '''    def metrics(z: np.ndarray) -> dict[str, float]:\n        beta = physical(z)\n        return {\n            "certified_rss_ratio": float(objective(z)),\n            "certified_parameter_scaled_error": float(np.linalg.norm((beta - certified) / radius)),\n            "physical_parameter_norm": float(np.linalg.norm(beta)),\n        }\n\n    return ScientificTask(\n'''
+          nist_insert = '''    def metrics(z: np.ndarray) -> dict[str, float]:\n        beta = physical(z)\n        return {\n            "certified_rss_ratio": float(objective(z)),\n            "certified_parameter_scaled_error": float(np.linalg.norm((beta - certified) / radius)),\n            "physical_parameter_norm": float(np.linalg.norm(beta)),\n        }\n\n    def specialized_reference() -> dict[str, object]:\n        scale = math.sqrt(spec.certified_rss)\n\n        def residual(z: np.ndarray) -> np.ndarray:\n            predicted = spec.model(physical(z), x)\n            if not np.all(np.isfinite(predicted)):\n                return np.full_like(y, 1e100)\n            return (predicted - y) / scale\n\n        best_z = z_start1.copy()\n        best_value = objective(best_z)\n        evaluations = 0\n        statuses: list[int] = []\n        for start in [z_start1, z_start2]:\n            fit = least_squares(\n                residual,\n                np.clip(start, -1.0, 1.0),\n                bounds=(-np.ones_like(start), np.ones_like(start)),\n                max_nfev=20_000,\n                xtol=1e-13,\n                ftol=1e-13,\n                gtol=1e-13,\n                x_scale="jac",\n            )\n            value = objective(fit.x)\n            evaluations += int(fit.nfev) + 1\n            statuses.append(int(fit.status))\n            if value < best_value:\n                best_value = value\n                best_z = fit.x.copy()\n        return {\n            "method": "scipy_least_squares_official_far_near_starts",\n            "xbest": best_z,\n            "fbest": best_value,\n            "iterations": evaluations,\n            "objective_evaluations": evaluations,\n            "metadata": {"starts": 2, "statuses": statuses, "max_nfev_per_start": 20000},\n        }\n\n    return ScientificTask(\n'''
+          replace_once('evidence_extension_v1/track_c/nist.py', nist_marker, nist_insert)
+          replace_once(
+              'evidence_extension_v1/track_c/nist.py',
+              '            "certified_z": z_certified.tolist(),\n            "description": spec.description,\n        },\n    )\n',
+              '            "certified_z": z_certified.tolist(),\n            "description": spec.description,\n        },\n        specialized_reference=specialized_reference,\n    )\n',
+          )
+
+          # Only checkpoints that physically exist are emitted; final budgets
+          # are explicitly tagged instead of being silently promoted to 300d.
+          replace_once(
+              'evidence_extension_v1/track_c/common.py',
+              'def verify_source_identity(*, require_clean: bool = True) -> dict[str, Any]:\n',
+              'def checkpoint_multipliers(budget_multiplier: int) -> list[int]:\n    available = [value for value in CHECKPOINTS_PER_DIMENSION if value <= int(budget_multiplier)]\n    return sorted(set([*available, int(budget_multiplier)]))\n\n\ndef verify_source_identity(*, require_clean: bool = True) -> dict[str, Any]:\n',
+          )
+          replace_once(
+              'evidence_extension_v1/track_c/run_track_c_shard.py',
+              '    TARGET_RATIOS,\n    normalize_gap,\n',
+              '    TARGET_RATIOS,\n    checkpoint_multipliers,\n    normalize_gap,\n',
+          )
+          replace_once(
+              'evidence_extension_v1/track_c/run_track_c_shard.py',
+              '    points = sorted(set([1, 3, 10, 30, 100, 300, task.budget_multiplier]))\n',
+              '    points = checkpoint_multipliers(task.budget_multiplier)\n',
+          )
+          replace_once(
+              'evidence_extension_v1/track_c/finalize_track_c.py',
+              '    TARGET_RATIOS,\n    normalize_gap,\n',
+              '    TARGET_RATIOS,\n    checkpoint_multipliers,\n    normalize_gap,\n',
+          )
+          replace_once(
+              'evidence_extension_v1/track_c/finalize_track_c.py',
+              '        checkpoints = sorted(set([1, 3, 10, 30, 100, 300, int(row.budget_multiplier)]))\n',
+              '        checkpoints = checkpoint_multipliers(int(row.budget_multiplier))\n',
+          )
+          replace_once(
+              'evidence_extension_v1/track_c/finalize_track_c.py',
+              '                        "checkpoint_evaluations_per_dimension": checkpoint,\n                        "reached": reached,\n',
+              '                        "checkpoint_evaluations_per_dimension": checkpoint,\n                        "is_final_checkpoint": checkpoint == int(row.budget_multiplier),\n                        "reached": reached,\n',
+          )
+
+          # Add paired primary endpoint inference and explicit final-budget summary.
+          finalize = Path('evidence_extension_v1/track_c/finalize_track_c.py')
+          text = finalize.read_text(encoding='utf-8')
+          marker = '\n\ndef write_manifest(root: Path) -> None:\n'
+          function = '''\n\ndef paired_target_statistics(primary: pd.DataFrame) -> pd.DataFrame:\n    rows: list[dict[str, object]] = []\n    endpoint_specs: list[tuple[str, pd.DataFrame]] = [(\n        "final_registered_budget", primary[primary.is_final_checkpoint]\n    )]\n    for checkpoint in sorted(primary.checkpoint_evaluations_per_dimension.unique()):\n        endpoint_specs.append((\n            f"checkpoint_{int(checkpoint)}d",\n            primary[primary.checkpoint_evaluations_per_dimension == checkpoint],\n        ))\n    rng = np.random.default_rng(20260808)\n    for endpoint, subset in endpoint_specs:\n        block = (\n            subset.groupby(["domain", "task_id", "paired_seed", "algorithm"], as_index=False)\n            .agg(target_fraction=("reached", "mean"))\n        )\n        basin = block[block.algorithm == "BasinGraph"][\n            ["domain", "task_id", "paired_seed", "target_fraction"]\n        ].rename(columns={"target_fraction": "basingraph_fraction"})\n        endpoint_rows: list[dict[str, object]] = []\n        raw_p: list[float] = []\n        for algorithm in ALGORITHMS[1:]:\n            paired = block[block.algorithm == algorithm][\n                ["domain", "task_id", "paired_seed", "target_fraction"]\n            ].merge(basin, on=["domain", "task_id", "paired_seed"], validate="one_to_one")\n            difference = paired.basingraph_fraction.to_numpy(float) - paired.target_fraction.to_numpy(float)\n            nonzero = difference[~np.isclose(difference, 0.0, rtol=1e-12, atol=1e-14)]\n            if len(nonzero):\n                test = wilcoxon(nonzero, alternative="two-sided", zero_method="wilcox", method="auto")\n                statistic, p_value = float(test.statistic), float(test.pvalue)\n            else:\n                statistic, p_value = 0.0, 1.0\n            if len(difference):\n                samples = rng.integers(0, len(difference), size=(2000, len(difference)))\n                boot = difference[samples].mean(axis=1)\n                low, high = np.quantile(boot, [0.025, 0.975])\n            else:\n                low = high = 0.0\n            bg_better = int(np.sum(difference > 1e-14))\n            baseline_better = int(np.sum(difference < -1e-14))\n            ties = int(len(difference) - bg_better - baseline_better)\n            endpoint_rows.append({\n                "endpoint": endpoint,\n                "baseline": algorithm,\n                "baseline_display": DISPLAY_NAMES[algorithm],\n                "paired_blocks": len(difference),\n                "basingraph_better_blocks": bg_better,\n                "baseline_better_blocks": baseline_better,\n                "ties": ties,\n                "mean_fraction_difference_basingraph_minus_baseline": float(np.mean(difference)) if len(difference) else 0.0,\n                "bootstrap_95_low": float(low),\n                "bootstrap_95_high": float(high),\n                "wilcoxon_statistic": statistic,\n                "raw_p": p_value,\n                "rank_biserial_positive_means_basingraph_better": (bg_better - baseline_better) / max(bg_better + baseline_better, 1),\n            })\n            raw_p.append(p_value)\n        for row, adjusted in zip(endpoint_rows, holm_adjust(raw_p)):\n            row["holm_p"] = adjusted\n        rows.extend(endpoint_rows)\n    return pd.DataFrame(rows)\n'''
+          if marker not in text:
+              raise SystemExit('Could not locate finalizer function insertion point.')
+          text = text.replace(marker, function + marker, 1)
+          finalize.write_text(text, encoding='utf-8')
+
+          replace_once(
+              'evidence_extension_v1/track_c/finalize_track_c.py',
+              '    checks: dict[str, bool] = {\n',
+              '    reference_path = run_root / "task_specific_reference_results.csv"\n    expected_reference_rows = 3 if args.mode == "smoke" else 18\n    reference_rows = len(pd.read_csv(reference_path)) if reference_path.is_file() else 0\n    checks: dict[str, bool] = {\n        "task_specific_reference_rows": reference_rows == expected_reference_rows,\n',
+          )
+          replace_once(
+              'evidence_extension_v1/track_c/finalize_track_c.py',
+              '    checkpoint_summary.to_csv(run_root / "target_fraction_summary.csv", index=False)\n\n    family_target = (\n',
+              '    checkpoint_summary.to_csv(run_root / "target_fraction_summary.csv", index=False)\n\n    final_target_summary = (\n        primary[primary.is_final_checkpoint]\n        .groupby(["algorithm", "domain"])\n        .agg(target_fraction=("reached", "mean"), records=("reached", "size"))\n        .reset_index()\n    )\n    final_target_summary.to_csv(run_root / "final_registered_budget_target_fraction.csv", index=False)\n\n    primary_pairwise = paired_target_statistics(primary)\n    primary_pairwise.to_csv(run_root / "pairwise_target_fraction.csv", index=False)\n\n    family_target = (\n',
+          )
+
+          # Integrate deterministic references before finalization so manifests cover them.
+          replace_once(
+              'evidence_extension_v1/track_c/run_track_c_mac.sh',
+              '  python evidence_extension_v1/track_c/finalize_track_c.py \\\n    --mode smoke \\\n    --run-id "${RUN_ID}"\n',
+              '  python evidence_extension_v1/track_c/task_specific_references.py \\\n    --mode smoke \\\n    --output "results_b21/track_c/${RUN_ID}/task_specific_reference_results.csv"\n  python evidence_extension_v1/track_c/finalize_track_c.py \\\n    --mode smoke \\\n    --run-id "${RUN_ID}"\n',
+          )
+          replace_once(
+              'evidence_extension_v1/track_c/run_track_c_mac.sh',
+              '  python evidence_extension_v1/track_c/finalize_track_c.py \\\n    --mode confirmatory \\\n    --run-id "${RUN_ID}" \\\n    --authorize-confirmatory\n',
+              '  python evidence_extension_v1/track_c/task_specific_references.py \\\n    --mode confirmatory \\\n    --authorize-confirmatory \\\n    --output "results_b21/track_c/${RUN_ID}/task_specific_reference_results.csv"\n  python evidence_extension_v1/track_c/finalize_track_c.py \\\n    --mode confirmatory \\\n    --run-id "${RUN_ID}" \\\n    --authorize-confirmatory\n',
+          )
+
+          # CI follows the same ordering.
+          ci = Path('.github/workflows/b21-track-c-ci.yml')
+          ci_text = ci.read_text(encoding='utf-8')
+          ci_old = '''          python evidence_extension_v1/track_c/finalize_track_c.py \\\n            --mode smoke \\\n            --run-id "${RUN_ID}"\n'''
+          ci_new = '''          python evidence_extension_v1/track_c/task_specific_references.py \\\n            --mode smoke \\\n            --output "results_b21/track_c/${RUN_ID}/task_specific_reference_results.csv"\n          python evidence_extension_v1/track_c/finalize_track_c.py \\\n            --mode smoke \\\n            --run-id "${RUN_ID}"\n'''
+          if ci_text.count(ci_old) != 1:
+              raise SystemExit(f'CI reference insertion point count: {ci_text.count(ci_old)}')
+          ci.write_text(ci_text.replace(ci_old, ci_new, 1), encoding='utf-8')
+
+          # Contract tests cover checkpoint availability and reference hooks.
+          tests = Path('tests_v2/test_track_c_contract.py')
+          test_text = tests.read_text(encoding='utf-8')
+          test_text = test_text.replace(
+              '    TARGET_RATIOS,\n    seed_for_c1,\n',
+              '    TARGET_RATIOS,\n    checkpoint_multipliers,\n    seed_for_c1,\n',
+              1,
+          )
+          block = '''\n\ndef test_checkpoint_availability_and_final_budget() -> None:\n    assert checkpoint_multipliers(75) == [1, 3, 10, 30, 75]\n    assert checkpoint_multipliers(100) == [1, 3, 10, 30, 100]\n    assert checkpoint_multipliers(150) == [1, 3, 10, 30, 100, 150]\n    assert checkpoint_multipliers(300) == [1, 3, 10, 30, 100, 300]\n    assert checkpoint_multipliers(1000) == [1, 3, 10, 30, 100, 300, 1000]\n\n\ndef test_registered_task_specific_reference_hooks() -> None:\n    assert callable(make_c1_task("phase_retrieval", 1).specialized_reference)\n    assert callable(make_c1_task("matrix_factorization", 1).specialized_reference)\n    assert callable(make_nist_task("BoxBOD").specialized_reference)\n'''
+          if 'test_checkpoint_availability_and_final_budget' not in test_text:
+              test_text += block
+          tests.write_text(test_text, encoding='utf-8')
+
+          # Protocol and identity amendments are registered before confirmatory access.
+          note = Path('protocols/evidence_extension_v1/track_c/TRACK_C_IMPLEMENTATION_NOTE_003.md')
+          note.write_text(
+              '# Track C implementation note 003: checkpoint semantics and descriptive references\n\n'
+              'Status: **registered before any Track C confirmatory objective evaluation**  \n'
+              'Date: 2026-08-08  \n'
+              'Track C confirmatory objective evaluations before amendment: **0**\n\n'
+              'Fixed-budget summaries now include only checkpoints that exist for a '
+              'task and tag each family-specific final budget explicitly. This removes '
+              'the former diagnostic-only truncation of shorter budgets to a nominal '
+              '`300d` label. The registered descriptive task-specific anchors are now '
+              'implemented: spectral Wirtinger flow for phase retrieval, alternating '
+              'ridge least squares for matrix factorization, and SciPy least squares '
+              'from the official NIST far and near starts. These anchors are not pooled '
+              'with the seven general-purpose optimizers. Primary target-fraction '
+              'comparisons now include paired Wilcoxon tests, Holm correction, '
+              'rank-biserial effects and cluster bootstrap confidence intervals.\n',
+              encoding='utf-8',
+          )
+
+          for protocol_path in [
+              'protocols/evidence_extension_v1/track_c/TRACK_C_CONFIRMATORY_PROTOCOL.md',
+              'protocols/evidence_extension_v1/track_c/TRACK_C_MASTER_PROTOCOL_DRAFT.md',
+              'protocols/evidence_extension_v1/track_c/TRACK_C_ANALYSIS_PLAN.md',
+          ]:
+              path = Path(protocol_path)
+              content = path.read_text(encoding='utf-8')
+              if 'Implementation note 003' not in content:
+                  content += (\n                      '\n\n## Implementation note 003\n\n'
+                      'Only checkpoints available under a task budget are analyzed, '
+                      'and the family-specific final budget is explicitly identified. '
+                      'Registered task-specific references comprise spectral Wirtinger '
+                      'flow, alternating ridge least squares and NIST far/near-start '
+                      'least squares. They are descriptive and excluded from the '
+                      'general-purpose aggregate ranking. Paired primary target-fraction '
+                      'inference is frozen before confirmatory evaluation.\n'
+                  )
+                  path.write_text(content, encoding='utf-8')
+
+          lock_path = Path('protocols/evidence_extension_v1/track_c/TRACK_C_CONFIRMATORY_LOCK.json')
+          lock = json.loads(lock_path.read_text(encoding='utf-8'))
+          lock['protocol_revision'] = '1.1.0'
+          lock['implementation_notes'] = [1, 2, 3]
+          lock['task_specific_reference_rows'] = {'smoke': 3, 'confirmatory': 18}
+          lock['checkpoint_semantics'] = 'available checkpoints plus explicit registered final budget'
+          lock_path.write_text(json.dumps(lock, indent=2) + '\n', encoding='utf-8')
+
+          materialize = Path('evidence_extension_v1/track_c/materialize_track_c.py')
+          materialize_text = materialize.read_text(encoding='utf-8')
+          materialize_text = materialize_text.replace(
+              '"identity_version": "1.0.1",',
+              '"identity_version": "1.1.0",',
+              1,
+          )
+          materialize_text = materialize_text.replace(
+              '"identity_revision": "exclude generated Python bytecode from portable source identity",',
+              '"identity_revision": "portable identity, available-checkpoint semantics, paired primary inference and registered descriptive task-specific references",',
+              1,
+          )
+          marker = '        "reference_construction_tasks": len(references),\n'
+          addition = (
+              '        "reference_construction_tasks": len(references),\n'
+              '        "task_specific_reference_tasks": 18,\n'
+              '        "checkpoint_semantics": "available checkpoints plus explicit registered final budget",\n'
+          )
+          if materialize_text.count(marker) != 1:
+              raise SystemExit('Could not locate identity reference count.')
+          materialize.write_text(materialize_text.replace(marker, addition, 1), encoding='utf-8')
+
+          # Record the actual pinned retrieval mirror without changing official URLs.
+          provenance_marker = '                "official_url": NIST_URL.format(name=name),\n'
+          provenance_addition = (
+              '                "official_url": NIST_URL.format(name=name),\n'
+              '                "retrieval_mirror": "https://raw.githubusercontent.com/lmfit/lmfit-py/fe389bbbd1fe936cd73742bd81fc6fce7ac92858/NIST_STRD/{name}.dat".format(name=name),\n'
+              '                "mirror_commit": "fe389bbbd1fe936cd73742bd81fc6fce7ac92858",\n'
+          )
+          materialize_text = materialize.read_text(encoding='utf-8')
+          if materialize_text.count(provenance_marker) != 1:
+              raise SystemExit('Could not locate NIST provenance URL field.')
+          materialize.write_text(materialize_text.replace(provenance_marker, provenance_addition, 1), encoding='utf-8')
+          PY
+
+      - name: Regenerate identities and validate amended Track C
+        shell: bash
+        run: |
+          set -euo pipefail
+          python evidence_extension_v1/track_c/materialize_track_c.py
+          python -m pytest -q tests_v2/test_track_c_contract.py
+          python -m compileall -q evidence_extension_v1/track_c tests_v2/test_track_c_contract.py
+          bash -n evidence_extension_v1/track_c/run_track_c_mac.sh
+          bash -n START_B21_TRACK_C_SMOKE.command
+          bash -n START_B21_TRACK_C_CONFIRMATORY.command
+
+          mkdir -p results_b21/track_c/amendment_smoke
+          python evidence_extension_v1/track_c/task_specific_references.py \
+            --mode smoke \
+            --output results_b21/track_c/amendment_smoke/task_specific_reference_results.csv
+
+          find basingraph_v2 evidence_extension_v1/track_c tests_v2 \
+            -type d -name '__pycache__' -prune -exec rm -rf '{}' +
+          find basingraph_v2 evidence_extension_v1/track_c tests_v2 \
+            -type f -name '*.pyc' -delete
+          python evidence_extension_v1/track_c/generate_protocol_manifest.py
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import pandas as pd
+          identity = json.loads(Path(
+              'protocols/evidence_extension_v1/track_c/TRACK_C_SOURCE_IDENTITY.json'
+          ).read_text())
+          if identity.get('identity_version') != '1.1.0':
+              raise SystemExit('Track C identity version was not amended.')
+          if identity.get('task_specific_reference_tasks') != 18:
+              raise SystemExit('Task-specific reference count is not frozen.')
+          refs = pd.read_csv('results_b21/track_c/amendment_smoke/task_specific_reference_results.csv')
+          if len(refs) != 3 or not refs.fbest.map(lambda value: value == value).all():
+              raise SystemExit('Task-specific smoke references failed.')
+          print('TRACK_C_ANALYSIS_AMENDMENT_OK')
+          print('Identity files:', len(identity['git_blobs']))
+          PY
+
+      - name: Commit pre-confirmatory Track C amendment
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf results_b21/track_c/amendment_smoke
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A evidence_extension_v1/track_c \
+                     protocols/evidence_extension_v1/track_c \
+                     tests_v2/test_track_c_contract.py \
+                     data/nist \
+                     .github/workflows/b21-track-c-ci.yml
+          git commit -m 'Amend Track C checkpoint analysis and descriptive references before evaluation'
+          git push origin HEAD:ncs-evidence-v1-track-c
