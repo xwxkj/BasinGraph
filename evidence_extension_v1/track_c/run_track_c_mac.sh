@@ -49,6 +49,9 @@ if [ "${MODE}" = "smoke" ]; then
   RUN_ID="b21_track_c_smoke_${TIMESTAMP}"
   python evidence_extension_v1/track_c/run_track_c_all.py \
     --mode smoke --run-id "${RUN_ID}" --workers "${B21_TRACK_C_SMOKE_WORKERS:-2}"
+  python evidence_extension_v1/track_c/task_specific_references.py \
+    --mode smoke \
+    --output "results_b21/track_c/${RUN_ID}/task_specific_reference_results.csv"
   python evidence_extension_v1/track_c/finalize_track_c.py \
     --mode smoke --run-id "${RUN_ID}"
   RUN_ROOT="results_b21/track_c/${RUN_ID}"
@@ -85,6 +88,9 @@ PY
   python evidence_extension_v1/track_c/run_track_c_all.py \
     --mode confirmatory --run-id "${RUN_ID}" \
     --workers "${B21_TRACK_C_CONFIRMATORY_WORKERS:-4}" --authorize-confirmatory
+  python evidence_extension_v1/track_c/task_specific_references.py \
+    --mode confirmatory --authorize-confirmatory \
+    --output "results_b21/track_c/${RUN_ID}/task_specific_reference_results.csv"
   python evidence_extension_v1/track_c/finalize_track_c.py \
     --mode confirmatory --run-id "${RUN_ID}" --authorize-confirmatory
   RUN_ROOT="results_b21/track_c/${RUN_ID}"
