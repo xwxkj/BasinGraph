@@ -1,0 +1,11 @@
+{
+  "status": "TRACK_C_PARTITION_FROZEN",
+  "c1_development_instances": [1, 2],
+  "c1_confirmatory_instances": [11, 12, 13],
+  "paired_algorithm_seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "c2_datasets": ["Chwirut1", "Roszman1", "ENSO", "Eckerle4", "Bennett5", "BoxBOD"],
+  "confirmatory_rows_c1": 1890,
+  "confirmatory_rows_c2": 420,
+  "confirmatory_rows_total": 2310,
+  "confirmatory_objective_evaluations_before_freeze": 0
+}

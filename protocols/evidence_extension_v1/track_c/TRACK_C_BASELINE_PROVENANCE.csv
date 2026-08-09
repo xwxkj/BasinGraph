@@ -1,0 +1,8 @@
+algorithm,implementation,provenance,limitation
+BasinGraph,basingraph_v2 frozen candidate,selected candidate commit and options hash,immutable
+CMA_ES,pycma CMAEvolutionStrategy,pycma 4.4.4,platform floating-point variation possible
+BIPOP_CMA_ES,pycma fmin2 bipop,pycma 4.4.4,platform floating-point variation possible
+L_SHADE_1_0_1,source-aligned transparent Python port,corrected L-SHADE 1.0.1 specification,not byte-identical official executable
+jSO,source-aligned transparent Python port,public jSO CEC-2017 specification,not byte-identical official executable
+L_SRTDE,transparent source-guided Python port,public CEC-2024 core with registered deviations,not GPL C++ executable
+MS_LBFGSB,SciPy repeated bounded L-BFGS-B,SciPy 1.17.1,finite-difference behavior is implementation-dependent

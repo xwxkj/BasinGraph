@@ -1,0 +1,19 @@
+{
+  "status": "TRACK_C_TASK_SPECIFICATIONS_FROZEN",
+  "c1": {
+    "elliptic_pde_inverse": {"dimensions": [6, 8, 10], "budget_multiplier": 300},
+    "lorenz63_calibration": {"dimensions": [6, 6, 6], "budget_multiplier": 300},
+    "phase_retrieval": {"dimensions": [16, 24, 32], "budget_multiplier": 200},
+    "noisy_phase_retrieval": {"dimensions": [16, 24, 32], "budget_multiplier": 200},
+    "matrix_factorization": {"dimensions": [36, 60, 96], "budget_multiplier": 150},
+    "large_matrix_factorization": {"dimensions": [120, 200, 320], "budget_multiplier": 75},
+    "burgers_control": {"dimensions": [8, 12, 16], "budget_multiplier": 200},
+    "allen_cahn_energy": {"dimensions": [32, 64, 96], "budget_multiplier": 100},
+    "sparse_nonlinear_inverse": {"dimensions": [20, 40, 80], "budget_multiplier": 150}
+  },
+  "c2": {
+    "datasets": ["Chwirut1", "Roszman1", "ENSO", "Eckerle4", "Bennett5", "BoxBOD"],
+    "budget_multiplier": 1000
+  },
+  "target_ratios": [1, 0.3, 0.1, 0.03, 0.01, 0.003, 0.001]
+}

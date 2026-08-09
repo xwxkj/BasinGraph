@@ -1,0 +1,124 @@
+name: B21 Track C preflight and smoke
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-c]
+    paths:
+      - 'evidence_extension_v1/track_c/**'
+      - 'protocols/evidence_extension_v1/track_c/**'
+      - 'data/nist/**'
+      - 'tests_v2/test_track_c_contract.py'
+      - 'START_B21_TRACK_C_*.command'
+      - '.github/workflows/b21-track-c-ci.yml'
+  pull_request:
+    paths:
+      - 'evidence_extension_v1/track_c/**'
+      - 'protocols/evidence_extension_v1/track_c/**'
+      - 'data/nist/**'
+      - 'tests_v2/test_track_c_contract.py'
+      - 'START_B21_TRACK_C_*.command'
+      - '.github/workflows/b21-track-c-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  track-c-smoke:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ['3.11']
+    runs-on: ${{ matrix.os }}
+    env:
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      VECLIB_MAXIMUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install frozen Track C environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r protocols/evidence_extension_v1/track_c/TRACK_C_REQUIREMENTS_LOCK.txt
+          python -m pip install -e . --no-deps
+          python -m pip install pytest
+
+      - name: Compile and run frozen contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m compileall -q evidence_extension_v1/track_c tests_v2/test_track_c_contract.py
+          bash -n evidence_extension_v1/track_c/run_track_c_mac.sh
+          bash -n START_B21_TRACK_C_SMOKE.command
+          bash -n START_B21_TRACK_C_CONFIRMATORY.command
+          python -m pytest -q tests_v2/test_track_c_contract.py
+
+      - name: Generate manifests and run Step 0 audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python evidence_extension_v1/track_c/generate_protocol_manifest.py
+          git diff --exit-code -- protocols/evidence_extension_v1/track_c/MANIFEST_SHA256.csv
+          python scripts_v2/generate_repository_manifest.py
+          mkdir -p results_b21/track_c/ci
+          python scripts_v2/audit_step0_identity.py \
+            --require-manifest \
+            --output results_b21/track_c/ci/identity_audit.json
+
+      - name: Run zero-evaluation preflights
+        shell: bash
+        run: |
+          set -euo pipefail
+          python evidence_extension_v1/track_c/preflight_track_c.py \
+            --mode smoke \
+            --output results_b21/track_c/ci/preflight_smoke.json
+          python evidence_extension_v1/track_c/preflight_track_c.py \
+            --mode confirmatory \
+            --authorize-confirmatory \
+            --output results_b21/track_c/ci/preflight_confirmatory.json
+
+      - name: Run 35-run development-only smoke and descriptive references
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN_ID="b21_track_c_ci_${RUNNER_OS}_${GITHUB_RUN_ID}"
+          python evidence_extension_v1/track_c/run_track_c_all.py \
+            --mode smoke \
+            --run-id "${RUN_ID}" \
+            --workers 2
+          python evidence_extension_v1/track_c/task_specific_references.py \
+            --mode smoke \
+            --output \
+            "results_b21/track_c/${RUN_ID}/task_specific_reference_results.csv"
+          python evidence_extension_v1/track_c/finalize_track_c.py \
+            --mode smoke \
+            --run-id "${RUN_ID}"
+          cp results_b21/track_c/ci/identity_audit.json \
+             "results_b21/track_c/${RUN_ID}/identity_audit.json"
+          cp results_b21/track_c/ci/preflight_smoke.json \
+             "results_b21/track_c/${RUN_ID}/preflight_smoke.json"
+          cp results_b21/track_c/ci/preflight_confirmatory.json \
+             "results_b21/track_c/${RUN_ID}/preflight_confirmatory.json"
+          echo "RUN_ID=${RUN_ID}" >> "$GITHUB_ENV"
+
+      - name: Upload Track C smoke artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: track-c-${{ runner.os }}
+          path: |
+            results_b21/track_c/${{ env.RUN_ID }}
+            results_b21/track_c/LOCAL_SMOKE_GATE.json
+            protocols/evidence_extension_v1/track_c/TRACK_C_SOURCE_IDENTITY.json
+            protocols/evidence_extension_v1/track_c/MANIFEST_SHA256.csv
+          if-no-files-found: error

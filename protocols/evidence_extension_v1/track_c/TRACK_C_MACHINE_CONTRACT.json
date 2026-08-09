@@ -1,0 +1,16 @@
+{
+  "status": "TRACK_C_MACHINE_CONTRACT_FROZEN",
+  "primary_machine": "user Apple Silicon Mac",
+  "operating_system": "macOS",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "smoke_default_workers": 2,
+  "confirmatory_default_workers": 4,
+  "cross_machine_results_must_not_be_pooled": true,
+  "wall_time_is_secondary": true
+}
