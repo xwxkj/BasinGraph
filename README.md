@@ -1,17 +1,17 @@
 # BasinGraph
 
-[![Result-bearing software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20789002.svg)](https://doi.org/10.5281/zenodo.20789002)
-[![Reproducibility dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20788903.svg)](https://doi.org/10.5281/zenodo.20788903)
+[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21857175.svg)](https://doi.org/10.5281/zenodo.21857175)
+[![Integrated evidence DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20791231.svg)](https://doi.org/10.5281/zenodo.20791231)
 
-BasinGraph is a geometry-controlled basin-graph optimizer for nonconvex
-mathematical models. It maintains a fixed-capacity archive of operational
+BasinGraph is a geometry-controlled optimizer for finite-budget nonconvex and
+scientific optimization. It maintains a fixed-capacity archive of operational
 search-state representatives and a directed graph of observed transitions,
 while counting every objective call in a single evaluation ledger.
 
 ## Result-bearing implementation
 
-The implementation that produced the reported prospective COCO/BBOB and
-CUTEst results is immutable and is identified by all of the following:
+The implementation used throughout the manuscript evidence is immutable and is
+identified by all of the following:
 
 - algorithm name in the manuscript: `BasinGraph`;
 - internal implementation version: `2.0.0-rc1`;
@@ -41,7 +41,9 @@ The historical simplified optimizer formerly exposed from
 `basingraph/optimizer.py` is not the result-bearing manuscript implementation.
 Its history remains available through earlier repository commits and tags.
 
-## Prospective evidence already reported
+## Evidence base
+
+### Original prospective holdouts
 
 - Official noiseless COCO/BBOB holdout: functions 1–24; dimensions 2, 3, 5,
   10 and 20; actual instances 4–15; seven algorithms; budget `1,000d`;
@@ -52,6 +54,24 @@ Its history remains available through earlier repository commits and tags.
 COCO/BBOB instances 1–3 and the 50-problem CUTEst development/comparability
 set are retained separately and are not pooled with the prospective holdouts.
 
+### Registered evidence extensions
+
+The v3.1.0 evidence release preserves the frozen candidate and adds disjoint,
+registered evaluations:
+
+- Track A: 1,920-run mechanism ablation;
+- Track B: 3,840-run modern-baseline comparison;
+- Track D: 1,440-run `bbob-largescale` comparison in 40–320 dimensions;
+- Track D overhead: 60 sequential optimizer-overhead runs;
+- Track C: 2,310-run scientific-model and NIST observed-data matrix;
+- Track C references: 18 separately reported task-specific reference runs.
+
+This is 9,510 confirmatory general-purpose runs, 60 sequential overhead runs
+and 18 descriptive task-specific references. Favorable, null and unfavorable
+outcomes are retained. The evidence supports a bounded finite-budget
+competitiveness claim; it does not support a claim that BasinGraph is the best
+overall optimizer or that every mechanism improves aggregate performance.
+
 ## Repository layout
 
 - `basingraph_v2/`: frozen result-bearing optimizer implementation.
@@ -61,10 +81,10 @@ set are retained separately and are not pooled with the prospective holdouts.
 - `experiments_v2/`: prospective COCO/BBOB and CUTEst runners.
 - `analysis_v2/`: validation and analysis scripts.
 - `scripts_v2/`: reproducibility, integrity and release workflows.
-- `protocols/`: frozen protocols, machine contracts and manifests.
+- `protocols/`: frozen protocols, machine contracts, decisions and manifests.
 - `results_v2/final_analysis/`: lightweight final analysis outputs.
-- `evidence_extension_v1/`: newly registered NCS evidence-extension runners;
-  these do not alter the frozen candidate or the original holdouts.
+- `evidence_extension_v1/`: registered Track A–D/C runners and protocols;
+  these do not alter the frozen candidate or original holdouts.
 
 ## Installation
 
@@ -93,21 +113,23 @@ A deterministic repository manifest can be generated with:
 python scripts_v2/generate_repository_manifest.py
 ```
 
-## Public archives used by the manuscript
+## Public archives
 
-| Resource | Public version-specific DOI |
-|---|---|
-| Result-bearing software archive v2.0.0 | `10.5281/zenodo.20789002` |
-| Reproducibility dataset v2.0.0 | `10.5281/zenodo.20788903` |
+| Resource | Version | DOI |
+|---|---:|---|
+| Current software archive | 3.1.0 | `10.5281/zenodo.21857175` |
+| Current integrated evidence dataset | 3.1.0 | `10.5281/zenodo.20791231` |
+| Original result-bearing software archive | 2.0.0 | `10.5281/zenodo.20789002` |
+| Original prospective reproducibility dataset | 2.0.0 | `10.5281/zenodo.20788903` |
 
-The GitHub release `v3.0.0` is a documentation and archive-composition release.
-It does not change the result-bearing optimizer, frozen options, benchmark
-runs, raw results, statistical analyses or numerical conclusions. Reserved or
-unverified DOI values in historical release-preparation files are retained only
-as provenance and are not used as the authoritative manuscript citations.
+The v3.1.0 software archive is identical to release-source commit
+`2084438e679f61660de497f5464fbe5636373163`. The result-bearing optimizer itself
+remains candidate commit `adbc0ecdf1153044188f0508321c47001ad9bdb0` with the
+frozen options hash shown above.
 
 ## Licence
 
-BasinGraph source code is released under the BSD-3-Clause licence. Benchmark
-libraries and externally developed comparator implementations retain their
-original licences.
+BasinGraph source code is released under the BSD-3-Clause licence. Research
+outputs and documentation in the integrated evidence record are released under
+CC BY 4.0. Benchmark libraries and externally developed comparator
+implementations retain their original licences.
