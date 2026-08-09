@@ -1,22 +1,41 @@
 cff-version: 1.2.0
-title: "BasinGraph: geometry-controlled basin-graph optimization"
-version: 2.0.0
-date-released: 2026-06-21
+title: "BasinGraph: bounded operational search-state optimization"
+version: 3.1.0
+date-released: 2026-08-08
 license: BSD-3-Clause
 type: software
-abstract: "Public archive of the selected BasinGraph 2.0.0-rc1 implementation used for the prospective COCO/BBOB and CUTEst holdouts. The frozen options hash is 031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69. Later repository releases may update documentation and packaging without changing the result-bearing optimizer."
-message: "Please cite the result-bearing Zenodo software record and the associated article."
+abstract: "BasinGraph is a finite-budget nonconvex and scientific optimizer with a fixed-capacity archive of operational search-state representatives, a directed graph of observed transitions, and exact objective-evaluation accounting. Version 3.1.0 archives the immutable BasinGraph 2.0.0-rc1 result-bearing implementation together with the registered Track A-D/C evidence-extension source and documentation. The result-bearing candidate, frozen options and options hash are unchanged."
+message: "Please cite the version-specific Zenodo software record, the associated evidence dataset, and the article."
 authors:
   - given-names: Kaijie
     family-names: Xu
     affiliation: "Xidian University; University of British Columbia"
     orcid: "https://orcid.org/0000-0003-4408-9070"
+  - given-names: Yankai
+    family-names: Cao
+  - given-names: Xiaoan
+    family-names: Tang
+  - given-names: Shanlin
+    family-names: Yang
+  - given-names: Yinghui
+    family-names: Quan
+  - given-names: Weike
+    family-names: Nie
+  - given-names: Xukun
+    family-names: Yin
+  - given-names: Qiang
+    family-names: Zhang
+  - given-names: Dazheng
+    family-names: Feng
 repository-code: "https://github.com/xwxkj/BasinGraph"
-doi: "10.5281/zenodo.20789002"
+doi: "10.5281/zenodo.21857175"
 keywords:
   - global optimization
   - derivative-free optimization
-  - nonconvex optimization
-  - basin graph
+  - scientific optimization
+  - finite-budget optimization
+  - operational search state
+  - directed transition graph
   - COCO/BBOB
   - CUTEst
+  - reproducibility
