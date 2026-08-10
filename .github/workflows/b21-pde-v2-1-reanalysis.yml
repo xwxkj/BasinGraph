@@ -1,0 +1,51 @@
+name: B21 PDE flagship v2.1 development reanalysis
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-e2-pde-theory]
+    paths:
+      - '.github/workflows/b21-pde-v2-1-reanalysis.yml'
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  reanalysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install analysis environment
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install numpy==2.4.6 scipy==1.17.1 pandas==3.0.3
+          python -m pip install -e . --no-deps
+      - name: Download immutable PDE v2 development artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf /tmp/pde-v2
+          mkdir -p /tmp/pde-v2
+          gh run download 31442795911 \
+            --repo xwxkj/BasinGraph \
+            --name pde-flagship-development-v2 \
+            --dir /tmp/pde-v2
+          test -f /tmp/pde-v2/pde_v2_optimizer_runs.csv
+      - name: Execute registered scale-normalized reanalysis
+        run: |
+          python evidence_extension_v1/pde_flagship/reanalyze_v2_scale_normalized.py \
+            --development-v2-dir /tmp/pde-v2 \
+            --output results_b21/pde_flagship/development_v2_1
+      - name: Upload PDE v2.1 development evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: pde-flagship-development-v2-1
+          path: results_b21/pde_flagship/development_v2_1
+          if-no-files-found: error
+          retention-days: 90
