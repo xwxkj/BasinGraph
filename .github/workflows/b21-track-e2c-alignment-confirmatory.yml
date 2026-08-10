@@ -1,0 +1,65 @@
+name: B21 Track E2-C alignment confirmatory
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-e2-pde-theory]
+    paths:
+      - '.github/workflows/b21-track-e2c-alignment-confirmatory.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: b21-track-e2c-alignment-confirmatory
+  cancel-in-progress: false
+
+env:
+  OMP_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+  OPENBLAS_NUM_THREADS: '1'
+  VECLIB_MAXIMUM_THREADS: '1'
+  NUMEXPR_NUM_THREADS: '1'
+
+jobs:
+  confirmatory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen numerical environment
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install numpy==2.4.6 scipy==1.17.1 pandas==3.0.3
+          python -m pip install -e . --no-deps
+      - name: Verify pre-access Track E2-C lock
+        run: |
+          test -f protocols/evidence_extension_v1/track_e2/TRACK_E2C_ALIGNMENT_LOCK.json
+          test "$(git rev-parse HEAD:basingraph_v2/optimizer.py)" = \
+            "4433d2b92075dcd858529f7f13342631847def4c"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          lock = json.loads(Path('protocols/evidence_extension_v1/track_e2/TRACK_E2C_ALIGNMENT_LOCK.json').read_text())
+          assert lock['status'] == 'TRACK_E2C_ALIGNMENT_LOCKED_BEFORE_ACCESS'
+          assert lock['confirmatory_objective_evaluations_before_lock'] == 0
+          assert len(lock['permutation_control_models']) == 7
+          print('TRACK_E2C_PREACCESS_LOCK_OK')
+          PY
+      - name: Execute Track E2-C alignment-specificity study
+        run: |
+          python evidence_extension_v1/track_e2/run_alignment_confirmatory.py \
+            --output results_b21/track_e2/alignment_confirmatory \
+            --workers 4 \
+            --bootstrap-replicates 10000
+      - name: Upload Track E2-C evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: track-e2c-alignment-confirmatory
+          path: results_b21/track_e2/alignment_confirmatory
+          if-no-files-found: error
+          retention-days: 90
