@@ -3,8 +3,15 @@
 
 from __future__ import annotations
 
-from evidence_extension_v1.track_e import run_matched_trace_pilot as base
-from evidence_extension_v1.track_e.snapshot_pilot import (
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from evidence_extension_v1.track_e import run_matched_trace_pilot as base  # noqa: E402
+from evidence_extension_v1.track_e.snapshot_pilot import (  # noqa: E402
     SNAPSHOT_CHECKPOINT_MULTIPLIER,
     run_block,
 )
