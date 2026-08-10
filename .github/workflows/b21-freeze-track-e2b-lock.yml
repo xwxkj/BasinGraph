@@ -5,6 +5,7 @@ on:
     branches: [ncs-evidence-v1-track-e2-pde-theory]
     paths:
       - '.github/workflows/b21-freeze-track-e2b-lock.yml'
+      - 'evidence_extension_v1/track_e2/freeze_event_lock.py'
 
 permissions:
   actions: read
