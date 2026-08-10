@@ -1,0 +1,75 @@
+name: B21 Track E matched-trace pilot 2
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-e-matched-trace]
+    paths:
+      - 'evidence_extension_v1/track_e/snapshot_pilot.py'
+      - 'evidence_extension_v1/track_e/run_matched_trace_pilot_v2.py'
+      - 'protocols/evidence_extension_v1/track_e/TRACK_E_PILOT_AMENDMENT_001.md'
+      - '.github/workflows/b21-track-e-pilot-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-snapshot-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      VECLIB_MAXIMUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install frozen numerical environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install numpy==2.4.6 scipy==1.17.1 pandas==3.0.3
+          python -m pip install -e . --no-deps
+
+      - name: Compile exact-snapshot runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m compileall -q evidence_extension_v1/track_e
+
+      - name: Verify immutable optimizer source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD:basingraph_v2/optimizer.py)" = \
+            "4433d2b92075dcd858529f7f13342631847def4c"
+          python - <<'PY'
+          from basingraph_v2.optimizer import BasinGraphOptions, IMPLEMENTATION_VERSION
+          assert IMPLEMENTATION_VERSION == '2.0.0-rc1'
+          assert BasinGraphOptions().stable_hash() == '031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69'
+          print('TRACK_E_FROZEN_SOURCE_OK')
+          PY
+
+      - name: Run registered exact-snapshot engineering pilot
+        shell: bash
+        run: |
+          set -euo pipefail
+          python evidence_extension_v1/track_e/run_matched_trace_pilot_v2.py \
+            --output results_b21/track_e/pilot_v2 \
+            --workers 2
+
+      - name: Upload Track E pilot 2 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: track-e-matched-trace-pilot-v2
+          path: results_b21/track_e/pilot_v2
+          if-no-files-found: error
