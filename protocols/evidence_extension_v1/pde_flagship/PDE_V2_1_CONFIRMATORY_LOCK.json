@@ -1,0 +1,30 @@
+{
+  "status": "PDE_FLAGSHIP_V2_1_LOCKED_BEFORE_CONFIRMATORY_ACCESS",
+  "confirmatory_objective_evaluations_before_lock": 0,
+  "development_v2_run_commit": "6f1533f4975ba7145e02adbc5ded0b7d24bf45f8",
+  "development_v2_1_analysis_commit": "a414745ce28230ae0a8dd5eb3a67f9da03bd48cf",
+  "implementation_version": "2.0.0-rc1",
+  "options_hash": "031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69",
+  "optimizer_blob": "4433d2b92075dcd858529f7f13342631847def4c",
+  "confirmatory_instances": [201, 202, 203, 204, 205, 206, 207, 208],
+  "seeds_per_instance": 10,
+  "budget_multiplier": 400,
+  "dimensions_cycle": [12, 16, 20],
+  "baseline_sensor_count": 5,
+  "maximum_explanations": 16,
+  "minimum_normalized_parameter_separation": 0.08,
+  "eligibility_rule": "f <= f_best + max(5, 0.15 * (f_zero - f_best))",
+  "baseline_weight_rule": "exp[-0.5 * (f_i - f_best) / max(objective_tolerance, 1e-12)]",
+  "design_score": "logdet(I + covariance(predictions) / sigma_design^2)",
+  "design_tie_break": "lexical_design_id",
+  "success_rule": {
+    "tasks": 8,
+    "minimum_tasks_with_four_explanations": 6,
+    "minimum_tasks_with_25pct_score_gain": 6,
+    "minimum_tasks_with_20pct_effective_count_reduction": 6,
+    "minimum_tasks_with_20pct_dispersion_reduction": 6,
+    "minimum_tasks_no_worse_than_median_design": 6,
+    "truth_not_used_for_selection": true,
+    "integrity_required": true
+  }
+}
