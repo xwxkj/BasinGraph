@@ -1,0 +1,56 @@
+name: B21 PDE flagship development cycle v2
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-e2-pde-theory]
+    paths:
+      - '.github/workflows/b21-pde-flagship-v2-development.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: b21-pde-flagship-v2-development
+  cancel-in-progress: false
+
+env:
+  OMP_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+  OPENBLAS_NUM_THREADS: '1'
+  VECLIB_MAXIMUM_THREADS: '1'
+  NUMEXPR_NUM_THREADS: '1'
+
+jobs:
+  development-v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen numerical environment
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install numpy==2.4.6 scipy==1.17.1 pandas==3.0.3
+          python -m pip install -e . --no-deps
+      - name: Verify immutable optimizer and v2 protocol
+        run: |
+          test -f protocols/evidence_extension_v1/pde_flagship/PDE_NONIDENTIFIABILITY_DEVELOPMENT_CYCLE_V2.md
+          test "$(git rev-parse HEAD:basingraph_v2/optimizer.py)" = \
+            "4433d2b92075dcd858529f7f13342631847def4c"
+          python -m compileall -q evidence_extension_v1/pde_flagship
+      - name: Execute frozen PDE flagship development cycle v2
+        run: |
+          python evidence_extension_v1/pde_flagship/run_development_v2.py \
+            --output results_b21/pde_flagship/development_v2 \
+            --workers 4
+      - name: Upload PDE flagship v2 development evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: pde-flagship-development-v2
+          path: results_b21/pde_flagship/development_v2
+          if-no-files-found: error
+          retention-days: 90

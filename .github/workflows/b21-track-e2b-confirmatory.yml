@@ -1,0 +1,67 @@
+name: B21 Track E2-B event confirmatory
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-e2-pde-theory]
+    paths:
+      - '.github/workflows/b21-track-e2b-confirmatory.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: b21-track-e2b-confirmatory
+  cancel-in-progress: false
+
+env:
+  OMP_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+  OPENBLAS_NUM_THREADS: '1'
+  VECLIB_MAXIMUM_THREADS: '1'
+  NUMEXPR_NUM_THREADS: '1'
+
+jobs:
+  confirmatory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen numerical environment
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install numpy==2.4.6 scipy==1.17.1 pandas==3.0.3
+          python -m pip install -e . --no-deps
+      - name: Verify pre-access lock and immutable optimizer
+        run: |
+          test -f protocols/evidence_extension_v1/track_e2/TRACK_E2B_CONFIRMATORY_LOCK.json
+          test "$(git rev-parse HEAD:basingraph_v2/optimizer.py)" = \
+            "4433d2b92075dcd858529f7f13342631847def4c"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from basingraph_v2.optimizer import BasinGraphOptions, IMPLEMENTATION_VERSION
+          lock = json.loads(Path('protocols/evidence_extension_v1/track_e2/TRACK_E2B_CONFIRMATORY_LOCK.json').read_text())
+          assert lock['status'] == 'TRACK_E2B_CONFIRMATORY_LOCKED_BEFORE_ACCESS'
+          assert lock['confirmatory_objective_evaluations_before_lock'] == 0
+          assert IMPLEMENTATION_VERSION == '2.0.0-rc1'
+          assert BasinGraphOptions().stable_hash() == '031b9c3df716889e48e2db753c73ec960b96a0239173ce791b4ed1ee63ed0f69'
+          print('TRACK_E2B_PREACCESS_LOCK_OK')
+          PY
+      - name: Execute locked Track E2-B confirmatory study
+        run: |
+          python evidence_extension_v1/track_e2/run_event_confirmatory.py \
+            --output results_b21/track_e2/event_confirmatory \
+            --workers 4 \
+            --bootstrap-replicates 10000
+      - name: Upload Track E2-B confirmatory evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: track-e2b-event-confirmatory
+          path: results_b21/track_e2/event_confirmatory
+          if-no-files-found: error
+          retention-days: 90

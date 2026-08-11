@@ -1,0 +1,178 @@
+name: B21 Track E2 PDE theory final audit
+
+on:
+  push:
+    branches: [ncs-evidence-v1-track-e2-pde-theory]
+    paths:
+      - '.github/workflows/b21-track-e2-pde-final-audit.yml'
+
+permissions:
+  actions: read
+  contents: read
+
+env:
+  OMP_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+  OPENBLAS_NUM_THREADS: '1'
+  VECLIB_MAXIMUM_THREADS: '1'
+  NUMEXPR_NUM_THREADS: '1'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install audit environment
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install numpy==2.4.6 scipy==1.17.1 pandas==3.0.3 pytest
+          python -m pip install -e . --no-deps
+      - name: Compile and test bounded-state contracts
+        run: |
+          python -m compileall -q evidence_extension_v1/track_e2
+          python -m compileall -q evidence_extension_v1/pde_flagship
+          python -m pytest -q tests_v2/test_bounded_state_theory_contract.py
+          test "$(git rev-parse HEAD:basingraph_v2/optimizer.py)" = \
+            "4433d2b92075dcd858529f7f13342631847def4c"
+      - name: Download all audited evidence artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf /tmp/evidence
+          mkdir -p /tmp/evidence/{track_e2_dev,track_e2b,track_e2c,pde_v1,pde_v2,pde_v2_1,pde_confirm}
+          gh run download 31441743630 --repo xwxkj/BasinGraph --name track-e2-development --dir /tmp/evidence/track_e2_dev
+          gh run download 31442530549 --repo xwxkj/BasinGraph --name track-e2b-event-confirmatory --dir /tmp/evidence/track_e2b
+          gh run download 31443172214 --repo xwxkj/BasinGraph --name track-e2c-alignment-confirmatory --dir /tmp/evidence/track_e2c
+          gh run download 31441743630 --repo xwxkj/BasinGraph --name pde-flagship-development --dir /tmp/evidence/pde_v1
+          gh run download 31442795911 --repo xwxkj/BasinGraph --name pde-flagship-development-v2 --dir /tmp/evidence/pde_v2
+          gh run download 31443355535 --repo xwxkj/BasinGraph --name pde-flagship-development-v2-1 --dir /tmp/evidence/pde_v2_1
+          gh run download 31443639344 --repo xwxkj/BasinGraph --name pde-flagship-confirmatory-v2-1 --dir /tmp/evidence/pde_confirm
+      - name: Validate manifests, matrices and registered decisions
+        run: |
+          mkdir -p results_b21/track_e2_pde_final_audit
+          python - <<'PY'
+          from pathlib import Path
+          import csv, hashlib, json
+          import pandas as pd
+
+          roots = {
+              'track_e2_dev': Path('/tmp/evidence/track_e2_dev'),
+              'track_e2b': Path('/tmp/evidence/track_e2b'),
+              'track_e2c': Path('/tmp/evidence/track_e2c'),
+              'pde_v1': Path('/tmp/evidence/pde_v1'),
+              'pde_v2': Path('/tmp/evidence/pde_v2'),
+              'pde_v2_1': Path('/tmp/evidence/pde_v2_1'),
+              'pde_confirm': Path('/tmp/evidence/pde_confirm'),
+          }
+
+          def sha(path):
+              h = hashlib.sha256()
+              with path.open('rb') as handle:
+                  for block in iter(lambda: handle.read(1024 * 1024), b''):
+                      h.update(block)
+              return h.hexdigest()
+
+          manifest_reports = {}
+          for name, root in roots.items():
+              manifest = pd.read_csv(root / 'MANIFEST_SHA256.csv')
+              missing = []
+              mismatched = []
+              for row in manifest.itertuples(index=False):
+                  path = root / str(row.relative_path)
+                  if not path.is_file():
+                      missing.append(str(row.relative_path))
+                  elif path.stat().st_size != int(row.size_bytes) or sha(path) != str(row.sha256):
+                      mismatched.append(str(row.relative_path))
+              if missing or mismatched:
+                  raise RuntimeError(f'{name}: manifest failure')
+              manifest_reports[name] = {
+                  'entries': len(manifest),
+                  'missing': len(missing),
+                  'mismatched': len(mismatched),
+              }
+
+          e2dev = json.loads((roots['track_e2_dev'] / 'development_decision.json').read_text())
+          e2b = json.loads((roots['track_e2b'] / 'confirmatory_decision.json').read_text())
+          e2c = json.loads((roots['track_e2c'] / 'alignment_confirmatory_decision.json').read_text())
+          pde1 = json.loads((roots['pde_v1'] / 'development_decision.json').read_text())
+          pde2 = json.loads((roots['pde_v2'] / 'development_decision.json').read_text())
+          pde21 = json.loads((roots['pde_v2_1'] / 'development_decision.json').read_text())
+          pdec = json.loads((roots['pde_confirm'] / 'confirmatory_decision.json').read_text())
+
+          assert e2dev['status'] == 'TRACK_E2_DEVELOPMENT_GATE_NOT_PASSED'
+          assert not e2dev['gate_passed']
+          assert e2b['status'] == 'TRACK_E2B_CONFIRMATORY_SUCCESS' and e2b['success']
+          assert e2c['status'] == 'TRACK_E2C_ALIGNMENT_SPECIFICITY_SUPPORTED' and e2c['success']
+          assert pde1['status'] == 'PDE_FLAGSHIP_DEVELOPMENT_GATE_NOT_PASSED'
+          assert pde2['status'] == 'PDE_FLAGSHIP_V2_DEVELOPMENT_GATE_NOT_PASSED'
+          assert pde21['status'] == 'PDE_FLAGSHIP_V2_1_DEVELOPMENT_GATE_PASSED'
+          assert pdec['status'] == 'PDE_FLAGSHIP_V2_1_CONFIRMATORY_SUCCESS' and pdec['success']
+
+          e2dev_rows = len(pd.read_csv(roots['track_e2_dev'] / 'track_e2_development_snapshots.csv'))
+          e2b_rows = len(pd.read_csv(roots['track_e2b'] / 'confirmatory_snapshots.csv'))
+          e2c_rows = len(pd.read_csv(roots['track_e2c'] / 'alignment_confirmatory_snapshots.csv'))
+          pde1_runs = len(pd.read_csv(roots['pde_v1'] / 'pde_optimizer_runs.csv'))
+          pde2_runs = len(pd.read_csv(roots['pde_v2'] / 'pde_v2_optimizer_runs.csv'))
+          pdec_runs = len(pd.read_csv(roots['pde_confirm'] / 'pde_v2_1_confirmatory_runs.csv'))
+          assert e2dev_rows == 288
+          assert e2b_rows == 864
+          assert e2c_rows == 864
+          assert pde1_runs == 48
+          assert pde2_runs == 80
+          assert pdec_runs == 80
+
+          report = {
+              'status': 'TRACK_E2_PDE_THEORY_FINAL_AUDIT_OK',
+              'source_commit': __import__('subprocess').check_output(
+                  ['git','rev-parse','HEAD'], text=True
+              ).strip(),
+              'optimizer_blob': __import__('subprocess').check_output(
+                  ['git','rev-parse','HEAD:basingraph_v2/optimizer.py'], text=True
+              ).strip(),
+              'manifest_reports': manifest_reports,
+              'matrix': {
+                  'track_e2_development_snapshots': e2dev_rows,
+                  'track_e2b_confirmatory_snapshots': e2b_rows,
+                  'track_e2c_confirmatory_snapshots': e2c_rows,
+                  'pde_v1_development_runs': pde1_runs,
+                  'pde_v2_development_runs': pde2_runs,
+                  'pde_v2_1_confirmatory_runs': pdec_runs,
+              },
+              'decisions': {
+                  'track_e2_continuous': e2dev['status'],
+                  'track_e2_event': e2b['status'],
+                  'track_e2_alignment': e2c['status'],
+                  'pde_v1': pde1['status'],
+                  'pde_v2': pde2['status'],
+                  'pde_v2_1_development': pde21['status'],
+                  'pde_v2_1_confirmatory': pdec['status'],
+              },
+              'key_results': {
+                  'e2c_trace_log_loss': e2c['trace_log_loss'],
+                  'e2c_real_state_log_loss': e2c['real_state_log_loss'],
+                  'e2c_permutation_log_loss': e2c['permutation_ensemble_log_loss'],
+                  'e2c_specificity_bootstrap': e2c['specificity_bootstrap'],
+                  'pde_confirmatory_counts': pdec['counts'],
+                  'pde_median_score_gain': pdec['median_score_gain'],
+                  'pde_median_effective_count_reduction': pdec['median_effective_count_reduction'],
+                  'pde_median_dispersion_reduction': pdec['median_dispersion_reduction'],
+              },
+          }
+          Path('results_b21/track_e2_pde_final_audit/final_audit.json').write_text(
+              json.dumps(report, indent=2) + '\n'
+          )
+          print('TRACK_E2_PDE_THEORY_FINAL_AUDIT_OK')
+          PY
+      - name: Upload integrated final audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: track-e2-pde-theory-final-audit
+          path: results_b21/track_e2_pde_final_audit
+          if-no-files-found: error
+          retention-days: 90
